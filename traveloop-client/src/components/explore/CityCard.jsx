@@ -6,17 +6,25 @@ import api from '../../api/axios';
 
 export const CityCard = ({ city, onToggle }) => {
   const [favorited, setFavorited] = useState(city.isFavorited || false);
+  const image = city.image || city.heroImage || 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop';
 
   const handleFavorite = async (e) => {
     e.preventDefault();
     e.stopPropagation();
     try {
-      await api.post(`/favorites/${city.id}`);
       const next = !favorited;
+      if (next) {
+        const res = await api.post('/favorites', { cityId: city.id });
+        onToggle?.(city.id, next, res.data.data.favorite);
+      } else if (city.favoriteId) {
+        await api.delete(`/favorites/${city.favoriteId}`);
+        onToggle?.(city.id, next);
+      } else {
+        return toast.error('Open Saved Places to remove this favorite');
+      }
       setFavorited(next);
-      onToggle?.(city.id, next);
     } catch (err) {
-      toast.error('Failed to update favorite');
+      toast.error(err.response?.data?.message || err.response?.data?.error || 'Failed to update favorite');
     }
   };
 
@@ -25,15 +33,15 @@ export const CityCard = ({ city, onToggle }) => {
       <div className="bg-[#0A1622] border border-white/5 rounded-[20px] overflow-hidden hover:border-white/10 transition-colors">
         <div className="relative h-40 bg-white/5">
           <img
-            src={city.image || 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop'}
+            src={image}
             alt={city.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
           />
           <button
             onClick={handleFavorite}
-            className={`absolute top-3 right-3 p-2 rounded-full ${favorited ? 'bg-accent-orange text-[#0A1622]' : 'bg-[#0A1622]/70 text-white'}`}
+            className={`absolute top-3 right-3 p-2 rounded-full transition-colors ${favorited ? 'bg-red-500 text-white' : 'bg-[#0A1622]/70 text-white'}`}
           >
-            <LuHeart className="w-4 h-4" />
+            <LuHeart className={`w-4 h-4 ${favorited ? 'fill-current' : ''}`} />
           </button>
         </div>
         <div className="p-4">
