@@ -1,6 +1,7 @@
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const path = require('path');
+const { getCurrencySymbol } = require('../utils/currency');
 
 class PDFService {
   async generateInvoicePDF(invoice, trip, user, expenses) {
@@ -57,7 +58,7 @@ class PDFService {
         doc.text(exp.title, 50, y);
         doc.text(exp.category, 200, y);
         doc.text(new Date(exp.expenseDate).toLocaleDateString(), 350, y);
-        doc.text(`${exp.amount.toFixed(2)}`, 450, y);
+        doc.text(`${getCurrencySymbol(invoice.currency)} ${exp.amount.toFixed(2)}`, 450, y);
         y += 20;
       });
 
@@ -66,18 +67,18 @@ class PDFService {
 
       // Totals
       doc.text('Subtotal:', 350, y);
-      doc.text(`${invoice.subtotal.toFixed(2)}`, 450, y);
+      doc.text(`${getCurrencySymbol(invoice.currency)} ${invoice.subtotal.toFixed(2)}`, 450, y);
       y += 15;
       doc.text(`Tax (${invoice.tax}%):`, 350, y);
       const taxAmount = (invoice.subtotal * invoice.tax) / 100;
-      doc.text(`${taxAmount.toFixed(2)}`, 450, y);
+      doc.text(`${getCurrencySymbol(invoice.currency)} ${taxAmount.toFixed(2)}`, 450, y);
       y += 15;
       doc.text('Discount:', 350, y);
-      doc.text(`-${invoice.discount.toFixed(2)}`, 450, y);
+      doc.text(`-${getCurrencySymbol(invoice.currency)} ${invoice.discount.toFixed(2)}`, 450, y);
       y += 20;
       
       doc.fontSize(16).text('TOTAL:', 350, y, { bold: true });
-      doc.text(`${invoice.total.toFixed(2)}`, 450, y);
+      doc.text(`${getCurrencySymbol(invoice.currency)} ${invoice.total.toFixed(2)}`, 450, y);
 
       // Footer
       doc.fontSize(10).text('Thank you for choosing Traveloop!', 50, 700, { align: 'center', width: 500 });

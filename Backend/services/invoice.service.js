@@ -29,6 +29,7 @@ class InvoiceService {
           total: total > 0 ? total : 0,
           paymentMethod: data.paymentMethod,
           paymentStatus: 'PENDING',
+          currency: trip.currency,
           expenses: { connect: trip.expenses.map(e => ({ id: e.id })) }
         }
       });

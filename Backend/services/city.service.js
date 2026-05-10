@@ -133,8 +133,16 @@ class CityService {
     const page = parseInt(query.page) || 1;
     const offset = (page - 1) * limit;
 
-    // Try Foursquare via utility
-    const activities = await foursquareService.getActivities(city.name, query.category || '', limit, offset);
+    // Fetch from internal database
+    const activities = await prisma.globalActivity.findMany({
+      where: {
+        cityId,
+        ...(query.category && { category: { contains: query.category, mode: 'insensitive' } })
+      },
+      skip: offset,
+      take: limit,
+      orderBy: { rating: 'desc' }
+    });
     
     return activities;
   }

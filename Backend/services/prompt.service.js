@@ -3,7 +3,7 @@ class PromptService {
     return `Generate a comprehensive travel itinerary for a ${data.days}-day trip to ${data.destination}.
     Trip Type: ${data.tripType}
     Interests: ${data.interests.join(', ')}
-    Budget: ${data.budget}
+    Budget: ${data.budget} INR
     Travelers: ${data.travelersCount}
     
     Structure the response as a JSON object with:
@@ -19,7 +19,7 @@ class PromptService {
 
   getActivitySuggestionPrompt(data) {
     return `Suggest 5-8 activities in ${data.city} for a ${data.tripType} trip focusing on ${data.interests.join(', ')}.
-    Available Budget for activities: ${data.budget}.
+    Available Budget for activities: ${data.budget} INR.
     
     Structure the response as a JSON object with:
     {
@@ -30,7 +30,7 @@ class PromptService {
   }
 
   getBudgetOptimizationPrompt(data) {
-    return `Optimize a ${data.budget} budget for a ${data.days}-day trip to ${data.destination} with a ${data.travelStyle} style.
+    return `Optimize a ${data.budget} INR budget for a ${data.days}-day trip to ${data.destination} with a ${data.travelStyle} style.
     
     Structure the response as a JSON object with:
     {

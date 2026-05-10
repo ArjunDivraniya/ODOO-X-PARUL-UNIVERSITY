@@ -46,14 +46,8 @@ class RecommendationService {
       take: 5
     });
 
-    // 2. Fetch from GeoDB for more results
-    const externalCities = await geodbService.searchCities(query);
-
-    // 3. Merge and Save new cities to DB (async)
-    this._saveNewCities(externalCities);
-
     return {
-      cities: [...dbCities, ...externalCities].filter((v, i, a) => a.findIndex(t => t.name === v.name) === i)
+      cities: dbCities
     };
   }
 
@@ -67,15 +61,7 @@ class RecommendationService {
       take: 10
     });
 
-    if (cachedActivities.length > 0) return cachedActivities;
-
-    // 2. Fetch from Foursquare
-    const externalActivities = await foursquareService.getActivities(cityName, category);
-
-    // 3. Cache them (async)
-    this._saveNewActivities(cityName, externalActivities);
-
-    return externalActivities;
+    return cachedActivities;
   }
 
   async getTrending() {

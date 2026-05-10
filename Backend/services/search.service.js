@@ -68,14 +68,30 @@ class SearchService {
     };
 
     const [activities, total] = await Promise.all([
-      prisma.activity.findMany({
-        where,
+      prisma.globalActivity.findMany({
+        where: {
+          OR: [
+            { title: { contains: query, mode: 'insensitive' } },
+            { description: { contains: query, mode: 'insensitive' } }
+          ],
+          ...(category && { category: { contains: category, mode: 'insensitive' } }),
+          ...(cityId && { cityId })
+        },
         skip,
         take: limit,
-        orderBy: { aiRecommended: 'desc' },
+        orderBy: { rating: 'desc' },
         include: { city: { select: { name: true } } }
       }),
-      prisma.activity.count({ where })
+      prisma.globalActivity.count({ 
+        where: {
+          OR: [
+            { title: { contains: query, mode: 'insensitive' } },
+            { description: { contains: query, mode: 'insensitive' } }
+          ],
+          ...(category && { category: { contains: category, mode: 'insensitive' } }),
+          ...(cityId && { cityId })
+        }
+      })
     ]);
 
     return {
