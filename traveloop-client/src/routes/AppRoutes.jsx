@@ -8,6 +8,7 @@ import ResetPassword from '../pages/auth/ResetPassword';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
 import Overview from '../pages/dashboard/Overview';
 import Trips from '../pages/dashboard/Trips';
+import Profile from '../pages/dashboard/profile/Profile';
 import Landing from '../pages/Landing';
 
 const PrivateRoute = ({ children }) => {
@@ -61,6 +62,7 @@ const AppRoutes = () => {
       }>
         <Route index element={<Overview />} />
         <Route path="trips" element={<Trips />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
     </Routes>
   );

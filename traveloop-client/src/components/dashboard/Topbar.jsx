@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { LuSearch, LuBell, LuMenu } from 'react-icons/lu';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -31,19 +32,25 @@ export const Topbar = ({ onMenuClick }) => {
           <span className="absolute top-1 right-1 w-2 h-2 bg-accent-orange rounded-full"></span>
         </button>
         
-        <div className="flex items-center gap-3 pl-6 border-l border-white/10">
+        <Link to="/dashboard/profile" className="flex items-center gap-3 pl-6 border-l border-white/10 group cursor-pointer">
           <div className="text-right hidden sm:block">
-            <div className="text-sm font-medium text-secondary-bg">{user?.firstName} {user?.lastName}</div>
+            <div className="text-sm font-medium text-secondary-bg group-hover:text-white transition-colors">{user?.firstName} {user?.lastName}</div>
             <div className="text-xs text-neutral-text">Traveler</div>
           </div>
-          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#0A1622] bg-white/10">
-            <img 
-              src={user?.profileImage || `https://ui-avatars.com/api/?name=${user?.firstName}+${user?.lastName}&background=0D8ABC&color=fff`} 
-              alt="Profile" 
-              className="w-full h-full object-cover"
-            />
+          <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-[#0A1622] group-hover:border-accent-blue transition-colors bg-[#0A1622] flex items-center justify-center">
+            {user?.profileImage ? (
+              <img 
+                src={user.profileImage} 
+                alt="Profile" 
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-accent-blue/20 to-accent-mint/20 text-accent-blue flex items-center justify-center text-lg font-heading font-bold">
+                {user?.firstName?.charAt(0).toUpperCase()}
+              </div>
+            )}
           </div>
-        </div>
+        </Link>
       </div>
     </header>
   );
