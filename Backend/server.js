@@ -24,6 +24,19 @@ app.use('/api/users', userRoutes);
 app.use('/api/trips', require('./routes/trip.routes.js'));
 app.use('/api/trip-sections', require('./routes/tripSection.routes.js'));
 app.use('/api/recommendations', require('./routes/recommendation.routes.js'));
+app.use('/api/cities', require('./routes/city.routes.js'));
+app.use('/api/activities', require('./routes/activity.routes.js'));
+app.use('/api/expenses', require('./routes/expense.routes.js'));
+app.use('/api/notes', require('./routes/note.routes.js'));
+app.use('/api/packing-list', require('./routes/packing.routes.js'));
+app.use('/api/community', require('./routes/community.routes.js'));
+app.use('/api/favorites', require('./routes/favorite.routes.js'));
+app.use('/api/ai', require('./routes/ai.routes.js'));
+app.use('/api/invoices', require('./routes/invoice.routes.js'));
+app.use('/api/notifications', require('./routes/notification.routes.js'));
+app.use('/api/reviews', require('./routes/review.routes.js'));
+app.use('/api/public', require('./routes/public.routes.js'));
+app.use('/api/collaborators', require('./routes/collaborator.routes.js'));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
