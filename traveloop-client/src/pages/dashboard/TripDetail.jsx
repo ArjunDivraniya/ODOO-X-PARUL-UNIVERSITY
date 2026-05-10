@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { LuArrowLeft, LuCalendar, LuMapPin, LuUsers, LuDollarSign, LuShare2, LuPencil, LuTrash2, LuCopy, LuGlobe, LuLock, LuCheck, LuEye } from 'react-icons/lu';
-import { format } from 'date-fns';
+import { LuArrowLeft, LuShare2, LuPencil, LuTrash2, LuCopy, LuGlobe, LuLock, LuEye } from 'react-icons/lu';
 import toast from 'react-hot-toast';
 import api from '../../api/axios';
 import EditTripModal from '../../components/dashboard/EditTripModal';
-
-const STATUS_FLOW = ['PLANNING', 'ACTIVE', 'COMPLETED', 'CANCELLED'];
+import { TabBar } from '../../components/ui/TabBar';
+import OverviewTab from './trip-tabs/OverviewTab';
+import ItineraryTab from './trip-tabs/ItineraryTab';
+import ActivitiesTab from './trip-tabs/ActivitiesTab';
+import ExpensesTab from './trip-tabs/ExpensesTab';
+import NotesTab from './trip-tabs/NotesTab';
+import PackingTab from './trip-tabs/PackingTab';
 
 const TripDetail = () => {
   const { tripId } = useParams();
@@ -16,6 +20,7 @@ const TripDetail = () => {
   const [overview, setOverview] = useState(null);
   const [loading, setLoading] = useState(true);
   const [editModalOpen, setEditModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('overview');
 
   const fetchTrip = async () => {
     try {
@@ -104,8 +109,17 @@ const TripDetail = () => {
 
   if (!trip) return null;
 
+  const tabs = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'itinerary', label: 'Itinerary' },
+    { id: 'activities', label: 'Activities' },
+    { id: 'expenses', label: 'Expenses' },
+    { id: 'notes', label: 'Notes' },
+    { id: 'packing', label: 'Packing' }
+  ];
+
   return (
-    <div className="p-6 md:p-10 max-w-5xl mx-auto space-y-8">
+    <div className="p-6 md:p-10 max-w-6xl mx-auto space-y-8">
       {/* Back Button */}
       <Link to="/dashboard/trips" className="inline-flex items-center gap-2 text-neutral-text hover:text-white transition-colors text-sm font-medium group">
         <LuArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -161,128 +175,16 @@ const TripDetail = () => {
         </div>
       </motion.div>
 
-      {/* Quick Info Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-[#0A1622] border border-white/5 rounded-[16px] p-5 text-center">
-          <LuCalendar className="w-5 h-5 mx-auto mb-2 text-accent-blue" />
-          <div className="text-xs text-neutral-text mb-1">Dates</div>
-          <div className="text-sm font-medium text-secondary-bg">
-            {trip.startDate ? format(new Date(trip.startDate), 'MMM dd') : '—'}
-            {trip.endDate ? ` – ${format(new Date(trip.endDate), 'MMM dd')}` : ''}
-          </div>
-        </div>
-        <div className="bg-[#0A1622] border border-white/5 rounded-[16px] p-5 text-center">
-          <LuUsers className="w-5 h-5 mx-auto mb-2 text-accent-mint" />
-          <div className="text-xs text-neutral-text mb-1">Travelers</div>
-          <div className="text-sm font-medium text-secondary-bg">{trip.travelersCount}</div>
-        </div>
-        <div className="bg-[#0A1622] border border-white/5 rounded-[16px] p-5 text-center">
-          <LuDollarSign className="w-5 h-5 mx-auto mb-2 text-accent-orange" />
-          <div className="text-xs text-neutral-text mb-1">Budget</div>
-          <div className="text-sm font-medium text-secondary-bg">{trip.currency} {trip.estimatedBudget || '—'}</div>
-        </div>
-        <div className="bg-[#0A1622] border border-white/5 rounded-[16px] p-5 text-center">
-          <LuMapPin className="w-5 h-5 mx-auto mb-2 text-accent-blue" />
-          <div className="text-xs text-neutral-text mb-1">Days</div>
-          <div className="text-sm font-medium text-secondary-bg">{overview?.totalDays || '—'}</div>
-        </div>
-      </div>
+      <TabBar tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
 
-      {/* Status Workflow */}
-      <div className="bg-[#0A1622] border border-white/5 rounded-[24px] p-6">
-        <h3 className="text-lg font-heading font-bold text-secondary-bg mb-4">Trip Status</h3>
-        <div className="flex flex-wrap gap-3">
-          {STATUS_FLOW.map((status) => (
-            <button
-              key={status}
-              onClick={() => handleStatusChange(status)}
-              className={`px-5 py-2.5 rounded-[12px] text-sm font-medium transition-all flex items-center gap-2 ${
-                trip.status === status
-                  ? 'bg-accent-blue text-[#0A1622]'
-                  : 'bg-white/5 text-neutral-text hover:bg-white/10 hover:text-white border border-white/5'
-              }`}
-            >
-              {trip.status === status && <LuCheck className="w-4 h-4" />}
-              {status.charAt(0) + status.slice(1).toLowerCase()}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Overview Stats */}
-      {overview && (
-        <div className="bg-[#0A1622] border border-white/5 rounded-[24px] p-6">
-          <h3 className="text-lg font-heading font-bold text-secondary-bg mb-4">Trip Overview</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="text-center">
-              <div className="text-2xl font-heading font-bold text-secondary-bg">{overview.citiesCount}</div>
-              <div className="text-xs text-neutral-text mt-1">Cities</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-heading font-bold text-secondary-bg">{overview.activitiesCount}</div>
-              <div className="text-xs text-neutral-text mt-1">Activities</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-heading font-bold text-secondary-bg">{overview.packingProgress}%</div>
-              <div className="text-xs text-neutral-text mt-1">Packed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-heading font-bold text-secondary-bg">{overview.expensesSummary.percentageUsed}%</div>
-              <div className="text-xs text-neutral-text mt-1">Budget Used</div>
-            </div>
-          </div>
-          {/* Budget Bar */}
-          {overview.expensesSummary.estimatedBudget > 0 && (
-            <div className="mt-6">
-              <div className="flex justify-between text-xs font-medium mb-1.5">
-                <span className="text-neutral-text">Budget Usage</span>
-                <span className="text-secondary-bg">${overview.expensesSummary.total} / ${overview.expensesSummary.estimatedBudget}</span>
-              </div>
-              <div className="w-full bg-white/5 rounded-full h-2 overflow-hidden">
-                <div className="bg-accent-blue h-full rounded-full transition-all" style={{ width: `${overview.expensesSummary.percentageUsed}%` }} />
-              </div>
-            </div>
-          )}
-        </div>
+      {activeTab === 'overview' && (
+        <OverviewTab trip={trip} overview={overview} onStatusChange={handleStatusChange} />
       )}
-
-      {/* Itinerary Sections */}
-      {trip.itinerarySections && trip.itinerarySections.length > 0 && (
-        <div className="bg-[#0A1622] border border-white/5 rounded-[24px] p-6">
-          <h3 className="text-lg font-heading font-bold text-secondary-bg mb-4">Itinerary</h3>
-          <div className="space-y-4">
-            {trip.itinerarySections.map((section, i) => (
-              <div key={section.id} className="flex gap-4 items-start p-4 bg-white/5 rounded-[16px] border border-white/5">
-                <div className="w-8 h-8 rounded-full bg-accent-blue/20 text-accent-blue flex items-center justify-center text-sm font-bold flex-shrink-0">
-                  {i + 1}
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-sm font-semibold text-secondary-bg">{section.title}</h4>
-                  {section.city && <p className="text-xs text-neutral-text mt-1">{section.city.name}, {section.city.country}</p>}
-                  {section.description && <p className="text-xs text-neutral-text mt-1">{section.description}</p>}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Collaborators */}
-      {trip.collaborators && trip.collaborators.length > 0 && (
-        <div className="bg-[#0A1622] border border-white/5 rounded-[24px] p-6">
-          <h3 className="text-lg font-heading font-bold text-secondary-bg mb-4">Collaborators</h3>
-          <div className="flex flex-wrap gap-3">
-            {trip.collaborators.map((collab) => (
-              <div key={collab.id} className="flex items-center gap-3 bg-white/5 rounded-[12px] px-4 py-2.5 border border-white/5">
-                <div className="w-8 h-8 rounded-full bg-accent-blue/20 text-accent-blue flex items-center justify-center text-xs font-bold">
-                  {collab.user.firstName?.charAt(0).toUpperCase()}
-                </div>
-                <span className="text-sm text-secondary-bg">{collab.user.firstName} {collab.user.lastName}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      {activeTab === 'itinerary' && <ItineraryTab tripId={tripId} />}
+      {activeTab === 'activities' && <ActivitiesTab tripId={tripId} />}
+      {activeTab === 'expenses' && <ExpensesTab tripId={tripId} />}
+      {activeTab === 'notes' && <NotesTab tripId={tripId} />}
+      {activeTab === 'packing' && <PackingTab tripId={tripId} />}
 
       {/* Edit Modal */}
       {editModalOpen && (
