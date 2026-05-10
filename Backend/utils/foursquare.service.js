@@ -7,8 +7,8 @@ class FoursquareService {
     this.baseUrl = 'https://api.foursquare.com/v3/places';
   }
 
-  async getActivities(city, category = '') {
-    const cacheKey = `foursquare:activities:${city.toLowerCase()}:${category.toLowerCase()}`;
+  async getActivities(city, category = '', limit = 15, offset = 0) {
+    const cacheKey = `foursquare:activities:${city.toLowerCase()}:${category.toLowerCase()}:${limit}:${offset}`;
     const cachedData = await cacheService.get(cacheKey);
     if (cachedData) return cachedData;
 
@@ -22,7 +22,8 @@ class FoursquareService {
         params: {
           near: city,
           categories: this._getCategoryIds(category),
-          limit: 15,
+          limit: limit,
+          offset: offset,
           sort: 'POPULARITY',
           fields: 'fsq_id,name,description,rating,photos,location,categories'
         },
