@@ -46,7 +46,10 @@ const EditProfile = ({ profile, onProfileUpdate }) => {
     try {
       const data = new FormData();
       Object.keys(formData).forEach(key => {
-        data.append(key, formData[key]);
+        // Only append if the value is not an empty string
+        if (formData[key] && formData[key].trim() !== '') {
+          data.append(key, formData[key]);
+        }
       });
       
       if (images.profileImage) data.append('profileImage', images.profileImage);
@@ -57,7 +60,9 @@ const EditProfile = ({ profile, onProfileUpdate }) => {
       
       if (onProfileUpdate) onProfileUpdate(res.data.data.user);
     } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to update profile');
+      const errorData = err.response?.data?.error;
+      const errorMsg = Array.isArray(errorData) ? errorData[0] : (errorData || err.response?.data?.message || 'Failed to update profile');
+      toast.error(typeof errorMsg === 'string' ? errorMsg : 'Failed to update profile');
     } finally {
       setIsSubmitting(false);
     }
