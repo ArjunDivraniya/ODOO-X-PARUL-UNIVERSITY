@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const generateSlug = require('../utils/slugGenerator');
 const generateShareCode = require('../utils/shareCodeGenerator');
 

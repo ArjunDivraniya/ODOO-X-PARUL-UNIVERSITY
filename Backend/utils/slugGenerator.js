@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 
 /**
  * Generates a unique slug from a string (e.g. trip title)

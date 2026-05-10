@@ -1,6 +1,6 @@
 const recommendationService = require('../services/recommendation.service');
 const aiService = require('../utils/ai.service');
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const { successResponse, errorResponse } = require('../utils/responseHandler');
 
 exports.getDashboard = async (req, res) => {

@@ -1,0 +1,479 @@
+{
+"cities": [
+{
+"name": "Jaipur",
+"state": "Rajasthan",
+"country": "India",
+"description": "The 'Pink City' of India, Jaipur is a flamboyant showcase of Rajasthani architecture, royal palaces, and vibrant local markets.",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 18000,
+"popularity": 98,
+"famousFor": "Palaces, Forts, and Handicrafts",
+"latitude": 26.9124,
+"longitude": 75.7873,
+"activities": [
+{
+"title": "Amer Fort Elephant Ride",
+"description": "Experience a royal ascent to the massive Amer Fort on elephant back.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1524230507669-5ff97982bb5e?q=80&w=800",
+"estimatedCost": 1100,
+"duration": "3 Hours"
+},
+{
+"title": "Hawa Mahal Exploration",
+"description": "Visit the 'Palace of Winds' with its 953 small windows designed for royal ladies.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1603262110263-fb0110e71329?q=80&w=800",
+"estimatedCost": 200,
+"duration": "1 Hour"
+},
+{
+"title": "Chokhi Dhani Village Experience",
+"description": "An ethnic village resort offering traditional Rajasthani food and cultural performances.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 900,
+"duration": "5 Hours"
+},
+{
+"title": "Jantar Mantar Observatory",
+"description": "Explore the UNESCO world heritage site featuring the world's largest stone sundial.",
+"category": "Science",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 200,
+"duration": "2 Hours"
+},
+{
+"title": "Hot Air Balloon Safari",
+"description": "Fly over the forts and palaces of Jaipur at sunrise.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1566121735504-20a221f5742a?q=80&w=800",
+"estimatedCost": 12000,
+"duration": "3 Hours"
+},
+{
+"title": "Nahargarh Fort Sunset View",
+"description": "Watch the city light up from the edge of the Aravalli hills.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=800",
+"estimatedCost": 100,
+"duration": "2 Hours"
+},
+{
+"title": "Johari Bazaar Shopping",
+"description": "Shop for authentic Kundan jewelry and traditional gemstones.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "City Palace Museum Tour",
+"description": "A complex of courtyards, gardens and buildings in the heart of the Old City.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 700,
+"duration": "2 Hours"
+},
+{
+"title": "Galta Ji (Monkey Temple)",
+"description": "An ancient Hindu pilgrimage site known for its natural springs and resident monkeys.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Albert Hall Museum Visit",
+"description": "The oldest museum in Rajasthan, showcasing Indo-Saracenic architecture.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 300,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Varanasi",
+"state": "Uttar Pradesh",
+"country": "India",
+"description": "Varanasi is one of the world's oldest continually inhabited cities and the spiritual heart of India.",
+"image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=1000",
+"bestTime": "November to February",
+"avgBudget": 12000,
+"popularity": 95,
+"famousFor": "Ganga Aarti and Spiritual Ghats",
+"latitude": 25.3176,
+"longitude": 82.9739,
+"activities": [
+{
+"title": "Ganga Aarti at Dashashwamedh Ghat",
+"description": "A spiritual ceremony with fire and chants performed every evening.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1590766948510-59367209188d?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Sunrise Boat Ride on Ganges",
+"description": "A peaceful boat trip to see the morning rituals on the various ghats.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=800",
+"estimatedCost": 500,
+"duration": "2 Hours"
+},
+{
+"title": "Sarnath Day Trip",
+"description": "Visit the place where Lord Buddha gave his first sermon.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1625505826533-5c80aca7d157?q=80&w=800",
+"estimatedCost": 400,
+"duration": "4 Hours"
+},
+{
+"title": "Banaras Silk Saree Shopping",
+"description": "Explore local looms and buy world-famous Banarasi silk.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Kashi Vishwanath Temple Visit",
+"description": "Visit one of the 12 Jyotirlingas, the most sacred temple of Lord Shiva.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Old City Food Trail",
+"description": "Taste local delicacies like Malaiyo, Tamatar Chaat, and Banarasi Paan.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 500,
+"duration": "3 Hours"
+},
+{
+"title": "Manikarnika Ghat Walk",
+"description": "Observe the cycle of life and death at the main cremation ghat (with respect).",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1598977123418-4545c99c3195?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Ramnagar Fort Exploration",
+"description": "Visit the 18th-century sandstone fort on the eastern bank of the Ganges.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1598462047020-d9af684451ca?q=80&w=800",
+"estimatedCost": 150,
+"duration": "2 Hours"
+},
+{
+"title": "Assi Ghat Music & Yoga",
+"description": "Join Subah-e-Banaras for morning yoga and classical music.",
+"category": "Wellness",
+"image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Banaras Hindu University (BHU) Campus",
+"description": "Tour one of the largest residential universities in Asia.",
+"category": "Education",
+"image": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Kochi",
+"state": "Kerala",
+"country": "India",
+"description": "Kochi is a vibrant city situated on the southwest coast of India, known for its colonial history and spice trade.",
+"image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1000",
+"bestTime": "September to March",
+"avgBudget": 22000,
+"popularity": 92,
+"famousFor": "Backwaters and Chinese Fishing Nets",
+"latitude": 9.9312,
+"longitude": 76.2673,
+"activities": [
+{
+"title": "Chinese Fishing Nets at Sunset",
+"description": "Watch fishermen operate the iconic cantilevered fishing nets.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Fort Kochi Heritage Walk",
+"description": "Explore the Jewish Synagogue, St. Francis Church, and Dutch Palace.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1589982840479-79737107775b?q=80&w=800",
+"estimatedCost": 300,
+"duration": "4 Hours"
+},
+{
+"title": "Kathakali Performance",
+"description": "Watch the traditional classical dance drama of Kerala.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=800",
+"estimatedCost": 500,
+"duration": "2 Hours"
+},
+{
+"title": "Backwater Houseboat Cruise",
+"description": "Navigate the serene backwaters on a luxury wooden boat.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1593693411515-c202e974fe08?q=80&w=800",
+"estimatedCost": 8000,
+"duration": "24 Hours"
+},
+{
+"title": "Jew Town Antique Shopping",
+"description": "Shop for vintage artifacts, spices, and perfumes in the narrow lanes.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Kalaripayattu Martial Arts Show",
+"description": "Witness the oldest martial art form in the world.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800",
+"estimatedCost": 400,
+"duration": "1 Hour"
+},
+{
+"title": "Marine Drive Promenade",
+"description": "A scenic walkway facing the backwaters of Kochi.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Hill Palace Museum",
+"description": "Visit the largest archaeological museum in Kerala.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1625505826533-5c80aca7d157?q=80&w=800",
+"estimatedCost": 100,
+"duration": "3 Hours"
+},
+{
+"title": "Cherai Beach Sunbath",
+"description": "Relax at the junction of the sea and the backwaters.",
+"category": "Beach",
+"image": "https://images.unsplash.com/photo-1540202404-a2f29036bc5e?q=80&w=800",
+"estimatedCost": 0,
+"duration": "4 Hours"
+},
+{
+"title": "Munnar Tea Estate Day Trip",
+"description": "Travel to the lush tea gardens in the nearby Western Ghats.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1531548731165-c6ae86ff6491?q=80&w=800",
+"estimatedCost": 2500,
+"duration": "10 Hours"
+}
+]
+},
+{
+"name": "Agra",
+"state": "Uttar Pradesh",
+"country": "India",
+"description": "Agra is the home of the Taj Mahal, a symbol of eternal love and one of the Seven Wonders of the World.",
+"image": "https://images.unsplash.com/photo-1564507592333-c60657451dd7?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 15000,
+"popularity": 100,
+"famousFor": "Taj Mahal and Mughal Architecture",
+"latitude": 27.1767,
+"longitude": 78.0081,
+"activities": [
+{
+"title": "Taj Mahal Sunrise Visit",
+"description": "Witness the marble mausoleum change colors as the sun rises.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1548013146-72479768bbaa?q=80&w=800",
+"estimatedCost": 1100,
+"duration": "3 Hours"
+},
+{
+"title": "Agra Fort Exploration",
+"description": "Tour the massive red sandstone fort that was the main residence of the Mughal Emperors.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?q=80&w=800",
+"estimatedCost": 600,
+"duration": "2 Hours"
+},
+{
+"title": "Fatehpur Sikri Day Trip",
+"description": "Visit the abandoned Mughal city and its stunning Buland Darwaza.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 600,
+"duration": "5 Hours"
+},
+{
+"title": "Mehtab Bagh Sunset View",
+"description": "View the Taj Mahal from across the Yamuna River without the crowds.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?q=80&w=800",
+"estimatedCost": 300,
+"duration": "2 Hours"
+},
+{
+"title": "Itmad-ud-Daula (Baby Taj)",
+"description": "Explore the intricate marble inlay work in this exquisite tomb.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1564507592333-c60657451dd7?q=80&w=800",
+"estimatedCost": 300,
+"duration": "1 Hour"
+},
+{
+"title": "Agra Petha Tasting",
+"description": "Sample the famous local sweet made from ash gourd.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 200,
+"duration": "1 Hour"
+},
+{
+"title": "Kinari Bazaar Heritage Walk",
+"description": "A narrow lane bazaar perfect for traditional embroidery and bridal wear.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Akbar's Tomb, Sikandra",
+"description": "Visit the final resting place of the great Mughal Emperor Akbar.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 300,
+"duration": "2 Hours"
+},
+{
+"title": "Kalakriti Cultural Show",
+"description": "Watch 'Mohabbat-the-Taj', a theatrical show depicting the story of Taj Mahal.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=800",
+"estimatedCost": 1500,
+"duration": "1.5 Hours"
+},
+{
+"title": "Wildlife SOS Conservation Tour",
+"description": "Visit the rescue center for elephants and sloth bears.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1524230507669-5ff97982bb5e?q=80&w=800",
+"estimatedCost": 2000,
+"duration": "3 Hours"
+}
+]
+},
+{
+"name": "Mumbai",
+"state": "Maharashtra",
+"country": "India",
+"description": "The financial capital of India, Mumbai is a city of dreams, colonial history, and a bustling film industry.",
+"image": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=1000",
+"bestTime": "October to February",
+"avgBudget": 30000,
+"popularity": 96,
+"famousFor": "Bollywood and Marine Drive",
+"latitude": 19.076,
+"longitude": 72.8777,
+"activities": [
+{
+"title": "Gateway of India Visit",
+"description": "The iconic arch monument overlooking the Arabian Sea.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1570160897040-30430ed22112?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Elephanta Caves Boat Trip",
+"description": "A UNESCO site featuring ancient rock-cut temples dedicated to Shiva.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1621255590924-f7737e6f3041?q=80&w=800",
+"estimatedCost": 600,
+"duration": "4 Hours"
+},
+{
+"title": "Marine Drive Evening Walk",
+"description": "A 3.6 km long boulevard along the coast, known as the Queen's Necklace.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Dharavi Guided Tour",
+"description": "An insightful tour of the local industries and community spirit in the heart of the city.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=800",
+"estimatedCost": 800,
+"duration": "3 Hours"
+},
+{
+"title": "Colaba Causeway Shopping",
+"description": "The ultimate street shopping destination for fashion and artifacts.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Siddhivinayak Temple Darshan",
+"description": "Visit the famous Ganesha temple frequented by celebrities.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1621255590924-f7737e6f3041?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Chhatrapati Shivaji Terminus (CST) View",
+"description": "Admire the Victorian Gothic Revival architecture of this historic station.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Juhu Beach Street Food",
+"description": "Try Mumbai's Pav Bhaji and Vada Pav at the famous beach front.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 400,
+"duration": "2 Hours"
+},
+{
+"title": "Bandra-Worli Sea Link Drive",
+"description": "A scenic drive across the modern cable-stayed bridge.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1570160897040-30430ed22112?q=80&w=800",
+"estimatedCost": 100,
+"duration": "0.5 Hours"
+},
+{
+"title": "Bollywood Studio Tour",
+"description": "Get a behind-the-scenes look at a film set and dance shows.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1598897349335-9697920bb31d?q=80&w=800",
+"estimatedCost": 3500,
+"duration": "4 Hours"
+}
+]
+}
+]
+}

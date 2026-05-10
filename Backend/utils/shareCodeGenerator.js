@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 
 /**
  * Generates a unique 8-character alphanumeric share code

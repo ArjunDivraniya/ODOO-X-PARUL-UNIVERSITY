@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const pdfService = require('./pdf.service');
 const path = require('path');
 

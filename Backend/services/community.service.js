@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const cloudinary = require('../utils/cloudinary');
 const streamifier = require('streamifier');
 

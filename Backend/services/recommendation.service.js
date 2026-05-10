@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const geodbService = require('../utils/geodb.service');
 const foursquareService = require('../utils/foursquare.service');
 const weatherService = require('../utils/weather.service');

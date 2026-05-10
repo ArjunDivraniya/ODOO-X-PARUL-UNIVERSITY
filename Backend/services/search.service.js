@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const cacheService = require('../utils/cache.service');
 
 class SearchService {

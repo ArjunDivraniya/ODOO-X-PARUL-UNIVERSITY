@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const weatherService = require('../utils/weather.service');
 const foursquareService = require('../utils/foursquare.service');
 const aiService = require('../utils/ai.service');

@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const geminiService = require('./gemini.service');
 const promptService = require('./prompt.service');
 

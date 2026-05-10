@@ -1,4 +1,4 @@
-const prisma = require('../lib/prisma');
+const { prisma } = require('../lib/prisma');
 const emailService = require('../utils/email.service');
 
 class CollaboratorService {
