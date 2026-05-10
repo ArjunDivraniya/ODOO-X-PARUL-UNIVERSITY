@@ -6,7 +6,7 @@ import { Badge } from '../../ui/Badge';
 export const InvoicesSection = ({ tripId }) => {
   const [invoices, setInvoices] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [formData, setFormData] = useState({ subtotal: '', tax: '', discount: '', currency: 'USD', paymentMethod: '' });
+  const [formData, setFormData] = useState({ tax: '', discount: '', paymentMethod: 'CARD' });
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -30,21 +30,18 @@ export const InvoicesSection = ({ tripId }) => {
 
   const handleCreate = async (e) => {
     e.preventDefault();
-    if (!formData.subtotal) return toast.error('Subtotal is required');
     setSubmitting(true);
 
     try {
-      const subtotal = Number(formData.subtotal);
       const tax = Number(formData.tax || 0);
       const discount = Number(formData.discount || 0);
-      const total = subtotal + tax - discount;
-      const payload = { tripId, subtotal, tax, discount, total, currency: formData.currency, paymentMethod: formData.paymentMethod || undefined };
+      const payload = { tripId, tax, discount, paymentMethod: formData.paymentMethod || 'CARD' };
       const res = await createInvoice(payload);
       setInvoices(prev => [res.data.data.invoice, ...prev]);
-      setFormData({ subtotal: '', tax: '', discount: '', currency: 'USD', paymentMethod: '' });
+      setFormData({ tax: '', discount: '', paymentMethod: 'CARD' });
       toast.success('Invoice created');
     } catch (err) {
-      toast.error('Failed to create invoice');
+      toast.error(err.response?.data?.message || err.response?.data?.error || 'Failed to create invoice');
     } finally {
       setSubmitting(false);
     }
@@ -52,11 +49,11 @@ export const InvoicesSection = ({ tripId }) => {
 
   const handleMarkPaid = async (invoiceId) => {
     try {
-      const res = await updateInvoiceStatus(invoiceId, { status: 'PAID' });
+      const res = await updateInvoiceStatus(invoiceId, { paymentStatus: 'PAID' });
       setInvoices(prev => prev.map(item => item.id === invoiceId ? res.data.data.invoice : item));
       toast.success('Invoice marked as paid');
     } catch (err) {
-      toast.error('Failed to update invoice');
+      toast.error(err.response?.data?.message || err.response?.data?.error || 'Failed to update invoice');
     }
   };
 
@@ -67,20 +64,12 @@ export const InvoicesSection = ({ tripId }) => {
         <p className="text-sm text-neutral-text">Generate invoices for trip expenses.</p>
       </div>
 
-      <form onSubmit={handleCreate} className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        <input
-          name="subtotal"
-          value={formData.subtotal}
-          onChange={handleChange}
-          placeholder="Subtotal"
-          type="number"
-          className="rounded-[12px] border border-white/10 bg-white/5 px-3 py-2 text-sm text-secondary-bg focus:outline-none"
-        />
+      <form onSubmit={handleCreate} className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <input
           name="tax"
           value={formData.tax}
           onChange={handleChange}
-          placeholder="Tax"
+          placeholder="Tax %"
           type="number"
           className="rounded-[12px] border border-white/10 bg-white/5 px-3 py-2 text-sm text-secondary-bg focus:outline-none"
         />
@@ -92,13 +81,16 @@ export const InvoicesSection = ({ tripId }) => {
           type="number"
           className="rounded-[12px] border border-white/10 bg-white/5 px-3 py-2 text-sm text-secondary-bg focus:outline-none"
         />
-        <input
+        <select
           name="paymentMethod"
           value={formData.paymentMethod}
           onChange={handleChange}
-          placeholder="Payment Method"
           className="rounded-[12px] border border-white/10 bg-white/5 px-3 py-2 text-sm text-secondary-bg focus:outline-none"
-        />
+        >
+          {['CARD', 'CASH', 'UPI', 'BANK_TRANSFER'].map(method => (
+            <option key={method} value={method} className="bg-[#0A1622]">{method}</option>
+          ))}
+        </select>
         <button
           type="submit"
           disabled={submitting}
@@ -119,11 +111,11 @@ export const InvoicesSection = ({ tripId }) => {
             <div key={invoice.id} className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-white/5 border border-white/5 rounded-[16px] p-4">
               <div>
                 <div className="text-sm font-semibold text-secondary-bg">{invoice.currency || 'USD'} {invoice.total}</div>
-                <div className="text-xs text-neutral-text">Subtotal {invoice.subtotal} · Tax {invoice.tax || 0} · Discount {invoice.discount || 0}</div>
+                <div className="text-xs text-neutral-text">Subtotal {invoice.subtotal} · Tax {invoice.tax || 0}% · Discount {invoice.discount || 0}</div>
               </div>
               <div className="flex items-center gap-3">
-                <Badge tone={invoice.status === 'PAID' ? 'mint' : 'orange'}>{invoice.status || 'PENDING'}</Badge>
-                {invoice.status !== 'PAID' && (
+                <Badge tone={invoice.paymentStatus === 'PAID' ? 'mint' : 'orange'}>{invoice.paymentStatus || 'PENDING'}</Badge>
+                {invoice.paymentStatus !== 'PAID' && (
                   <button onClick={() => handleMarkPaid(invoice.id)} className="text-xs text-accent-blue">Mark paid</button>
                 )}
               </div>

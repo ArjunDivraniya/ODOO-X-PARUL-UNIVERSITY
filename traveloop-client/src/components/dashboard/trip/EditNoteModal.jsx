@@ -7,13 +7,13 @@ import { Input } from '../../ui/Input';
 import { Label } from '../../ui/Label';
 import { Button } from '../../ui/Button';
 
-const NOTE_TYPES = ['TEXT', 'CHECKLIST', 'LINK'];
+const NOTE_TYPES = ['JOURNAL', 'MEMORY', 'GENERAL', 'TIPS'];
 
 const EditNoteModal = ({ isOpen, onClose, note, onUpdated }) => {
   const [formData, setFormData] = useState({
     title: note?.title || '',
     content: note?.content || '',
-    noteType: note?.noteType || 'TEXT'
+    noteType: note?.noteType || 'GENERAL'
   });
   const [submitting, setSubmitting] = useState(false);
 
@@ -37,7 +37,7 @@ const EditNoteModal = ({ isOpen, onClose, note, onUpdated }) => {
       toast.success('Note updated');
       onClose();
     } catch (err) {
-      toast.error('Failed to update note');
+      toast.error(err.response?.data?.message || err.response?.data?.error || 'Failed to update note');
     } finally {
       setSubmitting(false);
     }

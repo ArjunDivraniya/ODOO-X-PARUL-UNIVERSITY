@@ -2,30 +2,31 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import api from '../../../api/axios';
 import { Avatar } from '../../ui/Avatar';
+import { Badge } from '../../ui/Badge';
 
-const PERMISSIONS = ['VIEW', 'EDIT', 'ADMIN'];
+const PERMISSIONS = ['VIEWER', 'EDITOR', 'ADMIN'];
 
 export const CollaboratorsSection = ({ tripId, collaborators }) => {
   const [items, setItems] = useState(collaborators);
-  const [formData, setFormData] = useState({ userId: '', permission: 'VIEW' });
+  const [formData, setFormData] = useState({ email: '', permission: 'VIEWER' });
   const [submitting, setSubmitting] = useState(false);
 
   const handleAdd = async (e) => {
     e.preventDefault();
-    if (!formData.userId.trim()) return toast.error('User ID is required');
+    if (!formData.email.trim()) return toast.error('Email is required');
     setSubmitting(true);
 
     try {
-      const res = await api.post('/collaborators', {
+      const res = await api.post('/collaborators/invite', {
         tripId,
-        userId: formData.userId,
+        email: formData.email,
         permission: formData.permission
       });
       setItems(prev => [res.data.data.collaborator, ...prev]);
-      setFormData({ userId: '', permission: 'VIEW' });
+      setFormData({ email: '', permission: 'VIEWER' });
       toast.success('Collaborator added');
     } catch (err) {
-      toast.error('Failed to add collaborator');
+      toast.error(err.response?.data?.message || err.response?.data?.error || 'Failed to add collaborator');
     } finally {
       setSubmitting(false);
     }
@@ -44,11 +45,11 @@ export const CollaboratorsSection = ({ tripId, collaborators }) => {
 
   const handlePermission = async (id, permission) => {
     try {
-      const res = await api.patch(`/collaborators/${id}`, { permission });
+      const res = await api.patch(`/collaborators/${id}/permission`, { permission });
       setItems(prev => prev.map(item => item.id === id ? res.data.data.collaborator : item));
       toast.success('Permission updated');
     } catch (err) {
-      toast.error('Failed to update permission');
+      toast.error(err.response?.data?.message || err.response?.data?.error || 'Failed to update permission');
     }
   };
 
@@ -73,7 +74,12 @@ export const CollaboratorsSection = ({ tripId, collaborators }) => {
                 <div className="text-sm text-secondary-bg font-medium">
                   {collab.user?.firstName} {collab.user?.lastName}
                 </div>
-                <div className="text-xs text-neutral-text">{collab.user?.email}</div>
+                <div className="flex flex-wrap items-center gap-2 mt-1">
+                  <div className="text-xs text-neutral-text">{collab.user?.email}</div>
+                  <Badge tone={collab.permission === 'ADMIN' ? 'orange' : collab.permission === 'EDITOR' ? 'blue' : 'mint'}>
+                    {collab.permission}
+                  </Badge>
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -96,9 +102,10 @@ export const CollaboratorsSection = ({ tripId, collaborators }) => {
 
       <form onSubmit={handleAdd} className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <input
-          value={formData.userId}
-          onChange={(e) => setFormData(prev => ({ ...prev, userId: e.target.value }))}
-          placeholder="User ID"
+          type="email"
+          value={formData.email}
+          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+          placeholder="Collaborator email"
           className="rounded-[14px] border border-white/10 bg-white/5 px-4 py-3 text-sm text-secondary-bg focus:outline-none"
         />
         <select

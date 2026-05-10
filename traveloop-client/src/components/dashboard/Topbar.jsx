@@ -14,7 +14,7 @@ export const Topbar = ({ onMenuClick }) => {
     const loadNotifications = async () => {
       try {
         const res = await getNotifications();
-        const unread = (res.data.data.notifications || []).filter(item => !item.read).length;
+        const unread = (res.data.data.notifications || []).filter(item => !item.isRead).length;
         setUnreadCount(unread);
       } catch {
         setUnreadCount(0);
