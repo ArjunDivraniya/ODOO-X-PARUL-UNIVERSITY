@@ -79,20 +79,20 @@ export const TripCard = ({ trip, onEdit, onDelete, onDuplicate, onShare, onToggl
                 animate={{ opacity: 1, scale: 1 }}
                 className="absolute right-0 top-8 w-48 bg-[#0D1B2A] border border-white/10 rounded-[16px] shadow-2xl z-30 overflow-hidden"
               >
-                <button onClick={() => { onEdit(trip); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-secondary-bg hover:bg-white/5 flex items-center gap-3 transition-colors">
+                <button onClick={() => { onEdit?.(trip); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-secondary-bg hover:bg-white/5 flex items-center gap-3 transition-colors">
                   <LuPencil className="w-4 h-4 text-accent-blue" /> Edit Trip
                 </button>
-                <button onClick={() => { onDuplicate(trip.id); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-secondary-bg hover:bg-white/5 flex items-center gap-3 transition-colors">
+                <button onClick={() => { onDuplicate?.(trip.id); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-secondary-bg hover:bg-white/5 flex items-center gap-3 transition-colors">
                   <LuCopy className="w-4 h-4 text-accent-mint" /> Duplicate
                 </button>
-                <button onClick={() => { onShare(trip.id); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-secondary-bg hover:bg-white/5 flex items-center gap-3 transition-colors">
+                <button onClick={() => { onShare?.(trip.id); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-secondary-bg hover:bg-white/5 flex items-center gap-3 transition-colors">
                   <LuShare2 className="w-4 h-4 text-accent-orange" /> Share Link
                 </button>
-                <button onClick={() => { onToggleVisibility(trip.id, trip.visibility); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-secondary-bg hover:bg-white/5 flex items-center gap-3 transition-colors">
+                <button onClick={() => { onToggleVisibility?.(trip.id, trip.visibility); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-secondary-bg hover:bg-white/5 flex items-center gap-3 transition-colors">
                   <LuEye className="w-4 h-4" /> {isPublic ? 'Make Private' : 'Make Public'}
                 </button>
                 <div className="border-t border-white/5" />
-                <button onClick={() => { onDelete(trip.id); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-red-500/10 flex items-center gap-3 transition-colors">
+                <button onClick={() => { onDelete?.(trip.id); setMenuOpen(false); }} className="w-full text-left px-4 py-3 text-sm text-red-400 hover:bg-red-500/10 flex items-center gap-3 transition-colors">
                   <LuTrash2 className="w-4 h-4" /> Delete
                 </button>
               </motion.div>
