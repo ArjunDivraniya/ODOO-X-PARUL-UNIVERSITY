@@ -37,6 +37,7 @@ app.use('/api/notifications', require('./routes/notification.routes.js'));
 app.use('/api/reviews', require('./routes/review.routes.js'));
 app.use('/api/public', require('./routes/public.routes.js'));
 app.use('/api/collaborators', require('./routes/collaborator.routes.js'));
+app.use('/api/admin', require('./routes/admin.routes.js'));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
