@@ -102,6 +102,7 @@ model User {
   aiChats            AIChat[]
   comments           Comment[]
   likes              Like[]
+  favoriteActivities FavoriteActivity[]
 
   @@index([email, username])
 }
@@ -188,15 +189,19 @@ model City {
   language        String?
   popularityScore Float?   @default(0)
   averageBudget   Float?
+  searchCount     Int      @default(0)
+  isTrending      Boolean  @default(false)
   weatherInfo     String?
   heroImage       String?
   createdAt       DateTime @default(now())
 
   // Relations
-  sections     TripSection[]
-  activities   Activity[]
-  savedByUsers FavoritePlace[]
+  sections         TripSection[]
+  activities       Activity[]
+  savedByUsers     FavoritePlace[]
+  globalActivities GlobalActivity[]
 
+  @@unique([name, country])
   @@index([name, country])
 }
 
@@ -218,13 +223,15 @@ model Activity {
   bookingUrl    String?
   image         String?
   aiRecommended Boolean          @default(false)
+  saveCount     Int              @default(0)
   createdAt     DateTime         @default(now())
 
   // Relations
-  trip    Trip         @relation(fields: [tripId], references: [id], onDelete: Cascade)
-  section TripSection? @relation(fields: [sectionId], references: [id], onDelete: SetNull)
-  city    City?        @relation(fields: [cityId], references: [id], onDelete: SetNull)
-  reviews Review[]
+  trip               Trip               @relation(fields: [tripId], references: [id], onDelete: Cascade)
+  section            TripSection?       @relation(fields: [sectionId], references: [id], onDelete: SetNull)
+  city               City?              @relation(fields: [cityId], references: [id], onDelete: SetNull)
+  reviews            Review[]
+  favoriteActivities FavoriteActivity[]
 
   @@index([tripId, sectionId])
 }
@@ -449,4 +456,44 @@ model FavoritePlace {
   city City @relation(fields: [cityId], references: [id], onDelete: Cascade)
 
   @@unique([userId, cityId])
+}
+
+model RecommendationCache {
+  id        String   @id @default(uuid())
+  key       String   @unique // e.g. "geodb:search:goa"
+  data      Json
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([key])
+}
+
+model GlobalActivity {
+  id           String   @id @default(uuid())
+  foursquareId String?  @unique
+  title        String
+  description  String?
+  category     String?
+  location     String?
+  cityId       String?
+  rating       Float?
+  image        String?
+  createdAt    DateTime @default(now())
+
+  city City? @relation(fields: [cityId], references: [id], onDelete: SetNull)
+
+  @@index([cityId])
+}
+
+model FavoriteActivity {
+  id         String   @id @default(uuid())
+  userId     String
+  activityId String
+  createdAt  DateTime @default(now())
+
+  // Relations
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activity Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, activityId])
 }

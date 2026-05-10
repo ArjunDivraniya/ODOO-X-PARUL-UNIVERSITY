@@ -103,6 +103,21 @@ export type TripCollaborator = $Result.DefaultSelection<Prisma.$TripCollaborator
  * 
  */
 export type FavoritePlace = $Result.DefaultSelection<Prisma.$FavoritePlacePayload>
+/**
+ * Model RecommendationCache
+ * 
+ */
+export type RecommendationCache = $Result.DefaultSelection<Prisma.$RecommendationCachePayload>
+/**
+ * Model GlobalActivity
+ * 
+ */
+export type GlobalActivity = $Result.DefaultSelection<Prisma.$GlobalActivityPayload>
+/**
+ * Model FavoriteActivity
+ * 
+ */
+export type FavoriteActivity = $Result.DefaultSelection<Prisma.$FavoriteActivityPayload>
 
 /**
  * Enums
@@ -494,6 +509,36 @@ export class PrismaClient<
     * ```
     */
   get favoritePlace(): Prisma.FavoritePlaceDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.recommendationCache`: Exposes CRUD operations for the **RecommendationCache** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RecommendationCaches
+    * const recommendationCaches = await prisma.recommendationCache.findMany()
+    * ```
+    */
+  get recommendationCache(): Prisma.RecommendationCacheDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.globalActivity`: Exposes CRUD operations for the **GlobalActivity** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GlobalActivities
+    * const globalActivities = await prisma.globalActivity.findMany()
+    * ```
+    */
+  get globalActivity(): Prisma.GlobalActivityDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.favoriteActivity`: Exposes CRUD operations for the **FavoriteActivity** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FavoriteActivities
+    * const favoriteActivities = await prisma.favoriteActivity.findMany()
+    * ```
+    */
+  get favoriteActivity(): Prisma.FavoriteActivityDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -945,7 +990,10 @@ export namespace Prisma {
     Review: 'Review',
     AIChat: 'AIChat',
     TripCollaborator: 'TripCollaborator',
-    FavoritePlace: 'FavoritePlace'
+    FavoritePlace: 'FavoritePlace',
+    RecommendationCache: 'RecommendationCache',
+    GlobalActivity: 'GlobalActivity',
+    FavoriteActivity: 'FavoriteActivity'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -961,7 +1009,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "trip" | "tripSection" | "city" | "activity" | "expense" | "invoice" | "packingChecklist" | "travelNote" | "communityPost" | "comment" | "like" | "savedTrip" | "notification" | "review" | "aIChat" | "tripCollaborator" | "favoritePlace"
+      modelProps: "user" | "trip" | "tripSection" | "city" | "activity" | "expense" | "invoice" | "packingChecklist" | "travelNote" | "communityPost" | "comment" | "like" | "savedTrip" | "notification" | "review" | "aIChat" | "tripCollaborator" | "favoritePlace" | "recommendationCache" | "globalActivity" | "favoriteActivity"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2297,6 +2345,228 @@ export namespace Prisma {
           }
         }
       }
+      RecommendationCache: {
+        payload: Prisma.$RecommendationCachePayload<ExtArgs>
+        fields: Prisma.RecommendationCacheFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RecommendationCacheFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RecommendationCacheFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>
+          }
+          findFirst: {
+            args: Prisma.RecommendationCacheFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RecommendationCacheFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>
+          }
+          findMany: {
+            args: Prisma.RecommendationCacheFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>[]
+          }
+          create: {
+            args: Prisma.RecommendationCacheCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>
+          }
+          createMany: {
+            args: Prisma.RecommendationCacheCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RecommendationCacheCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>[]
+          }
+          delete: {
+            args: Prisma.RecommendationCacheDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>
+          }
+          update: {
+            args: Prisma.RecommendationCacheUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>
+          }
+          deleteMany: {
+            args: Prisma.RecommendationCacheDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RecommendationCacheUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RecommendationCacheUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>[]
+          }
+          upsert: {
+            args: Prisma.RecommendationCacheUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RecommendationCachePayload>
+          }
+          aggregate: {
+            args: Prisma.RecommendationCacheAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRecommendationCache>
+          }
+          groupBy: {
+            args: Prisma.RecommendationCacheGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RecommendationCacheGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RecommendationCacheCountArgs<ExtArgs>
+            result: $Utils.Optional<RecommendationCacheCountAggregateOutputType> | number
+          }
+        }
+      }
+      GlobalActivity: {
+        payload: Prisma.$GlobalActivityPayload<ExtArgs>
+        fields: Prisma.GlobalActivityFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GlobalActivityFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GlobalActivityFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>
+          }
+          findFirst: {
+            args: Prisma.GlobalActivityFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GlobalActivityFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>
+          }
+          findMany: {
+            args: Prisma.GlobalActivityFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>[]
+          }
+          create: {
+            args: Prisma.GlobalActivityCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>
+          }
+          createMany: {
+            args: Prisma.GlobalActivityCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.GlobalActivityCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>[]
+          }
+          delete: {
+            args: Prisma.GlobalActivityDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>
+          }
+          update: {
+            args: Prisma.GlobalActivityUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>
+          }
+          deleteMany: {
+            args: Prisma.GlobalActivityDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GlobalActivityUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.GlobalActivityUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>[]
+          }
+          upsert: {
+            args: Prisma.GlobalActivityUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlobalActivityPayload>
+          }
+          aggregate: {
+            args: Prisma.GlobalActivityAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateGlobalActivity>
+          }
+          groupBy: {
+            args: Prisma.GlobalActivityGroupByArgs<ExtArgs>
+            result: $Utils.Optional<GlobalActivityGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GlobalActivityCountArgs<ExtArgs>
+            result: $Utils.Optional<GlobalActivityCountAggregateOutputType> | number
+          }
+        }
+      }
+      FavoriteActivity: {
+        payload: Prisma.$FavoriteActivityPayload<ExtArgs>
+        fields: Prisma.FavoriteActivityFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FavoriteActivityFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FavoriteActivityFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>
+          }
+          findFirst: {
+            args: Prisma.FavoriteActivityFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FavoriteActivityFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>
+          }
+          findMany: {
+            args: Prisma.FavoriteActivityFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>[]
+          }
+          create: {
+            args: Prisma.FavoriteActivityCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>
+          }
+          createMany: {
+            args: Prisma.FavoriteActivityCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FavoriteActivityCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>[]
+          }
+          delete: {
+            args: Prisma.FavoriteActivityDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>
+          }
+          update: {
+            args: Prisma.FavoriteActivityUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>
+          }
+          deleteMany: {
+            args: Prisma.FavoriteActivityDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FavoriteActivityUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FavoriteActivityUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>[]
+          }
+          upsert: {
+            args: Prisma.FavoriteActivityUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FavoriteActivityPayload>
+          }
+          aggregate: {
+            args: Prisma.FavoriteActivityAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFavoriteActivity>
+          }
+          groupBy: {
+            args: Prisma.FavoriteActivityGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FavoriteActivityGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FavoriteActivityCountArgs<ExtArgs>
+            result: $Utils.Optional<FavoriteActivityCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2423,6 +2693,9 @@ export namespace Prisma {
     aIChat?: AIChatOmit
     tripCollaborator?: TripCollaboratorOmit
     favoritePlace?: FavoritePlaceOmit
+    recommendationCache?: RecommendationCacheOmit
+    globalActivity?: GlobalActivityOmit
+    favoriteActivity?: FavoriteActivityOmit
   }
 
   /* Types for Logging */
@@ -2516,6 +2789,7 @@ export namespace Prisma {
     aiChats: number
     comments: number
     likes: number
+    favoriteActivities: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2532,6 +2806,7 @@ export namespace Prisma {
     aiChats?: boolean | UserCountOutputTypeCountAiChatsArgs
     comments?: boolean | UserCountOutputTypeCountCommentsArgs
     likes?: boolean | UserCountOutputTypeCountLikesArgs
+    favoriteActivities?: boolean | UserCountOutputTypeCountFavoriteActivitiesArgs
   }
 
   // Custom InputTypes
@@ -2634,6 +2909,13 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountLikesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: LikeWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountFavoriteActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FavoriteActivityWhereInput
   }
 
 
@@ -2815,12 +3097,14 @@ export namespace Prisma {
     sections: number
     activities: number
     savedByUsers: number
+    globalActivities: number
   }
 
   export type CityCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sections?: boolean | CityCountOutputTypeCountSectionsArgs
     activities?: boolean | CityCountOutputTypeCountActivitiesArgs
     savedByUsers?: boolean | CityCountOutputTypeCountSavedByUsersArgs
+    globalActivities?: boolean | CityCountOutputTypeCountGlobalActivitiesArgs
   }
 
   // Custom InputTypes
@@ -2855,6 +3139,13 @@ export namespace Prisma {
     where?: FavoritePlaceWhereInput
   }
 
+  /**
+   * CityCountOutputType without action
+   */
+  export type CityCountOutputTypeCountGlobalActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GlobalActivityWhereInput
+  }
+
 
   /**
    * Count Type ActivityCountOutputType
@@ -2862,10 +3153,12 @@ export namespace Prisma {
 
   export type ActivityCountOutputType = {
     reviews: number
+    favoriteActivities: number
   }
 
   export type ActivityCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     reviews?: boolean | ActivityCountOutputTypeCountReviewsArgs
+    favoriteActivities?: boolean | ActivityCountOutputTypeCountFavoriteActivitiesArgs
   }
 
   // Custom InputTypes
@@ -2884,6 +3177,13 @@ export namespace Prisma {
    */
   export type ActivityCountOutputTypeCountReviewsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ReviewWhereInput
+  }
+
+  /**
+   * ActivityCountOutputType without action
+   */
+  export type ActivityCountOutputTypeCountFavoriteActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FavoriteActivityWhereInput
   }
 
 
@@ -3307,6 +3607,7 @@ export namespace Prisma {
     aiChats?: boolean | User$aiChatsArgs<ExtArgs>
     comments?: boolean | User$commentsArgs<ExtArgs>
     likes?: boolean | User$likesArgs<ExtArgs>
+    favoriteActivities?: boolean | User$favoriteActivitiesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -3415,6 +3716,7 @@ export namespace Prisma {
     aiChats?: boolean | User$aiChatsArgs<ExtArgs>
     comments?: boolean | User$commentsArgs<ExtArgs>
     likes?: boolean | User$likesArgs<ExtArgs>
+    favoriteActivities?: boolean | User$favoriteActivitiesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3436,6 +3738,7 @@ export namespace Prisma {
       aiChats: Prisma.$AIChatPayload<ExtArgs>[]
       comments: Prisma.$CommentPayload<ExtArgs>[]
       likes: Prisma.$LikePayload<ExtArgs>[]
+      favoriteActivities: Prisma.$FavoriteActivityPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3872,6 +4175,7 @@ export namespace Prisma {
     aiChats<T extends User$aiChatsArgs<ExtArgs> = {}>(args?: Subset<T, User$aiChatsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AIChatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     comments<T extends User$commentsArgs<ExtArgs> = {}>(args?: Subset<T, User$commentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CommentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     likes<T extends User$likesArgs<ExtArgs> = {}>(args?: Subset<T, User$likesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LikePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favoriteActivities<T extends User$favoriteActivitiesArgs<ExtArgs> = {}>(args?: Subset<T, User$favoriteActivitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4630,6 +4934,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: LikeScalarFieldEnum | LikeScalarFieldEnum[]
+  }
+
+  /**
+   * User.favoriteActivities
+   */
+  export type User$favoriteActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    where?: FavoriteActivityWhereInput
+    orderBy?: FavoriteActivityOrderByWithRelationInput | FavoriteActivityOrderByWithRelationInput[]
+    cursor?: FavoriteActivityWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FavoriteActivityScalarFieldEnum | FavoriteActivityScalarFieldEnum[]
   }
 
   /**
@@ -7613,6 +7941,7 @@ export namespace Prisma {
     longitude: number | null
     popularityScore: number | null
     averageBudget: number | null
+    searchCount: number | null
   }
 
   export type CitySumAggregateOutputType = {
@@ -7620,6 +7949,7 @@ export namespace Prisma {
     longitude: number | null
     popularityScore: number | null
     averageBudget: number | null
+    searchCount: number | null
   }
 
   export type CityMinAggregateOutputType = {
@@ -7635,6 +7965,8 @@ export namespace Prisma {
     language: string | null
     popularityScore: number | null
     averageBudget: number | null
+    searchCount: number | null
+    isTrending: boolean | null
     weatherInfo: string | null
     heroImage: string | null
     createdAt: Date | null
@@ -7653,6 +7985,8 @@ export namespace Prisma {
     language: string | null
     popularityScore: number | null
     averageBudget: number | null
+    searchCount: number | null
+    isTrending: boolean | null
     weatherInfo: string | null
     heroImage: string | null
     createdAt: Date | null
@@ -7671,6 +8005,8 @@ export namespace Prisma {
     language: number
     popularityScore: number
     averageBudget: number
+    searchCount: number
+    isTrending: number
     weatherInfo: number
     heroImage: number
     createdAt: number
@@ -7683,6 +8019,7 @@ export namespace Prisma {
     longitude?: true
     popularityScore?: true
     averageBudget?: true
+    searchCount?: true
   }
 
   export type CitySumAggregateInputType = {
@@ -7690,6 +8027,7 @@ export namespace Prisma {
     longitude?: true
     popularityScore?: true
     averageBudget?: true
+    searchCount?: true
   }
 
   export type CityMinAggregateInputType = {
@@ -7705,6 +8043,8 @@ export namespace Prisma {
     language?: true
     popularityScore?: true
     averageBudget?: true
+    searchCount?: true
+    isTrending?: true
     weatherInfo?: true
     heroImage?: true
     createdAt?: true
@@ -7723,6 +8063,8 @@ export namespace Prisma {
     language?: true
     popularityScore?: true
     averageBudget?: true
+    searchCount?: true
+    isTrending?: true
     weatherInfo?: true
     heroImage?: true
     createdAt?: true
@@ -7741,6 +8083,8 @@ export namespace Prisma {
     language?: true
     popularityScore?: true
     averageBudget?: true
+    searchCount?: true
+    isTrending?: true
     weatherInfo?: true
     heroImage?: true
     createdAt?: true
@@ -7846,6 +8190,8 @@ export namespace Prisma {
     language: string | null
     popularityScore: number | null
     averageBudget: number | null
+    searchCount: number
+    isTrending: boolean
     weatherInfo: string | null
     heroImage: string | null
     createdAt: Date
@@ -7883,12 +8229,15 @@ export namespace Prisma {
     language?: boolean
     popularityScore?: boolean
     averageBudget?: boolean
+    searchCount?: boolean
+    isTrending?: boolean
     weatherInfo?: boolean
     heroImage?: boolean
     createdAt?: boolean
     sections?: boolean | City$sectionsArgs<ExtArgs>
     activities?: boolean | City$activitiesArgs<ExtArgs>
     savedByUsers?: boolean | City$savedByUsersArgs<ExtArgs>
+    globalActivities?: boolean | City$globalActivitiesArgs<ExtArgs>
     _count?: boolean | CityCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["city"]>
 
@@ -7905,6 +8254,8 @@ export namespace Prisma {
     language?: boolean
     popularityScore?: boolean
     averageBudget?: boolean
+    searchCount?: boolean
+    isTrending?: boolean
     weatherInfo?: boolean
     heroImage?: boolean
     createdAt?: boolean
@@ -7923,6 +8274,8 @@ export namespace Prisma {
     language?: boolean
     popularityScore?: boolean
     averageBudget?: boolean
+    searchCount?: boolean
+    isTrending?: boolean
     weatherInfo?: boolean
     heroImage?: boolean
     createdAt?: boolean
@@ -7941,16 +8294,19 @@ export namespace Prisma {
     language?: boolean
     popularityScore?: boolean
     averageBudget?: boolean
+    searchCount?: boolean
+    isTrending?: boolean
     weatherInfo?: boolean
     heroImage?: boolean
     createdAt?: boolean
   }
 
-  export type CityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "country" | "countryCode" | "description" | "latitude" | "longitude" | "timezone" | "currency" | "language" | "popularityScore" | "averageBudget" | "weatherInfo" | "heroImage" | "createdAt", ExtArgs["result"]["city"]>
+  export type CityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "country" | "countryCode" | "description" | "latitude" | "longitude" | "timezone" | "currency" | "language" | "popularityScore" | "averageBudget" | "searchCount" | "isTrending" | "weatherInfo" | "heroImage" | "createdAt", ExtArgs["result"]["city"]>
   export type CityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sections?: boolean | City$sectionsArgs<ExtArgs>
     activities?: boolean | City$activitiesArgs<ExtArgs>
     savedByUsers?: boolean | City$savedByUsersArgs<ExtArgs>
+    globalActivities?: boolean | City$globalActivitiesArgs<ExtArgs>
     _count?: boolean | CityCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CityIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -7962,6 +8318,7 @@ export namespace Prisma {
       sections: Prisma.$TripSectionPayload<ExtArgs>[]
       activities: Prisma.$ActivityPayload<ExtArgs>[]
       savedByUsers: Prisma.$FavoritePlacePayload<ExtArgs>[]
+      globalActivities: Prisma.$GlobalActivityPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -7976,6 +8333,8 @@ export namespace Prisma {
       language: string | null
       popularityScore: number | null
       averageBudget: number | null
+      searchCount: number
+      isTrending: boolean
       weatherInfo: string | null
       heroImage: string | null
       createdAt: Date
@@ -8376,6 +8735,7 @@ export namespace Prisma {
     sections<T extends City$sectionsArgs<ExtArgs> = {}>(args?: Subset<T, City$sectionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TripSectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     activities<T extends City$activitiesArgs<ExtArgs> = {}>(args?: Subset<T, City$activitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     savedByUsers<T extends City$savedByUsersArgs<ExtArgs> = {}>(args?: Subset<T, City$savedByUsersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoritePlacePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    globalActivities<T extends City$globalActivitiesArgs<ExtArgs> = {}>(args?: Subset<T, City$globalActivitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -8417,6 +8777,8 @@ export namespace Prisma {
     readonly language: FieldRef<"City", 'String'>
     readonly popularityScore: FieldRef<"City", 'Float'>
     readonly averageBudget: FieldRef<"City", 'Float'>
+    readonly searchCount: FieldRef<"City", 'Int'>
+    readonly isTrending: FieldRef<"City", 'Boolean'>
     readonly weatherInfo: FieldRef<"City", 'String'>
     readonly heroImage: FieldRef<"City", 'String'>
     readonly createdAt: FieldRef<"City", 'DateTime'>
@@ -8885,6 +9247,30 @@ export namespace Prisma {
   }
 
   /**
+   * City.globalActivities
+   */
+  export type City$globalActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    where?: GlobalActivityWhereInput
+    orderBy?: GlobalActivityOrderByWithRelationInput | GlobalActivityOrderByWithRelationInput[]
+    cursor?: GlobalActivityWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: GlobalActivityScalarFieldEnum | GlobalActivityScalarFieldEnum[]
+  }
+
+  /**
    * City without action
    */
   export type CityDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -8919,12 +9305,14 @@ export namespace Prisma {
     duration: number | null
     price: number | null
     rating: number | null
+    saveCount: number | null
   }
 
   export type ActivitySumAggregateOutputType = {
     duration: number | null
     price: number | null
     rating: number | null
+    saveCount: number | null
   }
 
   export type ActivityMinAggregateOutputType = {
@@ -8945,6 +9333,7 @@ export namespace Prisma {
     bookingUrl: string | null
     image: string | null
     aiRecommended: boolean | null
+    saveCount: number | null
     createdAt: Date | null
   }
 
@@ -8966,6 +9355,7 @@ export namespace Prisma {
     bookingUrl: string | null
     image: string | null
     aiRecommended: boolean | null
+    saveCount: number | null
     createdAt: Date | null
   }
 
@@ -8987,6 +9377,7 @@ export namespace Prisma {
     bookingUrl: number
     image: number
     aiRecommended: number
+    saveCount: number
     createdAt: number
     _all: number
   }
@@ -8996,12 +9387,14 @@ export namespace Prisma {
     duration?: true
     price?: true
     rating?: true
+    saveCount?: true
   }
 
   export type ActivitySumAggregateInputType = {
     duration?: true
     price?: true
     rating?: true
+    saveCount?: true
   }
 
   export type ActivityMinAggregateInputType = {
@@ -9022,6 +9415,7 @@ export namespace Prisma {
     bookingUrl?: true
     image?: true
     aiRecommended?: true
+    saveCount?: true
     createdAt?: true
   }
 
@@ -9043,6 +9437,7 @@ export namespace Prisma {
     bookingUrl?: true
     image?: true
     aiRecommended?: true
+    saveCount?: true
     createdAt?: true
   }
 
@@ -9064,6 +9459,7 @@ export namespace Prisma {
     bookingUrl?: true
     image?: true
     aiRecommended?: true
+    saveCount?: true
     createdAt?: true
     _all?: true
   }
@@ -9172,6 +9568,7 @@ export namespace Prisma {
     bookingUrl: string | null
     image: string | null
     aiRecommended: boolean
+    saveCount: number
     createdAt: Date
     _count: ActivityCountAggregateOutputType | null
     _avg: ActivityAvgAggregateOutputType | null
@@ -9212,11 +9609,13 @@ export namespace Prisma {
     bookingUrl?: boolean
     image?: boolean
     aiRecommended?: boolean
+    saveCount?: boolean
     createdAt?: boolean
     trip?: boolean | TripDefaultArgs<ExtArgs>
     section?: boolean | Activity$sectionArgs<ExtArgs>
     city?: boolean | Activity$cityArgs<ExtArgs>
     reviews?: boolean | Activity$reviewsArgs<ExtArgs>
+    favoriteActivities?: boolean | Activity$favoriteActivitiesArgs<ExtArgs>
     _count?: boolean | ActivityCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["activity"]>
 
@@ -9238,6 +9637,7 @@ export namespace Prisma {
     bookingUrl?: boolean
     image?: boolean
     aiRecommended?: boolean
+    saveCount?: boolean
     createdAt?: boolean
     trip?: boolean | TripDefaultArgs<ExtArgs>
     section?: boolean | Activity$sectionArgs<ExtArgs>
@@ -9262,6 +9662,7 @@ export namespace Prisma {
     bookingUrl?: boolean
     image?: boolean
     aiRecommended?: boolean
+    saveCount?: boolean
     createdAt?: boolean
     trip?: boolean | TripDefaultArgs<ExtArgs>
     section?: boolean | Activity$sectionArgs<ExtArgs>
@@ -9286,15 +9687,17 @@ export namespace Prisma {
     bookingUrl?: boolean
     image?: boolean
     aiRecommended?: boolean
+    saveCount?: boolean
     createdAt?: boolean
   }
 
-  export type ActivityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tripId" | "sectionId" | "cityId" | "title" | "description" | "category" | "activityType" | "location" | "startTime" | "endTime" | "duration" | "price" | "rating" | "bookingUrl" | "image" | "aiRecommended" | "createdAt", ExtArgs["result"]["activity"]>
+  export type ActivityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tripId" | "sectionId" | "cityId" | "title" | "description" | "category" | "activityType" | "location" | "startTime" | "endTime" | "duration" | "price" | "rating" | "bookingUrl" | "image" | "aiRecommended" | "saveCount" | "createdAt", ExtArgs["result"]["activity"]>
   export type ActivityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     trip?: boolean | TripDefaultArgs<ExtArgs>
     section?: boolean | Activity$sectionArgs<ExtArgs>
     city?: boolean | Activity$cityArgs<ExtArgs>
     reviews?: boolean | Activity$reviewsArgs<ExtArgs>
+    favoriteActivities?: boolean | Activity$favoriteActivitiesArgs<ExtArgs>
     _count?: boolean | ActivityCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ActivityIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -9315,6 +9718,7 @@ export namespace Prisma {
       section: Prisma.$TripSectionPayload<ExtArgs> | null
       city: Prisma.$CityPayload<ExtArgs> | null
       reviews: Prisma.$ReviewPayload<ExtArgs>[]
+      favoriteActivities: Prisma.$FavoriteActivityPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -9334,6 +9738,7 @@ export namespace Prisma {
       bookingUrl: string | null
       image: string | null
       aiRecommended: boolean
+      saveCount: number
       createdAt: Date
     }, ExtArgs["result"]["activity"]>
     composites: {}
@@ -9733,6 +10138,7 @@ export namespace Prisma {
     section<T extends Activity$sectionArgs<ExtArgs> = {}>(args?: Subset<T, Activity$sectionArgs<ExtArgs>>): Prisma__TripSectionClient<$Result.GetResult<Prisma.$TripSectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     city<T extends Activity$cityArgs<ExtArgs> = {}>(args?: Subset<T, Activity$cityArgs<ExtArgs>>): Prisma__CityClient<$Result.GetResult<Prisma.$CityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     reviews<T extends Activity$reviewsArgs<ExtArgs> = {}>(args?: Subset<T, Activity$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    favoriteActivities<T extends Activity$favoriteActivitiesArgs<ExtArgs> = {}>(args?: Subset<T, Activity$favoriteActivitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -9779,6 +10185,7 @@ export namespace Prisma {
     readonly bookingUrl: FieldRef<"Activity", 'String'>
     readonly image: FieldRef<"Activity", 'String'>
     readonly aiRecommended: FieldRef<"Activity", 'Boolean'>
+    readonly saveCount: FieldRef<"Activity", 'Int'>
     readonly createdAt: FieldRef<"Activity", 'DateTime'>
   }
     
@@ -10240,6 +10647,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: ReviewScalarFieldEnum | ReviewScalarFieldEnum[]
+  }
+
+  /**
+   * Activity.favoriteActivities
+   */
+  export type Activity$favoriteActivitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    where?: FavoriteActivityWhereInput
+    orderBy?: FavoriteActivityOrderByWithRelationInput | FavoriteActivityOrderByWithRelationInput[]
+    cursor?: FavoriteActivityWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FavoriteActivityScalarFieldEnum | FavoriteActivityScalarFieldEnum[]
   }
 
   /**
@@ -25012,6 +25443,3241 @@ export namespace Prisma {
 
 
   /**
+   * Model RecommendationCache
+   */
+
+  export type AggregateRecommendationCache = {
+    _count: RecommendationCacheCountAggregateOutputType | null
+    _min: RecommendationCacheMinAggregateOutputType | null
+    _max: RecommendationCacheMaxAggregateOutputType | null
+  }
+
+  export type RecommendationCacheMinAggregateOutputType = {
+    id: string | null
+    key: string | null
+    expiresAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RecommendationCacheMaxAggregateOutputType = {
+    id: string | null
+    key: string | null
+    expiresAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RecommendationCacheCountAggregateOutputType = {
+    id: number
+    key: number
+    data: number
+    expiresAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type RecommendationCacheMinAggregateInputType = {
+    id?: true
+    key?: true
+    expiresAt?: true
+    createdAt?: true
+  }
+
+  export type RecommendationCacheMaxAggregateInputType = {
+    id?: true
+    key?: true
+    expiresAt?: true
+    createdAt?: true
+  }
+
+  export type RecommendationCacheCountAggregateInputType = {
+    id?: true
+    key?: true
+    data?: true
+    expiresAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type RecommendationCacheAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RecommendationCache to aggregate.
+     */
+    where?: RecommendationCacheWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RecommendationCaches to fetch.
+     */
+    orderBy?: RecommendationCacheOrderByWithRelationInput | RecommendationCacheOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RecommendationCacheWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RecommendationCaches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RecommendationCaches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RecommendationCaches
+    **/
+    _count?: true | RecommendationCacheCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RecommendationCacheMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RecommendationCacheMaxAggregateInputType
+  }
+
+  export type GetRecommendationCacheAggregateType<T extends RecommendationCacheAggregateArgs> = {
+        [P in keyof T & keyof AggregateRecommendationCache]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRecommendationCache[P]>
+      : GetScalarType<T[P], AggregateRecommendationCache[P]>
+  }
+
+
+
+
+  export type RecommendationCacheGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RecommendationCacheWhereInput
+    orderBy?: RecommendationCacheOrderByWithAggregationInput | RecommendationCacheOrderByWithAggregationInput[]
+    by: RecommendationCacheScalarFieldEnum[] | RecommendationCacheScalarFieldEnum
+    having?: RecommendationCacheScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RecommendationCacheCountAggregateInputType | true
+    _min?: RecommendationCacheMinAggregateInputType
+    _max?: RecommendationCacheMaxAggregateInputType
+  }
+
+  export type RecommendationCacheGroupByOutputType = {
+    id: string
+    key: string
+    data: JsonValue
+    expiresAt: Date
+    createdAt: Date
+    _count: RecommendationCacheCountAggregateOutputType | null
+    _min: RecommendationCacheMinAggregateOutputType | null
+    _max: RecommendationCacheMaxAggregateOutputType | null
+  }
+
+  type GetRecommendationCacheGroupByPayload<T extends RecommendationCacheGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RecommendationCacheGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RecommendationCacheGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RecommendationCacheGroupByOutputType[P]>
+            : GetScalarType<T[P], RecommendationCacheGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RecommendationCacheSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    key?: boolean
+    data?: boolean
+    expiresAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["recommendationCache"]>
+
+  export type RecommendationCacheSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    key?: boolean
+    data?: boolean
+    expiresAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["recommendationCache"]>
+
+  export type RecommendationCacheSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    key?: boolean
+    data?: boolean
+    expiresAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["recommendationCache"]>
+
+  export type RecommendationCacheSelectScalar = {
+    id?: boolean
+    key?: boolean
+    data?: boolean
+    expiresAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type RecommendationCacheOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "key" | "data" | "expiresAt" | "createdAt", ExtArgs["result"]["recommendationCache"]>
+
+  export type $RecommendationCachePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RecommendationCache"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      key: string
+      data: Prisma.JsonValue
+      expiresAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["recommendationCache"]>
+    composites: {}
+  }
+
+  type RecommendationCacheGetPayload<S extends boolean | null | undefined | RecommendationCacheDefaultArgs> = $Result.GetResult<Prisma.$RecommendationCachePayload, S>
+
+  type RecommendationCacheCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RecommendationCacheFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RecommendationCacheCountAggregateInputType | true
+    }
+
+  export interface RecommendationCacheDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RecommendationCache'], meta: { name: 'RecommendationCache' } }
+    /**
+     * Find zero or one RecommendationCache that matches the filter.
+     * @param {RecommendationCacheFindUniqueArgs} args - Arguments to find a RecommendationCache
+     * @example
+     * // Get one RecommendationCache
+     * const recommendationCache = await prisma.recommendationCache.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RecommendationCacheFindUniqueArgs>(args: SelectSubset<T, RecommendationCacheFindUniqueArgs<ExtArgs>>): Prisma__RecommendationCacheClient<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RecommendationCache that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RecommendationCacheFindUniqueOrThrowArgs} args - Arguments to find a RecommendationCache
+     * @example
+     * // Get one RecommendationCache
+     * const recommendationCache = await prisma.recommendationCache.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RecommendationCacheFindUniqueOrThrowArgs>(args: SelectSubset<T, RecommendationCacheFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RecommendationCacheClient<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RecommendationCache that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RecommendationCacheFindFirstArgs} args - Arguments to find a RecommendationCache
+     * @example
+     * // Get one RecommendationCache
+     * const recommendationCache = await prisma.recommendationCache.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RecommendationCacheFindFirstArgs>(args?: SelectSubset<T, RecommendationCacheFindFirstArgs<ExtArgs>>): Prisma__RecommendationCacheClient<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RecommendationCache that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RecommendationCacheFindFirstOrThrowArgs} args - Arguments to find a RecommendationCache
+     * @example
+     * // Get one RecommendationCache
+     * const recommendationCache = await prisma.recommendationCache.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RecommendationCacheFindFirstOrThrowArgs>(args?: SelectSubset<T, RecommendationCacheFindFirstOrThrowArgs<ExtArgs>>): Prisma__RecommendationCacheClient<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RecommendationCaches that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RecommendationCacheFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RecommendationCaches
+     * const recommendationCaches = await prisma.recommendationCache.findMany()
+     * 
+     * // Get first 10 RecommendationCaches
+     * const recommendationCaches = await prisma.recommendationCache.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const recommendationCacheWithIdOnly = await prisma.recommendationCache.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RecommendationCacheFindManyArgs>(args?: SelectSubset<T, RecommendationCacheFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RecommendationCache.
+     * @param {RecommendationCacheCreateArgs} args - Arguments to create a RecommendationCache.
+     * @example
+     * // Create one RecommendationCache
+     * const RecommendationCache = await prisma.recommendationCache.create({
+     *   data: {
+     *     // ... data to create a RecommendationCache
+     *   }
+     * })
+     * 
+     */
+    create<T extends RecommendationCacheCreateArgs>(args: SelectSubset<T, RecommendationCacheCreateArgs<ExtArgs>>): Prisma__RecommendationCacheClient<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RecommendationCaches.
+     * @param {RecommendationCacheCreateManyArgs} args - Arguments to create many RecommendationCaches.
+     * @example
+     * // Create many RecommendationCaches
+     * const recommendationCache = await prisma.recommendationCache.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RecommendationCacheCreateManyArgs>(args?: SelectSubset<T, RecommendationCacheCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RecommendationCaches and returns the data saved in the database.
+     * @param {RecommendationCacheCreateManyAndReturnArgs} args - Arguments to create many RecommendationCaches.
+     * @example
+     * // Create many RecommendationCaches
+     * const recommendationCache = await prisma.recommendationCache.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RecommendationCaches and only return the `id`
+     * const recommendationCacheWithIdOnly = await prisma.recommendationCache.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RecommendationCacheCreateManyAndReturnArgs>(args?: SelectSubset<T, RecommendationCacheCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RecommendationCache.
+     * @param {RecommendationCacheDeleteArgs} args - Arguments to delete one RecommendationCache.
+     * @example
+     * // Delete one RecommendationCache
+     * const RecommendationCache = await prisma.recommendationCache.delete({
+     *   where: {
+     *     // ... filter to delete one RecommendationCache
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RecommendationCacheDeleteArgs>(args: SelectSubset<T, RecommendationCacheDeleteArgs<ExtArgs>>): Prisma__RecommendationCacheClient<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RecommendationCache.
+     * @param {RecommendationCacheUpdateArgs} args - Arguments to update one RecommendationCache.
+     * @example
+     * // Update one RecommendationCache
+     * const recommendationCache = await prisma.recommendationCache.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RecommendationCacheUpdateArgs>(args: SelectSubset<T, RecommendationCacheUpdateArgs<ExtArgs>>): Prisma__RecommendationCacheClient<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RecommendationCaches.
+     * @param {RecommendationCacheDeleteManyArgs} args - Arguments to filter RecommendationCaches to delete.
+     * @example
+     * // Delete a few RecommendationCaches
+     * const { count } = await prisma.recommendationCache.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RecommendationCacheDeleteManyArgs>(args?: SelectSubset<T, RecommendationCacheDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RecommendationCaches.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RecommendationCacheUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RecommendationCaches
+     * const recommendationCache = await prisma.recommendationCache.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RecommendationCacheUpdateManyArgs>(args: SelectSubset<T, RecommendationCacheUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RecommendationCaches and returns the data updated in the database.
+     * @param {RecommendationCacheUpdateManyAndReturnArgs} args - Arguments to update many RecommendationCaches.
+     * @example
+     * // Update many RecommendationCaches
+     * const recommendationCache = await prisma.recommendationCache.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RecommendationCaches and only return the `id`
+     * const recommendationCacheWithIdOnly = await prisma.recommendationCache.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RecommendationCacheUpdateManyAndReturnArgs>(args: SelectSubset<T, RecommendationCacheUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RecommendationCache.
+     * @param {RecommendationCacheUpsertArgs} args - Arguments to update or create a RecommendationCache.
+     * @example
+     * // Update or create a RecommendationCache
+     * const recommendationCache = await prisma.recommendationCache.upsert({
+     *   create: {
+     *     // ... data to create a RecommendationCache
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RecommendationCache we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RecommendationCacheUpsertArgs>(args: SelectSubset<T, RecommendationCacheUpsertArgs<ExtArgs>>): Prisma__RecommendationCacheClient<$Result.GetResult<Prisma.$RecommendationCachePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RecommendationCaches.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RecommendationCacheCountArgs} args - Arguments to filter RecommendationCaches to count.
+     * @example
+     * // Count the number of RecommendationCaches
+     * const count = await prisma.recommendationCache.count({
+     *   where: {
+     *     // ... the filter for the RecommendationCaches we want to count
+     *   }
+     * })
+    **/
+    count<T extends RecommendationCacheCountArgs>(
+      args?: Subset<T, RecommendationCacheCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RecommendationCacheCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RecommendationCache.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RecommendationCacheAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RecommendationCacheAggregateArgs>(args: Subset<T, RecommendationCacheAggregateArgs>): Prisma.PrismaPromise<GetRecommendationCacheAggregateType<T>>
+
+    /**
+     * Group by RecommendationCache.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RecommendationCacheGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RecommendationCacheGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RecommendationCacheGroupByArgs['orderBy'] }
+        : { orderBy?: RecommendationCacheGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RecommendationCacheGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRecommendationCacheGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RecommendationCache model
+   */
+  readonly fields: RecommendationCacheFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RecommendationCache.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RecommendationCacheClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RecommendationCache model
+   */
+  interface RecommendationCacheFieldRefs {
+    readonly id: FieldRef<"RecommendationCache", 'String'>
+    readonly key: FieldRef<"RecommendationCache", 'String'>
+    readonly data: FieldRef<"RecommendationCache", 'Json'>
+    readonly expiresAt: FieldRef<"RecommendationCache", 'DateTime'>
+    readonly createdAt: FieldRef<"RecommendationCache", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RecommendationCache findUnique
+   */
+  export type RecommendationCacheFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * Filter, which RecommendationCache to fetch.
+     */
+    where: RecommendationCacheWhereUniqueInput
+  }
+
+  /**
+   * RecommendationCache findUniqueOrThrow
+   */
+  export type RecommendationCacheFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * Filter, which RecommendationCache to fetch.
+     */
+    where: RecommendationCacheWhereUniqueInput
+  }
+
+  /**
+   * RecommendationCache findFirst
+   */
+  export type RecommendationCacheFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * Filter, which RecommendationCache to fetch.
+     */
+    where?: RecommendationCacheWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RecommendationCaches to fetch.
+     */
+    orderBy?: RecommendationCacheOrderByWithRelationInput | RecommendationCacheOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RecommendationCaches.
+     */
+    cursor?: RecommendationCacheWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RecommendationCaches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RecommendationCaches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RecommendationCaches.
+     */
+    distinct?: RecommendationCacheScalarFieldEnum | RecommendationCacheScalarFieldEnum[]
+  }
+
+  /**
+   * RecommendationCache findFirstOrThrow
+   */
+  export type RecommendationCacheFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * Filter, which RecommendationCache to fetch.
+     */
+    where?: RecommendationCacheWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RecommendationCaches to fetch.
+     */
+    orderBy?: RecommendationCacheOrderByWithRelationInput | RecommendationCacheOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RecommendationCaches.
+     */
+    cursor?: RecommendationCacheWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RecommendationCaches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RecommendationCaches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RecommendationCaches.
+     */
+    distinct?: RecommendationCacheScalarFieldEnum | RecommendationCacheScalarFieldEnum[]
+  }
+
+  /**
+   * RecommendationCache findMany
+   */
+  export type RecommendationCacheFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * Filter, which RecommendationCaches to fetch.
+     */
+    where?: RecommendationCacheWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RecommendationCaches to fetch.
+     */
+    orderBy?: RecommendationCacheOrderByWithRelationInput | RecommendationCacheOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RecommendationCaches.
+     */
+    cursor?: RecommendationCacheWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RecommendationCaches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RecommendationCaches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RecommendationCaches.
+     */
+    distinct?: RecommendationCacheScalarFieldEnum | RecommendationCacheScalarFieldEnum[]
+  }
+
+  /**
+   * RecommendationCache create
+   */
+  export type RecommendationCacheCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * The data needed to create a RecommendationCache.
+     */
+    data: XOR<RecommendationCacheCreateInput, RecommendationCacheUncheckedCreateInput>
+  }
+
+  /**
+   * RecommendationCache createMany
+   */
+  export type RecommendationCacheCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RecommendationCaches.
+     */
+    data: RecommendationCacheCreateManyInput | RecommendationCacheCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RecommendationCache createManyAndReturn
+   */
+  export type RecommendationCacheCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * The data used to create many RecommendationCaches.
+     */
+    data: RecommendationCacheCreateManyInput | RecommendationCacheCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RecommendationCache update
+   */
+  export type RecommendationCacheUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * The data needed to update a RecommendationCache.
+     */
+    data: XOR<RecommendationCacheUpdateInput, RecommendationCacheUncheckedUpdateInput>
+    /**
+     * Choose, which RecommendationCache to update.
+     */
+    where: RecommendationCacheWhereUniqueInput
+  }
+
+  /**
+   * RecommendationCache updateMany
+   */
+  export type RecommendationCacheUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RecommendationCaches.
+     */
+    data: XOR<RecommendationCacheUpdateManyMutationInput, RecommendationCacheUncheckedUpdateManyInput>
+    /**
+     * Filter which RecommendationCaches to update
+     */
+    where?: RecommendationCacheWhereInput
+    /**
+     * Limit how many RecommendationCaches to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RecommendationCache updateManyAndReturn
+   */
+  export type RecommendationCacheUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * The data used to update RecommendationCaches.
+     */
+    data: XOR<RecommendationCacheUpdateManyMutationInput, RecommendationCacheUncheckedUpdateManyInput>
+    /**
+     * Filter which RecommendationCaches to update
+     */
+    where?: RecommendationCacheWhereInput
+    /**
+     * Limit how many RecommendationCaches to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RecommendationCache upsert
+   */
+  export type RecommendationCacheUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * The filter to search for the RecommendationCache to update in case it exists.
+     */
+    where: RecommendationCacheWhereUniqueInput
+    /**
+     * In case the RecommendationCache found by the `where` argument doesn't exist, create a new RecommendationCache with this data.
+     */
+    create: XOR<RecommendationCacheCreateInput, RecommendationCacheUncheckedCreateInput>
+    /**
+     * In case the RecommendationCache was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RecommendationCacheUpdateInput, RecommendationCacheUncheckedUpdateInput>
+  }
+
+  /**
+   * RecommendationCache delete
+   */
+  export type RecommendationCacheDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+    /**
+     * Filter which RecommendationCache to delete.
+     */
+    where: RecommendationCacheWhereUniqueInput
+  }
+
+  /**
+   * RecommendationCache deleteMany
+   */
+  export type RecommendationCacheDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RecommendationCaches to delete
+     */
+    where?: RecommendationCacheWhereInput
+    /**
+     * Limit how many RecommendationCaches to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RecommendationCache without action
+   */
+  export type RecommendationCacheDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RecommendationCache
+     */
+    select?: RecommendationCacheSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RecommendationCache
+     */
+    omit?: RecommendationCacheOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model GlobalActivity
+   */
+
+  export type AggregateGlobalActivity = {
+    _count: GlobalActivityCountAggregateOutputType | null
+    _avg: GlobalActivityAvgAggregateOutputType | null
+    _sum: GlobalActivitySumAggregateOutputType | null
+    _min: GlobalActivityMinAggregateOutputType | null
+    _max: GlobalActivityMaxAggregateOutputType | null
+  }
+
+  export type GlobalActivityAvgAggregateOutputType = {
+    rating: number | null
+  }
+
+  export type GlobalActivitySumAggregateOutputType = {
+    rating: number | null
+  }
+
+  export type GlobalActivityMinAggregateOutputType = {
+    id: string | null
+    foursquareId: string | null
+    title: string | null
+    description: string | null
+    category: string | null
+    location: string | null
+    cityId: string | null
+    rating: number | null
+    image: string | null
+    createdAt: Date | null
+  }
+
+  export type GlobalActivityMaxAggregateOutputType = {
+    id: string | null
+    foursquareId: string | null
+    title: string | null
+    description: string | null
+    category: string | null
+    location: string | null
+    cityId: string | null
+    rating: number | null
+    image: string | null
+    createdAt: Date | null
+  }
+
+  export type GlobalActivityCountAggregateOutputType = {
+    id: number
+    foursquareId: number
+    title: number
+    description: number
+    category: number
+    location: number
+    cityId: number
+    rating: number
+    image: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type GlobalActivityAvgAggregateInputType = {
+    rating?: true
+  }
+
+  export type GlobalActivitySumAggregateInputType = {
+    rating?: true
+  }
+
+  export type GlobalActivityMinAggregateInputType = {
+    id?: true
+    foursquareId?: true
+    title?: true
+    description?: true
+    category?: true
+    location?: true
+    cityId?: true
+    rating?: true
+    image?: true
+    createdAt?: true
+  }
+
+  export type GlobalActivityMaxAggregateInputType = {
+    id?: true
+    foursquareId?: true
+    title?: true
+    description?: true
+    category?: true
+    location?: true
+    cityId?: true
+    rating?: true
+    image?: true
+    createdAt?: true
+  }
+
+  export type GlobalActivityCountAggregateInputType = {
+    id?: true
+    foursquareId?: true
+    title?: true
+    description?: true
+    category?: true
+    location?: true
+    cityId?: true
+    rating?: true
+    image?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type GlobalActivityAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GlobalActivity to aggregate.
+     */
+    where?: GlobalActivityWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlobalActivities to fetch.
+     */
+    orderBy?: GlobalActivityOrderByWithRelationInput | GlobalActivityOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GlobalActivityWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlobalActivities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlobalActivities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GlobalActivities
+    **/
+    _count?: true | GlobalActivityCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GlobalActivityAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GlobalActivitySumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GlobalActivityMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GlobalActivityMaxAggregateInputType
+  }
+
+  export type GetGlobalActivityAggregateType<T extends GlobalActivityAggregateArgs> = {
+        [P in keyof T & keyof AggregateGlobalActivity]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGlobalActivity[P]>
+      : GetScalarType<T[P], AggregateGlobalActivity[P]>
+  }
+
+
+
+
+  export type GlobalActivityGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GlobalActivityWhereInput
+    orderBy?: GlobalActivityOrderByWithAggregationInput | GlobalActivityOrderByWithAggregationInput[]
+    by: GlobalActivityScalarFieldEnum[] | GlobalActivityScalarFieldEnum
+    having?: GlobalActivityScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GlobalActivityCountAggregateInputType | true
+    _avg?: GlobalActivityAvgAggregateInputType
+    _sum?: GlobalActivitySumAggregateInputType
+    _min?: GlobalActivityMinAggregateInputType
+    _max?: GlobalActivityMaxAggregateInputType
+  }
+
+  export type GlobalActivityGroupByOutputType = {
+    id: string
+    foursquareId: string | null
+    title: string
+    description: string | null
+    category: string | null
+    location: string | null
+    cityId: string | null
+    rating: number | null
+    image: string | null
+    createdAt: Date
+    _count: GlobalActivityCountAggregateOutputType | null
+    _avg: GlobalActivityAvgAggregateOutputType | null
+    _sum: GlobalActivitySumAggregateOutputType | null
+    _min: GlobalActivityMinAggregateOutputType | null
+    _max: GlobalActivityMaxAggregateOutputType | null
+  }
+
+  type GetGlobalActivityGroupByPayload<T extends GlobalActivityGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GlobalActivityGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GlobalActivityGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GlobalActivityGroupByOutputType[P]>
+            : GetScalarType<T[P], GlobalActivityGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GlobalActivitySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    foursquareId?: boolean
+    title?: boolean
+    description?: boolean
+    category?: boolean
+    location?: boolean
+    cityId?: boolean
+    rating?: boolean
+    image?: boolean
+    createdAt?: boolean
+    city?: boolean | GlobalActivity$cityArgs<ExtArgs>
+  }, ExtArgs["result"]["globalActivity"]>
+
+  export type GlobalActivitySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    foursquareId?: boolean
+    title?: boolean
+    description?: boolean
+    category?: boolean
+    location?: boolean
+    cityId?: boolean
+    rating?: boolean
+    image?: boolean
+    createdAt?: boolean
+    city?: boolean | GlobalActivity$cityArgs<ExtArgs>
+  }, ExtArgs["result"]["globalActivity"]>
+
+  export type GlobalActivitySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    foursquareId?: boolean
+    title?: boolean
+    description?: boolean
+    category?: boolean
+    location?: boolean
+    cityId?: boolean
+    rating?: boolean
+    image?: boolean
+    createdAt?: boolean
+    city?: boolean | GlobalActivity$cityArgs<ExtArgs>
+  }, ExtArgs["result"]["globalActivity"]>
+
+  export type GlobalActivitySelectScalar = {
+    id?: boolean
+    foursquareId?: boolean
+    title?: boolean
+    description?: boolean
+    category?: boolean
+    location?: boolean
+    cityId?: boolean
+    rating?: boolean
+    image?: boolean
+    createdAt?: boolean
+  }
+
+  export type GlobalActivityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "foursquareId" | "title" | "description" | "category" | "location" | "cityId" | "rating" | "image" | "createdAt", ExtArgs["result"]["globalActivity"]>
+  export type GlobalActivityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    city?: boolean | GlobalActivity$cityArgs<ExtArgs>
+  }
+  export type GlobalActivityIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    city?: boolean | GlobalActivity$cityArgs<ExtArgs>
+  }
+  export type GlobalActivityIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    city?: boolean | GlobalActivity$cityArgs<ExtArgs>
+  }
+
+  export type $GlobalActivityPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GlobalActivity"
+    objects: {
+      city: Prisma.$CityPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      foursquareId: string | null
+      title: string
+      description: string | null
+      category: string | null
+      location: string | null
+      cityId: string | null
+      rating: number | null
+      image: string | null
+      createdAt: Date
+    }, ExtArgs["result"]["globalActivity"]>
+    composites: {}
+  }
+
+  type GlobalActivityGetPayload<S extends boolean | null | undefined | GlobalActivityDefaultArgs> = $Result.GetResult<Prisma.$GlobalActivityPayload, S>
+
+  type GlobalActivityCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<GlobalActivityFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: GlobalActivityCountAggregateInputType | true
+    }
+
+  export interface GlobalActivityDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GlobalActivity'], meta: { name: 'GlobalActivity' } }
+    /**
+     * Find zero or one GlobalActivity that matches the filter.
+     * @param {GlobalActivityFindUniqueArgs} args - Arguments to find a GlobalActivity
+     * @example
+     * // Get one GlobalActivity
+     * const globalActivity = await prisma.globalActivity.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends GlobalActivityFindUniqueArgs>(args: SelectSubset<T, GlobalActivityFindUniqueArgs<ExtArgs>>): Prisma__GlobalActivityClient<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one GlobalActivity that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {GlobalActivityFindUniqueOrThrowArgs} args - Arguments to find a GlobalActivity
+     * @example
+     * // Get one GlobalActivity
+     * const globalActivity = await prisma.globalActivity.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends GlobalActivityFindUniqueOrThrowArgs>(args: SelectSubset<T, GlobalActivityFindUniqueOrThrowArgs<ExtArgs>>): Prisma__GlobalActivityClient<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GlobalActivity that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlobalActivityFindFirstArgs} args - Arguments to find a GlobalActivity
+     * @example
+     * // Get one GlobalActivity
+     * const globalActivity = await prisma.globalActivity.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends GlobalActivityFindFirstArgs>(args?: SelectSubset<T, GlobalActivityFindFirstArgs<ExtArgs>>): Prisma__GlobalActivityClient<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GlobalActivity that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlobalActivityFindFirstOrThrowArgs} args - Arguments to find a GlobalActivity
+     * @example
+     * // Get one GlobalActivity
+     * const globalActivity = await prisma.globalActivity.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends GlobalActivityFindFirstOrThrowArgs>(args?: SelectSubset<T, GlobalActivityFindFirstOrThrowArgs<ExtArgs>>): Prisma__GlobalActivityClient<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more GlobalActivities that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlobalActivityFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GlobalActivities
+     * const globalActivities = await prisma.globalActivity.findMany()
+     * 
+     * // Get first 10 GlobalActivities
+     * const globalActivities = await prisma.globalActivity.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const globalActivityWithIdOnly = await prisma.globalActivity.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends GlobalActivityFindManyArgs>(args?: SelectSubset<T, GlobalActivityFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a GlobalActivity.
+     * @param {GlobalActivityCreateArgs} args - Arguments to create a GlobalActivity.
+     * @example
+     * // Create one GlobalActivity
+     * const GlobalActivity = await prisma.globalActivity.create({
+     *   data: {
+     *     // ... data to create a GlobalActivity
+     *   }
+     * })
+     * 
+     */
+    create<T extends GlobalActivityCreateArgs>(args: SelectSubset<T, GlobalActivityCreateArgs<ExtArgs>>): Prisma__GlobalActivityClient<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many GlobalActivities.
+     * @param {GlobalActivityCreateManyArgs} args - Arguments to create many GlobalActivities.
+     * @example
+     * // Create many GlobalActivities
+     * const globalActivity = await prisma.globalActivity.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends GlobalActivityCreateManyArgs>(args?: SelectSubset<T, GlobalActivityCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many GlobalActivities and returns the data saved in the database.
+     * @param {GlobalActivityCreateManyAndReturnArgs} args - Arguments to create many GlobalActivities.
+     * @example
+     * // Create many GlobalActivities
+     * const globalActivity = await prisma.globalActivity.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many GlobalActivities and only return the `id`
+     * const globalActivityWithIdOnly = await prisma.globalActivity.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends GlobalActivityCreateManyAndReturnArgs>(args?: SelectSubset<T, GlobalActivityCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a GlobalActivity.
+     * @param {GlobalActivityDeleteArgs} args - Arguments to delete one GlobalActivity.
+     * @example
+     * // Delete one GlobalActivity
+     * const GlobalActivity = await prisma.globalActivity.delete({
+     *   where: {
+     *     // ... filter to delete one GlobalActivity
+     *   }
+     * })
+     * 
+     */
+    delete<T extends GlobalActivityDeleteArgs>(args: SelectSubset<T, GlobalActivityDeleteArgs<ExtArgs>>): Prisma__GlobalActivityClient<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one GlobalActivity.
+     * @param {GlobalActivityUpdateArgs} args - Arguments to update one GlobalActivity.
+     * @example
+     * // Update one GlobalActivity
+     * const globalActivity = await prisma.globalActivity.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends GlobalActivityUpdateArgs>(args: SelectSubset<T, GlobalActivityUpdateArgs<ExtArgs>>): Prisma__GlobalActivityClient<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more GlobalActivities.
+     * @param {GlobalActivityDeleteManyArgs} args - Arguments to filter GlobalActivities to delete.
+     * @example
+     * // Delete a few GlobalActivities
+     * const { count } = await prisma.globalActivity.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends GlobalActivityDeleteManyArgs>(args?: SelectSubset<T, GlobalActivityDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GlobalActivities.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlobalActivityUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GlobalActivities
+     * const globalActivity = await prisma.globalActivity.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends GlobalActivityUpdateManyArgs>(args: SelectSubset<T, GlobalActivityUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GlobalActivities and returns the data updated in the database.
+     * @param {GlobalActivityUpdateManyAndReturnArgs} args - Arguments to update many GlobalActivities.
+     * @example
+     * // Update many GlobalActivities
+     * const globalActivity = await prisma.globalActivity.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more GlobalActivities and only return the `id`
+     * const globalActivityWithIdOnly = await prisma.globalActivity.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends GlobalActivityUpdateManyAndReturnArgs>(args: SelectSubset<T, GlobalActivityUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one GlobalActivity.
+     * @param {GlobalActivityUpsertArgs} args - Arguments to update or create a GlobalActivity.
+     * @example
+     * // Update or create a GlobalActivity
+     * const globalActivity = await prisma.globalActivity.upsert({
+     *   create: {
+     *     // ... data to create a GlobalActivity
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GlobalActivity we want to update
+     *   }
+     * })
+     */
+    upsert<T extends GlobalActivityUpsertArgs>(args: SelectSubset<T, GlobalActivityUpsertArgs<ExtArgs>>): Prisma__GlobalActivityClient<$Result.GetResult<Prisma.$GlobalActivityPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of GlobalActivities.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlobalActivityCountArgs} args - Arguments to filter GlobalActivities to count.
+     * @example
+     * // Count the number of GlobalActivities
+     * const count = await prisma.globalActivity.count({
+     *   where: {
+     *     // ... the filter for the GlobalActivities we want to count
+     *   }
+     * })
+    **/
+    count<T extends GlobalActivityCountArgs>(
+      args?: Subset<T, GlobalActivityCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GlobalActivityCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GlobalActivity.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlobalActivityAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GlobalActivityAggregateArgs>(args: Subset<T, GlobalActivityAggregateArgs>): Prisma.PrismaPromise<GetGlobalActivityAggregateType<T>>
+
+    /**
+     * Group by GlobalActivity.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlobalActivityGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GlobalActivityGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GlobalActivityGroupByArgs['orderBy'] }
+        : { orderBy?: GlobalActivityGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GlobalActivityGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGlobalActivityGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GlobalActivity model
+   */
+  readonly fields: GlobalActivityFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GlobalActivity.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GlobalActivityClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    city<T extends GlobalActivity$cityArgs<ExtArgs> = {}>(args?: Subset<T, GlobalActivity$cityArgs<ExtArgs>>): Prisma__CityClient<$Result.GetResult<Prisma.$CityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the GlobalActivity model
+   */
+  interface GlobalActivityFieldRefs {
+    readonly id: FieldRef<"GlobalActivity", 'String'>
+    readonly foursquareId: FieldRef<"GlobalActivity", 'String'>
+    readonly title: FieldRef<"GlobalActivity", 'String'>
+    readonly description: FieldRef<"GlobalActivity", 'String'>
+    readonly category: FieldRef<"GlobalActivity", 'String'>
+    readonly location: FieldRef<"GlobalActivity", 'String'>
+    readonly cityId: FieldRef<"GlobalActivity", 'String'>
+    readonly rating: FieldRef<"GlobalActivity", 'Float'>
+    readonly image: FieldRef<"GlobalActivity", 'String'>
+    readonly createdAt: FieldRef<"GlobalActivity", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * GlobalActivity findUnique
+   */
+  export type GlobalActivityFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which GlobalActivity to fetch.
+     */
+    where: GlobalActivityWhereUniqueInput
+  }
+
+  /**
+   * GlobalActivity findUniqueOrThrow
+   */
+  export type GlobalActivityFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which GlobalActivity to fetch.
+     */
+    where: GlobalActivityWhereUniqueInput
+  }
+
+  /**
+   * GlobalActivity findFirst
+   */
+  export type GlobalActivityFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which GlobalActivity to fetch.
+     */
+    where?: GlobalActivityWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlobalActivities to fetch.
+     */
+    orderBy?: GlobalActivityOrderByWithRelationInput | GlobalActivityOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GlobalActivities.
+     */
+    cursor?: GlobalActivityWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlobalActivities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlobalActivities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlobalActivities.
+     */
+    distinct?: GlobalActivityScalarFieldEnum | GlobalActivityScalarFieldEnum[]
+  }
+
+  /**
+   * GlobalActivity findFirstOrThrow
+   */
+  export type GlobalActivityFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which GlobalActivity to fetch.
+     */
+    where?: GlobalActivityWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlobalActivities to fetch.
+     */
+    orderBy?: GlobalActivityOrderByWithRelationInput | GlobalActivityOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GlobalActivities.
+     */
+    cursor?: GlobalActivityWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlobalActivities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlobalActivities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlobalActivities.
+     */
+    distinct?: GlobalActivityScalarFieldEnum | GlobalActivityScalarFieldEnum[]
+  }
+
+  /**
+   * GlobalActivity findMany
+   */
+  export type GlobalActivityFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which GlobalActivities to fetch.
+     */
+    where?: GlobalActivityWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlobalActivities to fetch.
+     */
+    orderBy?: GlobalActivityOrderByWithRelationInput | GlobalActivityOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GlobalActivities.
+     */
+    cursor?: GlobalActivityWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlobalActivities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlobalActivities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlobalActivities.
+     */
+    distinct?: GlobalActivityScalarFieldEnum | GlobalActivityScalarFieldEnum[]
+  }
+
+  /**
+   * GlobalActivity create
+   */
+  export type GlobalActivityCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * The data needed to create a GlobalActivity.
+     */
+    data: XOR<GlobalActivityCreateInput, GlobalActivityUncheckedCreateInput>
+  }
+
+  /**
+   * GlobalActivity createMany
+   */
+  export type GlobalActivityCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GlobalActivities.
+     */
+    data: GlobalActivityCreateManyInput | GlobalActivityCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * GlobalActivity createManyAndReturn
+   */
+  export type GlobalActivityCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * The data used to create many GlobalActivities.
+     */
+    data: GlobalActivityCreateManyInput | GlobalActivityCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * GlobalActivity update
+   */
+  export type GlobalActivityUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * The data needed to update a GlobalActivity.
+     */
+    data: XOR<GlobalActivityUpdateInput, GlobalActivityUncheckedUpdateInput>
+    /**
+     * Choose, which GlobalActivity to update.
+     */
+    where: GlobalActivityWhereUniqueInput
+  }
+
+  /**
+   * GlobalActivity updateMany
+   */
+  export type GlobalActivityUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GlobalActivities.
+     */
+    data: XOR<GlobalActivityUpdateManyMutationInput, GlobalActivityUncheckedUpdateManyInput>
+    /**
+     * Filter which GlobalActivities to update
+     */
+    where?: GlobalActivityWhereInput
+    /**
+     * Limit how many GlobalActivities to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlobalActivity updateManyAndReturn
+   */
+  export type GlobalActivityUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * The data used to update GlobalActivities.
+     */
+    data: XOR<GlobalActivityUpdateManyMutationInput, GlobalActivityUncheckedUpdateManyInput>
+    /**
+     * Filter which GlobalActivities to update
+     */
+    where?: GlobalActivityWhereInput
+    /**
+     * Limit how many GlobalActivities to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * GlobalActivity upsert
+   */
+  export type GlobalActivityUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * The filter to search for the GlobalActivity to update in case it exists.
+     */
+    where: GlobalActivityWhereUniqueInput
+    /**
+     * In case the GlobalActivity found by the `where` argument doesn't exist, create a new GlobalActivity with this data.
+     */
+    create: XOR<GlobalActivityCreateInput, GlobalActivityUncheckedCreateInput>
+    /**
+     * In case the GlobalActivity was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GlobalActivityUpdateInput, GlobalActivityUncheckedUpdateInput>
+  }
+
+  /**
+   * GlobalActivity delete
+   */
+  export type GlobalActivityDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+    /**
+     * Filter which GlobalActivity to delete.
+     */
+    where: GlobalActivityWhereUniqueInput
+  }
+
+  /**
+   * GlobalActivity deleteMany
+   */
+  export type GlobalActivityDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GlobalActivities to delete
+     */
+    where?: GlobalActivityWhereInput
+    /**
+     * Limit how many GlobalActivities to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlobalActivity.city
+   */
+  export type GlobalActivity$cityArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the City
+     */
+    select?: CitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the City
+     */
+    omit?: CityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CityInclude<ExtArgs> | null
+    where?: CityWhereInput
+  }
+
+  /**
+   * GlobalActivity without action
+   */
+  export type GlobalActivityDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlobalActivity
+     */
+    select?: GlobalActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlobalActivity
+     */
+    omit?: GlobalActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlobalActivityInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FavoriteActivity
+   */
+
+  export type AggregateFavoriteActivity = {
+    _count: FavoriteActivityCountAggregateOutputType | null
+    _min: FavoriteActivityMinAggregateOutputType | null
+    _max: FavoriteActivityMaxAggregateOutputType | null
+  }
+
+  export type FavoriteActivityMinAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    activityId: string | null
+    createdAt: Date | null
+  }
+
+  export type FavoriteActivityMaxAggregateOutputType = {
+    id: string | null
+    userId: string | null
+    activityId: string | null
+    createdAt: Date | null
+  }
+
+  export type FavoriteActivityCountAggregateOutputType = {
+    id: number
+    userId: number
+    activityId: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type FavoriteActivityMinAggregateInputType = {
+    id?: true
+    userId?: true
+    activityId?: true
+    createdAt?: true
+  }
+
+  export type FavoriteActivityMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    activityId?: true
+    createdAt?: true
+  }
+
+  export type FavoriteActivityCountAggregateInputType = {
+    id?: true
+    userId?: true
+    activityId?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type FavoriteActivityAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FavoriteActivity to aggregate.
+     */
+    where?: FavoriteActivityWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FavoriteActivities to fetch.
+     */
+    orderBy?: FavoriteActivityOrderByWithRelationInput | FavoriteActivityOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FavoriteActivityWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FavoriteActivities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FavoriteActivities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FavoriteActivities
+    **/
+    _count?: true | FavoriteActivityCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FavoriteActivityMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FavoriteActivityMaxAggregateInputType
+  }
+
+  export type GetFavoriteActivityAggregateType<T extends FavoriteActivityAggregateArgs> = {
+        [P in keyof T & keyof AggregateFavoriteActivity]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFavoriteActivity[P]>
+      : GetScalarType<T[P], AggregateFavoriteActivity[P]>
+  }
+
+
+
+
+  export type FavoriteActivityGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FavoriteActivityWhereInput
+    orderBy?: FavoriteActivityOrderByWithAggregationInput | FavoriteActivityOrderByWithAggregationInput[]
+    by: FavoriteActivityScalarFieldEnum[] | FavoriteActivityScalarFieldEnum
+    having?: FavoriteActivityScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FavoriteActivityCountAggregateInputType | true
+    _min?: FavoriteActivityMinAggregateInputType
+    _max?: FavoriteActivityMaxAggregateInputType
+  }
+
+  export type FavoriteActivityGroupByOutputType = {
+    id: string
+    userId: string
+    activityId: string
+    createdAt: Date
+    _count: FavoriteActivityCountAggregateOutputType | null
+    _min: FavoriteActivityMinAggregateOutputType | null
+    _max: FavoriteActivityMaxAggregateOutputType | null
+  }
+
+  type GetFavoriteActivityGroupByPayload<T extends FavoriteActivityGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FavoriteActivityGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FavoriteActivityGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FavoriteActivityGroupByOutputType[P]>
+            : GetScalarType<T[P], FavoriteActivityGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FavoriteActivitySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    activityId?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    activity?: boolean | ActivityDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["favoriteActivity"]>
+
+  export type FavoriteActivitySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    activityId?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    activity?: boolean | ActivityDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["favoriteActivity"]>
+
+  export type FavoriteActivitySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    activityId?: boolean
+    createdAt?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    activity?: boolean | ActivityDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["favoriteActivity"]>
+
+  export type FavoriteActivitySelectScalar = {
+    id?: boolean
+    userId?: boolean
+    activityId?: boolean
+    createdAt?: boolean
+  }
+
+  export type FavoriteActivityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "activityId" | "createdAt", ExtArgs["result"]["favoriteActivity"]>
+  export type FavoriteActivityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    activity?: boolean | ActivityDefaultArgs<ExtArgs>
+  }
+  export type FavoriteActivityIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    activity?: boolean | ActivityDefaultArgs<ExtArgs>
+  }
+  export type FavoriteActivityIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    activity?: boolean | ActivityDefaultArgs<ExtArgs>
+  }
+
+  export type $FavoriteActivityPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FavoriteActivity"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      activity: Prisma.$ActivityPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      userId: string
+      activityId: string
+      createdAt: Date
+    }, ExtArgs["result"]["favoriteActivity"]>
+    composites: {}
+  }
+
+  type FavoriteActivityGetPayload<S extends boolean | null | undefined | FavoriteActivityDefaultArgs> = $Result.GetResult<Prisma.$FavoriteActivityPayload, S>
+
+  type FavoriteActivityCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FavoriteActivityFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FavoriteActivityCountAggregateInputType | true
+    }
+
+  export interface FavoriteActivityDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FavoriteActivity'], meta: { name: 'FavoriteActivity' } }
+    /**
+     * Find zero or one FavoriteActivity that matches the filter.
+     * @param {FavoriteActivityFindUniqueArgs} args - Arguments to find a FavoriteActivity
+     * @example
+     * // Get one FavoriteActivity
+     * const favoriteActivity = await prisma.favoriteActivity.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FavoriteActivityFindUniqueArgs>(args: SelectSubset<T, FavoriteActivityFindUniqueArgs<ExtArgs>>): Prisma__FavoriteActivityClient<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FavoriteActivity that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FavoriteActivityFindUniqueOrThrowArgs} args - Arguments to find a FavoriteActivity
+     * @example
+     * // Get one FavoriteActivity
+     * const favoriteActivity = await prisma.favoriteActivity.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FavoriteActivityFindUniqueOrThrowArgs>(args: SelectSubset<T, FavoriteActivityFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FavoriteActivityClient<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FavoriteActivity that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FavoriteActivityFindFirstArgs} args - Arguments to find a FavoriteActivity
+     * @example
+     * // Get one FavoriteActivity
+     * const favoriteActivity = await prisma.favoriteActivity.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FavoriteActivityFindFirstArgs>(args?: SelectSubset<T, FavoriteActivityFindFirstArgs<ExtArgs>>): Prisma__FavoriteActivityClient<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FavoriteActivity that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FavoriteActivityFindFirstOrThrowArgs} args - Arguments to find a FavoriteActivity
+     * @example
+     * // Get one FavoriteActivity
+     * const favoriteActivity = await prisma.favoriteActivity.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FavoriteActivityFindFirstOrThrowArgs>(args?: SelectSubset<T, FavoriteActivityFindFirstOrThrowArgs<ExtArgs>>): Prisma__FavoriteActivityClient<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FavoriteActivities that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FavoriteActivityFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FavoriteActivities
+     * const favoriteActivities = await prisma.favoriteActivity.findMany()
+     * 
+     * // Get first 10 FavoriteActivities
+     * const favoriteActivities = await prisma.favoriteActivity.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const favoriteActivityWithIdOnly = await prisma.favoriteActivity.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends FavoriteActivityFindManyArgs>(args?: SelectSubset<T, FavoriteActivityFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FavoriteActivity.
+     * @param {FavoriteActivityCreateArgs} args - Arguments to create a FavoriteActivity.
+     * @example
+     * // Create one FavoriteActivity
+     * const FavoriteActivity = await prisma.favoriteActivity.create({
+     *   data: {
+     *     // ... data to create a FavoriteActivity
+     *   }
+     * })
+     * 
+     */
+    create<T extends FavoriteActivityCreateArgs>(args: SelectSubset<T, FavoriteActivityCreateArgs<ExtArgs>>): Prisma__FavoriteActivityClient<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FavoriteActivities.
+     * @param {FavoriteActivityCreateManyArgs} args - Arguments to create many FavoriteActivities.
+     * @example
+     * // Create many FavoriteActivities
+     * const favoriteActivity = await prisma.favoriteActivity.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FavoriteActivityCreateManyArgs>(args?: SelectSubset<T, FavoriteActivityCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FavoriteActivities and returns the data saved in the database.
+     * @param {FavoriteActivityCreateManyAndReturnArgs} args - Arguments to create many FavoriteActivities.
+     * @example
+     * // Create many FavoriteActivities
+     * const favoriteActivity = await prisma.favoriteActivity.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FavoriteActivities and only return the `id`
+     * const favoriteActivityWithIdOnly = await prisma.favoriteActivity.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FavoriteActivityCreateManyAndReturnArgs>(args?: SelectSubset<T, FavoriteActivityCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FavoriteActivity.
+     * @param {FavoriteActivityDeleteArgs} args - Arguments to delete one FavoriteActivity.
+     * @example
+     * // Delete one FavoriteActivity
+     * const FavoriteActivity = await prisma.favoriteActivity.delete({
+     *   where: {
+     *     // ... filter to delete one FavoriteActivity
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FavoriteActivityDeleteArgs>(args: SelectSubset<T, FavoriteActivityDeleteArgs<ExtArgs>>): Prisma__FavoriteActivityClient<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FavoriteActivity.
+     * @param {FavoriteActivityUpdateArgs} args - Arguments to update one FavoriteActivity.
+     * @example
+     * // Update one FavoriteActivity
+     * const favoriteActivity = await prisma.favoriteActivity.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FavoriteActivityUpdateArgs>(args: SelectSubset<T, FavoriteActivityUpdateArgs<ExtArgs>>): Prisma__FavoriteActivityClient<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FavoriteActivities.
+     * @param {FavoriteActivityDeleteManyArgs} args - Arguments to filter FavoriteActivities to delete.
+     * @example
+     * // Delete a few FavoriteActivities
+     * const { count } = await prisma.favoriteActivity.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FavoriteActivityDeleteManyArgs>(args?: SelectSubset<T, FavoriteActivityDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FavoriteActivities.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FavoriteActivityUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FavoriteActivities
+     * const favoriteActivity = await prisma.favoriteActivity.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FavoriteActivityUpdateManyArgs>(args: SelectSubset<T, FavoriteActivityUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FavoriteActivities and returns the data updated in the database.
+     * @param {FavoriteActivityUpdateManyAndReturnArgs} args - Arguments to update many FavoriteActivities.
+     * @example
+     * // Update many FavoriteActivities
+     * const favoriteActivity = await prisma.favoriteActivity.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FavoriteActivities and only return the `id`
+     * const favoriteActivityWithIdOnly = await prisma.favoriteActivity.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FavoriteActivityUpdateManyAndReturnArgs>(args: SelectSubset<T, FavoriteActivityUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FavoriteActivity.
+     * @param {FavoriteActivityUpsertArgs} args - Arguments to update or create a FavoriteActivity.
+     * @example
+     * // Update or create a FavoriteActivity
+     * const favoriteActivity = await prisma.favoriteActivity.upsert({
+     *   create: {
+     *     // ... data to create a FavoriteActivity
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FavoriteActivity we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FavoriteActivityUpsertArgs>(args: SelectSubset<T, FavoriteActivityUpsertArgs<ExtArgs>>): Prisma__FavoriteActivityClient<$Result.GetResult<Prisma.$FavoriteActivityPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FavoriteActivities.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FavoriteActivityCountArgs} args - Arguments to filter FavoriteActivities to count.
+     * @example
+     * // Count the number of FavoriteActivities
+     * const count = await prisma.favoriteActivity.count({
+     *   where: {
+     *     // ... the filter for the FavoriteActivities we want to count
+     *   }
+     * })
+    **/
+    count<T extends FavoriteActivityCountArgs>(
+      args?: Subset<T, FavoriteActivityCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FavoriteActivityCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FavoriteActivity.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FavoriteActivityAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FavoriteActivityAggregateArgs>(args: Subset<T, FavoriteActivityAggregateArgs>): Prisma.PrismaPromise<GetFavoriteActivityAggregateType<T>>
+
+    /**
+     * Group by FavoriteActivity.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FavoriteActivityGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FavoriteActivityGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FavoriteActivityGroupByArgs['orderBy'] }
+        : { orderBy?: FavoriteActivityGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FavoriteActivityGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFavoriteActivityGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FavoriteActivity model
+   */
+  readonly fields: FavoriteActivityFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FavoriteActivity.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FavoriteActivityClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    activity<T extends ActivityDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ActivityDefaultArgs<ExtArgs>>): Prisma__ActivityClient<$Result.GetResult<Prisma.$ActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FavoriteActivity model
+   */
+  interface FavoriteActivityFieldRefs {
+    readonly id: FieldRef<"FavoriteActivity", 'String'>
+    readonly userId: FieldRef<"FavoriteActivity", 'String'>
+    readonly activityId: FieldRef<"FavoriteActivity", 'String'>
+    readonly createdAt: FieldRef<"FavoriteActivity", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FavoriteActivity findUnique
+   */
+  export type FavoriteActivityFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which FavoriteActivity to fetch.
+     */
+    where: FavoriteActivityWhereUniqueInput
+  }
+
+  /**
+   * FavoriteActivity findUniqueOrThrow
+   */
+  export type FavoriteActivityFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which FavoriteActivity to fetch.
+     */
+    where: FavoriteActivityWhereUniqueInput
+  }
+
+  /**
+   * FavoriteActivity findFirst
+   */
+  export type FavoriteActivityFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which FavoriteActivity to fetch.
+     */
+    where?: FavoriteActivityWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FavoriteActivities to fetch.
+     */
+    orderBy?: FavoriteActivityOrderByWithRelationInput | FavoriteActivityOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FavoriteActivities.
+     */
+    cursor?: FavoriteActivityWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FavoriteActivities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FavoriteActivities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FavoriteActivities.
+     */
+    distinct?: FavoriteActivityScalarFieldEnum | FavoriteActivityScalarFieldEnum[]
+  }
+
+  /**
+   * FavoriteActivity findFirstOrThrow
+   */
+  export type FavoriteActivityFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which FavoriteActivity to fetch.
+     */
+    where?: FavoriteActivityWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FavoriteActivities to fetch.
+     */
+    orderBy?: FavoriteActivityOrderByWithRelationInput | FavoriteActivityOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FavoriteActivities.
+     */
+    cursor?: FavoriteActivityWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FavoriteActivities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FavoriteActivities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FavoriteActivities.
+     */
+    distinct?: FavoriteActivityScalarFieldEnum | FavoriteActivityScalarFieldEnum[]
+  }
+
+  /**
+   * FavoriteActivity findMany
+   */
+  export type FavoriteActivityFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * Filter, which FavoriteActivities to fetch.
+     */
+    where?: FavoriteActivityWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FavoriteActivities to fetch.
+     */
+    orderBy?: FavoriteActivityOrderByWithRelationInput | FavoriteActivityOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FavoriteActivities.
+     */
+    cursor?: FavoriteActivityWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FavoriteActivities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FavoriteActivities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FavoriteActivities.
+     */
+    distinct?: FavoriteActivityScalarFieldEnum | FavoriteActivityScalarFieldEnum[]
+  }
+
+  /**
+   * FavoriteActivity create
+   */
+  export type FavoriteActivityCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FavoriteActivity.
+     */
+    data: XOR<FavoriteActivityCreateInput, FavoriteActivityUncheckedCreateInput>
+  }
+
+  /**
+   * FavoriteActivity createMany
+   */
+  export type FavoriteActivityCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FavoriteActivities.
+     */
+    data: FavoriteActivityCreateManyInput | FavoriteActivityCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FavoriteActivity createManyAndReturn
+   */
+  export type FavoriteActivityCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * The data used to create many FavoriteActivities.
+     */
+    data: FavoriteActivityCreateManyInput | FavoriteActivityCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FavoriteActivity update
+   */
+  export type FavoriteActivityUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FavoriteActivity.
+     */
+    data: XOR<FavoriteActivityUpdateInput, FavoriteActivityUncheckedUpdateInput>
+    /**
+     * Choose, which FavoriteActivity to update.
+     */
+    where: FavoriteActivityWhereUniqueInput
+  }
+
+  /**
+   * FavoriteActivity updateMany
+   */
+  export type FavoriteActivityUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FavoriteActivities.
+     */
+    data: XOR<FavoriteActivityUpdateManyMutationInput, FavoriteActivityUncheckedUpdateManyInput>
+    /**
+     * Filter which FavoriteActivities to update
+     */
+    where?: FavoriteActivityWhereInput
+    /**
+     * Limit how many FavoriteActivities to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FavoriteActivity updateManyAndReturn
+   */
+  export type FavoriteActivityUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * The data used to update FavoriteActivities.
+     */
+    data: XOR<FavoriteActivityUpdateManyMutationInput, FavoriteActivityUncheckedUpdateManyInput>
+    /**
+     * Filter which FavoriteActivities to update
+     */
+    where?: FavoriteActivityWhereInput
+    /**
+     * Limit how many FavoriteActivities to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FavoriteActivity upsert
+   */
+  export type FavoriteActivityUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FavoriteActivity to update in case it exists.
+     */
+    where: FavoriteActivityWhereUniqueInput
+    /**
+     * In case the FavoriteActivity found by the `where` argument doesn't exist, create a new FavoriteActivity with this data.
+     */
+    create: XOR<FavoriteActivityCreateInput, FavoriteActivityUncheckedCreateInput>
+    /**
+     * In case the FavoriteActivity was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FavoriteActivityUpdateInput, FavoriteActivityUncheckedUpdateInput>
+  }
+
+  /**
+   * FavoriteActivity delete
+   */
+  export type FavoriteActivityDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+    /**
+     * Filter which FavoriteActivity to delete.
+     */
+    where: FavoriteActivityWhereUniqueInput
+  }
+
+  /**
+   * FavoriteActivity deleteMany
+   */
+  export type FavoriteActivityDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FavoriteActivities to delete
+     */
+    where?: FavoriteActivityWhereInput
+    /**
+     * Limit how many FavoriteActivities to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FavoriteActivity without action
+   */
+  export type FavoriteActivityDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FavoriteActivity
+     */
+    select?: FavoriteActivitySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FavoriteActivity
+     */
+    omit?: FavoriteActivityOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FavoriteActivityInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -25117,6 +28783,8 @@ export namespace Prisma {
     language: 'language',
     popularityScore: 'popularityScore',
     averageBudget: 'averageBudget',
+    searchCount: 'searchCount',
+    isTrending: 'isTrending',
     weatherInfo: 'weatherInfo',
     heroImage: 'heroImage',
     createdAt: 'createdAt'
@@ -25143,6 +28811,7 @@ export namespace Prisma {
     bookingUrl: 'bookingUrl',
     image: 'image',
     aiRecommended: 'aiRecommended',
+    saveCount: 'saveCount',
     createdAt: 'createdAt'
   };
 
@@ -25326,6 +28995,43 @@ export namespace Prisma {
   export type FavoritePlaceScalarFieldEnum = (typeof FavoritePlaceScalarFieldEnum)[keyof typeof FavoritePlaceScalarFieldEnum]
 
 
+  export const RecommendationCacheScalarFieldEnum: {
+    id: 'id',
+    key: 'key',
+    data: 'data',
+    expiresAt: 'expiresAt',
+    createdAt: 'createdAt'
+  };
+
+  export type RecommendationCacheScalarFieldEnum = (typeof RecommendationCacheScalarFieldEnum)[keyof typeof RecommendationCacheScalarFieldEnum]
+
+
+  export const GlobalActivityScalarFieldEnum: {
+    id: 'id',
+    foursquareId: 'foursquareId',
+    title: 'title',
+    description: 'description',
+    category: 'category',
+    location: 'location',
+    cityId: 'cityId',
+    rating: 'rating',
+    image: 'image',
+    createdAt: 'createdAt'
+  };
+
+  export type GlobalActivityScalarFieldEnum = (typeof GlobalActivityScalarFieldEnum)[keyof typeof GlobalActivityScalarFieldEnum]
+
+
+  export const FavoriteActivityScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    activityId: 'activityId',
+    createdAt: 'createdAt'
+  };
+
+  export type FavoriteActivityScalarFieldEnum = (typeof FavoriteActivityScalarFieldEnum)[keyof typeof FavoriteActivityScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -25340,6 +29046,13 @@ export namespace Prisma {
   };
 
   export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+  export const JsonNullValueInput: {
+    JsonNull: typeof JsonNull
+  };
+
+  export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
   export const QueryMode: {
@@ -25580,6 +29293,7 @@ export namespace Prisma {
     aiChats?: AIChatListRelationFilter
     comments?: CommentListRelationFilter
     likes?: LikeListRelationFilter
+    favoriteActivities?: FavoriteActivityListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -25623,6 +29337,7 @@ export namespace Prisma {
     aiChats?: AIChatOrderByRelationAggregateInput
     comments?: CommentOrderByRelationAggregateInput
     likes?: LikeOrderByRelationAggregateInput
+    favoriteActivities?: FavoriteActivityOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -25669,6 +29384,7 @@ export namespace Prisma {
     aiChats?: AIChatListRelationFilter
     comments?: CommentListRelationFilter
     likes?: LikeListRelationFilter
+    favoriteActivities?: FavoriteActivityListRelationFilter
   }, "id" | "username" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -26032,12 +29748,15 @@ export namespace Prisma {
     language?: StringNullableFilter<"City"> | string | null
     popularityScore?: FloatNullableFilter<"City"> | number | null
     averageBudget?: FloatNullableFilter<"City"> | number | null
+    searchCount?: IntFilter<"City"> | number
+    isTrending?: BoolFilter<"City"> | boolean
     weatherInfo?: StringNullableFilter<"City"> | string | null
     heroImage?: StringNullableFilter<"City"> | string | null
     createdAt?: DateTimeFilter<"City"> | Date | string
     sections?: TripSectionListRelationFilter
     activities?: ActivityListRelationFilter
     savedByUsers?: FavoritePlaceListRelationFilter
+    globalActivities?: GlobalActivityListRelationFilter
   }
 
   export type CityOrderByWithRelationInput = {
@@ -26053,16 +29772,20 @@ export namespace Prisma {
     language?: SortOrderInput | SortOrder
     popularityScore?: SortOrderInput | SortOrder
     averageBudget?: SortOrderInput | SortOrder
+    searchCount?: SortOrder
+    isTrending?: SortOrder
     weatherInfo?: SortOrderInput | SortOrder
     heroImage?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     sections?: TripSectionOrderByRelationAggregateInput
     activities?: ActivityOrderByRelationAggregateInput
     savedByUsers?: FavoritePlaceOrderByRelationAggregateInput
+    globalActivities?: GlobalActivityOrderByRelationAggregateInput
   }
 
   export type CityWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    name_country?: CityNameCountryCompoundUniqueInput
     AND?: CityWhereInput | CityWhereInput[]
     OR?: CityWhereInput[]
     NOT?: CityWhereInput | CityWhereInput[]
@@ -26077,13 +29800,16 @@ export namespace Prisma {
     language?: StringNullableFilter<"City"> | string | null
     popularityScore?: FloatNullableFilter<"City"> | number | null
     averageBudget?: FloatNullableFilter<"City"> | number | null
+    searchCount?: IntFilter<"City"> | number
+    isTrending?: BoolFilter<"City"> | boolean
     weatherInfo?: StringNullableFilter<"City"> | string | null
     heroImage?: StringNullableFilter<"City"> | string | null
     createdAt?: DateTimeFilter<"City"> | Date | string
     sections?: TripSectionListRelationFilter
     activities?: ActivityListRelationFilter
     savedByUsers?: FavoritePlaceListRelationFilter
-  }, "id">
+    globalActivities?: GlobalActivityListRelationFilter
+  }, "id" | "name_country">
 
   export type CityOrderByWithAggregationInput = {
     id?: SortOrder
@@ -26098,6 +29824,8 @@ export namespace Prisma {
     language?: SortOrderInput | SortOrder
     popularityScore?: SortOrderInput | SortOrder
     averageBudget?: SortOrderInput | SortOrder
+    searchCount?: SortOrder
+    isTrending?: SortOrder
     weatherInfo?: SortOrderInput | SortOrder
     heroImage?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -26124,6 +29852,8 @@ export namespace Prisma {
     language?: StringNullableWithAggregatesFilter<"City"> | string | null
     popularityScore?: FloatNullableWithAggregatesFilter<"City"> | number | null
     averageBudget?: FloatNullableWithAggregatesFilter<"City"> | number | null
+    searchCount?: IntWithAggregatesFilter<"City"> | number
+    isTrending?: BoolWithAggregatesFilter<"City"> | boolean
     weatherInfo?: StringNullableWithAggregatesFilter<"City"> | string | null
     heroImage?: StringNullableWithAggregatesFilter<"City"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"City"> | Date | string
@@ -26150,11 +29880,13 @@ export namespace Prisma {
     bookingUrl?: StringNullableFilter<"Activity"> | string | null
     image?: StringNullableFilter<"Activity"> | string | null
     aiRecommended?: BoolFilter<"Activity"> | boolean
+    saveCount?: IntFilter<"Activity"> | number
     createdAt?: DateTimeFilter<"Activity"> | Date | string
     trip?: XOR<TripScalarRelationFilter, TripWhereInput>
     section?: XOR<TripSectionNullableScalarRelationFilter, TripSectionWhereInput> | null
     city?: XOR<CityNullableScalarRelationFilter, CityWhereInput> | null
     reviews?: ReviewListRelationFilter
+    favoriteActivities?: FavoriteActivityListRelationFilter
   }
 
   export type ActivityOrderByWithRelationInput = {
@@ -26175,11 +29907,13 @@ export namespace Prisma {
     bookingUrl?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     aiRecommended?: SortOrder
+    saveCount?: SortOrder
     createdAt?: SortOrder
     trip?: TripOrderByWithRelationInput
     section?: TripSectionOrderByWithRelationInput
     city?: CityOrderByWithRelationInput
     reviews?: ReviewOrderByRelationAggregateInput
+    favoriteActivities?: FavoriteActivityOrderByRelationAggregateInput
   }
 
   export type ActivityWhereUniqueInput = Prisma.AtLeast<{
@@ -26203,11 +29937,13 @@ export namespace Prisma {
     bookingUrl?: StringNullableFilter<"Activity"> | string | null
     image?: StringNullableFilter<"Activity"> | string | null
     aiRecommended?: BoolFilter<"Activity"> | boolean
+    saveCount?: IntFilter<"Activity"> | number
     createdAt?: DateTimeFilter<"Activity"> | Date | string
     trip?: XOR<TripScalarRelationFilter, TripWhereInput>
     section?: XOR<TripSectionNullableScalarRelationFilter, TripSectionWhereInput> | null
     city?: XOR<CityNullableScalarRelationFilter, CityWhereInput> | null
     reviews?: ReviewListRelationFilter
+    favoriteActivities?: FavoriteActivityListRelationFilter
   }, "id">
 
   export type ActivityOrderByWithAggregationInput = {
@@ -26228,6 +29964,7 @@ export namespace Prisma {
     bookingUrl?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     aiRecommended?: SortOrder
+    saveCount?: SortOrder
     createdAt?: SortOrder
     _count?: ActivityCountOrderByAggregateInput
     _avg?: ActivityAvgOrderByAggregateInput
@@ -26257,6 +29994,7 @@ export namespace Prisma {
     bookingUrl?: StringNullableWithAggregatesFilter<"Activity"> | string | null
     image?: StringNullableWithAggregatesFilter<"Activity"> | string | null
     aiRecommended?: BoolWithAggregatesFilter<"Activity"> | boolean
+    saveCount?: IntWithAggregatesFilter<"Activity"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Activity"> | Date | string
   }
 
@@ -27211,6 +30949,194 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"FavoritePlace"> | Date | string
   }
 
+  export type RecommendationCacheWhereInput = {
+    AND?: RecommendationCacheWhereInput | RecommendationCacheWhereInput[]
+    OR?: RecommendationCacheWhereInput[]
+    NOT?: RecommendationCacheWhereInput | RecommendationCacheWhereInput[]
+    id?: StringFilter<"RecommendationCache"> | string
+    key?: StringFilter<"RecommendationCache"> | string
+    data?: JsonFilter<"RecommendationCache">
+    expiresAt?: DateTimeFilter<"RecommendationCache"> | Date | string
+    createdAt?: DateTimeFilter<"RecommendationCache"> | Date | string
+  }
+
+  export type RecommendationCacheOrderByWithRelationInput = {
+    id?: SortOrder
+    key?: SortOrder
+    data?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RecommendationCacheWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    key?: string
+    AND?: RecommendationCacheWhereInput | RecommendationCacheWhereInput[]
+    OR?: RecommendationCacheWhereInput[]
+    NOT?: RecommendationCacheWhereInput | RecommendationCacheWhereInput[]
+    data?: JsonFilter<"RecommendationCache">
+    expiresAt?: DateTimeFilter<"RecommendationCache"> | Date | string
+    createdAt?: DateTimeFilter<"RecommendationCache"> | Date | string
+  }, "id" | "key">
+
+  export type RecommendationCacheOrderByWithAggregationInput = {
+    id?: SortOrder
+    key?: SortOrder
+    data?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: RecommendationCacheCountOrderByAggregateInput
+    _max?: RecommendationCacheMaxOrderByAggregateInput
+    _min?: RecommendationCacheMinOrderByAggregateInput
+  }
+
+  export type RecommendationCacheScalarWhereWithAggregatesInput = {
+    AND?: RecommendationCacheScalarWhereWithAggregatesInput | RecommendationCacheScalarWhereWithAggregatesInput[]
+    OR?: RecommendationCacheScalarWhereWithAggregatesInput[]
+    NOT?: RecommendationCacheScalarWhereWithAggregatesInput | RecommendationCacheScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"RecommendationCache"> | string
+    key?: StringWithAggregatesFilter<"RecommendationCache"> | string
+    data?: JsonWithAggregatesFilter<"RecommendationCache">
+    expiresAt?: DateTimeWithAggregatesFilter<"RecommendationCache"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"RecommendationCache"> | Date | string
+  }
+
+  export type GlobalActivityWhereInput = {
+    AND?: GlobalActivityWhereInput | GlobalActivityWhereInput[]
+    OR?: GlobalActivityWhereInput[]
+    NOT?: GlobalActivityWhereInput | GlobalActivityWhereInput[]
+    id?: StringFilter<"GlobalActivity"> | string
+    foursquareId?: StringNullableFilter<"GlobalActivity"> | string | null
+    title?: StringFilter<"GlobalActivity"> | string
+    description?: StringNullableFilter<"GlobalActivity"> | string | null
+    category?: StringNullableFilter<"GlobalActivity"> | string | null
+    location?: StringNullableFilter<"GlobalActivity"> | string | null
+    cityId?: StringNullableFilter<"GlobalActivity"> | string | null
+    rating?: FloatNullableFilter<"GlobalActivity"> | number | null
+    image?: StringNullableFilter<"GlobalActivity"> | string | null
+    createdAt?: DateTimeFilter<"GlobalActivity"> | Date | string
+    city?: XOR<CityNullableScalarRelationFilter, CityWhereInput> | null
+  }
+
+  export type GlobalActivityOrderByWithRelationInput = {
+    id?: SortOrder
+    foursquareId?: SortOrderInput | SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    category?: SortOrderInput | SortOrder
+    location?: SortOrderInput | SortOrder
+    cityId?: SortOrderInput | SortOrder
+    rating?: SortOrderInput | SortOrder
+    image?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    city?: CityOrderByWithRelationInput
+  }
+
+  export type GlobalActivityWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    foursquareId?: string
+    AND?: GlobalActivityWhereInput | GlobalActivityWhereInput[]
+    OR?: GlobalActivityWhereInput[]
+    NOT?: GlobalActivityWhereInput | GlobalActivityWhereInput[]
+    title?: StringFilter<"GlobalActivity"> | string
+    description?: StringNullableFilter<"GlobalActivity"> | string | null
+    category?: StringNullableFilter<"GlobalActivity"> | string | null
+    location?: StringNullableFilter<"GlobalActivity"> | string | null
+    cityId?: StringNullableFilter<"GlobalActivity"> | string | null
+    rating?: FloatNullableFilter<"GlobalActivity"> | number | null
+    image?: StringNullableFilter<"GlobalActivity"> | string | null
+    createdAt?: DateTimeFilter<"GlobalActivity"> | Date | string
+    city?: XOR<CityNullableScalarRelationFilter, CityWhereInput> | null
+  }, "id" | "foursquareId">
+
+  export type GlobalActivityOrderByWithAggregationInput = {
+    id?: SortOrder
+    foursquareId?: SortOrderInput | SortOrder
+    title?: SortOrder
+    description?: SortOrderInput | SortOrder
+    category?: SortOrderInput | SortOrder
+    location?: SortOrderInput | SortOrder
+    cityId?: SortOrderInput | SortOrder
+    rating?: SortOrderInput | SortOrder
+    image?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    _count?: GlobalActivityCountOrderByAggregateInput
+    _avg?: GlobalActivityAvgOrderByAggregateInput
+    _max?: GlobalActivityMaxOrderByAggregateInput
+    _min?: GlobalActivityMinOrderByAggregateInput
+    _sum?: GlobalActivitySumOrderByAggregateInput
+  }
+
+  export type GlobalActivityScalarWhereWithAggregatesInput = {
+    AND?: GlobalActivityScalarWhereWithAggregatesInput | GlobalActivityScalarWhereWithAggregatesInput[]
+    OR?: GlobalActivityScalarWhereWithAggregatesInput[]
+    NOT?: GlobalActivityScalarWhereWithAggregatesInput | GlobalActivityScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"GlobalActivity"> | string
+    foursquareId?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
+    title?: StringWithAggregatesFilter<"GlobalActivity"> | string
+    description?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
+    category?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
+    location?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
+    cityId?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
+    rating?: FloatNullableWithAggregatesFilter<"GlobalActivity"> | number | null
+    image?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"GlobalActivity"> | Date | string
+  }
+
+  export type FavoriteActivityWhereInput = {
+    AND?: FavoriteActivityWhereInput | FavoriteActivityWhereInput[]
+    OR?: FavoriteActivityWhereInput[]
+    NOT?: FavoriteActivityWhereInput | FavoriteActivityWhereInput[]
+    id?: StringFilter<"FavoriteActivity"> | string
+    userId?: StringFilter<"FavoriteActivity"> | string
+    activityId?: StringFilter<"FavoriteActivity"> | string
+    createdAt?: DateTimeFilter<"FavoriteActivity"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    activity?: XOR<ActivityScalarRelationFilter, ActivityWhereInput>
+  }
+
+  export type FavoriteActivityOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    activityId?: SortOrder
+    createdAt?: SortOrder
+    user?: UserOrderByWithRelationInput
+    activity?: ActivityOrderByWithRelationInput
+  }
+
+  export type FavoriteActivityWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    userId_activityId?: FavoriteActivityUserIdActivityIdCompoundUniqueInput
+    AND?: FavoriteActivityWhereInput | FavoriteActivityWhereInput[]
+    OR?: FavoriteActivityWhereInput[]
+    NOT?: FavoriteActivityWhereInput | FavoriteActivityWhereInput[]
+    userId?: StringFilter<"FavoriteActivity"> | string
+    activityId?: StringFilter<"FavoriteActivity"> | string
+    createdAt?: DateTimeFilter<"FavoriteActivity"> | Date | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    activity?: XOR<ActivityScalarRelationFilter, ActivityWhereInput>
+  }, "id" | "userId_activityId">
+
+  export type FavoriteActivityOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    activityId?: SortOrder
+    createdAt?: SortOrder
+    _count?: FavoriteActivityCountOrderByAggregateInput
+    _max?: FavoriteActivityMaxOrderByAggregateInput
+    _min?: FavoriteActivityMinOrderByAggregateInput
+  }
+
+  export type FavoriteActivityScalarWhereWithAggregatesInput = {
+    AND?: FavoriteActivityScalarWhereWithAggregatesInput | FavoriteActivityScalarWhereWithAggregatesInput[]
+    OR?: FavoriteActivityScalarWhereWithAggregatesInput[]
+    NOT?: FavoriteActivityScalarWhereWithAggregatesInput | FavoriteActivityScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"FavoriteActivity"> | string
+    userId?: StringWithAggregatesFilter<"FavoriteActivity"> | string
+    activityId?: StringWithAggregatesFilter<"FavoriteActivity"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"FavoriteActivity"> | Date | string
+  }
+
   export type UserCreateInput = {
     id?: string
     firstName: string
@@ -27252,6 +31178,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -27295,6 +31222,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -27338,6 +31266,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -27381,6 +31310,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -27819,12 +31749,15 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
     sections?: TripSectionCreateNestedManyWithoutCityInput
     activities?: ActivityCreateNestedManyWithoutCityInput
     savedByUsers?: FavoritePlaceCreateNestedManyWithoutCityInput
+    globalActivities?: GlobalActivityCreateNestedManyWithoutCityInput
   }
 
   export type CityUncheckedCreateInput = {
@@ -27840,12 +31773,15 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
     sections?: TripSectionUncheckedCreateNestedManyWithoutCityInput
     activities?: ActivityUncheckedCreateNestedManyWithoutCityInput
     savedByUsers?: FavoritePlaceUncheckedCreateNestedManyWithoutCityInput
+    globalActivities?: GlobalActivityUncheckedCreateNestedManyWithoutCityInput
   }
 
   export type CityUpdateInput = {
@@ -27861,12 +31797,15 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: TripSectionUpdateManyWithoutCityNestedInput
     activities?: ActivityUpdateManyWithoutCityNestedInput
     savedByUsers?: FavoritePlaceUpdateManyWithoutCityNestedInput
+    globalActivities?: GlobalActivityUpdateManyWithoutCityNestedInput
   }
 
   export type CityUncheckedUpdateInput = {
@@ -27882,12 +31821,15 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: TripSectionUncheckedUpdateManyWithoutCityNestedInput
     activities?: ActivityUncheckedUpdateManyWithoutCityNestedInput
     savedByUsers?: FavoritePlaceUncheckedUpdateManyWithoutCityNestedInput
+    globalActivities?: GlobalActivityUncheckedUpdateManyWithoutCityNestedInput
   }
 
   export type CityCreateManyInput = {
@@ -27903,6 +31845,8 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
@@ -27921,6 +31865,8 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -27939,6 +31885,8 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -27959,11 +31907,13 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     trip: TripCreateNestedOneWithoutActivitiesInput
     section?: TripSectionCreateNestedOneWithoutActivitiesInput
     city?: CityCreateNestedOneWithoutActivitiesInput
     reviews?: ReviewCreateNestedManyWithoutActivityInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUncheckedCreateInput = {
@@ -27984,8 +31934,10 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     reviews?: ReviewUncheckedCreateNestedManyWithoutActivityInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUpdateInput = {
@@ -28003,11 +31955,13 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     trip?: TripUpdateOneRequiredWithoutActivitiesNestedInput
     section?: TripSectionUpdateOneWithoutActivitiesNestedInput
     city?: CityUpdateOneWithoutActivitiesNestedInput
     reviews?: ReviewUpdateManyWithoutActivityNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateInput = {
@@ -28028,8 +31982,10 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     reviews?: ReviewUncheckedUpdateManyWithoutActivityNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityCreateManyInput = {
@@ -28050,6 +32006,7 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
   }
 
@@ -28068,6 +32025,7 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28089,6 +32047,7 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -29042,6 +33001,199 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type RecommendationCacheCreateInput = {
+    id?: string
+    key: string
+    data: JsonNullValueInput | InputJsonValue
+    expiresAt: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RecommendationCacheUncheckedCreateInput = {
+    id?: string
+    key: string
+    data: JsonNullValueInput | InputJsonValue
+    expiresAt: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RecommendationCacheUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RecommendationCacheUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RecommendationCacheCreateManyInput = {
+    id?: string
+    key: string
+    data: JsonNullValueInput | InputJsonValue
+    expiresAt: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RecommendationCacheUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RecommendationCacheUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    data?: JsonNullValueInput | InputJsonValue
+    expiresAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlobalActivityCreateInput = {
+    id?: string
+    foursquareId?: string | null
+    title: string
+    description?: string | null
+    category?: string | null
+    location?: string | null
+    rating?: number | null
+    image?: string | null
+    createdAt?: Date | string
+    city?: CityCreateNestedOneWithoutGlobalActivitiesInput
+  }
+
+  export type GlobalActivityUncheckedCreateInput = {
+    id?: string
+    foursquareId?: string | null
+    title: string
+    description?: string | null
+    category?: string | null
+    location?: string | null
+    cityId?: string | null
+    rating?: number | null
+    image?: string | null
+    createdAt?: Date | string
+  }
+
+  export type GlobalActivityUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    foursquareId?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    city?: CityUpdateOneWithoutGlobalActivitiesNestedInput
+  }
+
+  export type GlobalActivityUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    foursquareId?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    cityId?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlobalActivityCreateManyInput = {
+    id?: string
+    foursquareId?: string | null
+    title: string
+    description?: string | null
+    category?: string | null
+    location?: string | null
+    cityId?: string | null
+    rating?: number | null
+    image?: string | null
+    createdAt?: Date | string
+  }
+
+  export type GlobalActivityUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    foursquareId?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlobalActivityUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    foursquareId?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    cityId?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FavoriteActivityCreateInput = {
+    id?: string
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutFavoriteActivitiesInput
+    activity: ActivityCreateNestedOneWithoutFavoriteActivitiesInput
+  }
+
+  export type FavoriteActivityUncheckedCreateInput = {
+    id?: string
+    userId: string
+    activityId: string
+    createdAt?: Date | string
+  }
+
+  export type FavoriteActivityUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutFavoriteActivitiesNestedInput
+    activity?: ActivityUpdateOneRequiredWithoutFavoriteActivitiesNestedInput
+  }
+
+  export type FavoriteActivityUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    activityId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FavoriteActivityCreateManyInput = {
+    id?: string
+    userId: string
+    activityId: string
+    createdAt?: Date | string
+  }
+
+  export type FavoriteActivityUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FavoriteActivityUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    activityId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -29207,6 +33359,12 @@ export namespace Prisma {
     none?: LikeWhereInput
   }
 
+  export type FavoriteActivityListRelationFilter = {
+    every?: FavoriteActivityWhereInput
+    some?: FavoriteActivityWhereInput
+    none?: FavoriteActivityWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -29261,6 +33419,10 @@ export namespace Prisma {
   }
 
   export type LikeOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type FavoriteActivityOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -29735,6 +33897,21 @@ export namespace Prisma {
     actualExpense?: SortOrder
   }
 
+  export type GlobalActivityListRelationFilter = {
+    every?: GlobalActivityWhereInput
+    some?: GlobalActivityWhereInput
+    none?: GlobalActivityWhereInput
+  }
+
+  export type GlobalActivityOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type CityNameCountryCompoundUniqueInput = {
+    name: string
+    country: string
+  }
+
   export type CityCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
@@ -29748,6 +33925,8 @@ export namespace Prisma {
     language?: SortOrder
     popularityScore?: SortOrder
     averageBudget?: SortOrder
+    searchCount?: SortOrder
+    isTrending?: SortOrder
     weatherInfo?: SortOrder
     heroImage?: SortOrder
     createdAt?: SortOrder
@@ -29758,6 +33937,7 @@ export namespace Prisma {
     longitude?: SortOrder
     popularityScore?: SortOrder
     averageBudget?: SortOrder
+    searchCount?: SortOrder
   }
 
   export type CityMaxOrderByAggregateInput = {
@@ -29773,6 +33953,8 @@ export namespace Prisma {
     language?: SortOrder
     popularityScore?: SortOrder
     averageBudget?: SortOrder
+    searchCount?: SortOrder
+    isTrending?: SortOrder
     weatherInfo?: SortOrder
     heroImage?: SortOrder
     createdAt?: SortOrder
@@ -29791,6 +33973,8 @@ export namespace Prisma {
     language?: SortOrder
     popularityScore?: SortOrder
     averageBudget?: SortOrder
+    searchCount?: SortOrder
+    isTrending?: SortOrder
     weatherInfo?: SortOrder
     heroImage?: SortOrder
     createdAt?: SortOrder
@@ -29801,6 +33985,7 @@ export namespace Prisma {
     longitude?: SortOrder
     popularityScore?: SortOrder
     averageBudget?: SortOrder
+    searchCount?: SortOrder
   }
 
   export type EnumActivityCategoryFilter<$PrismaModel = never> = {
@@ -29844,6 +34029,7 @@ export namespace Prisma {
     bookingUrl?: SortOrder
     image?: SortOrder
     aiRecommended?: SortOrder
+    saveCount?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -29851,6 +34037,7 @@ export namespace Prisma {
     duration?: SortOrder
     price?: SortOrder
     rating?: SortOrder
+    saveCount?: SortOrder
   }
 
   export type ActivityMaxOrderByAggregateInput = {
@@ -29871,6 +34058,7 @@ export namespace Prisma {
     bookingUrl?: SortOrder
     image?: SortOrder
     aiRecommended?: SortOrder
+    saveCount?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -29892,6 +34080,7 @@ export namespace Prisma {
     bookingUrl?: SortOrder
     image?: SortOrder
     aiRecommended?: SortOrder
+    saveCount?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -29899,6 +34088,7 @@ export namespace Prisma {
     duration?: SortOrder
     price?: SortOrder
     rating?: SortOrder
+    saveCount?: SortOrder
   }
 
   export type EnumActivityCategoryWithAggregatesFilter<$PrismaModel = never> = {
@@ -30492,6 +34682,155 @@ export namespace Prisma {
     cityId?: SortOrder
     createdAt?: SortOrder
   }
+  export type JsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type RecommendationCacheCountOrderByAggregateInput = {
+    id?: SortOrder
+    key?: SortOrder
+    data?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RecommendationCacheMaxOrderByAggregateInput = {
+    id?: SortOrder
+    key?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RecommendationCacheMinOrderByAggregateInput = {
+    id?: SortOrder
+    key?: SortOrder
+    expiresAt?: SortOrder
+    createdAt?: SortOrder
+  }
+  export type JsonWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedJsonFilter<$PrismaModel>
+    _max?: NestedJsonFilter<$PrismaModel>
+  }
+
+  export type GlobalActivityCountOrderByAggregateInput = {
+    id?: SortOrder
+    foursquareId?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    category?: SortOrder
+    location?: SortOrder
+    cityId?: SortOrder
+    rating?: SortOrder
+    image?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type GlobalActivityAvgOrderByAggregateInput = {
+    rating?: SortOrder
+  }
+
+  export type GlobalActivityMaxOrderByAggregateInput = {
+    id?: SortOrder
+    foursquareId?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    category?: SortOrder
+    location?: SortOrder
+    cityId?: SortOrder
+    rating?: SortOrder
+    image?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type GlobalActivityMinOrderByAggregateInput = {
+    id?: SortOrder
+    foursquareId?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    category?: SortOrder
+    location?: SortOrder
+    cityId?: SortOrder
+    rating?: SortOrder
+    image?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type GlobalActivitySumOrderByAggregateInput = {
+    rating?: SortOrder
+  }
+
+  export type ActivityScalarRelationFilter = {
+    is?: ActivityWhereInput
+    isNot?: ActivityWhereInput
+  }
+
+  export type FavoriteActivityUserIdActivityIdCompoundUniqueInput = {
+    userId: string
+    activityId: string
+  }
+
+  export type FavoriteActivityCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    activityId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type FavoriteActivityMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    activityId?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type FavoriteActivityMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    activityId?: SortOrder
+    createdAt?: SortOrder
+  }
 
   export type TripCreateNestedManyWithoutOwnerInput = {
     create?: XOR<TripCreateWithoutOwnerInput, TripUncheckedCreateWithoutOwnerInput> | TripCreateWithoutOwnerInput[] | TripUncheckedCreateWithoutOwnerInput[]
@@ -30584,6 +34923,13 @@ export namespace Prisma {
     connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
   }
 
+  export type FavoriteActivityCreateNestedManyWithoutUserInput = {
+    create?: XOR<FavoriteActivityCreateWithoutUserInput, FavoriteActivityUncheckedCreateWithoutUserInput> | FavoriteActivityCreateWithoutUserInput[] | FavoriteActivityUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: FavoriteActivityCreateOrConnectWithoutUserInput | FavoriteActivityCreateOrConnectWithoutUserInput[]
+    createMany?: FavoriteActivityCreateManyUserInputEnvelope
+    connect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+  }
+
   export type TripUncheckedCreateNestedManyWithoutOwnerInput = {
     create?: XOR<TripCreateWithoutOwnerInput, TripUncheckedCreateWithoutOwnerInput> | TripCreateWithoutOwnerInput[] | TripUncheckedCreateWithoutOwnerInput[]
     connectOrCreate?: TripCreateOrConnectWithoutOwnerInput | TripCreateOrConnectWithoutOwnerInput[]
@@ -30673,6 +35019,13 @@ export namespace Prisma {
     connectOrCreate?: LikeCreateOrConnectWithoutUserInput | LikeCreateOrConnectWithoutUserInput[]
     createMany?: LikeCreateManyUserInputEnvelope
     connect?: LikeWhereUniqueInput | LikeWhereUniqueInput[]
+  }
+
+  export type FavoriteActivityUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<FavoriteActivityCreateWithoutUserInput, FavoriteActivityUncheckedCreateWithoutUserInput> | FavoriteActivityCreateWithoutUserInput[] | FavoriteActivityUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: FavoriteActivityCreateOrConnectWithoutUserInput | FavoriteActivityCreateOrConnectWithoutUserInput[]
+    createMany?: FavoriteActivityCreateManyUserInputEnvelope
+    connect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -30881,6 +35234,20 @@ export namespace Prisma {
     deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
   }
 
+  export type FavoriteActivityUpdateManyWithoutUserNestedInput = {
+    create?: XOR<FavoriteActivityCreateWithoutUserInput, FavoriteActivityUncheckedCreateWithoutUserInput> | FavoriteActivityCreateWithoutUserInput[] | FavoriteActivityUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: FavoriteActivityCreateOrConnectWithoutUserInput | FavoriteActivityCreateOrConnectWithoutUserInput[]
+    upsert?: FavoriteActivityUpsertWithWhereUniqueWithoutUserInput | FavoriteActivityUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: FavoriteActivityCreateManyUserInputEnvelope
+    set?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    disconnect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    delete?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    connect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    update?: FavoriteActivityUpdateWithWhereUniqueWithoutUserInput | FavoriteActivityUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: FavoriteActivityUpdateManyWithWhereWithoutUserInput | FavoriteActivityUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: FavoriteActivityScalarWhereInput | FavoriteActivityScalarWhereInput[]
+  }
+
   export type TripUncheckedUpdateManyWithoutOwnerNestedInput = {
     create?: XOR<TripCreateWithoutOwnerInput, TripUncheckedCreateWithoutOwnerInput> | TripCreateWithoutOwnerInput[] | TripUncheckedCreateWithoutOwnerInput[]
     connectOrCreate?: TripCreateOrConnectWithoutOwnerInput | TripCreateOrConnectWithoutOwnerInput[]
@@ -31061,6 +35428,20 @@ export namespace Prisma {
     update?: LikeUpdateWithWhereUniqueWithoutUserInput | LikeUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: LikeUpdateManyWithWhereWithoutUserInput | LikeUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: LikeScalarWhereInput | LikeScalarWhereInput[]
+  }
+
+  export type FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<FavoriteActivityCreateWithoutUserInput, FavoriteActivityUncheckedCreateWithoutUserInput> | FavoriteActivityCreateWithoutUserInput[] | FavoriteActivityUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: FavoriteActivityCreateOrConnectWithoutUserInput | FavoriteActivityCreateOrConnectWithoutUserInput[]
+    upsert?: FavoriteActivityUpsertWithWhereUniqueWithoutUserInput | FavoriteActivityUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: FavoriteActivityCreateManyUserInputEnvelope
+    set?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    disconnect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    delete?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    connect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    update?: FavoriteActivityUpdateWithWhereUniqueWithoutUserInput | FavoriteActivityUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: FavoriteActivityUpdateManyWithWhereWithoutUserInput | FavoriteActivityUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: FavoriteActivityScalarWhereInput | FavoriteActivityScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutTripsInput = {
@@ -31740,6 +36121,13 @@ export namespace Prisma {
     connect?: FavoritePlaceWhereUniqueInput | FavoritePlaceWhereUniqueInput[]
   }
 
+  export type GlobalActivityCreateNestedManyWithoutCityInput = {
+    create?: XOR<GlobalActivityCreateWithoutCityInput, GlobalActivityUncheckedCreateWithoutCityInput> | GlobalActivityCreateWithoutCityInput[] | GlobalActivityUncheckedCreateWithoutCityInput[]
+    connectOrCreate?: GlobalActivityCreateOrConnectWithoutCityInput | GlobalActivityCreateOrConnectWithoutCityInput[]
+    createMany?: GlobalActivityCreateManyCityInputEnvelope
+    connect?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+  }
+
   export type TripSectionUncheckedCreateNestedManyWithoutCityInput = {
     create?: XOR<TripSectionCreateWithoutCityInput, TripSectionUncheckedCreateWithoutCityInput> | TripSectionCreateWithoutCityInput[] | TripSectionUncheckedCreateWithoutCityInput[]
     connectOrCreate?: TripSectionCreateOrConnectWithoutCityInput | TripSectionCreateOrConnectWithoutCityInput[]
@@ -31759,6 +36147,13 @@ export namespace Prisma {
     connectOrCreate?: FavoritePlaceCreateOrConnectWithoutCityInput | FavoritePlaceCreateOrConnectWithoutCityInput[]
     createMany?: FavoritePlaceCreateManyCityInputEnvelope
     connect?: FavoritePlaceWhereUniqueInput | FavoritePlaceWhereUniqueInput[]
+  }
+
+  export type GlobalActivityUncheckedCreateNestedManyWithoutCityInput = {
+    create?: XOR<GlobalActivityCreateWithoutCityInput, GlobalActivityUncheckedCreateWithoutCityInput> | GlobalActivityCreateWithoutCityInput[] | GlobalActivityUncheckedCreateWithoutCityInput[]
+    connectOrCreate?: GlobalActivityCreateOrConnectWithoutCityInput | GlobalActivityCreateOrConnectWithoutCityInput[]
+    createMany?: GlobalActivityCreateManyCityInputEnvelope
+    connect?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
   }
 
   export type TripSectionUpdateManyWithoutCityNestedInput = {
@@ -31803,6 +36198,20 @@ export namespace Prisma {
     deleteMany?: FavoritePlaceScalarWhereInput | FavoritePlaceScalarWhereInput[]
   }
 
+  export type GlobalActivityUpdateManyWithoutCityNestedInput = {
+    create?: XOR<GlobalActivityCreateWithoutCityInput, GlobalActivityUncheckedCreateWithoutCityInput> | GlobalActivityCreateWithoutCityInput[] | GlobalActivityUncheckedCreateWithoutCityInput[]
+    connectOrCreate?: GlobalActivityCreateOrConnectWithoutCityInput | GlobalActivityCreateOrConnectWithoutCityInput[]
+    upsert?: GlobalActivityUpsertWithWhereUniqueWithoutCityInput | GlobalActivityUpsertWithWhereUniqueWithoutCityInput[]
+    createMany?: GlobalActivityCreateManyCityInputEnvelope
+    set?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+    disconnect?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+    delete?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+    connect?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+    update?: GlobalActivityUpdateWithWhereUniqueWithoutCityInput | GlobalActivityUpdateWithWhereUniqueWithoutCityInput[]
+    updateMany?: GlobalActivityUpdateManyWithWhereWithoutCityInput | GlobalActivityUpdateManyWithWhereWithoutCityInput[]
+    deleteMany?: GlobalActivityScalarWhereInput | GlobalActivityScalarWhereInput[]
+  }
+
   export type TripSectionUncheckedUpdateManyWithoutCityNestedInput = {
     create?: XOR<TripSectionCreateWithoutCityInput, TripSectionUncheckedCreateWithoutCityInput> | TripSectionCreateWithoutCityInput[] | TripSectionUncheckedCreateWithoutCityInput[]
     connectOrCreate?: TripSectionCreateOrConnectWithoutCityInput | TripSectionCreateOrConnectWithoutCityInput[]
@@ -31845,6 +36254,20 @@ export namespace Prisma {
     deleteMany?: FavoritePlaceScalarWhereInput | FavoritePlaceScalarWhereInput[]
   }
 
+  export type GlobalActivityUncheckedUpdateManyWithoutCityNestedInput = {
+    create?: XOR<GlobalActivityCreateWithoutCityInput, GlobalActivityUncheckedCreateWithoutCityInput> | GlobalActivityCreateWithoutCityInput[] | GlobalActivityUncheckedCreateWithoutCityInput[]
+    connectOrCreate?: GlobalActivityCreateOrConnectWithoutCityInput | GlobalActivityCreateOrConnectWithoutCityInput[]
+    upsert?: GlobalActivityUpsertWithWhereUniqueWithoutCityInput | GlobalActivityUpsertWithWhereUniqueWithoutCityInput[]
+    createMany?: GlobalActivityCreateManyCityInputEnvelope
+    set?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+    disconnect?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+    delete?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+    connect?: GlobalActivityWhereUniqueInput | GlobalActivityWhereUniqueInput[]
+    update?: GlobalActivityUpdateWithWhereUniqueWithoutCityInput | GlobalActivityUpdateWithWhereUniqueWithoutCityInput[]
+    updateMany?: GlobalActivityUpdateManyWithWhereWithoutCityInput | GlobalActivityUpdateManyWithWhereWithoutCityInput[]
+    deleteMany?: GlobalActivityScalarWhereInput | GlobalActivityScalarWhereInput[]
+  }
+
   export type TripCreateNestedOneWithoutActivitiesInput = {
     create?: XOR<TripCreateWithoutActivitiesInput, TripUncheckedCreateWithoutActivitiesInput>
     connectOrCreate?: TripCreateOrConnectWithoutActivitiesInput
@@ -31870,11 +36293,25 @@ export namespace Prisma {
     connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
   }
 
+  export type FavoriteActivityCreateNestedManyWithoutActivityInput = {
+    create?: XOR<FavoriteActivityCreateWithoutActivityInput, FavoriteActivityUncheckedCreateWithoutActivityInput> | FavoriteActivityCreateWithoutActivityInput[] | FavoriteActivityUncheckedCreateWithoutActivityInput[]
+    connectOrCreate?: FavoriteActivityCreateOrConnectWithoutActivityInput | FavoriteActivityCreateOrConnectWithoutActivityInput[]
+    createMany?: FavoriteActivityCreateManyActivityInputEnvelope
+    connect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+  }
+
   export type ReviewUncheckedCreateNestedManyWithoutActivityInput = {
     create?: XOR<ReviewCreateWithoutActivityInput, ReviewUncheckedCreateWithoutActivityInput> | ReviewCreateWithoutActivityInput[] | ReviewUncheckedCreateWithoutActivityInput[]
     connectOrCreate?: ReviewCreateOrConnectWithoutActivityInput | ReviewCreateOrConnectWithoutActivityInput[]
     createMany?: ReviewCreateManyActivityInputEnvelope
     connect?: ReviewWhereUniqueInput | ReviewWhereUniqueInput[]
+  }
+
+  export type FavoriteActivityUncheckedCreateNestedManyWithoutActivityInput = {
+    create?: XOR<FavoriteActivityCreateWithoutActivityInput, FavoriteActivityUncheckedCreateWithoutActivityInput> | FavoriteActivityCreateWithoutActivityInput[] | FavoriteActivityUncheckedCreateWithoutActivityInput[]
+    connectOrCreate?: FavoriteActivityCreateOrConnectWithoutActivityInput | FavoriteActivityCreateOrConnectWithoutActivityInput[]
+    createMany?: FavoriteActivityCreateManyActivityInputEnvelope
+    connect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
   }
 
   export type EnumActivityCategoryFieldUpdateOperationsInput = {
@@ -31931,6 +36368,20 @@ export namespace Prisma {
     deleteMany?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
   }
 
+  export type FavoriteActivityUpdateManyWithoutActivityNestedInput = {
+    create?: XOR<FavoriteActivityCreateWithoutActivityInput, FavoriteActivityUncheckedCreateWithoutActivityInput> | FavoriteActivityCreateWithoutActivityInput[] | FavoriteActivityUncheckedCreateWithoutActivityInput[]
+    connectOrCreate?: FavoriteActivityCreateOrConnectWithoutActivityInput | FavoriteActivityCreateOrConnectWithoutActivityInput[]
+    upsert?: FavoriteActivityUpsertWithWhereUniqueWithoutActivityInput | FavoriteActivityUpsertWithWhereUniqueWithoutActivityInput[]
+    createMany?: FavoriteActivityCreateManyActivityInputEnvelope
+    set?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    disconnect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    delete?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    connect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    update?: FavoriteActivityUpdateWithWhereUniqueWithoutActivityInput | FavoriteActivityUpdateWithWhereUniqueWithoutActivityInput[]
+    updateMany?: FavoriteActivityUpdateManyWithWhereWithoutActivityInput | FavoriteActivityUpdateManyWithWhereWithoutActivityInput[]
+    deleteMany?: FavoriteActivityScalarWhereInput | FavoriteActivityScalarWhereInput[]
+  }
+
   export type ReviewUncheckedUpdateManyWithoutActivityNestedInput = {
     create?: XOR<ReviewCreateWithoutActivityInput, ReviewUncheckedCreateWithoutActivityInput> | ReviewCreateWithoutActivityInput[] | ReviewUncheckedCreateWithoutActivityInput[]
     connectOrCreate?: ReviewCreateOrConnectWithoutActivityInput | ReviewCreateOrConnectWithoutActivityInput[]
@@ -31943,6 +36394,20 @@ export namespace Prisma {
     update?: ReviewUpdateWithWhereUniqueWithoutActivityInput | ReviewUpdateWithWhereUniqueWithoutActivityInput[]
     updateMany?: ReviewUpdateManyWithWhereWithoutActivityInput | ReviewUpdateManyWithWhereWithoutActivityInput[]
     deleteMany?: ReviewScalarWhereInput | ReviewScalarWhereInput[]
+  }
+
+  export type FavoriteActivityUncheckedUpdateManyWithoutActivityNestedInput = {
+    create?: XOR<FavoriteActivityCreateWithoutActivityInput, FavoriteActivityUncheckedCreateWithoutActivityInput> | FavoriteActivityCreateWithoutActivityInput[] | FavoriteActivityUncheckedCreateWithoutActivityInput[]
+    connectOrCreate?: FavoriteActivityCreateOrConnectWithoutActivityInput | FavoriteActivityCreateOrConnectWithoutActivityInput[]
+    upsert?: FavoriteActivityUpsertWithWhereUniqueWithoutActivityInput | FavoriteActivityUpsertWithWhereUniqueWithoutActivityInput[]
+    createMany?: FavoriteActivityCreateManyActivityInputEnvelope
+    set?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    disconnect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    delete?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    connect?: FavoriteActivityWhereUniqueInput | FavoriteActivityWhereUniqueInput[]
+    update?: FavoriteActivityUpdateWithWhereUniqueWithoutActivityInput | FavoriteActivityUpdateWithWhereUniqueWithoutActivityInput[]
+    updateMany?: FavoriteActivityUpdateManyWithWhereWithoutActivityInput | FavoriteActivityUpdateManyWithWhereWithoutActivityInput[]
+    deleteMany?: FavoriteActivityScalarWhereInput | FavoriteActivityScalarWhereInput[]
   }
 
   export type TripCreateNestedOneWithoutExpensesInput = {
@@ -32511,6 +36976,50 @@ export namespace Prisma {
     update?: XOR<XOR<CityUpdateToOneWithWhereWithoutSavedByUsersInput, CityUpdateWithoutSavedByUsersInput>, CityUncheckedUpdateWithoutSavedByUsersInput>
   }
 
+  export type CityCreateNestedOneWithoutGlobalActivitiesInput = {
+    create?: XOR<CityCreateWithoutGlobalActivitiesInput, CityUncheckedCreateWithoutGlobalActivitiesInput>
+    connectOrCreate?: CityCreateOrConnectWithoutGlobalActivitiesInput
+    connect?: CityWhereUniqueInput
+  }
+
+  export type CityUpdateOneWithoutGlobalActivitiesNestedInput = {
+    create?: XOR<CityCreateWithoutGlobalActivitiesInput, CityUncheckedCreateWithoutGlobalActivitiesInput>
+    connectOrCreate?: CityCreateOrConnectWithoutGlobalActivitiesInput
+    upsert?: CityUpsertWithoutGlobalActivitiesInput
+    disconnect?: CityWhereInput | boolean
+    delete?: CityWhereInput | boolean
+    connect?: CityWhereUniqueInput
+    update?: XOR<XOR<CityUpdateToOneWithWhereWithoutGlobalActivitiesInput, CityUpdateWithoutGlobalActivitiesInput>, CityUncheckedUpdateWithoutGlobalActivitiesInput>
+  }
+
+  export type UserCreateNestedOneWithoutFavoriteActivitiesInput = {
+    create?: XOR<UserCreateWithoutFavoriteActivitiesInput, UserUncheckedCreateWithoutFavoriteActivitiesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutFavoriteActivitiesInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type ActivityCreateNestedOneWithoutFavoriteActivitiesInput = {
+    create?: XOR<ActivityCreateWithoutFavoriteActivitiesInput, ActivityUncheckedCreateWithoutFavoriteActivitiesInput>
+    connectOrCreate?: ActivityCreateOrConnectWithoutFavoriteActivitiesInput
+    connect?: ActivityWhereUniqueInput
+  }
+
+  export type UserUpdateOneRequiredWithoutFavoriteActivitiesNestedInput = {
+    create?: XOR<UserCreateWithoutFavoriteActivitiesInput, UserUncheckedCreateWithoutFavoriteActivitiesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutFavoriteActivitiesInput
+    upsert?: UserUpsertWithoutFavoriteActivitiesInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutFavoriteActivitiesInput, UserUpdateWithoutFavoriteActivitiesInput>, UserUncheckedUpdateWithoutFavoriteActivitiesInput>
+  }
+
+  export type ActivityUpdateOneRequiredWithoutFavoriteActivitiesNestedInput = {
+    create?: XOR<ActivityCreateWithoutFavoriteActivitiesInput, ActivityUncheckedCreateWithoutFavoriteActivitiesInput>
+    connectOrCreate?: ActivityCreateOrConnectWithoutFavoriteActivitiesInput
+    upsert?: ActivityUpsertWithoutFavoriteActivitiesInput
+    connect?: ActivityWhereUniqueInput
+    update?: XOR<XOR<ActivityUpdateToOneWithWhereWithoutFavoriteActivitiesInput, ActivityUpdateWithoutFavoriteActivitiesInput>, ActivityUncheckedUpdateWithoutFavoriteActivitiesInput>
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -32867,6 +37376,29 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumNotificationTypeFilter<$PrismaModel>
     _max?: NestedEnumNotificationTypeFilter<$PrismaModel>
+  }
+  export type NestedJsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
   export type TripCreateWithoutOwnerInput = {
@@ -33289,6 +37821,28 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type FavoriteActivityCreateWithoutUserInput = {
+    id?: string
+    createdAt?: Date | string
+    activity: ActivityCreateNestedOneWithoutFavoriteActivitiesInput
+  }
+
+  export type FavoriteActivityUncheckedCreateWithoutUserInput = {
+    id?: string
+    activityId: string
+    createdAt?: Date | string
+  }
+
+  export type FavoriteActivityCreateOrConnectWithoutUserInput = {
+    where: FavoriteActivityWhereUniqueInput
+    create: XOR<FavoriteActivityCreateWithoutUserInput, FavoriteActivityUncheckedCreateWithoutUserInput>
+  }
+
+  export type FavoriteActivityCreateManyUserInputEnvelope = {
+    data: FavoriteActivityCreateManyUserInput | FavoriteActivityCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type TripUpsertWithWhereUniqueWithoutOwnerInput = {
     where: TripWhereUniqueInput
     update: XOR<TripUpdateWithoutOwnerInput, TripUncheckedUpdateWithoutOwnerInput>
@@ -33680,6 +38234,32 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Like"> | Date | string
   }
 
+  export type FavoriteActivityUpsertWithWhereUniqueWithoutUserInput = {
+    where: FavoriteActivityWhereUniqueInput
+    update: XOR<FavoriteActivityUpdateWithoutUserInput, FavoriteActivityUncheckedUpdateWithoutUserInput>
+    create: XOR<FavoriteActivityCreateWithoutUserInput, FavoriteActivityUncheckedCreateWithoutUserInput>
+  }
+
+  export type FavoriteActivityUpdateWithWhereUniqueWithoutUserInput = {
+    where: FavoriteActivityWhereUniqueInput
+    data: XOR<FavoriteActivityUpdateWithoutUserInput, FavoriteActivityUncheckedUpdateWithoutUserInput>
+  }
+
+  export type FavoriteActivityUpdateManyWithWhereWithoutUserInput = {
+    where: FavoriteActivityScalarWhereInput
+    data: XOR<FavoriteActivityUpdateManyMutationInput, FavoriteActivityUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type FavoriteActivityScalarWhereInput = {
+    AND?: FavoriteActivityScalarWhereInput | FavoriteActivityScalarWhereInput[]
+    OR?: FavoriteActivityScalarWhereInput[]
+    NOT?: FavoriteActivityScalarWhereInput | FavoriteActivityScalarWhereInput[]
+    id?: StringFilter<"FavoriteActivity"> | string
+    userId?: StringFilter<"FavoriteActivity"> | string
+    activityId?: StringFilter<"FavoriteActivity"> | string
+    createdAt?: DateTimeFilter<"FavoriteActivity"> | Date | string
+  }
+
   export type UserCreateWithoutTripsInput = {
     id?: string
     firstName: string
@@ -33720,6 +38300,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutTripsInput = {
@@ -33762,6 +38343,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutTripsInput = {
@@ -33834,10 +38416,12 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     section?: TripSectionCreateNestedOneWithoutActivitiesInput
     city?: CityCreateNestedOneWithoutActivitiesInput
     reviews?: ReviewCreateNestedManyWithoutActivityInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUncheckedCreateWithoutTripInput = {
@@ -33857,8 +38441,10 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     reviews?: ReviewUncheckedCreateNestedManyWithoutActivityInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityCreateOrConnectWithoutTripInput = {
@@ -34212,6 +38798,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutTripsInput = {
@@ -34254,6 +38841,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TripSectionUpsertWithWhereUniqueWithoutTripInput = {
@@ -34330,6 +38918,7 @@ export namespace Prisma {
     bookingUrl?: StringNullableFilter<"Activity"> | string | null
     image?: StringNullableFilter<"Activity"> | string | null
     aiRecommended?: BoolFilter<"Activity"> | boolean
+    saveCount?: IntFilter<"Activity"> | number
     createdAt?: DateTimeFilter<"Activity"> | Date | string
   }
 
@@ -34578,11 +39167,14 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
     activities?: ActivityCreateNestedManyWithoutCityInput
     savedByUsers?: FavoritePlaceCreateNestedManyWithoutCityInput
+    globalActivities?: GlobalActivityCreateNestedManyWithoutCityInput
   }
 
   export type CityUncheckedCreateWithoutSectionsInput = {
@@ -34598,11 +39190,14 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
     activities?: ActivityUncheckedCreateNestedManyWithoutCityInput
     savedByUsers?: FavoritePlaceUncheckedCreateNestedManyWithoutCityInput
+    globalActivities?: GlobalActivityUncheckedCreateNestedManyWithoutCityInput
   }
 
   export type CityCreateOrConnectWithoutSectionsInput = {
@@ -34625,10 +39220,12 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     trip: TripCreateNestedOneWithoutActivitiesInput
     city?: CityCreateNestedOneWithoutActivitiesInput
     reviews?: ReviewCreateNestedManyWithoutActivityInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUncheckedCreateWithoutSectionInput = {
@@ -34648,8 +39245,10 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     reviews?: ReviewUncheckedCreateNestedManyWithoutActivityInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityCreateOrConnectWithoutSectionInput = {
@@ -34835,11 +39434,14 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     activities?: ActivityUpdateManyWithoutCityNestedInput
     savedByUsers?: FavoritePlaceUpdateManyWithoutCityNestedInput
+    globalActivities?: GlobalActivityUpdateManyWithoutCityNestedInput
   }
 
   export type CityUncheckedUpdateWithoutSectionsInput = {
@@ -34855,11 +39457,14 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     activities?: ActivityUncheckedUpdateManyWithoutCityNestedInput
     savedByUsers?: FavoritePlaceUncheckedUpdateManyWithoutCityNestedInput
+    globalActivities?: GlobalActivityUncheckedUpdateManyWithoutCityNestedInput
   }
 
   export type ActivityUpsertWithWhereUniqueWithoutSectionInput = {
@@ -34975,10 +39580,12 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     trip: TripCreateNestedOneWithoutActivitiesInput
     section?: TripSectionCreateNestedOneWithoutActivitiesInput
     reviews?: ReviewCreateNestedManyWithoutActivityInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUncheckedCreateWithoutCityInput = {
@@ -34998,8 +39605,10 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     reviews?: ReviewUncheckedCreateNestedManyWithoutActivityInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityCreateOrConnectWithoutCityInput = {
@@ -35031,6 +39640,40 @@ export namespace Prisma {
 
   export type FavoritePlaceCreateManyCityInputEnvelope = {
     data: FavoritePlaceCreateManyCityInput | FavoritePlaceCreateManyCityInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type GlobalActivityCreateWithoutCityInput = {
+    id?: string
+    foursquareId?: string | null
+    title: string
+    description?: string | null
+    category?: string | null
+    location?: string | null
+    rating?: number | null
+    image?: string | null
+    createdAt?: Date | string
+  }
+
+  export type GlobalActivityUncheckedCreateWithoutCityInput = {
+    id?: string
+    foursquareId?: string | null
+    title: string
+    description?: string | null
+    category?: string | null
+    location?: string | null
+    rating?: number | null
+    image?: string | null
+    createdAt?: Date | string
+  }
+
+  export type GlobalActivityCreateOrConnectWithoutCityInput = {
+    where: GlobalActivityWhereUniqueInput
+    create: XOR<GlobalActivityCreateWithoutCityInput, GlobalActivityUncheckedCreateWithoutCityInput>
+  }
+
+  export type GlobalActivityCreateManyCityInputEnvelope = {
+    data: GlobalActivityCreateManyCityInput | GlobalActivityCreateManyCityInput[]
     skipDuplicates?: boolean
   }
 
@@ -35080,6 +39723,38 @@ export namespace Prisma {
   export type FavoritePlaceUpdateManyWithWhereWithoutCityInput = {
     where: FavoritePlaceScalarWhereInput
     data: XOR<FavoritePlaceUpdateManyMutationInput, FavoritePlaceUncheckedUpdateManyWithoutCityInput>
+  }
+
+  export type GlobalActivityUpsertWithWhereUniqueWithoutCityInput = {
+    where: GlobalActivityWhereUniqueInput
+    update: XOR<GlobalActivityUpdateWithoutCityInput, GlobalActivityUncheckedUpdateWithoutCityInput>
+    create: XOR<GlobalActivityCreateWithoutCityInput, GlobalActivityUncheckedCreateWithoutCityInput>
+  }
+
+  export type GlobalActivityUpdateWithWhereUniqueWithoutCityInput = {
+    where: GlobalActivityWhereUniqueInput
+    data: XOR<GlobalActivityUpdateWithoutCityInput, GlobalActivityUncheckedUpdateWithoutCityInput>
+  }
+
+  export type GlobalActivityUpdateManyWithWhereWithoutCityInput = {
+    where: GlobalActivityScalarWhereInput
+    data: XOR<GlobalActivityUpdateManyMutationInput, GlobalActivityUncheckedUpdateManyWithoutCityInput>
+  }
+
+  export type GlobalActivityScalarWhereInput = {
+    AND?: GlobalActivityScalarWhereInput | GlobalActivityScalarWhereInput[]
+    OR?: GlobalActivityScalarWhereInput[]
+    NOT?: GlobalActivityScalarWhereInput | GlobalActivityScalarWhereInput[]
+    id?: StringFilter<"GlobalActivity"> | string
+    foursquareId?: StringNullableFilter<"GlobalActivity"> | string | null
+    title?: StringFilter<"GlobalActivity"> | string
+    description?: StringNullableFilter<"GlobalActivity"> | string | null
+    category?: StringNullableFilter<"GlobalActivity"> | string | null
+    location?: StringNullableFilter<"GlobalActivity"> | string | null
+    cityId?: StringNullableFilter<"GlobalActivity"> | string | null
+    rating?: FloatNullableFilter<"GlobalActivity"> | number | null
+    image?: StringNullableFilter<"GlobalActivity"> | string | null
+    createdAt?: DateTimeFilter<"GlobalActivity"> | Date | string
   }
 
   export type TripCreateWithoutActivitiesInput = {
@@ -35209,11 +39884,14 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
     sections?: TripSectionCreateNestedManyWithoutCityInput
     savedByUsers?: FavoritePlaceCreateNestedManyWithoutCityInput
+    globalActivities?: GlobalActivityCreateNestedManyWithoutCityInput
   }
 
   export type CityUncheckedCreateWithoutActivitiesInput = {
@@ -35229,11 +39907,14 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
     sections?: TripSectionUncheckedCreateNestedManyWithoutCityInput
     savedByUsers?: FavoritePlaceUncheckedCreateNestedManyWithoutCityInput
+    globalActivities?: GlobalActivityUncheckedCreateNestedManyWithoutCityInput
   }
 
   export type CityCreateOrConnectWithoutActivitiesInput = {
@@ -35266,6 +39947,28 @@ export namespace Prisma {
 
   export type ReviewCreateManyActivityInputEnvelope = {
     data: ReviewCreateManyActivityInput | ReviewCreateManyActivityInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FavoriteActivityCreateWithoutActivityInput = {
+    id?: string
+    createdAt?: Date | string
+    user: UserCreateNestedOneWithoutFavoriteActivitiesInput
+  }
+
+  export type FavoriteActivityUncheckedCreateWithoutActivityInput = {
+    id?: string
+    userId: string
+    createdAt?: Date | string
+  }
+
+  export type FavoriteActivityCreateOrConnectWithoutActivityInput = {
+    where: FavoriteActivityWhereUniqueInput
+    create: XOR<FavoriteActivityCreateWithoutActivityInput, FavoriteActivityUncheckedCreateWithoutActivityInput>
+  }
+
+  export type FavoriteActivityCreateManyActivityInputEnvelope = {
+    data: FavoriteActivityCreateManyActivityInput | FavoriteActivityCreateManyActivityInput[]
     skipDuplicates?: boolean
   }
 
@@ -35419,11 +40122,14 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: TripSectionUpdateManyWithoutCityNestedInput
     savedByUsers?: FavoritePlaceUpdateManyWithoutCityNestedInput
+    globalActivities?: GlobalActivityUpdateManyWithoutCityNestedInput
   }
 
   export type CityUncheckedUpdateWithoutActivitiesInput = {
@@ -35439,11 +40145,14 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: TripSectionUncheckedUpdateManyWithoutCityNestedInput
     savedByUsers?: FavoritePlaceUncheckedUpdateManyWithoutCityNestedInput
+    globalActivities?: GlobalActivityUncheckedUpdateManyWithoutCityNestedInput
   }
 
   export type ReviewUpsertWithWhereUniqueWithoutActivityInput = {
@@ -35460,6 +40169,22 @@ export namespace Prisma {
   export type ReviewUpdateManyWithWhereWithoutActivityInput = {
     where: ReviewScalarWhereInput
     data: XOR<ReviewUpdateManyMutationInput, ReviewUncheckedUpdateManyWithoutActivityInput>
+  }
+
+  export type FavoriteActivityUpsertWithWhereUniqueWithoutActivityInput = {
+    where: FavoriteActivityWhereUniqueInput
+    update: XOR<FavoriteActivityUpdateWithoutActivityInput, FavoriteActivityUncheckedUpdateWithoutActivityInput>
+    create: XOR<FavoriteActivityCreateWithoutActivityInput, FavoriteActivityUncheckedCreateWithoutActivityInput>
+  }
+
+  export type FavoriteActivityUpdateWithWhereUniqueWithoutActivityInput = {
+    where: FavoriteActivityWhereUniqueInput
+    data: XOR<FavoriteActivityUpdateWithoutActivityInput, FavoriteActivityUncheckedUpdateWithoutActivityInput>
+  }
+
+  export type FavoriteActivityUpdateManyWithWhereWithoutActivityInput = {
+    where: FavoriteActivityScalarWhereInput
+    data: XOR<FavoriteActivityUpdateManyMutationInput, FavoriteActivityUncheckedUpdateManyWithoutActivityInput>
   }
 
   export type TripCreateWithoutExpensesInput = {
@@ -35899,6 +40624,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutInvoicesInput = {
@@ -35941,6 +40667,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutInvoicesInput = {
@@ -36114,6 +40841,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutInvoicesInput = {
@@ -36156,6 +40884,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type ExpenseUpsertWithWhereUniqueWithoutInvoiceInput = {
@@ -36214,6 +40943,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutPackingListsInput = {
@@ -36256,6 +40986,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutPackingListsInput = {
@@ -36383,6 +41114,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutPackingListsInput = {
@@ -36425,6 +41157,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TripUpsertWithoutPackingListsInput = {
@@ -36542,6 +41275,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutNotesInput = {
@@ -36584,6 +41318,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutNotesInput = {
@@ -36756,6 +41491,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutNotesInput = {
@@ -36798,6 +41534,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TripUpsertWithoutNotesInput = {
@@ -36966,6 +41703,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutCommunityPostsInput = {
@@ -37008,6 +41746,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutCommunityPostsInput = {
@@ -37181,6 +41920,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCommunityPostsInput = {
@@ -37223,6 +41963,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TripUpsertWithoutCommunityPostsInput = {
@@ -37372,6 +42113,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceCreateNestedManyWithoutUserInput
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutCommentsInput = {
@@ -37414,6 +42156,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUncheckedCreateNestedManyWithoutUserInput
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutCommentsInput = {
@@ -37505,6 +42248,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUpdateManyWithoutUserNestedInput
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutCommentsInput = {
@@ -37547,6 +42291,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUncheckedUpdateManyWithoutUserNestedInput
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type CommunityPostUpsertWithoutCommentsInput = {
@@ -37628,6 +42373,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceCreateNestedManyWithoutUserInput
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutLikesInput = {
@@ -37670,6 +42416,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUncheckedCreateNestedManyWithoutUserInput
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutLikesInput = {
@@ -37761,6 +42508,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUpdateManyWithoutUserNestedInput
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutLikesInput = {
@@ -37803,6 +42551,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUncheckedUpdateManyWithoutUserNestedInput
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type CommunityPostUpsertWithoutLikesInput = {
@@ -37884,6 +42633,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutSavedTripsInput = {
@@ -37926,6 +42676,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutSavedTripsInput = {
@@ -38053,6 +42804,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSavedTripsInput = {
@@ -38095,6 +42847,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TripUpsertWithoutSavedByUsersInput = {
@@ -38212,6 +42965,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutNotificationsInput = {
@@ -38254,6 +43008,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutNotificationsInput = {
@@ -38312,6 +43067,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutNotificationsInput = {
@@ -38354,6 +43110,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutReviewsInput = {
@@ -38396,6 +43153,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutReviewsInput = {
@@ -38438,6 +43196,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutReviewsInput = {
@@ -38529,10 +43288,12 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
     trip: TripCreateNestedOneWithoutActivitiesInput
     section?: TripSectionCreateNestedOneWithoutActivitiesInput
     city?: CityCreateNestedOneWithoutActivitiesInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityUncheckedCreateWithoutReviewsInput = {
@@ -38553,7 +43314,9 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutActivityInput
   }
 
   export type ActivityCreateOrConnectWithoutReviewsInput = {
@@ -38612,6 +43375,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutReviewsInput = {
@@ -38654,6 +43418,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TripUpsertWithoutReviewsInput = {
@@ -38757,10 +43522,12 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     trip?: TripUpdateOneRequiredWithoutActivitiesNestedInput
     section?: TripSectionUpdateOneWithoutActivitiesNestedInput
     city?: CityUpdateOneWithoutActivitiesNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateWithoutReviewsInput = {
@@ -38781,7 +43548,9 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutActivityNestedInput
   }
 
   export type UserCreateWithoutAiChatsInput = {
@@ -38824,6 +43593,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutAiChatsInput = {
@@ -38866,6 +43636,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutAiChatsInput = {
@@ -38993,6 +43764,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAiChatsInput = {
@@ -39035,6 +43807,7 @@ export namespace Prisma {
     favorites?: FavoritePlaceUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TripUpsertWithoutAiChatsInput = {
@@ -39221,6 +43994,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutTripCollaborationsInput = {
@@ -39263,6 +44037,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutTripCollaborationsInput = {
@@ -39396,6 +44171,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutTripCollaborationsInput = {
@@ -39438,6 +44214,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutFavoritesInput = {
@@ -39480,6 +44257,7 @@ export namespace Prisma {
     aiChats?: AIChatCreateNestedManyWithoutUserInput
     comments?: CommentCreateNestedManyWithoutUserInput
     likes?: LikeCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutFavoritesInput = {
@@ -39522,6 +44300,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
     comments?: CommentUncheckedCreateNestedManyWithoutUserInput
     likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+    favoriteActivities?: FavoriteActivityUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutFavoritesInput = {
@@ -39542,11 +44321,14 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
     sections?: TripSectionCreateNestedManyWithoutCityInput
     activities?: ActivityCreateNestedManyWithoutCityInput
+    globalActivities?: GlobalActivityCreateNestedManyWithoutCityInput
   }
 
   export type CityUncheckedCreateWithoutSavedByUsersInput = {
@@ -39562,11 +44344,14 @@ export namespace Prisma {
     language?: string | null
     popularityScore?: number | null
     averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
     weatherInfo?: string | null
     heroImage?: string | null
     createdAt?: Date | string
     sections?: TripSectionUncheckedCreateNestedManyWithoutCityInput
     activities?: ActivityUncheckedCreateNestedManyWithoutCityInput
+    globalActivities?: GlobalActivityUncheckedCreateNestedManyWithoutCityInput
   }
 
   export type CityCreateOrConnectWithoutSavedByUsersInput = {
@@ -39625,6 +44410,7 @@ export namespace Prisma {
     aiChats?: AIChatUpdateManyWithoutUserNestedInput
     comments?: CommentUpdateManyWithoutUserNestedInput
     likes?: LikeUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutFavoritesInput = {
@@ -39667,6 +44453,7 @@ export namespace Prisma {
     aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
     comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
     likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type CityUpsertWithoutSavedByUsersInput = {
@@ -39693,11 +44480,14 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: TripSectionUpdateManyWithoutCityNestedInput
     activities?: ActivityUpdateManyWithoutCityNestedInput
+    globalActivities?: GlobalActivityUpdateManyWithoutCityNestedInput
   }
 
   export type CityUncheckedUpdateWithoutSavedByUsersInput = {
@@ -39713,11 +44503,418 @@ export namespace Prisma {
     language?: NullableStringFieldUpdateOperationsInput | string | null
     popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
     averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
     weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
     heroImage?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: TripSectionUncheckedUpdateManyWithoutCityNestedInput
     activities?: ActivityUncheckedUpdateManyWithoutCityNestedInput
+    globalActivities?: GlobalActivityUncheckedUpdateManyWithoutCityNestedInput
+  }
+
+  export type CityCreateWithoutGlobalActivitiesInput = {
+    id?: string
+    name: string
+    country: string
+    countryCode?: string | null
+    description?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    timezone?: string | null
+    currency?: string | null
+    language?: string | null
+    popularityScore?: number | null
+    averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
+    weatherInfo?: string | null
+    heroImage?: string | null
+    createdAt?: Date | string
+    sections?: TripSectionCreateNestedManyWithoutCityInput
+    activities?: ActivityCreateNestedManyWithoutCityInput
+    savedByUsers?: FavoritePlaceCreateNestedManyWithoutCityInput
+  }
+
+  export type CityUncheckedCreateWithoutGlobalActivitiesInput = {
+    id?: string
+    name: string
+    country: string
+    countryCode?: string | null
+    description?: string | null
+    latitude?: number | null
+    longitude?: number | null
+    timezone?: string | null
+    currency?: string | null
+    language?: string | null
+    popularityScore?: number | null
+    averageBudget?: number | null
+    searchCount?: number
+    isTrending?: boolean
+    weatherInfo?: string | null
+    heroImage?: string | null
+    createdAt?: Date | string
+    sections?: TripSectionUncheckedCreateNestedManyWithoutCityInput
+    activities?: ActivityUncheckedCreateNestedManyWithoutCityInput
+    savedByUsers?: FavoritePlaceUncheckedCreateNestedManyWithoutCityInput
+  }
+
+  export type CityCreateOrConnectWithoutGlobalActivitiesInput = {
+    where: CityWhereUniqueInput
+    create: XOR<CityCreateWithoutGlobalActivitiesInput, CityUncheckedCreateWithoutGlobalActivitiesInput>
+  }
+
+  export type CityUpsertWithoutGlobalActivitiesInput = {
+    update: XOR<CityUpdateWithoutGlobalActivitiesInput, CityUncheckedUpdateWithoutGlobalActivitiesInput>
+    create: XOR<CityCreateWithoutGlobalActivitiesInput, CityUncheckedCreateWithoutGlobalActivitiesInput>
+    where?: CityWhereInput
+  }
+
+  export type CityUpdateToOneWithWhereWithoutGlobalActivitiesInput = {
+    where?: CityWhereInput
+    data: XOR<CityUpdateWithoutGlobalActivitiesInput, CityUncheckedUpdateWithoutGlobalActivitiesInput>
+  }
+
+  export type CityUpdateWithoutGlobalActivitiesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    countryCode?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    timezone?: NullableStringFieldUpdateOperationsInput | string | null
+    currency?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: NullableStringFieldUpdateOperationsInput | string | null
+    popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
+    averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
+    weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
+    heroImage?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sections?: TripSectionUpdateManyWithoutCityNestedInput
+    activities?: ActivityUpdateManyWithoutCityNestedInput
+    savedByUsers?: FavoritePlaceUpdateManyWithoutCityNestedInput
+  }
+
+  export type CityUncheckedUpdateWithoutGlobalActivitiesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    country?: StringFieldUpdateOperationsInput | string
+    countryCode?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    longitude?: NullableFloatFieldUpdateOperationsInput | number | null
+    timezone?: NullableStringFieldUpdateOperationsInput | string | null
+    currency?: NullableStringFieldUpdateOperationsInput | string | null
+    language?: NullableStringFieldUpdateOperationsInput | string | null
+    popularityScore?: NullableFloatFieldUpdateOperationsInput | number | null
+    averageBudget?: NullableFloatFieldUpdateOperationsInput | number | null
+    searchCount?: IntFieldUpdateOperationsInput | number
+    isTrending?: BoolFieldUpdateOperationsInput | boolean
+    weatherInfo?: NullableStringFieldUpdateOperationsInput | string | null
+    heroImage?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sections?: TripSectionUncheckedUpdateManyWithoutCityNestedInput
+    activities?: ActivityUncheckedUpdateManyWithoutCityNestedInput
+    savedByUsers?: FavoritePlaceUncheckedUpdateManyWithoutCityNestedInput
+  }
+
+  export type UserCreateWithoutFavoriteActivitiesInput = {
+    id?: string
+    firstName: string
+    lastName: string
+    username?: string | null
+    email: string
+    password: string
+    phoneNumber?: string | null
+    bio?: string | null
+    city?: string | null
+    country?: string | null
+    profileImage?: string | null
+    coverImage?: string | null
+    role?: $Enums.Role
+    isVerified?: boolean
+    verificationToken?: string | null
+    verificationTokenExpiry?: Date | string | null
+    resetPasswordToken?: string | null
+    resetPasswordExpiry?: Date | string | null
+    refreshToken?: string | null
+    isPublic?: boolean
+    authProvider?: string | null
+    socialLinks?: NullableJsonNullValueInput | InputJsonValue
+    preferences?: NullableJsonNullValueInput | InputJsonValue
+    onboardingComplete?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastLogin?: Date | string | null
+    trips?: TripCreateNestedManyWithoutOwnerInput
+    savedTrips?: SavedTripCreateNestedManyWithoutUserInput
+    tripCollaborations?: TripCollaboratorCreateNestedManyWithoutUserInput
+    reviews?: ReviewCreateNestedManyWithoutUserInput
+    notes?: TravelNoteCreateNestedManyWithoutUserInput
+    packingLists?: PackingChecklistCreateNestedManyWithoutUserInput
+    notifications?: NotificationCreateNestedManyWithoutUserInput
+    invoices?: InvoiceCreateNestedManyWithoutUserInput
+    communityPosts?: CommunityPostCreateNestedManyWithoutUserInput
+    favorites?: FavoritePlaceCreateNestedManyWithoutUserInput
+    aiChats?: AIChatCreateNestedManyWithoutUserInput
+    comments?: CommentCreateNestedManyWithoutUserInput
+    likes?: LikeCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutFavoriteActivitiesInput = {
+    id?: string
+    firstName: string
+    lastName: string
+    username?: string | null
+    email: string
+    password: string
+    phoneNumber?: string | null
+    bio?: string | null
+    city?: string | null
+    country?: string | null
+    profileImage?: string | null
+    coverImage?: string | null
+    role?: $Enums.Role
+    isVerified?: boolean
+    verificationToken?: string | null
+    verificationTokenExpiry?: Date | string | null
+    resetPasswordToken?: string | null
+    resetPasswordExpiry?: Date | string | null
+    refreshToken?: string | null
+    isPublic?: boolean
+    authProvider?: string | null
+    socialLinks?: NullableJsonNullValueInput | InputJsonValue
+    preferences?: NullableJsonNullValueInput | InputJsonValue
+    onboardingComplete?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    lastLogin?: Date | string | null
+    trips?: TripUncheckedCreateNestedManyWithoutOwnerInput
+    savedTrips?: SavedTripUncheckedCreateNestedManyWithoutUserInput
+    tripCollaborations?: TripCollaboratorUncheckedCreateNestedManyWithoutUserInput
+    reviews?: ReviewUncheckedCreateNestedManyWithoutUserInput
+    notes?: TravelNoteUncheckedCreateNestedManyWithoutUserInput
+    packingLists?: PackingChecklistUncheckedCreateNestedManyWithoutUserInput
+    notifications?: NotificationUncheckedCreateNestedManyWithoutUserInput
+    invoices?: InvoiceUncheckedCreateNestedManyWithoutUserInput
+    communityPosts?: CommunityPostUncheckedCreateNestedManyWithoutUserInput
+    favorites?: FavoritePlaceUncheckedCreateNestedManyWithoutUserInput
+    aiChats?: AIChatUncheckedCreateNestedManyWithoutUserInput
+    comments?: CommentUncheckedCreateNestedManyWithoutUserInput
+    likes?: LikeUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutFavoriteActivitiesInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutFavoriteActivitiesInput, UserUncheckedCreateWithoutFavoriteActivitiesInput>
+  }
+
+  export type ActivityCreateWithoutFavoriteActivitiesInput = {
+    id?: string
+    title: string
+    description?: string | null
+    category: $Enums.ActivityCategory
+    activityType?: string | null
+    location?: string | null
+    startTime?: Date | string | null
+    endTime?: Date | string | null
+    duration?: number | null
+    price?: number | null
+    rating?: number | null
+    bookingUrl?: string | null
+    image?: string | null
+    aiRecommended?: boolean
+    saveCount?: number
+    createdAt?: Date | string
+    trip: TripCreateNestedOneWithoutActivitiesInput
+    section?: TripSectionCreateNestedOneWithoutActivitiesInput
+    city?: CityCreateNestedOneWithoutActivitiesInput
+    reviews?: ReviewCreateNestedManyWithoutActivityInput
+  }
+
+  export type ActivityUncheckedCreateWithoutFavoriteActivitiesInput = {
+    id?: string
+    tripId: string
+    sectionId?: string | null
+    cityId?: string | null
+    title: string
+    description?: string | null
+    category: $Enums.ActivityCategory
+    activityType?: string | null
+    location?: string | null
+    startTime?: Date | string | null
+    endTime?: Date | string | null
+    duration?: number | null
+    price?: number | null
+    rating?: number | null
+    bookingUrl?: string | null
+    image?: string | null
+    aiRecommended?: boolean
+    saveCount?: number
+    createdAt?: Date | string
+    reviews?: ReviewUncheckedCreateNestedManyWithoutActivityInput
+  }
+
+  export type ActivityCreateOrConnectWithoutFavoriteActivitiesInput = {
+    where: ActivityWhereUniqueInput
+    create: XOR<ActivityCreateWithoutFavoriteActivitiesInput, ActivityUncheckedCreateWithoutFavoriteActivitiesInput>
+  }
+
+  export type UserUpsertWithoutFavoriteActivitiesInput = {
+    update: XOR<UserUpdateWithoutFavoriteActivitiesInput, UserUncheckedUpdateWithoutFavoriteActivitiesInput>
+    create: XOR<UserCreateWithoutFavoriteActivitiesInput, UserUncheckedCreateWithoutFavoriteActivitiesInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutFavoriteActivitiesInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutFavoriteActivitiesInput, UserUncheckedUpdateWithoutFavoriteActivitiesInput>
+  }
+
+  export type UserUpdateWithoutFavoriteActivitiesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    username?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImage?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    verificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    verificationTokenExpiry?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    resetPasswordToken?: NullableStringFieldUpdateOperationsInput | string | null
+    resetPasswordExpiry?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
+    isPublic?: BoolFieldUpdateOperationsInput | boolean
+    authProvider?: NullableStringFieldUpdateOperationsInput | string | null
+    socialLinks?: NullableJsonNullValueInput | InputJsonValue
+    preferences?: NullableJsonNullValueInput | InputJsonValue
+    onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    trips?: TripUpdateManyWithoutOwnerNestedInput
+    savedTrips?: SavedTripUpdateManyWithoutUserNestedInput
+    tripCollaborations?: TripCollaboratorUpdateManyWithoutUserNestedInput
+    reviews?: ReviewUpdateManyWithoutUserNestedInput
+    notes?: TravelNoteUpdateManyWithoutUserNestedInput
+    packingLists?: PackingChecklistUpdateManyWithoutUserNestedInput
+    notifications?: NotificationUpdateManyWithoutUserNestedInput
+    invoices?: InvoiceUpdateManyWithoutUserNestedInput
+    communityPosts?: CommunityPostUpdateManyWithoutUserNestedInput
+    favorites?: FavoritePlaceUpdateManyWithoutUserNestedInput
+    aiChats?: AIChatUpdateManyWithoutUserNestedInput
+    comments?: CommentUpdateManyWithoutUserNestedInput
+    likes?: LikeUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutFavoriteActivitiesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    firstName?: StringFieldUpdateOperationsInput | string
+    lastName?: StringFieldUpdateOperationsInput | string
+    username?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    phoneNumber?: NullableStringFieldUpdateOperationsInput | string | null
+    bio?: NullableStringFieldUpdateOperationsInput | string | null
+    city?: NullableStringFieldUpdateOperationsInput | string | null
+    country?: NullableStringFieldUpdateOperationsInput | string | null
+    profileImage?: NullableStringFieldUpdateOperationsInput | string | null
+    coverImage?: NullableStringFieldUpdateOperationsInput | string | null
+    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
+    verificationToken?: NullableStringFieldUpdateOperationsInput | string | null
+    verificationTokenExpiry?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    resetPasswordToken?: NullableStringFieldUpdateOperationsInput | string | null
+    resetPasswordExpiry?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    refreshToken?: NullableStringFieldUpdateOperationsInput | string | null
+    isPublic?: BoolFieldUpdateOperationsInput | boolean
+    authProvider?: NullableStringFieldUpdateOperationsInput | string | null
+    socialLinks?: NullableJsonNullValueInput | InputJsonValue
+    preferences?: NullableJsonNullValueInput | InputJsonValue
+    onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    trips?: TripUncheckedUpdateManyWithoutOwnerNestedInput
+    savedTrips?: SavedTripUncheckedUpdateManyWithoutUserNestedInput
+    tripCollaborations?: TripCollaboratorUncheckedUpdateManyWithoutUserNestedInput
+    reviews?: ReviewUncheckedUpdateManyWithoutUserNestedInput
+    notes?: TravelNoteUncheckedUpdateManyWithoutUserNestedInput
+    packingLists?: PackingChecklistUncheckedUpdateManyWithoutUserNestedInput
+    notifications?: NotificationUncheckedUpdateManyWithoutUserNestedInput
+    invoices?: InvoiceUncheckedUpdateManyWithoutUserNestedInput
+    communityPosts?: CommunityPostUncheckedUpdateManyWithoutUserNestedInput
+    favorites?: FavoritePlaceUncheckedUpdateManyWithoutUserNestedInput
+    aiChats?: AIChatUncheckedUpdateManyWithoutUserNestedInput
+    comments?: CommentUncheckedUpdateManyWithoutUserNestedInput
+    likes?: LikeUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type ActivityUpsertWithoutFavoriteActivitiesInput = {
+    update: XOR<ActivityUpdateWithoutFavoriteActivitiesInput, ActivityUncheckedUpdateWithoutFavoriteActivitiesInput>
+    create: XOR<ActivityCreateWithoutFavoriteActivitiesInput, ActivityUncheckedCreateWithoutFavoriteActivitiesInput>
+    where?: ActivityWhereInput
+  }
+
+  export type ActivityUpdateToOneWithWhereWithoutFavoriteActivitiesInput = {
+    where?: ActivityWhereInput
+    data: XOR<ActivityUpdateWithoutFavoriteActivitiesInput, ActivityUncheckedUpdateWithoutFavoriteActivitiesInput>
+  }
+
+  export type ActivityUpdateWithoutFavoriteActivitiesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: EnumActivityCategoryFieldUpdateOperationsInput | $Enums.ActivityCategory
+    activityType?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    startTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    trip?: TripUpdateOneRequiredWithoutActivitiesNestedInput
+    section?: TripSectionUpdateOneWithoutActivitiesNestedInput
+    city?: CityUpdateOneWithoutActivitiesNestedInput
+    reviews?: ReviewUpdateManyWithoutActivityNestedInput
+  }
+
+  export type ActivityUncheckedUpdateWithoutFavoriteActivitiesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tripId?: StringFieldUpdateOperationsInput | string
+    sectionId?: NullableStringFieldUpdateOperationsInput | string | null
+    cityId?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: EnumActivityCategoryFieldUpdateOperationsInput | $Enums.ActivityCategory
+    activityType?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    startTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    reviews?: ReviewUncheckedUpdateManyWithoutActivityNestedInput
   }
 
   export type TripCreateManyOwnerInput = {
@@ -39848,6 +45045,12 @@ export namespace Prisma {
   export type LikeCreateManyUserInput = {
     id?: string
     postId: string
+    createdAt?: Date | string
+  }
+
+  export type FavoriteActivityCreateManyUserInput = {
+    id?: string
+    activityId: string
     createdAt?: Date | string
   }
 
@@ -40272,6 +45475,24 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type FavoriteActivityUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    activity?: ActivityUpdateOneRequiredWithoutFavoriteActivitiesNestedInput
+  }
+
+  export type FavoriteActivityUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    activityId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FavoriteActivityUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    activityId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type TripSectionCreateManyTripInput = {
     id?: string
     title: string
@@ -40306,6 +45527,7 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
   }
 
@@ -40478,10 +45700,12 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     section?: TripSectionUpdateOneWithoutActivitiesNestedInput
     city?: CityUpdateOneWithoutActivitiesNestedInput
     reviews?: ReviewUpdateManyWithoutActivityNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateWithoutTripInput = {
@@ -40501,8 +45725,10 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     reviews?: ReviewUncheckedUpdateManyWithoutActivityNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateManyWithoutTripInput = {
@@ -40522,6 +45748,7 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -40839,6 +46066,7 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
   }
 
@@ -40884,10 +46112,12 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     trip?: TripUpdateOneRequiredWithoutActivitiesNestedInput
     city?: CityUpdateOneWithoutActivitiesNestedInput
     reviews?: ReviewUpdateManyWithoutActivityNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateWithoutSectionInput = {
@@ -40907,8 +46137,10 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     reviews?: ReviewUncheckedUpdateManyWithoutActivityNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateManyWithoutSectionInput = {
@@ -40928,6 +46160,7 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -41046,12 +46279,25 @@ export namespace Prisma {
     bookingUrl?: string | null
     image?: string | null
     aiRecommended?: boolean
+    saveCount?: number
     createdAt?: Date | string
   }
 
   export type FavoritePlaceCreateManyCityInput = {
     id?: string
     userId: string
+    createdAt?: Date | string
+  }
+
+  export type GlobalActivityCreateManyCityInput = {
+    id?: string
+    foursquareId?: string | null
+    title: string
+    description?: string | null
+    category?: string | null
+    location?: string | null
+    rating?: number | null
+    image?: string | null
     createdAt?: Date | string
   }
 
@@ -41127,10 +46373,12 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     trip?: TripUpdateOneRequiredWithoutActivitiesNestedInput
     section?: TripSectionUpdateOneWithoutActivitiesNestedInput
     reviews?: ReviewUpdateManyWithoutActivityNestedInput
+    favoriteActivities?: FavoriteActivityUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateWithoutCityInput = {
@@ -41150,8 +46398,10 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     reviews?: ReviewUncheckedUpdateManyWithoutActivityNestedInput
+    favoriteActivities?: FavoriteActivityUncheckedUpdateManyWithoutActivityNestedInput
   }
 
   export type ActivityUncheckedUpdateManyWithoutCityInput = {
@@ -41171,6 +46421,7 @@ export namespace Prisma {
     bookingUrl?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     aiRecommended?: BoolFieldUpdateOperationsInput | boolean
+    saveCount?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -41192,12 +46443,54 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type GlobalActivityUpdateWithoutCityInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    foursquareId?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlobalActivityUncheckedUpdateWithoutCityInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    foursquareId?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlobalActivityUncheckedUpdateManyWithoutCityInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    foursquareId?: NullableStringFieldUpdateOperationsInput | string | null
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type ReviewCreateManyActivityInput = {
     id?: string
     userId: string
     tripId?: string | null
     rating: number
     comment?: string | null
+    createdAt?: Date | string
+  }
+
+  export type FavoriteActivityCreateManyActivityInput = {
+    id?: string
+    userId: string
     createdAt?: Date | string
   }
 
@@ -41225,6 +46518,24 @@ export namespace Prisma {
     tripId?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: FloatFieldUpdateOperationsInput | number
     comment?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FavoriteActivityUpdateWithoutActivityInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutFavoriteActivitiesNestedInput
+  }
+
+  export type FavoriteActivityUncheckedUpdateWithoutActivityInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FavoriteActivityUncheckedUpdateManyWithoutActivityInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    userId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 

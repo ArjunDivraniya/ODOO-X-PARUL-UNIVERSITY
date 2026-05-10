@@ -203,6 +203,8 @@ exports.Prisma.CityScalarFieldEnum = {
   language: 'language',
   popularityScore: 'popularityScore',
   averageBudget: 'averageBudget',
+  searchCount: 'searchCount',
+  isTrending: 'isTrending',
   weatherInfo: 'weatherInfo',
   heroImage: 'heroImage',
   createdAt: 'createdAt'
@@ -226,6 +228,7 @@ exports.Prisma.ActivityScalarFieldEnum = {
   bookingUrl: 'bookingUrl',
   image: 'image',
   aiRecommended: 'aiRecommended',
+  saveCount: 'saveCount',
   createdAt: 'createdAt'
 };
 
@@ -367,6 +370,34 @@ exports.Prisma.FavoritePlaceScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.RecommendationCacheScalarFieldEnum = {
+  id: 'id',
+  key: 'key',
+  data: 'data',
+  expiresAt: 'expiresAt',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.GlobalActivityScalarFieldEnum = {
+  id: 'id',
+  foursquareId: 'foursquareId',
+  title: 'title',
+  description: 'description',
+  category: 'category',
+  location: 'location',
+  cityId: 'cityId',
+  rating: 'rating',
+  image: 'image',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.FavoriteActivityScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  activityId: 'activityId',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -374,6 +405,10 @@ exports.Prisma.SortOrder = {
 
 exports.Prisma.NullableJsonNullValueInput = {
   DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull
+};
+
+exports.Prisma.JsonNullValueInput = {
   JsonNull: Prisma.JsonNull
 };
 
@@ -453,7 +488,10 @@ exports.Prisma.ModelName = {
   Review: 'Review',
   AIChat: 'AIChat',
   TripCollaborator: 'TripCollaborator',
-  FavoritePlace: 'FavoritePlace'
+  FavoritePlace: 'FavoritePlace',
+  RecommendationCache: 'RecommendationCache',
+  GlobalActivity: 'GlobalActivity',
+  FavoriteActivity: 'FavoriteActivity'
 };
 
 /**
