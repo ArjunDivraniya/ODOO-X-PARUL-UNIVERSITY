@@ -188,15 +188,19 @@ model City {
   language        String?
   popularityScore Float?   @default(0)
   averageBudget   Float?
+  searchCount     Int      @default(0)
+  isTrending      Boolean  @default(false)
   weatherInfo     String?
   heroImage       String?
   createdAt       DateTime @default(now())
 
   // Relations
-  sections     TripSection[]
-  activities   Activity[]
-  savedByUsers FavoritePlace[]
+  sections         TripSection[]
+  activities       Activity[]
+  savedByUsers     FavoritePlace[]
+  globalActivities GlobalActivity[]
 
+  @@unique([name, country])
   @@index([name, country])
 }
 
@@ -449,4 +453,31 @@ model FavoritePlace {
   city City @relation(fields: [cityId], references: [id], onDelete: Cascade)
 
   @@unique([userId, cityId])
+}
+
+model RecommendationCache {
+  id        String   @id @default(uuid())
+  key       String   @unique // e.g. "geodb:search:goa"
+  data      Json
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([key])
+}
+
+model GlobalActivity {
+  id           String   @id @default(uuid())
+  foursquareId String?  @unique
+  title        String
+  description  String?
+  category     String?
+  location     String?
+  cityId       String?
+  rating       Float?
+  image        String?
+  createdAt    DateTime @default(now())
+
+  city City? @relation(fields: [cityId], references: [id], onDelete: SetNull)
+
+  @@index([cityId])
 }
