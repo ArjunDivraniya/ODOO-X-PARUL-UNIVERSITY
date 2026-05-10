@@ -1,26 +1,22 @@
 const multer = require('multer');
-const path = require('path');
 
-// Configure multer to use memory storage
 const storage = multer.memoryStorage();
 
-// File filter for images
 const fileFilter = (req, file, cb) => {
-  const allowedTypes = /jpeg|jpg|png|webp/;
-  const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
-  const mimetype = allowedTypes.test(file.mimetype);
-
-  if (extname && mimetype) {
-    return cb(null, true);
+  const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+  if (allowedTypes.includes(file.mimetype)) {
+    cb(null, true);
   } else {
-    cb(new Error('Error: Images only! (jpeg, jpg, png, webp)'));
+    cb(new Error('Invalid file type. Only JPG, PNG, and WebP are allowed.'), false);
   }
 };
 
 const upload = multer({
   storage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
-  fileFilter
+  fileFilter,
+  limits: {
+    fileSize: 5 * 1024 * 1024 // 5MB
+  }
 });
 
 module.exports = upload;

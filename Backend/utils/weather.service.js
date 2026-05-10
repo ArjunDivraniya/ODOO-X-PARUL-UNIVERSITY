@@ -7,30 +7,65 @@ class WeatherService {
     this.baseUrl = 'https://api.openweathermap.org/data/2.5';
   }
 
-  async getCityWeather(city) {
-    const cacheKey = `weather:${city.toLowerCase()}`;
-    const cachedData = await cacheService.get(cacheKey);
-    if (cachedData) return cachedData;
-
-    if (!this.apiKey) return null;
+  async getCurrentWeather(city) {
+    const cacheKey = `weather_current_${city.toLowerCase()}`;
+    const cached = await cacheService.get(cacheKey);
+    if (cached) return cached;
 
     try {
       const response = await axios.get(`${this.baseUrl}/weather`, {
-        params: { q: city, appid: this.apiKey, units: 'metric' }
+        params: {
+          q: city,
+          appid: this.apiKey,
+          units: 'metric'
+        }
       });
 
       const weather = {
-        temp: response.data.main.temp,
+        city: response.data.name,
+        temperature: Math.round(response.data.main.temp),
         condition: response.data.weather[0].main,
-        description: response.data.weather[0].description,
+        humidity: response.data.main.humidity,
+        windSpeed: response.data.wind.speed,
         icon: response.data.weather[0].icon
       };
 
-      await cacheService.set(cacheKey, weather, 3600 * 3); // Cache for 3 hours
+      await cacheService.set(cacheKey, weather, 1800); // 30 min cache
       return weather;
     } catch (error) {
       console.error('Weather API Error:', error.message);
-      return null;
+      throw new Error('Failed to fetch weather data');
+    }
+  }
+
+  async getForecast(city) {
+    const cacheKey = `weather_forecast_${city.toLowerCase()}`;
+    const cached = await cacheService.get(cacheKey);
+    if (cached) return cached;
+
+    try {
+      const response = await axios.get(`${this.baseUrl}/forecast`, {
+        params: {
+          q: city,
+          appid: this.apiKey,
+          units: 'metric'
+        }
+      });
+
+      const forecast = response.data.list
+        .filter((_, index) => index % 8 === 0) // Every 24 hours
+        .map(item => ({
+          date: item.dt_txt.split(' ')[0],
+          temp: Math.round(item.main.temp),
+          condition: item.weather[0].main,
+          icon: item.weather[0].icon
+        }));
+
+      await cacheService.set(cacheKey, forecast, 3600); // 1 hour cache
+      return forecast;
+    } catch (error) {
+      console.error('Forecast API Error:', error.message);
+      throw new Error('Failed to fetch forecast data');
     }
   }
 }
