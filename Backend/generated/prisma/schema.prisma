@@ -60,25 +60,33 @@ enum NotificationType {
 // -----------------------------------------------------------------------------
 
 model User {
-  id           String    @id @default(uuid())
-  firstName    String
-  lastName     String
-  username     String?   @unique
-  email        String    @unique
-  password     String
-  phoneNumber  String?
-  bio          String?
-  city         String?
-  country      String?
-  profileImage String?
-  coverImage   String?
-  role         Role      @default(USER)
-  isVerified   Boolean   @default(false)
-  isPublic     Boolean   @default(true)
-  authProvider String?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
-  lastLogin    DateTime?
+  id                      String    @id @default(uuid())
+  firstName               String
+  lastName                String
+  username                String?   @unique
+  email                   String    @unique
+  password                String
+  phoneNumber             String?
+  bio                     String?
+  city                    String?
+  country                 String?
+  profileImage            String?
+  coverImage              String?
+  role                    Role      @default(USER)
+  isVerified              Boolean   @default(false)
+  verificationToken       String?
+  verificationTokenExpiry DateTime?
+  resetPasswordToken      String?
+  resetPasswordExpiry     DateTime?
+  refreshToken            String?
+  isPublic                Boolean   @default(true)
+  authProvider            String?
+  socialLinks             Json?
+  preferences             Json?
+  onboardingComplete      Boolean   @default(false)
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
+  lastLogin               DateTime?
 
   // Relations
   trips              Trip[]
@@ -135,6 +143,9 @@ model Trip {
 
   @@index([userId])
   @@index([status, visibility])
+  @@index([userId, status])
+  @@index([userId, visibility])
+  @@index([createdAt])
 }
 
 model TripSection {

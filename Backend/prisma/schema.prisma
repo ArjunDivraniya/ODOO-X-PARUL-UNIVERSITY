@@ -143,6 +143,9 @@ model Trip {
 
   @@index([userId])
   @@index([status, visibility])
+  @@index([userId, status])
+  @@index([userId, visibility])
+  @@index([createdAt])
 }
 
 model TripSection {

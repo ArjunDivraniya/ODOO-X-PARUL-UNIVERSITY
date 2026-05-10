@@ -83,8 +83,8 @@ exports.register = async (req, res) => {
     });
 
   } catch (error) {
-    console.error(error.message);
-    res.status(500).json({ success: false, error: 'Server Error' });
+    console.error(error);
+    res.status(500).json({ success: false, error: error.message, stack: error.stack });
   }
 };
 

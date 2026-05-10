@@ -135,8 +135,16 @@ exports.Prisma.UserScalarFieldEnum = {
   coverImage: 'coverImage',
   role: 'role',
   isVerified: 'isVerified',
+  verificationToken: 'verificationToken',
+  verificationTokenExpiry: 'verificationTokenExpiry',
+  resetPasswordToken: 'resetPasswordToken',
+  resetPasswordExpiry: 'resetPasswordExpiry',
+  refreshToken: 'refreshToken',
   isPublic: 'isPublic',
   authProvider: 'authProvider',
+  socialLinks: 'socialLinks',
+  preferences: 'preferences',
+  onboardingComplete: 'onboardingComplete',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   lastLogin: 'lastLogin'
@@ -364,9 +372,20 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.NullableJsonNullValueInput = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull
+};
+
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
 };
 
 exports.Prisma.NullsOrder = {

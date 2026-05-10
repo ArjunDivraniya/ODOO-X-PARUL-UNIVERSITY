@@ -65,6 +65,102 @@ exports.updateProfile = async (req, res) => {
   }
 };
 
+// @route   PATCH /api/users/profile-image
+// @desc    Update authenticated user's profile image
+// @access  Private
+exports.updateProfileImage = async (req, res) => {
+  try {
+    if (!req.file) {
+      return errorResponse(res, 'Please upload an image file', 400);
+    }
+    
+    const profileImageUrl = await userService.updateProfileImage(req.user.id, req.file.buffer);
+    return successResponse(res, 'Profile image updated successfully', { profileImage: profileImageUrl });
+  } catch (error) {
+    return errorResponse(res, 'Failed to update profile image', 500, error);
+  }
+};
+
+// @route   PATCH /api/users/cover-image
+// @desc    Update authenticated user's cover image
+// @access  Private
+exports.updateCoverImage = async (req, res) => {
+  try {
+    if (!req.file) {
+      return errorResponse(res, 'Please upload an image file', 400);
+    }
+    
+    const coverImageUrl = await userService.updateCoverImage(req.user.id, req.file.buffer);
+    return successResponse(res, 'Cover image updated successfully', { coverImage: coverImageUrl });
+  } catch (error) {
+    return errorResponse(res, 'Failed to update cover image', 500, error);
+  }
+};
+
+// @route   GET /api/users/dashboard-stats
+// @desc    Fetch dashboard statistics for logged-in user
+// @access  Private
+exports.getDashboardStats = async (req, res) => {
+  try {
+    const stats = await userService.getDashboardStats(req.user.id);
+    return successResponse(res, 'Dashboard stats fetched successfully', stats);
+  } catch (error) {
+    return errorResponse(res, 'Failed to fetch dashboard stats', 500, error);
+  }
+};
+
+// @route   GET /api/users/activity-summary
+// @desc    Fetch user activity overview for dashboard analytics
+// @access  Private
+exports.getActivitySummary = async (req, res) => {
+  try {
+    const summary = await userService.getActivitySummary(req.user.id);
+    return successResponse(res, 'Activity summary fetched successfully', summary);
+  } catch (error) {
+    return errorResponse(res, 'Failed to fetch activity summary', 500, error);
+  }
+};
+
+// @route   GET /api/users/travel-history
+// @desc    Fetch complete travel history
+// @access  Private
+exports.getTravelHistory = async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const status = req.query.status; // e.g. COMPLETED
+    
+    const history = await userService.getTravelHistory(req.user.id, page, limit, status);
+    return successResponse(res, 'Travel history fetched successfully', history);
+  } catch (error) {
+    return errorResponse(res, 'Failed to fetch travel history', 500, error);
+  }
+};
+
+// @route   GET /api/users/saved-trips
+// @desc    Fetch user's bookmarked/saved trips
+// @access  Private
+exports.getSavedTrips = async (req, res) => {
+  try {
+    const savedTrips = await userService.getSavedTrips(req.user.id);
+    return successResponse(res, 'Saved trips fetched successfully', { savedTrips });
+  } catch (error) {
+    return errorResponse(res, 'Failed to fetch saved trips', 500, error);
+  }
+};
+
+// @route   GET /api/users/favorite-places
+// @desc    Fetch user's saved favorite destinations
+// @access  Private
+exports.getFavoritePlaces = async (req, res) => {
+  try {
+    const favoritePlaces = await userService.getFavoritePlaces(req.user.id);
+    return successResponse(res, 'Favorite places fetched successfully', { favoritePlaces });
+  } catch (error) {
+    return errorResponse(res, 'Failed to fetch favorite places', 500, error);
+  }
+};
+
 // @route   DELETE /api/users/profile
 // @desc    Delete authenticated user account
 // @access  Private
