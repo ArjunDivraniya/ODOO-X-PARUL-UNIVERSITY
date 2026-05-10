@@ -1,19 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from './context/AuthContext';
+import AppRoutes from './routes/AppRoutes';
+import './index.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     <h1 className="text-3xl font-bold ">
-    Hello world!
-  </h1>
-     </>
-  )
+    <BrowserRouter>
+      <AuthProvider>
+        <Toaster 
+          position="top-center"
+          toastOptions={{
+            style: {
+              background: '#1f2937',
+              color: '#fff',
+              borderRadius: '12px',
+            },
+          }}
+        />
+        <AppRoutes />
+      </AuthProvider>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
