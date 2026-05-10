@@ -38,6 +38,11 @@ app.use('/api/reviews', require('./routes/review.routes.js'));
 app.use('/api/public', require('./routes/public.routes.js'));
 app.use('/api/collaborators', require('./routes/collaborator.routes.js'));
 app.use('/api/admin', require('./routes/admin.routes.js'));
+app.use('/api/search', require('./routes/search.routes.js'));
+app.use('/api/upload', require('./routes/upload.routes.js'));
+app.use('/api/weather', require('./routes/weather.routes.js'));
+app.use('/api/analytics', require('./routes/analytics.routes.js'));
+app.use('/api/system', require('./routes/health.routes.js'));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
