@@ -7,13 +7,13 @@ import { Input } from '../../ui/Input';
 import { Label } from '../../ui/Label';
 import { Button } from '../../ui/Button';
 
-const NOTE_TYPES = ['TEXT', 'CHECKLIST', 'LINK'];
+const NOTE_TYPES = ['JOURNAL', 'MEMORY', 'GENERAL', 'TIPS'];
 
 const CreateNoteModal = ({ isOpen, onClose, tripId, onCreated }) => {
   const [formData, setFormData] = useState({
     title: '',
     content: '',
-    noteType: 'TEXT'
+    noteType: 'GENERAL'
   });
   const [submitting, setSubmitting] = useState(false);
 
@@ -40,7 +40,7 @@ const CreateNoteModal = ({ isOpen, onClose, tripId, onCreated }) => {
       toast.success('Note created');
       onClose();
     } catch (err) {
-      toast.error('Failed to create note');
+      toast.error(err.response?.data?.message || err.response?.data?.error || 'Failed to create note');
     } finally {
       setSubmitting(false);
     }

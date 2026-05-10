@@ -5,7 +5,7 @@ class CollaboratorService {
   async inviteCollaborator(userId, data) {
     const trip = await prisma.trip.findUnique({
       where: { id: data.tripId },
-      include: { user: true }
+      include: { owner: true }
     });
 
     if (!trip || trip.userId !== userId) {
@@ -31,13 +31,13 @@ class CollaboratorService {
         userId: invitee.id,
         permission: data.permission
       },
-      include: { user: { select: { firstName: true, avatar: true, email: true } } }
+      include: { user: { select: { firstName: true, profileImage: true, email: true } } }
     });
 
     // Send Email
     await emailService.sendCollaboratorInvite(
       invitee.email,
-      trip.user.firstName,
+      trip.owner.firstName,
       trip.title,
       data.permission
     );
@@ -47,7 +47,7 @@ class CollaboratorService {
       data: {
         userId: invitee.id,
         title: 'Trip Invitation',
-        message: `${trip.user.firstName} invited you to collaborate on ${trip.title}`,
+        message: `${trip.owner.firstName} invited you to collaborate on ${trip.title} as ${data.permission}.`,
         type: 'INFO'
       }
     });
@@ -60,7 +60,7 @@ class CollaboratorService {
       where: { id: tripId },
       include: { 
         collaborators: {
-          include: { user: { select: { id: true, firstName: true, lastName: true, avatar: true, email: true } } }
+          include: { user: { select: { id: true, firstName: true, lastName: true, profileImage: true, email: true } } }
         }
       }
     });

@@ -31,8 +31,10 @@ class PDFService {
       // Trip Info
       doc.fontSize(14).text('Trip Details', { underline: true });
       doc.fontSize(10).text(`Trip: ${trip.title}`);
-      doc.text(`Destination: ${trip.destination}`);
-      doc.text(`Duration: ${trip.startDate.toLocaleDateString()} - ${trip.endDate.toLocaleDateString()}`);
+      doc.text(`Destination: ${trip.destination || 'Not specified'}`);
+      const startDate = trip.startDate ? trip.startDate.toLocaleDateString() : 'Not set';
+      const endDate = trip.endDate ? trip.endDate.toLocaleDateString() : 'Not set';
+      doc.text(`Duration: ${startDate} - ${endDate}`);
       doc.moveDown();
 
       // User Info
@@ -57,7 +59,8 @@ class PDFService {
       expenses.forEach(exp => {
         doc.text(exp.title, 50, y);
         doc.text(exp.category, 200, y);
-        doc.text(new Date(exp.expenseDate).toLocaleDateString(), 350, y);
+        const expenseDate = exp.expenseDate ? new Date(exp.expenseDate).toLocaleDateString() : 'Not set';
+        doc.text(expenseDate, 350, y);
         doc.text(`${getCurrencySymbol(invoice.currency)} ${exp.amount.toFixed(2)}`, 450, y);
         y += 20;
       });
