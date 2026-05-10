@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary-bg: #07111A;
+  --color-secondary-bg: #F6F1E8;
+  --color-accent-blue: #6DD3FF;
+  --color-accent-mint: #B7F5D4;
+  --color-accent-orange: #FFB36B;
+  --color-neutral-text: #B9B9B9;
+
+  --font-heading: "Clash Display", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  body {
+    @apply bg-primary-bg text-secondary-bg font-body antialiased selection:bg-accent-blue selection:text-primary-bg;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animation-ease {
+    transition-timing-function: var(--ease-smooth);
+  }
+}

@@ -3,7 +3,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
+import ForgotPassword from '../pages/auth/ForgotPassword';
+import ResetPassword from '../pages/auth/ResetPassword';
 import Dashboard from '../pages/Dashboard';
+import Landing from '../pages/Landing';
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -22,7 +25,7 @@ const PublicRoute = ({ children }) => {
 
   if (loading) return null;
 
-  return !user ? children : <Navigate to="/" />;
+  return !user ? children : <Navigate to="/dashboard" />;
 };
 
 const AppRoutes = () => {
@@ -38,7 +41,18 @@ const AppRoutes = () => {
           <Register />
         </PublicRoute>
       } />
-      <Route path="/" element={
+      <Route path="/forgot-password" element={
+        <PublicRoute>
+          <ForgotPassword />
+        </PublicRoute>
+      } />
+      <Route path="/reset-password/:token" element={
+        <PublicRoute>
+          <ResetPassword />
+        </PublicRoute>
+      } />
+      <Route path="/" element={<Landing />} />
+      <Route path="/dashboard" element={
         <PrivateRoute>
           <Dashboard />
         </PrivateRoute>

@@ -1,10 +1,13 @@
 import React, { useState, useContext, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { User, Mail, Lock, Phone, MapPin, Globe, Camera, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { LuUser, LuMail, LuLock, LuPhone, LuMapPin, LuGlobe, LuCamera, LuArrowRight, LuEye, LuEyeOff } from 'react-icons/lu';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthContext';
 import AuthLayout from '../../components/auth/AuthLayout';
+import { Button } from '../../components/ui/Button';
+import { Input } from '../../components/ui/Input';
+import { Label } from '../../components/ui/Label';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +53,7 @@ const Register = () => {
 
       await register(data);
       toast.success('Registration successful!');
-      navigate('/');
+      navigate('/dashboard');
     } catch (err) {
       toast.error(err.response?.data?.error || 'Registration failed');
     } finally {
@@ -58,46 +61,30 @@ const Register = () => {
     }
   };
 
-  const InputField = ({ label, icon: Icon, type = "text", ...props }) => (
-    <div className="space-y-1">
-      <label className="text-xs font-medium text-gray-300 ml-1">{label}</label>
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <Icon className="h-4 w-4 text-gray-500" />
-        </div>
-        <input
-          type={type}
-          className="w-full pl-9 pr-3 py-2 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all text-white placeholder-gray-500 text-sm"
-          {...props}
-        />
-      </div>
-    </div>
-  );
-
   return (
     <AuthLayout 
-      title="Join Traveloop" 
-      subtitle="Start planning your dream vacations with AI."
+      title="Join TripLoop." 
+      subtitle="Start planning your dream vacations seamlessly."
     >
-      <div className="mb-6 text-center">
-        <h2 className="text-2xl font-semibold mb-1">Create Account</h2>
-        <p className="text-gray-400 text-sm">Join the next generation of travel</p>
+      <div className="mb-8">
+        <h2 className="text-3xl font-heading font-bold mb-2 text-secondary-bg tracking-tight">Create Account</h2>
+        <p className="text-neutral-text">Join the next generation of travel</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-5">
         {/* Profile Photo Upload */}
         <div className="flex justify-center mb-6">
           <div className="relative">
             <div 
               onClick={() => fileInputRef.current?.click()}
-              className="w-20 h-20 rounded-full border-2 border-dashed border-gray-500 hover:border-blue-400 flex flex-col items-center justify-center cursor-pointer overflow-hidden group transition-colors bg-white/5"
+              className="w-24 h-24 rounded-full border border-dashed border-white/20 hover:border-accent-blue flex flex-col items-center justify-center cursor-pointer overflow-hidden group transition-all bg-white/5"
             >
               {previewUrl ? (
                 <img src={previewUrl} alt="Preview" className="w-full h-full object-cover" />
               ) : (
                 <>
-                  <Camera className="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors" />
-                  <span className="text-[10px] text-gray-400 group-hover:text-blue-400 mt-1">Upload</span>
+                  <LuCamera className="w-6 h-6 text-gray-500 group-hover:text-accent-blue transition-colors" />
+                  <span className="text-[10px] font-medium text-gray-500 group-hover:text-accent-blue mt-1 uppercase tracking-wider">Upload</span>
                 </>
               )}
             </div>
@@ -112,96 +99,110 @@ const Register = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <InputField label="First Name" icon={User} name="firstName" value={formData.firstName} onChange={handleChange} required placeholder="John" />
-          <InputField label="Last Name" icon={User} name="lastName" value={formData.lastName} onChange={handleChange} required placeholder="Doe" />
+          <div className="space-y-2">
+            <Label htmlFor="firstName">First Name</Label>
+            <Input id="firstName" name="firstName" icon={LuUser} value={formData.firstName} onChange={handleChange} required placeholder="Jane" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="lastName">Last Name</Label>
+            <Input id="lastName" name="lastName" icon={LuUser} value={formData.lastName} onChange={handleChange} required placeholder="Doe" />
+          </div>
         </div>
 
-        <InputField label="Email Address" icon={Mail} type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" />
-        <InputField label="Phone Number" icon={Phone} type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} placeholder="+1 234 567 8900" />
+        <div className="space-y-2">
+          <Label htmlFor="email">Email Address</Label>
+          <Input id="email" type="email" name="email" icon={LuMail} value={formData.email} onChange={handleChange} required placeholder="jane@example.com" />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="phoneNumber">Phone Number</Label>
+          <Input id="phoneNumber" type="tel" name="phoneNumber" icon={LuPhone} value={formData.phoneNumber} onChange={handleChange} placeholder="+1 234 567 8900" />
+        </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <InputField label="City" icon={MapPin} name="city" value={formData.city} onChange={handleChange} placeholder="New York" />
-          <InputField label="Country" icon={Globe} name="country" value={formData.country} onChange={handleChange} placeholder="USA" />
+          <div className="space-y-2">
+            <Label htmlFor="city">City</Label>
+            <Input id="city" name="city" icon={LuMapPin} value={formData.city} onChange={handleChange} placeholder="New York" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="country">Country</Label>
+            <Input id="country" name="country" icon={LuGlobe} value={formData.country} onChange={handleChange} placeholder="USA" />
+          </div>
         </div>
 
-        <div className="space-y-1">
-          <label className="text-xs font-medium text-gray-300 ml-1">Additional Info</label>
+        <div className="space-y-2">
+          <Label htmlFor="additionalInfo">Travel Bio</Label>
           <textarea
+            id="additionalInfo"
             name="additionalInfo"
             value={formData.additionalInfo}
             onChange={handleChange}
-            className="w-full p-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all text-white placeholder-gray-500 text-sm resize-none h-20"
+            className="flex w-full rounded-[16px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-secondary-bg shadow-sm transition-all placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue resize-none h-24 disabled:cursor-not-allowed disabled:opacity-50"
             placeholder="Tell us about your travel preferences..."
           ></textarea>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-1">
-            <label className="text-xs font-medium text-gray-300 ml-1">Password</label>
+          <div className="space-y-2">
+            <Label htmlFor="password">Password</Label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Lock className="h-4 w-4 text-gray-500" />
-              </div>
-              <input
+              <Input
+                id="password"
                 type={showPassword ? "text" : "password"}
                 name="password"
+                icon={LuLock}
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="w-full pl-9 pr-8 py-2 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all text-white placeholder-gray-500 text-sm"
                 placeholder="••••••••"
               />
             </div>
           </div>
           
-          <div className="space-y-1">
-            <label className="text-xs font-medium text-gray-300 ml-1">Confirm</label>
+          <div className="space-y-2">
+            <Label htmlFor="confirmPassword">Confirm</Label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Lock className="h-4 w-4 text-gray-500" />
-              </div>
-              <input
+              <Input
+                id="confirmPassword"
                 type={showPassword ? "text" : "password"}
                 name="confirmPassword"
+                icon={LuLock}
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
-                className="w-full pl-9 pr-8 py-2 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all text-white placeholder-gray-500 text-sm"
                 placeholder="••••••••"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute inset-y-0 right-0 pr-2 flex items-center text-gray-500 hover:text-gray-300"
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-gray-300 transition-colors"
               >
-                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                {showPassword ? <LuEyeOff className="h-5 w-5" /> : <LuEye className="h-5 w-5" />}
               </button>
             </div>
           </div>
         </div>
 
-        <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
+        <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full mt-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-xl font-medium shadow-[0_0_20px_rgba(79,70,229,0.3)] transition-all flex justify-center items-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed text-sm"
+          className="w-full mt-8 group"
         >
           {isSubmitting ? (
-            <span className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin"></span>
+            <span className="w-5 h-5 border-2 border-primary-bg/20 border-t-primary-bg rounded-full animate-spin"></span>
           ) : (
             <>
               Create Account
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <LuArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </>
           )}
-        </motion.button>
+        </Button>
       </form>
 
-      <div className="mt-6 text-center">
-        <p className="text-gray-400 text-sm">
+      <div className="mt-8 text-center">
+        <p className="text-neutral-text">
           Already have an account?{' '}
-          <Link to="/login" className="text-blue-400 font-medium hover:text-blue-300 transition-colors">
+          <Link to="/login" className="text-secondary-bg font-medium hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5">
             Sign In
           </Link>
         </p>
