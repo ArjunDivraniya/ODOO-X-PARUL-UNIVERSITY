@@ -6,7 +6,7 @@ class InvoiceService {
   async generateInvoice(userId, data) {
     const trip = await prisma.trip.findFirst({
       where: { id: data.tripId, userId },
-      include: { expenses: true, user: true }
+      include: { expenses: true, owner: true }
     });
 
     if (!trip) throw new Error('Trip not found or unauthorized');
@@ -35,7 +35,7 @@ class InvoiceService {
       });
 
       // Generate PDF
-      const pdfPath = await pdfService.generateInvoicePDF(invoice, trip, trip.user, trip.expenses);
+      const pdfPath = await pdfService.generateInvoicePDF(invoice, trip, trip.owner, trip.expenses);
       
       // In a real app, you'd upload this to Cloudinary/S3
       // For now, we'll store the local path or a placeholder

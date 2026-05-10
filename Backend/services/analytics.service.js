@@ -5,23 +5,24 @@ class AnalyticsService {
     const [
       totalTrips,
       completedTrips,
-      totalExpenses,
+      expenses,
       savedCities,
       activitiesCount
     ] = await Promise.all([
       prisma.trip.count({ where: { userId } }),
       prisma.trip.count({ where: { userId, status: 'COMPLETED' } }),
-      prisma.expense.aggregate({
+      prisma.expense.findMany({
         where: { trip: { userId } },
-        _sum: { amount: true }
+        select: { amount: true, quantity: true }
       }),
       prisma.favoriteDestination.count({ where: { userId } }),
       prisma.activity.count({ where: { trip: { userId } } })
     ]);
+    const totalSpending = expenses.reduce((sum, expense) => sum + (expense.amount * expense.quantity), 0);
 
     return {
       trips: { total: totalTrips, completed: completedTrips },
-      spending: totalExpenses._sum.amount || 0,
+      spending: totalSpending,
       favorites: savedCities,
       activities: activitiesCount,
       travelTrend: await this.getTravelTrends(userId)
@@ -34,7 +35,7 @@ class AnalyticsService {
       include: {
         expenses: true,
         activities: true,
-        _count: { select: { sections: true } }
+        _count: { select: { itinerarySections: true } }
       }
     });
 
@@ -47,10 +48,10 @@ class AnalyticsService {
     });
 
     return {
-      budgetUsed: trip.expenses.reduce((sum, e) => sum + e.amount, 0),
-      estimatedBudget: trip.budget,
+      budgetUsed: trip.expenses.reduce((sum, e) => sum + (e.amount * e.quantity), 0),
+      estimatedBudget: trip.estimatedBudget || 0,
       activityCount: trip.activities.length,
-      sectionCount: trip._count.sections,
+      sectionCount: trip._count.itinerarySections,
       expenseBreakdown
     };
   }
@@ -75,13 +76,20 @@ class AnalyticsService {
   }
 
   async getTravelTrends(userId) {
-    return await prisma.trip.groupBy({
-      by: ['destination'],
-      where: { userId },
-      _count: { id: true },
-      orderBy: { _count: { id: 'desc' } },
-      take: 3
+    const trips = await prisma.trip.findMany({
+      where: { userId, destination: { not: null } },
+      select: { destination: true }
     });
+
+    const counts = trips.reduce((acc, trip) => {
+      acc[trip.destination] = (acc[trip.destination] || 0) + 1;
+      return acc;
+    }, {});
+
+    return Object.entries(counts)
+      .map(([destination, count]) => ({ destination, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 3);
   }
 }
 
