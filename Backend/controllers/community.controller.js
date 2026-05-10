@@ -5,11 +5,12 @@ const { successResponse, errorResponse } = require('../utils/responseHandler');
 exports.createPost = async (req, res) => {
   try {
     const validatedData = postSchema.parse(req.body);
-    const files = req.files || [];
-    const post = await communityService.createPost(req.user.id, validatedData, files);
-    return successResponse(res, 'Post created successfully', { post });
+    const post = await communityService.createPost(req.user.id, validatedData, req.files);
+    return successResponse(res, 'Post created successfully', { post }, 201);
   } catch (error) {
-    return errorResponse(res, error.message || 'Failed to create post', 400, error);
+    console.error('Create Post Error:', JSON.stringify(error, null, 2));
+    const msg = error.errors ? error.errors.map(e => e.message).join(', ') : (error.message || 'Failed to create post');
+    return errorResponse(res, msg, 400, error);
   }
 };
 
@@ -34,8 +35,7 @@ exports.getPostById = async (req, res) => {
 exports.updatePost = async (req, res) => {
   try {
     const validatedData = updatePostSchema.parse(req.body);
-    const files = req.files || [];
-    const post = await communityService.updatePost(req.params.postId, req.user.id, validatedData, files);
+    const post = await communityService.updatePost(req.params.postId, req.user.id, validatedData, req.files);
     return successResponse(res, 'Post updated successfully', { post });
   } catch (error) {
     return errorResponse(res, error.message || 'Failed to update post', 400, error);
@@ -53,10 +53,10 @@ exports.deletePost = async (req, res) => {
 
 exports.likePost = async (req, res) => {
   try {
-    await communityService.likePost(req.user.id, req.params.postId);
-    return successResponse(res, 'Post liked successfully');
+    const result = await communityService.likePost(req.user.id, req.params.postId);
+    return successResponse(res, result.liked ? 'Post liked' : 'Like removed', { liked: result.liked });
   } catch (error) {
-    return errorResponse(res, 'Failed to like post', 500, error);
+    return errorResponse(res, 'Failed to toggle like', 500, error);
   }
 };
 
@@ -73,7 +73,7 @@ exports.addComment = async (req, res) => {
   try {
     const { content } = commentSchema.parse(req.body);
     const comment = await communityService.addComment(req.user.id, req.params.postId, content);
-    return successResponse(res, 'Comment added successfully', { comment });
+    return successResponse(res, 'Comment added successfully', { comment }, 201);
   } catch (error) {
     return errorResponse(res, error.message || 'Failed to add comment', 400, error);
   }
@@ -85,5 +85,23 @@ exports.getComments = async (req, res) => {
     return successResponse(res, 'Comments fetched successfully', data);
   } catch (error) {
     return errorResponse(res, 'Failed to fetch comments', 500, error);
+  }
+};
+
+exports.savePostTrip = async (req, res) => {
+  try {
+    const saved = await communityService.savePostTrip(req.user.id, req.params.postId);
+    return successResponse(res, 'Trip saved successfully', { saved });
+  } catch (error) {
+    return errorResponse(res, error.message || 'Failed to save trip', 400, error);
+  }
+};
+
+exports.copyPostTrip = async (req, res) => {
+  try {
+    const trip = await communityService.copyPostTrip(req.user.id, req.params.postId);
+    return successResponse(res, 'Trip copied to your account', { trip }, 201);
+  } catch (error) {
+    return errorResponse(res, error.message || 'Failed to copy trip', 400, error);
   }
 };

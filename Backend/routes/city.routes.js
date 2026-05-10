@@ -11,16 +11,16 @@ const optionalAuth = (req, res, next) => {
   next();
 };
 
-// Public routes
+// Public routes — specific paths BEFORE wildcard /:cityId
 router.get('/', cityController.getCities);
 router.get('/popular', cityController.getPopular);
 router.get('/trending', cityController.getTrending);
+router.get('/recommended', optionalAuth, cityController.getRecommended);
+
+// Wildcard city routes
 router.get('/:cityId', cityController.getCityById);
 router.get('/:cityId/activities', cityController.getActivities);
 router.get('/:cityId/weather', cityController.getWeather);
 router.get('/:cityId/budget-insights', cityController.getBudgetInsights);
-
-// Auth optional routes
-router.get('/recommended', optionalAuth, cityController.getRecommended);
 
 module.exports = router;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import api from '../../api/axios';
-import { getCity, getWeatherForecast } from '../../api/explore';
+import { getCity, getCityActivities, getWeatherForecast } from '../../api/explore';
 const ActivityPreview = ({ activity }) => (
   <div className="bg-[#0A1622] border border-white/5 rounded-[18px] p-4">
     <div className="text-sm text-secondary-bg font-semibold">{activity.title}</div>
@@ -22,7 +22,7 @@ const CityDetail = () => {
       try {
         const [cityRes, activityRes] = await Promise.all([
           getCity(cityId),
-          api.get('/activities', { params: { cityId } })
+          getCityActivities(cityId)
         ]);
         setCity(cityRes.data.data.city);
         setActivities(activityRes.data.data.activities || []);

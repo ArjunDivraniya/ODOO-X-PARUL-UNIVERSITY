@@ -9,3 +9,5 @@ export const updatePost = (postId, payload) => api.patch(`/community/posts/${pos
 export const deletePost = (postId) => api.delete(`/community/posts/${postId}`);
 export const addComment = (postId, payload) => api.post(`/community/posts/${postId}/comment`, payload);
 export const toggleLike = (postId) => api.post(`/community/posts/${postId}/like`);
+export const saveTrip = (postId) => api.post(`/community/posts/${postId}/save-trip`);
+export const copyTrip = (postId) => api.post(`/community/posts/${postId}/copy-trip`);

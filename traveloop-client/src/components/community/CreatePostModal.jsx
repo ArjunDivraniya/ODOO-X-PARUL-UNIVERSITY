@@ -55,7 +55,9 @@ const CreatePostModal = ({ isOpen, onClose, onCreated }) => {
       toast.success('Post created');
       onClose();
     } catch (err) {
-      toast.error('Failed to create post');
+      console.error(err);
+      const msg = err.response?.data?.error || err.response?.data?.message || 'Failed to create post';
+      toast.error(msg);
     } finally {
       setSubmitting(false);
     }

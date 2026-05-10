@@ -6,10 +6,10 @@ const authMiddleware = require('../middleware/auth.middleware');
 // All expense routes are protected
 router.use(authMiddleware);
 
-// CRUD
+// CRUD — specific paths BEFORE wildcard /:tripId
 router.post('/', expenseController.createExpense);
-router.get('/:tripId', expenseController.getTripExpenses);
 router.get('/single/:expenseId', expenseController.getExpenseById);
+router.get('/:tripId', expenseController.getTripExpenses);
 router.patch('/:expenseId', expenseController.updateExpense);
 router.delete('/:expenseId', expenseController.deleteExpense);
 

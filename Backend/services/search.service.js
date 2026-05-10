@@ -4,8 +4,11 @@ const cacheService = require('../utils/cache.service');
 class SearchService {
   async globalSearch(params) {
     const { query, limit } = params;
+    if (!query || !query.trim()) {
+      return { cities: [], activities: [], trips: [], communityPosts: [], topResults: [] };
+    }
+
     const cacheKey = `global_search_${query}_${limit}`;
-    
     const cached = await cacheService.get(cacheKey);
     if (cached) return cached;
 
@@ -24,7 +27,7 @@ class SearchService {
       topResults: [...cities.cities.slice(0, 2), ...activities.activities.slice(0, 2)]
     };
 
-    await cacheService.set(cacheKey, results, 300); // 5 min cache
+    await cacheService.set(cacheKey, results, 300);
     return results;
   }
 
@@ -118,7 +121,7 @@ class SearchService {
         where,
         skip,
         take: limit,
-        include: { user: { select: { firstName: true, avatar: true } } },
+        include: { owner: { select: { firstName: true, lastName: true, profileImage: true } } },
         orderBy: { createdAt: 'desc' }
       }),
       prisma.trip.count({ where })
@@ -148,7 +151,7 @@ class SearchService {
         skip,
         take: limit,
         include: { 
-          user: { select: { firstName: true, avatar: true } },
+          user: { select: { firstName: true, lastName: true, profileImage: true } },
           _count: { select: { likes: true, comments: true } }
         },
         orderBy: { createdAt: 'desc' }

@@ -12,7 +12,7 @@ const optionalAuth = (req, res, next) => {
   next();
 };
 
-// Public/Optional routes
+// Public / optional-auth routes
 router.get('/posts', optionalAuth, communityController.getFeed);
 router.get('/posts/:postId', optionalAuth, communityController.getPostById);
 router.get('/posts/:postId/comments', communityController.getComments);
@@ -20,13 +20,23 @@ router.get('/posts/:postId/comments', communityController.getComments);
 // Protected routes
 router.use(authMiddleware);
 
-router.post('/posts', upload.array('images', 5), communityController.createPost);
-router.patch('/posts/:postId', upload.array('images', 5), communityController.updatePost);
+// Post CRUD — accept both single "image" and multi "images" field names
+const uploadFields = upload.fields([
+  { name: 'image', maxCount: 1 },
+  { name: 'images', maxCount: 5 }
+]);
+
+router.post('/posts', uploadFields, communityController.createPost);
+router.patch('/posts/:postId', uploadFields, communityController.updatePost);
 router.delete('/posts/:postId', communityController.deletePost);
 
-// Social Interactions
+// Social interactions
 router.post('/posts/:postId/like', communityController.likePost);
 router.delete('/posts/:postId/like', communityController.unlikePost);
 router.post('/posts/:postId/comment', communityController.addComment);
+
+// Trip actions on community posts
+router.post('/posts/:postId/save-trip', communityController.savePostTrip);
+router.post('/posts/:postId/copy-trip', communityController.copyPostTrip);
 
 module.exports = router;

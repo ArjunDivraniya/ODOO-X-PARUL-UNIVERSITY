@@ -7,10 +7,10 @@ const upload = require('../middleware/upload.middleware');
 // All note routes are protected
 router.use(authMiddleware);
 
-// CRUD
+// CRUD — specific paths BEFORE wildcard /:tripId
 router.post('/', upload.array('attachments', 5), noteController.createNote);
-router.get('/:tripId', noteController.getTripNotes);
 router.get('/single/:noteId', noteController.getNoteById);
+router.get('/:tripId', noteController.getTripNotes);
 router.patch('/:noteId', upload.array('attachments', 5), noteController.updateNote);
 router.delete('/:noteId', noteController.deleteNote);
 

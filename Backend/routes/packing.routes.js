@@ -7,10 +7,11 @@ const authMiddleware = require('../middleware/auth.middleware');
 router.use(authMiddleware);
 
 router.post('/', packingController.createItem);
+// Specific named paths BEFORE wildcards
+router.delete('/reset/:tripId', packingController.resetChecklist);
 router.get('/:tripId', packingController.getTripChecklist);
+router.patch('/:itemId/toggle', packingController.toggleItem);
 router.patch('/:itemId', packingController.updateItem);
 router.delete('/:itemId', packingController.deleteItem);
-router.patch('/:itemId/toggle', packingController.toggleItem);
-router.delete('/reset/:tripId', packingController.resetChecklist);
 
 module.exports = router;

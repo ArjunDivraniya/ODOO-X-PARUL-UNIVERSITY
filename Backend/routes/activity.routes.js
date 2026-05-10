@@ -11,7 +11,7 @@ const optionalAuth = (req, res, next) => {
   next();
 };
 
-// Public/Optional routes
+// Public / Optional routes — specific paths MUST come before wildcard /:tripId
 router.get('/single/:activityId', optionalAuth, activityController.getActivityById);
 router.get('/recommended', activityController.getRecommended);
 router.get('/trending', activityController.getTrending);
