@@ -9,7 +9,7 @@ const AdminDashboard = () => {
     const load = async () => {
       try {
         const res = await getAdminDashboard();
-        setStats(res.data.data);
+        setStats(res.data.data.overview || null);
       } catch {
         toast.error('Failed to load admin stats');
       }
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
         </div>
         <div className="bg-white/5 border border-white/10 rounded-[16px] p-5">
           <div className="text-xs text-neutral-text mb-1">Total Posts</div>
-          <div className="text-2xl font-heading font-bold">{stats.totalPosts}</div>
+          <div className="text-2xl font-heading font-bold">{stats.totalCommunityPosts}</div>
         </div>
       </div>
     </div>

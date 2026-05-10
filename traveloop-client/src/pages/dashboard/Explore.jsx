@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { LuSearch } from 'react-icons/lu';
 import { searchGlobal, getRecommendations } from '../../api/explore';
+import api from '../../api/axios';
 import { CityCard } from '../../components/explore/CityCard';
 import { WeatherWidget } from '../../components/explore/WeatherWidget';
 import { EmptyState } from '../../components/ui/EmptyState';
@@ -10,22 +11,52 @@ const Explore = () => {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [sections, setSections] = useState({ trending: [], budget: [], gems: [], popular: [] });
+  const [favoriteMap, setFavoriteMap] = useState({});
   const [loading, setLoading] = useState(true);
+
+  const withFavoriteState = (cities = [], favorites = favoriteMap) => {
+    return cities.map(city => {
+      const favorite = favorites[city.id];
+      return {
+        ...city,
+        isFavorited: !!favorite,
+        favoriteId: favorite?.id
+      };
+    });
+  };
+
+  const handleFavoriteToggle = (cityId, favorited, favorite) => {
+    setFavoriteMap(prev => {
+      const next = { ...prev };
+      if (favorited) {
+        next[cityId] = favorite || { cityId };
+      } else {
+        delete next[cityId];
+      }
+      return next;
+    });
+  };
 
   useEffect(() => {
     const load = async () => {
       try {
-        const [trending, budget, gems, popular] = await Promise.all([
+        const [trending, budget, gems, popular, favorites] = await Promise.all([
           getRecommendations('trending'),
           getRecommendations('budget-friendly'),
           getRecommendations('hidden-gems'),
-          getRecommendations('popular-destinations')
+          getRecommendations('popular-destinations'),
+          api.get('/favorites').catch(() => ({ data: { data: { favorites: [] } } }))
         ]);
+        const favoriteLookup = (favorites.data.data.favorites || []).reduce((acc, favorite) => {
+          acc[favorite.cityId] = favorite;
+          return acc;
+        }, {});
+        setFavoriteMap(favoriteLookup);
         setSections({
-          trending: trending.data.data.cities || [],
-          budget: budget.data.data.cities || [],
-          gems: gems.data.data.cities || [],
-          popular: popular.data.data.cities || []
+          trending: withFavoriteState(trending.data.data.cities || [], favoriteLookup),
+          budget: withFavoriteState(budget.data.data.cities || [], favoriteLookup),
+          gems: withFavoriteState(gems.data.data.cities || [], favoriteLookup),
+          popular: withFavoriteState(popular.data.data.cities || [], favoriteLookup)
         });
       } catch {
         setSections({ trending: [], budget: [], gems: [], popular: [] });
@@ -45,7 +76,7 @@ const Explore = () => {
       }
       try {
         const res = await searchGlobal(query);
-        setSearchResults(res.data.data?.cities || []);
+        setSearchResults(res.data.data.results?.cities || []);
       } catch {
         setSearchResults([]);
       }
@@ -85,7 +116,7 @@ const Explore = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {searchResults.map(city => (
-                <CityCard key={city.id} city={city} />
+                <CityCard key={city.id} city={city} onToggle={handleFavoriteToggle} />
               ))}
             </div>
           )}
@@ -102,7 +133,7 @@ const Explore = () => {
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {section.data.map(city => (
-                    <CityCard key={city.id} city={city} />
+                    <CityCard key={city.id} city={city} onToggle={handleFavoriteToggle} />
                   ))}
                 </div>
               )}

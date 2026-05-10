@@ -12,7 +12,13 @@ const Saved = () => {
     const load = async () => {
       try {
         const res = await api.get('/favorites');
-        setCities(res.data.data.cities || []);
+        const favorites = res.data.data.favorites || [];
+        setCities(favorites.map(favorite => ({
+          ...favorite.city,
+          image: favorite.city.heroImage,
+          favoriteId: favorite.id,
+          isFavorited: true
+        })));
       } catch (err) {
         toast.error('Failed to load favorites');
       } finally {
@@ -36,7 +42,15 @@ const Saved = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {cities.map(city => (
-            <CityCard key={city.id} city={city} />
+            <CityCard
+              key={city.id}
+              city={city}
+              onToggle={(cityId, favorited) => {
+                if (!favorited) {
+                  setCities(prev => prev.filter(item => item.id !== cityId));
+                }
+              }}
+            />
           ))}
         </div>
       )}

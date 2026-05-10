@@ -17,7 +17,7 @@ class AdminService {
       prisma.trip.count(),
       prisma.activity.count(),
       prisma.city.count(),
-      prisma.aichat.count(),
+      prisma.aIChat.count(),
       prisma.communityPost.count(),
       analyticsService.getRevenueStats(),
       prisma.user.findMany({ take: 5, orderBy: { createdAt: 'desc' } })
@@ -87,7 +87,7 @@ class AdminService {
         skip,
         take: limit,
         orderBy: { createdAt: 'desc' },
-        include: { user: { select: { firstName: true, email: true } } }
+        include: { owner: { select: { firstName: true, email: true } } }
       }),
       prisma.trip.count({ where })
     ]);

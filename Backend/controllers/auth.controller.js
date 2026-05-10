@@ -77,7 +77,8 @@ exports.register = async (req, res) => {
           lastName: user.lastName,
           email: user.email,
           profileImage: user.profileImage,
-          isVerified: user.isVerified
+          isVerified: user.isVerified,
+          role: user.role
         }
       }
     });
@@ -122,7 +123,8 @@ exports.login = async (req, res) => {
           lastName: user.lastName,
           email: user.email,
           profileImage: user.profileImage,
-          isVerified: user.isVerified
+          isVerified: user.isVerified,
+          role: user.role
         }
       }
     });
@@ -144,7 +146,8 @@ exports.me = async (req, res) => {
         lastName: true,
         email: true,
         profileImage: true,
-        isVerified: true
+        isVerified: true,
+        role: true
       }
     });
     

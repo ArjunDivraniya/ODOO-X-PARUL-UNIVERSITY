@@ -33,7 +33,7 @@ const AdminTrips = () => {
             {trips.map(trip => (
               <tr key={trip.id} className="border-t border-white/10">
                 <td className="p-3">{trip.title}</td>
-                <td className="p-3">{trip.user?.email}</td>
+                <td className="p-3">{trip.owner?.email}</td>
                 <td className="p-3">{trip.status}</td>
               </tr>
             ))}
