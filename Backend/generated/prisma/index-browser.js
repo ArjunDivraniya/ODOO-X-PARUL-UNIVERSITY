@@ -145,6 +145,7 @@ exports.Prisma.UserScalarFieldEnum = {
   socialLinks: 'socialLinks',
   preferences: 'preferences',
   onboardingComplete: 'onboardingComplete',
+  isBlocked: 'isBlocked',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   lastLogin: 'lastLogin'
@@ -443,6 +444,16 @@ exports.TripStatus = exports.$Enums.TripStatus = {
   ACTIVE: 'ACTIVE',
   COMPLETED: 'COMPLETED',
   CANCELLED: 'CANCELLED'
+};
+
+exports.Currency = exports.$Enums.Currency = {
+  INR: 'INR',
+  USD: 'USD',
+  EUR: 'EUR',
+  GBP: 'GBP',
+  JPY: 'JPY',
+  AUD: 'AUD',
+  CAD: 'CAD'
 };
 
 exports.ActivityCategory = exports.$Enums.ActivityCategory = {

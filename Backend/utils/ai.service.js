@@ -9,7 +9,7 @@ class AIService {
   }
 
   async generateTripRecommendation(budget, days, tripType, interests) {
-    const prompt = `Generate a travel recommendation for a ${days}-day ${tripType} trip with a budget of ${budget} USD. 
+    const prompt = `Generate a travel recommendation for a ${days}-day ${tripType} trip with a budget of ${budget} INR. 
     Interests: ${interests.join(', ')}.
     Return a valid JSON object with the following structure:
     {

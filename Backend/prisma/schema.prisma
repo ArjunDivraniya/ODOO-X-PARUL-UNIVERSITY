@@ -55,6 +55,16 @@ enum NotificationType {
   ERROR
 }
 
+enum Currency {
+  INR
+  USD
+  EUR
+  GBP
+  JPY
+  AUD
+  CAD
+}
+
 // -----------------------------------------------------------------------------
 // MODELS
 // -----------------------------------------------------------------------------
@@ -123,7 +133,7 @@ model Trip {
   estimatedBudget Float?
   totalExpense    Float?     @default(0)
   travelersCount  Int        @default(1)
-  currency        String     @default("USD")
+  currency        Currency   @default(INR)
   aiGenerated     Boolean    @default(false)
   shareCode       String?    @unique
   createdAt       DateTime   @default(now())
@@ -269,7 +279,7 @@ model Invoice {
   tax           Float     @default(0)
   discount      Float     @default(0)
   total         Float
-  currency      String    @default("USD")
+  currency      Currency  @default(INR)
   paymentStatus String    @default("PENDING")
   paymentMethod String?
   invoiceDate   DateTime  @default(now())

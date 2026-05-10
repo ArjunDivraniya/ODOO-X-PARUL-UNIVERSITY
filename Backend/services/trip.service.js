@@ -25,7 +25,7 @@ class TripService {
         startDate: data.startDate ? new Date(data.startDate) : null,
         endDate: data.endDate ? new Date(data.endDate) : null,
         estimatedBudget: data.estimatedBudget,
-        currency: data.currency || 'USD',
+        currency: data.currency || 'INR',
         travelersCount: data.travelersCount || 1,
         visibility: data.visibility || 'PRIVATE',
         aiGenerated: data.aiGenerated || false,

@@ -183,6 +183,19 @@ export const NotificationType: {
 
 export type NotificationType = (typeof NotificationType)[keyof typeof NotificationType]
 
+
+export const Currency: {
+  INR: 'INR',
+  USD: 'USD',
+  EUR: 'EUR',
+  GBP: 'GBP',
+  JPY: 'JPY',
+  AUD: 'AUD',
+  CAD: 'CAD'
+};
+
+export type Currency = (typeof Currency)[keyof typeof Currency]
+
 }
 
 export type Role = $Enums.Role
@@ -208,6 +221,10 @@ export const ActivityCategory: typeof $Enums.ActivityCategory
 export type NotificationType = $Enums.NotificationType
 
 export const NotificationType: typeof $Enums.NotificationType
+
+export type Currency = $Enums.Currency
+
+export const Currency: typeof $Enums.Currency
 
 /**
  * ##  Prisma Client ʲˢ
@@ -3295,6 +3312,7 @@ export namespace Prisma {
     isPublic: boolean | null
     authProvider: string | null
     onboardingComplete: boolean | null
+    isBlocked: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
     lastLogin: Date | null
@@ -3323,6 +3341,7 @@ export namespace Prisma {
     isPublic: boolean | null
     authProvider: string | null
     onboardingComplete: boolean | null
+    isBlocked: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
     lastLogin: Date | null
@@ -3353,6 +3372,7 @@ export namespace Prisma {
     socialLinks: number
     preferences: number
     onboardingComplete: number
+    isBlocked: number
     createdAt: number
     updatedAt: number
     lastLogin: number
@@ -3383,6 +3403,7 @@ export namespace Prisma {
     isPublic?: true
     authProvider?: true
     onboardingComplete?: true
+    isBlocked?: true
     createdAt?: true
     updatedAt?: true
     lastLogin?: true
@@ -3411,6 +3432,7 @@ export namespace Prisma {
     isPublic?: true
     authProvider?: true
     onboardingComplete?: true
+    isBlocked?: true
     createdAt?: true
     updatedAt?: true
     lastLogin?: true
@@ -3441,6 +3463,7 @@ export namespace Prisma {
     socialLinks?: true
     preferences?: true
     onboardingComplete?: true
+    isBlocked?: true
     createdAt?: true
     updatedAt?: true
     lastLogin?: true
@@ -3544,6 +3567,7 @@ export namespace Prisma {
     socialLinks: JsonValue | null
     preferences: JsonValue | null
     onboardingComplete: boolean
+    isBlocked: boolean
     createdAt: Date
     updatedAt: Date
     lastLogin: Date | null
@@ -3591,6 +3615,7 @@ export namespace Prisma {
     socialLinks?: boolean
     preferences?: boolean
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     lastLogin?: boolean
@@ -3636,6 +3661,7 @@ export namespace Prisma {
     socialLinks?: boolean
     preferences?: boolean
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     lastLogin?: boolean
@@ -3666,6 +3692,7 @@ export namespace Prisma {
     socialLinks?: boolean
     preferences?: boolean
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     lastLogin?: boolean
@@ -3696,12 +3723,13 @@ export namespace Prisma {
     socialLinks?: boolean
     preferences?: boolean
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     lastLogin?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstName" | "lastName" | "username" | "email" | "password" | "phoneNumber" | "bio" | "city" | "country" | "profileImage" | "coverImage" | "role" | "isVerified" | "verificationToken" | "verificationTokenExpiry" | "resetPasswordToken" | "resetPasswordExpiry" | "refreshToken" | "isPublic" | "authProvider" | "socialLinks" | "preferences" | "onboardingComplete" | "createdAt" | "updatedAt" | "lastLogin", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstName" | "lastName" | "username" | "email" | "password" | "phoneNumber" | "bio" | "city" | "country" | "profileImage" | "coverImage" | "role" | "isVerified" | "verificationToken" | "verificationTokenExpiry" | "resetPasswordToken" | "resetPasswordExpiry" | "refreshToken" | "isPublic" | "authProvider" | "socialLinks" | "preferences" | "onboardingComplete" | "isBlocked" | "createdAt" | "updatedAt" | "lastLogin", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     trips?: boolean | User$tripsArgs<ExtArgs>
     savedTrips?: boolean | User$savedTripsArgs<ExtArgs>
@@ -3765,6 +3793,7 @@ export namespace Prisma {
       socialLinks: Prisma.JsonValue | null
       preferences: Prisma.JsonValue | null
       onboardingComplete: boolean
+      isBlocked: boolean
       createdAt: Date
       updatedAt: Date
       lastLogin: Date | null
@@ -4229,6 +4258,7 @@ export namespace Prisma {
     readonly socialLinks: FieldRef<"User", 'Json'>
     readonly preferences: FieldRef<"User", 'Json'>
     readonly onboardingComplete: FieldRef<"User", 'Boolean'>
+    readonly isBlocked: FieldRef<"User", 'Boolean'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
     readonly lastLogin: FieldRef<"User", 'DateTime'>
@@ -5018,7 +5048,7 @@ export namespace Prisma {
     estimatedBudget: number | null
     totalExpense: number | null
     travelersCount: number | null
-    currency: string | null
+    currency: $Enums.Currency | null
     aiGenerated: boolean | null
     shareCode: string | null
     createdAt: Date | null
@@ -5040,7 +5070,7 @@ export namespace Prisma {
     estimatedBudget: number | null
     totalExpense: number | null
     travelersCount: number | null
-    currency: string | null
+    currency: $Enums.Currency | null
     aiGenerated: boolean | null
     shareCode: string | null
     createdAt: Date | null
@@ -5251,7 +5281,7 @@ export namespace Prisma {
     estimatedBudget: number | null
     totalExpense: number | null
     travelersCount: number
-    currency: string
+    currency: $Enums.Currency
     aiGenerated: boolean
     shareCode: string | null
     createdAt: Date
@@ -5434,7 +5464,7 @@ export namespace Prisma {
       estimatedBudget: number | null
       totalExpense: number | null
       travelersCount: number
-      currency: string
+      currency: $Enums.Currency
       aiGenerated: boolean
       shareCode: string | null
       createdAt: Date
@@ -5888,7 +5918,7 @@ export namespace Prisma {
     readonly estimatedBudget: FieldRef<"Trip", 'Float'>
     readonly totalExpense: FieldRef<"Trip", 'Float'>
     readonly travelersCount: FieldRef<"Trip", 'Int'>
-    readonly currency: FieldRef<"Trip", 'String'>
+    readonly currency: FieldRef<"Trip", 'Currency'>
     readonly aiGenerated: FieldRef<"Trip", 'Boolean'>
     readonly shareCode: FieldRef<"Trip", 'String'>
     readonly createdAt: FieldRef<"Trip", 'DateTime'>
@@ -11986,7 +12016,7 @@ export namespace Prisma {
     tax: number | null
     discount: number | null
     total: number | null
-    currency: string | null
+    currency: $Enums.Currency | null
     paymentStatus: string | null
     paymentMethod: string | null
     invoiceDate: Date | null
@@ -12004,7 +12034,7 @@ export namespace Prisma {
     tax: number | null
     discount: number | null
     total: number | null
-    currency: string | null
+    currency: $Enums.Currency | null
     paymentStatus: string | null
     paymentMethod: string | null
     invoiceDate: Date | null
@@ -12197,7 +12227,7 @@ export namespace Prisma {
     tax: number
     discount: number
     total: number
-    currency: string
+    currency: $Enums.Currency
     paymentStatus: string
     paymentMethod: string | null
     invoiceDate: Date
@@ -12337,7 +12367,7 @@ export namespace Prisma {
       tax: number
       discount: number
       total: number
-      currency: string
+      currency: $Enums.Currency
       paymentStatus: string
       paymentMethod: string | null
       invoiceDate: Date
@@ -12778,7 +12808,7 @@ export namespace Prisma {
     readonly tax: FieldRef<"Invoice", 'Float'>
     readonly discount: FieldRef<"Invoice", 'Float'>
     readonly total: FieldRef<"Invoice", 'Float'>
-    readonly currency: FieldRef<"Invoice", 'String'>
+    readonly currency: FieldRef<"Invoice", 'Currency'>
     readonly paymentStatus: FieldRef<"Invoice", 'String'>
     readonly paymentMethod: FieldRef<"Invoice", 'String'>
     readonly invoiceDate: FieldRef<"Invoice", 'DateTime'>
@@ -28716,6 +28746,7 @@ export namespace Prisma {
     socialLinks: 'socialLinks',
     preferences: 'preferences',
     onboardingComplete: 'onboardingComplete',
+    isBlocked: 'isBlocked',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     lastLogin: 'lastLogin'
@@ -29205,6 +29236,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Currency'
+   */
+  export type EnumCurrencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Currency'>
+    
+
+
+  /**
+   * Reference to a field of type 'Currency[]'
+   */
+  export type ListEnumCurrencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Currency[]'>
+    
+
+
+  /**
    * Reference to a field of type 'ActivityCategory'
    */
   export type EnumActivityCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ActivityCategory'>
@@ -29277,6 +29322,7 @@ export namespace Prisma {
     socialLinks?: JsonNullableFilter<"User">
     preferences?: JsonNullableFilter<"User">
     onboardingComplete?: BoolFilter<"User"> | boolean
+    isBlocked?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     lastLogin?: DateTimeNullableFilter<"User"> | Date | string | null
@@ -29321,6 +29367,7 @@ export namespace Prisma {
     socialLinks?: SortOrderInput | SortOrder
     preferences?: SortOrderInput | SortOrder
     onboardingComplete?: SortOrder
+    isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     lastLogin?: SortOrderInput | SortOrder
@@ -29368,6 +29415,7 @@ export namespace Prisma {
     socialLinks?: JsonNullableFilter<"User">
     preferences?: JsonNullableFilter<"User">
     onboardingComplete?: BoolFilter<"User"> | boolean
+    isBlocked?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
     lastLogin?: DateTimeNullableFilter<"User"> | Date | string | null
@@ -29412,6 +29460,7 @@ export namespace Prisma {
     socialLinks?: SortOrderInput | SortOrder
     preferences?: SortOrderInput | SortOrder
     onboardingComplete?: SortOrder
+    isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     lastLogin?: SortOrderInput | SortOrder
@@ -29448,6 +29497,7 @@ export namespace Prisma {
     socialLinks?: JsonNullableWithAggregatesFilter<"User">
     preferences?: JsonNullableWithAggregatesFilter<"User">
     onboardingComplete?: BoolWithAggregatesFilter<"User"> | boolean
+    isBlocked?: BoolWithAggregatesFilter<"User"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     lastLogin?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
@@ -29471,7 +29521,7 @@ export namespace Prisma {
     estimatedBudget?: FloatNullableFilter<"Trip"> | number | null
     totalExpense?: FloatNullableFilter<"Trip"> | number | null
     travelersCount?: IntFilter<"Trip"> | number
-    currency?: StringFilter<"Trip"> | string
+    currency?: EnumCurrencyFilter<"Trip"> | $Enums.Currency
     aiGenerated?: BoolFilter<"Trip"> | boolean
     shareCode?: StringNullableFilter<"Trip"> | string | null
     createdAt?: DateTimeFilter<"Trip"> | Date | string
@@ -29543,7 +29593,7 @@ export namespace Prisma {
     estimatedBudget?: FloatNullableFilter<"Trip"> | number | null
     totalExpense?: FloatNullableFilter<"Trip"> | number | null
     travelersCount?: IntFilter<"Trip"> | number
-    currency?: StringFilter<"Trip"> | string
+    currency?: EnumCurrencyFilter<"Trip"> | $Enums.Currency
     aiGenerated?: BoolFilter<"Trip"> | boolean
     createdAt?: DateTimeFilter<"Trip"> | Date | string
     updatedAt?: DateTimeFilter<"Trip"> | Date | string
@@ -29606,7 +29656,7 @@ export namespace Prisma {
     estimatedBudget?: FloatNullableWithAggregatesFilter<"Trip"> | number | null
     totalExpense?: FloatNullableWithAggregatesFilter<"Trip"> | number | null
     travelersCount?: IntWithAggregatesFilter<"Trip"> | number
-    currency?: StringWithAggregatesFilter<"Trip"> | string
+    currency?: EnumCurrencyWithAggregatesFilter<"Trip"> | $Enums.Currency
     aiGenerated?: BoolWithAggregatesFilter<"Trip"> | boolean
     shareCode?: StringNullableWithAggregatesFilter<"Trip"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Trip"> | Date | string
@@ -30113,7 +30163,7 @@ export namespace Prisma {
     tax?: FloatFilter<"Invoice"> | number
     discount?: FloatFilter<"Invoice"> | number
     total?: FloatFilter<"Invoice"> | number
-    currency?: StringFilter<"Invoice"> | string
+    currency?: EnumCurrencyFilter<"Invoice"> | $Enums.Currency
     paymentStatus?: StringFilter<"Invoice"> | string
     paymentMethod?: StringNullableFilter<"Invoice"> | string | null
     invoiceDate?: DateTimeFilter<"Invoice"> | Date | string
@@ -30158,7 +30208,7 @@ export namespace Prisma {
     tax?: FloatFilter<"Invoice"> | number
     discount?: FloatFilter<"Invoice"> | number
     total?: FloatFilter<"Invoice"> | number
-    currency?: StringFilter<"Invoice"> | string
+    currency?: EnumCurrencyFilter<"Invoice"> | $Enums.Currency
     paymentStatus?: StringFilter<"Invoice"> | string
     paymentMethod?: StringNullableFilter<"Invoice"> | string | null
     invoiceDate?: DateTimeFilter<"Invoice"> | Date | string
@@ -30205,7 +30255,7 @@ export namespace Prisma {
     tax?: FloatWithAggregatesFilter<"Invoice"> | number
     discount?: FloatWithAggregatesFilter<"Invoice"> | number
     total?: FloatWithAggregatesFilter<"Invoice"> | number
-    currency?: StringWithAggregatesFilter<"Invoice"> | string
+    currency?: EnumCurrencyWithAggregatesFilter<"Invoice"> | $Enums.Currency
     paymentStatus?: StringWithAggregatesFilter<"Invoice"> | string
     paymentMethod?: StringNullableWithAggregatesFilter<"Invoice"> | string | null
     invoiceDate?: DateTimeWithAggregatesFilter<"Invoice"> | Date | string
@@ -31162,6 +31212,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -31206,6 +31257,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -31250,6 +31302,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -31294,6 +31347,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -31338,6 +31392,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -31368,6 +31423,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -31398,6 +31454,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -31417,7 +31474,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -31451,7 +31508,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -31483,7 +31540,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31517,7 +31574,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31550,7 +31607,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -31571,7 +31628,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31593,7 +31650,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -32167,7 +32224,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -32188,7 +32245,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -32205,7 +32262,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -32226,7 +32283,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -32245,7 +32302,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -32261,7 +32318,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -32279,7 +32336,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -33451,6 +33508,7 @@ export namespace Prisma {
     socialLinks?: SortOrder
     preferences?: SortOrder
     onboardingComplete?: SortOrder
+    isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     lastLogin?: SortOrder
@@ -33479,6 +33537,7 @@ export namespace Prisma {
     isPublic?: SortOrder
     authProvider?: SortOrder
     onboardingComplete?: SortOrder
+    isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     lastLogin?: SortOrder
@@ -33507,6 +33566,7 @@ export namespace Prisma {
     isPublic?: SortOrder
     authProvider?: SortOrder
     onboardingComplete?: SortOrder
+    isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     lastLogin?: SortOrder
@@ -33654,6 +33714,13 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type EnumCurrencyFilter<$PrismaModel = never> = {
+    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
+    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumCurrencyFilter<$PrismaModel> | $Enums.Currency
   }
 
   export type UserScalarRelationFilter = {
@@ -33819,6 +33886,16 @@ export namespace Prisma {
     _sum?: NestedIntFilter<$PrismaModel>
     _min?: NestedIntFilter<$PrismaModel>
     _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type EnumCurrencyWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
+    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumCurrencyWithAggregatesFilter<$PrismaModel> | $Enums.Currency
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCurrencyFilter<$PrismaModel>
+    _max?: NestedEnumCurrencyFilter<$PrismaModel>
   }
 
   export type TripScalarRelationFilter = {
@@ -35628,6 +35705,10 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type EnumCurrencyFieldUpdateOperationsInput = {
+    set?: $Enums.Currency
+  }
+
   export type UserUpdateOneRequiredWithoutTripsNestedInput = {
     create?: XOR<UserCreateWithoutTripsInput, UserUncheckedCreateWithoutTripsInput>
     connectOrCreate?: UserCreateOrConnectWithoutTripsInput
@@ -37232,6 +37313,13 @@ export namespace Prisma {
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
+  export type NestedEnumCurrencyFilter<$PrismaModel = never> = {
+    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
+    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumCurrencyFilter<$PrismaModel> | $Enums.Currency
+  }
+
   export type NestedEnumVisibilityWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Visibility | EnumVisibilityFieldRefInput<$PrismaModel>
     in?: $Enums.Visibility[] | ListEnumVisibilityFieldRefInput<$PrismaModel>
@@ -37293,6 +37381,16 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedEnumCurrencyWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
+    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumCurrencyWithAggregatesFilter<$PrismaModel> | $Enums.Currency
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCurrencyFilter<$PrismaModel>
+    _max?: NestedEnumCurrencyFilter<$PrismaModel>
   }
 
   export type NestedEnumActivityCategoryFilter<$PrismaModel = never> = {
@@ -37415,7 +37513,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -37447,7 +37545,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -37648,7 +37746,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -37667,7 +37765,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -37877,7 +37975,7 @@ export namespace Prisma {
     estimatedBudget?: FloatNullableFilter<"Trip"> | number | null
     totalExpense?: FloatNullableFilter<"Trip"> | number | null
     travelersCount?: IntFilter<"Trip"> | number
-    currency?: StringFilter<"Trip"> | string
+    currency?: EnumCurrencyFilter<"Trip"> | $Enums.Currency
     aiGenerated?: BoolFilter<"Trip"> | boolean
     shareCode?: StringNullableFilter<"Trip"> | string | null
     createdAt?: DateTimeFilter<"Trip"> | Date | string
@@ -38085,7 +38183,7 @@ export namespace Prisma {
     tax?: FloatFilter<"Invoice"> | number
     discount?: FloatFilter<"Invoice"> | number
     total?: FloatFilter<"Invoice"> | number
-    currency?: StringFilter<"Invoice"> | string
+    currency?: EnumCurrencyFilter<"Invoice"> | $Enums.Currency
     paymentStatus?: StringFilter<"Invoice"> | string
     paymentMethod?: StringNullableFilter<"Invoice"> | string | null
     invoiceDate?: DateTimeFilter<"Invoice"> | Date | string
@@ -38285,6 +38383,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -38328,6 +38427,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -38568,7 +38668,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -38587,7 +38687,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -38783,6 +38883,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -38826,6 +38927,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -39099,7 +39201,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -39132,7 +39234,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -39360,7 +39462,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -39393,7 +39495,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -39771,7 +39873,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -39804,7 +39906,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -39997,7 +40099,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40030,7 +40132,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40201,7 +40303,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -40234,7 +40336,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -40308,7 +40410,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -40328,7 +40430,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -40367,7 +40469,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40400,7 +40502,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40486,7 +40588,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40506,7 +40608,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40529,7 +40631,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -40562,7 +40664,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -40609,6 +40711,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -40652,6 +40755,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -40740,7 +40844,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40773,7 +40877,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40826,6 +40930,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -40869,6 +40974,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -40928,6 +41034,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -40971,6 +41078,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -41008,7 +41116,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -41041,7 +41149,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -41099,6 +41207,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41142,6 +41251,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41185,7 +41295,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41218,7 +41328,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41260,6 +41370,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -41303,6 +41414,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -41340,7 +41452,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -41373,7 +41485,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -41476,6 +41588,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41519,6 +41632,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41562,7 +41676,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41595,7 +41709,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41688,6 +41802,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -41731,6 +41846,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -41768,7 +41884,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -41801,7 +41917,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -41905,6 +42021,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41948,6 +42065,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41991,7 +42109,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42024,7 +42142,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42098,6 +42216,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -42141,6 +42260,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -42233,6 +42353,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -42276,6 +42397,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -42358,6 +42480,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -42401,6 +42524,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -42493,6 +42617,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -42536,6 +42661,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -42618,6 +42744,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -42661,6 +42788,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -42698,7 +42826,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -42731,7 +42859,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -42789,6 +42917,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -42832,6 +42961,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -42875,7 +43005,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42908,7 +43038,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42950,6 +43080,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -42993,6 +43124,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -43052,6 +43184,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43095,6 +43228,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43138,6 +43272,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -43181,6 +43316,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -43218,7 +43354,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -43251,7 +43387,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -43360,6 +43496,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43403,6 +43540,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43446,7 +43584,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43479,7 +43617,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43578,6 +43716,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -43621,6 +43760,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -43658,7 +43798,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -43691,7 +43831,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -43749,6 +43889,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43792,6 +43933,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43835,7 +43977,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43868,7 +44010,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43899,7 +44041,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -43932,7 +44074,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -43979,6 +44121,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -44022,6 +44165,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -44070,7 +44214,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -44103,7 +44247,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -44156,6 +44300,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44199,6 +44344,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44242,6 +44388,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -44285,6 +44432,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -44395,6 +44543,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44438,6 +44587,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44646,6 +44796,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -44689,6 +44840,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     lastLogin?: Date | string | null
@@ -44799,6 +44951,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44842,6 +44995,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lastLogin?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44931,7 +45085,7 @@ export namespace Prisma {
     estimatedBudget?: number | null
     totalExpense?: number | null
     travelersCount?: number
-    currency?: string
+    currency?: $Enums.Currency
     aiGenerated?: boolean
     shareCode?: string | null
     createdAt?: Date | string
@@ -44999,7 +45153,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -45068,7 +45222,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45100,7 +45254,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45132,7 +45286,7 @@ export namespace Prisma {
     estimatedBudget?: NullableFloatFieldUpdateOperationsInput | number | null
     totalExpense?: NullableFloatFieldUpdateOperationsInput | number | null
     travelersCount?: IntFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     aiGenerated?: BoolFieldUpdateOperationsInput | boolean
     shareCode?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45305,7 +45459,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45324,7 +45478,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45342,7 +45496,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45576,7 +45730,7 @@ export namespace Prisma {
     tax?: number
     discount?: number
     total: number
-    currency?: string
+    currency?: $Enums.Currency
     paymentStatus?: string
     paymentMethod?: string | null
     invoiceDate?: Date | string
@@ -45870,7 +46024,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45889,7 +46043,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45907,7 +46061,7 @@ export namespace Prisma {
     tax?: FloatFieldUpdateOperationsInput | number
     discount?: FloatFieldUpdateOperationsInput | number
     total?: FloatFieldUpdateOperationsInput | number
-    currency?: StringFieldUpdateOperationsInput | string
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     paymentStatus?: StringFieldUpdateOperationsInput | string
     paymentMethod?: NullableStringFieldUpdateOperationsInput | string | null
     invoiceDate?: DateTimeFieldUpdateOperationsInput | Date | string
