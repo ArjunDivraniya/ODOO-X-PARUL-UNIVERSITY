@@ -84,10 +84,19 @@ class AIService {
     ]);
 
     return {
-      history: history.map(h => ({
-        ...h,
-        response: JSON.parse(h.response)
-      })),
+      history: history.map(h => {
+        let parsedResponse = {};
+        try {
+          parsedResponse = h.response ? JSON.parse(h.response) : {};
+        } catch (e) {
+          console.error(`Failed to parse AI history item ${h.id}:`, e.message);
+          parsedResponse = { reply: 'Error parsing response' };
+        }
+        return {
+          ...h,
+          response: parsedResponse
+        };
+      }),
       pagination: { total, page, limit, pages: Math.ceil(total / limit) }
     };
   }

@@ -45,7 +45,7 @@ const Explore = () => {
       }
       try {
         const res = await searchGlobal(query);
-        setSearchResults(res.data.data.results?.cities || []);
+        setSearchResults(res.data.data?.cities || []);
       } catch {
         setSearchResults([]);
       }

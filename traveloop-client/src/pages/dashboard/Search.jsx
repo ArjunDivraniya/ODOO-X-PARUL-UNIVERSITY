@@ -39,7 +39,7 @@ const Search = () => {
       try {
         if (filter === 'All') {
           const res = await searchGlobal(query);
-          setResults(res.data.data.results || {});
+          setResults(res.data.data || {});
         } else if (filter === 'Trips') {
           const res = await searchTrips(query);
           setResults({ trips: res.data.data.trips || [] });

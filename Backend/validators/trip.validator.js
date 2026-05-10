@@ -50,3 +50,13 @@ exports.updateStatusSchema = z.object({
     status: StatusEnum
   })
 });
+
+exports.generateAITripSchema = z.object({
+  body: z.object({
+    destination: z.string().min(2, 'Destination is required'),
+    duration: z.number().int().min(1).max(30),
+    budget: z.number().nonnegative().optional(),
+    tripType: z.string().optional(),
+    interests: z.array(z.string()).optional()
+  })
+});

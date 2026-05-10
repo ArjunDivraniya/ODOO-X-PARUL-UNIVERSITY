@@ -11,6 +11,7 @@ const TRIP_TYPES = ['LEISURE', 'BUSINESS', 'BACKPACKING', 'FAMILY', 'COUPLE', 'S
 const VISIBILITY_OPTIONS = ['PRIVATE', 'PUBLIC', 'FRIENDS'];
 
 const CreateTripModal = ({ isOpen, onClose, onTripCreated }) => {
+  const [mode, setMode] = useState('MANUAL'); // 'MANUAL' or 'AI'
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -18,9 +19,16 @@ const CreateTripModal = ({ isOpen, onClose, onTripCreated }) => {
     startDate: '',
     endDate: '',
     estimatedBudget: '',
-    currency: 'USD',
+    currency: 'INR',
     travelersCount: 1,
     visibility: 'PRIVATE'
+  });
+  const [aiData, setAIData] = useState({
+    destination: '',
+    duration: 3,
+    budget: 50000,
+    tripType: 'LEISURE',
+    interests: []
   });
   const [coverImage, setCoverImage] = useState(null);
   const [coverPreview, setCoverPreview] = useState(null);
@@ -40,7 +48,26 @@ const CreateTripModal = ({ isOpen, onClose, onTripCreated }) => {
     }
   };
 
+  const handleAISubmit = async (e) => {
+    e.preventDefault();
+    if (!aiData.destination) return toast.error('Please enter a destination.');
+    setIsSubmitting(true);
+
+    try {
+      const res = await api.post('/trips/generate-ai', aiData);
+      const trip = res.data.data.trip;
+      toast.success('AI Trip generated successfully!');
+      onTripCreated(trip);
+      onClose();
+    } catch (err) {
+      toast.error(err.response?.data?.error || 'AI generation failed');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleSubmit = async (e) => {
+    if (mode === 'AI') return handleAISubmit(e);
     e.preventDefault();
     if (!formData.title || formData.title.length < 3) {
       return toast.error('Title must be at least 3 characters.');
@@ -78,7 +105,7 @@ const CreateTripModal = ({ isOpen, onClose, onTripCreated }) => {
       onClose();
 
       // Reset form
-      setFormData({ title: '', description: '', tripType: 'LEISURE', startDate: '', endDate: '', estimatedBudget: '', currency: 'USD', travelersCount: 1, visibility: 'PRIVATE' });
+      setFormData({ title: '', description: '', tripType: 'LEISURE', startDate: '', endDate: '', estimatedBudget: '', currency: 'INR', travelersCount: 1, visibility: 'PRIVATE' });
       setCoverImage(null);
       setCoverPreview(null);
     } catch (err) {
@@ -117,105 +144,185 @@ const CreateTripModal = ({ isOpen, onClose, onTripCreated }) => {
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="p-8 space-y-6">
-                {/* Cover Image */}
-                <div
-                  onClick={() => fileInputRef.current?.click()}
-                  className="w-full h-40 rounded-[16px] border border-dashed border-white/20 hover:border-accent-blue bg-white/5 flex flex-col items-center justify-center cursor-pointer overflow-hidden group relative"
+              <div className="px-8 pt-4 flex gap-4">
+                <button
+                  type="button"
+                  onClick={() => setMode('MANUAL')}
+                  className={`flex-1 py-2 text-sm font-medium rounded-xl border transition-all ${mode === 'MANUAL' ? 'bg-white/10 border-accent-blue text-white' : 'border-white/5 text-neutral-text'}`}
                 >
-                  {coverPreview ? (
-                    <>
-                      <img src={coverPreview} alt="Cover" className="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity" />
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="bg-[#0A1622]/80 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
-                          <LuImage className="w-4 h-4" /> Change Cover
-                        </span>
-                      </div>
-                    </>
-                  ) : (
-                    <div className="text-center text-neutral-text group-hover:text-accent-blue transition-colors">
-                      <LuImage className="w-8 h-8 mx-auto mb-2" />
-                      <span className="text-sm font-medium">Upload cover image (optional)</span>
+                  Manual Plan
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMode('AI')}
+                  className={`flex-1 py-2 text-sm font-medium rounded-xl border transition-all ${mode === 'AI' ? 'bg-accent-blue/10 border-accent-blue text-accent-blue' : 'border-white/5 text-neutral-text'}`}
+                >
+                  AI Magic ✨
+                </button>
+              </div>
+
+              {mode === 'AI' ? (
+                <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="destination">Where do you want to go?</Label>
+                    <Input
+                      id="destination"
+                      placeholder="e.g. Bali, Indonesia or Jaipur, Rajasthan"
+                      value={aiData.destination}
+                      onChange={(e) => setAIData({ ...aiData, destination: e.target.value })}
+                      required
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="duration">Duration (Days)</Label>
+                      <Input
+                        id="duration"
+                        type="number"
+                        min="1"
+                        max="30"
+                        value={aiData.duration}
+                        onChange={(e) => setAIData({ ...aiData, duration: parseInt(e.target.value) })}
+                      />
                     </div>
-                  )}
-                  <input type="file" ref={fileInputRef} onChange={handleImageChange} accept="image/*" className="hidden" />
-                </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="tripType">Trip Type</Label>
+                      <select
+                        id="tripType"
+                        value={aiData.tripType}
+                        onChange={(e) => setAIData({ ...aiData, tripType: e.target.value })}
+                        className="flex w-full rounded-[16px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-secondary-bg shadow-sm focus:outline-none focus:ring-2 focus:ring-accent-blue/50 appearance-none cursor-pointer"
+                      >
+                        {TRIP_TYPES.map(t => <option key={t} value={t} className="bg-[#0A1622]">{t.charAt(0) + t.slice(1).toLowerCase()}</option>)}
+                      </select>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="budget">Total Budget (INR)</Label>
+                    <Input
+                      id="budget"
+                      type="number"
+                      value={aiData.budget}
+                      onChange={(e) => setAIData({ ...aiData, budget: parseInt(e.target.value) })}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label>Interests (comma separated)</Label>
+                    <Input
+                      placeholder="e.g. Photography, Food, Hiking"
+                      onChange={(e) => setAIData({ ...aiData, interests: e.target.value.split(',').map(s => s.trim()) })}
+                    />
+                  </div>
+                  <div className="pt-4 flex justify-end gap-4">
+                    <button type="button" onClick={onClose} className="px-6 py-3 text-neutral-text hover:text-white rounded-[16px] text-sm font-medium transition-colors">
+                      Cancel
+                    </button>
+                    <Button type="submit" disabled={isSubmitting} className="min-w-[160px] bg-accent-blue text-[#0A1622]">
+                      {isSubmitting ? <LuLoader className="w-5 h-5 animate-spin mx-auto" /> : 'Generate My Trip ✨'}
+                    </Button>
+                  </div>
+                </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="p-8 space-y-6">
+                  {/* Cover Image */}
+                  <div
+                    onClick={() => fileInputRef.current?.click()}
+                    className="w-full h-40 rounded-[16px] border border-dashed border-white/20 hover:border-accent-blue bg-white/5 flex flex-col items-center justify-center cursor-pointer overflow-hidden group relative"
+                  >
+                    {coverPreview ? (
+                      <>
+                        <img src={coverPreview} alt="Cover" className="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity" />
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          <span className="bg-[#0A1622]/80 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                            <LuImage className="w-4 h-4" /> Change Cover
+                          </span>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="text-center text-neutral-text group-hover:text-accent-blue transition-colors">
+                        <LuImage className="w-8 h-8 mx-auto mb-2" />
+                        <span className="text-sm font-medium">Upload cover image (optional)</span>
+                      </div>
+                    )}
+                    <input type="file" ref={fileInputRef} onChange={handleImageChange} accept="image/*" className="hidden" />
+                  </div>
 
-                {/* Title */}
-                <div className="space-y-2">
-                  <Label htmlFor="title">Trip Title *</Label>
-                  <Input id="title" name="title" value={formData.title} onChange={handleChange} placeholder="e.g. Bali Backpacking 2026" required />
-                </div>
+                  {/* Title */}
+                  <div className="space-y-2">
+                    <Label htmlFor="title">Trip Title *</Label>
+                    <Input id="title" name="title" value={formData.title} onChange={handleChange} placeholder="e.g. Bali Backpacking 2026" required />
+                  </div>
 
-                {/* Description */}
-                <div className="space-y-2">
-                  <Label htmlFor="description">Description</Label>
-                  <textarea
-                    id="description"
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                    className="flex w-full rounded-[16px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-secondary-bg shadow-sm transition-all placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue resize-none h-24"
-                    placeholder="A quick overview of your trip..."
-                  />
-                </div>
+                  {/* Description */}
+                  <div className="space-y-2">
+                    <Label htmlFor="description">Description</Label>
+                    <textarea
+                      id="description"
+                      name="description"
+                      value={formData.description}
+                      onChange={handleChange}
+                      className="flex w-full rounded-[16px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-secondary-bg shadow-sm transition-all placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue resize-none h-24"
+                      placeholder="A quick overview of your trip..."
+                    />
+                  </div>
 
-                {/* Row: Type + Visibility */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="tripType">Trip Type</Label>
-                    <select id="tripType" name="tripType" value={formData.tripType} onChange={handleChange}
-                      className="flex w-full rounded-[16px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-secondary-bg shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue appearance-none cursor-pointer">
-                      {TRIP_TYPES.map(t => <option key={t} value={t} className="bg-[#0A1622]">{t.charAt(0) + t.slice(1).toLowerCase()}</option>)}
-                    </select>
+                  {/* Row: Type + Visibility */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="tripType">Trip Type</Label>
+                      <select id="tripType" name="tripType" value={formData.tripType} onChange={handleChange}
+                        className="flex w-full rounded-[16px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-secondary-bg shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue appearance-none cursor-pointer">
+                        {TRIP_TYPES.map(t => <option key={t} value={t} className="bg-[#0A1622]">{t.charAt(0) + t.slice(1).toLowerCase()}</option>)}
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="visibility">Visibility</Label>
+                      <select id="visibility" name="visibility" value={formData.visibility} onChange={handleChange}
+                        className="flex w-full rounded-[16px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-secondary-bg shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue appearance-none cursor-pointer">
+                        {VISIBILITY_OPTIONS.map(v => <option key={v} value={v} className="bg-[#0A1622]">{v.charAt(0) + v.slice(1).toLowerCase()}</option>)}
+                      </select>
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="visibility">Visibility</Label>
-                    <select id="visibility" name="visibility" value={formData.visibility} onChange={handleChange}
-                      className="flex w-full rounded-[16px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-secondary-bg shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-accent-blue appearance-none cursor-pointer">
-                      {VISIBILITY_OPTIONS.map(v => <option key={v} value={v} className="bg-[#0A1622]">{v.charAt(0) + v.slice(1).toLowerCase()}</option>)}
-                    </select>
-                  </div>
-                </div>
 
-                {/* Row: Start + End dates */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="startDate">Start Date</Label>
-                    <Input id="startDate" name="startDate" type="date" value={formData.startDate} onChange={handleChange} />
+                  {/* Row: Start + End dates */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="startDate">Start Date</Label>
+                      <Input id="startDate" name="startDate" type="date" value={formData.startDate} onChange={handleChange} />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="endDate">End Date</Label>
+                      <Input id="endDate" name="endDate" type="date" value={formData.endDate} onChange={handleChange} />
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="endDate">End Date</Label>
-                    <Input id="endDate" name="endDate" type="date" value={formData.endDate} onChange={handleChange} />
-                  </div>
-                </div>
 
-                {/* Row: Budget + Currency + Travelers */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="estimatedBudget">Budget</Label>
-                    <Input id="estimatedBudget" name="estimatedBudget" type="number" value={formData.estimatedBudget} onChange={handleChange} placeholder="5000" />
+                  {/* Row: Budget + Currency + Travelers */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="estimatedBudget">Budget</Label>
+                      <Input id="estimatedBudget" name="estimatedBudget" type="number" value={formData.estimatedBudget} onChange={handleChange} placeholder="5000" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="currency">Currency</Label>
+                      <Input id="currency" name="currency" value={formData.currency} onChange={handleChange} placeholder="USD" maxLength={3} />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="travelersCount">Travelers</Label>
+                      <Input id="travelersCount" name="travelersCount" type="number" min="1" value={formData.travelersCount} onChange={handleChange} />
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="currency">Currency</Label>
-                    <Input id="currency" name="currency" value={formData.currency} onChange={handleChange} placeholder="USD" maxLength={3} />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="travelersCount">Travelers</Label>
-                    <Input id="travelersCount" name="travelersCount" type="number" min="1" value={formData.travelersCount} onChange={handleChange} />
-                  </div>
-                </div>
 
-                {/* Submit */}
-                <div className="pt-4 flex justify-end gap-4">
-                  <button type="button" onClick={onClose} className="px-6 py-3 text-neutral-text hover:text-white rounded-[16px] text-sm font-medium transition-colors">
-                    Cancel
-                  </button>
-                  <Button type="submit" disabled={isSubmitting} className="min-w-[160px]">
-                    {isSubmitting ? <LuLoader className="w-5 h-5 animate-spin mx-auto" /> : 'Create Trip'}
-                  </Button>
-                </div>
-              </form>
+                  {/* Submit */}
+                  <div className="pt-4 flex justify-end gap-4">
+                    <button type="button" onClick={onClose} className="px-6 py-3 text-neutral-text hover:text-white rounded-[16px] text-sm font-medium transition-colors">
+                      Cancel
+                    </button>
+                    <Button type="submit" disabled={isSubmitting} className="min-w-[160px]">
+                      {isSubmitting ? <LuLoader className="w-5 h-5 animate-spin mx-auto" /> : 'Create Trip'}
+                    </Button>
+                  </div>
+                </form>
+              )}
             </div>
           </motion.div>
         </>

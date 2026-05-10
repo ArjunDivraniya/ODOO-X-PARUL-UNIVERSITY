@@ -33,8 +33,13 @@ const AIChat = () => {
     setPrompt('');
 
     try {
-      const res = await sendAIMessage({ prompt, tripId: tripId || undefined });
-      setMessages(prev => [...prev, { role: 'assistant', content: res.data.data.response }]);
+      const res = await sendAIMessage({ prompt: prompt, tripId: tripId || undefined });
+      const aiResponse = res.data.data;
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: aiResponse.reply,
+        suggestions: aiResponse.suggestions || []
+      }]);
     } catch (err) {
       toast.error('Failed to get response');
     }
@@ -59,9 +64,15 @@ const AIChat = () => {
         <div className="space-y-3">
           {history.length === 0 && <div className="text-xs text-neutral-text">No history yet.</div>}
           {history.map(item => (
-            <div key={item.id} className="bg-white/5 border border-white/10 rounded-[14px] p-3 text-xs text-neutral-text">
-              <div className="font-semibold text-secondary-bg">{item.prompt}</div>
-              <button onClick={() => handleDeleteHistory(item.id)} className="text-red-300 mt-2">Delete</button>
+            <div key={item.id} className="bg-white/5 border border-white/10 rounded-[14px] p-3 text-xs text-neutral-text group relative">
+              <div className="font-semibold text-secondary-bg line-clamp-1">{item.prompt}</div>
+              <div className="mt-1 line-clamp-2 opacity-60">{item.response?.reply}</div>
+              <button 
+                onClick={() => handleDeleteHistory(item.id)} 
+                className="text-red-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                Delete
+              </button>
             </div>
           ))}
         </div>
@@ -90,15 +101,33 @@ const AIChat = () => {
             <div className="text-sm text-neutral-text">Start a conversation with the AI assistant.</div>
           )}
           {messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`max-w-[80%] px-4 py-3 rounded-[16px] text-sm ${
-                msg.role === 'user'
-                  ? 'bg-accent-blue text-[#0A1622] ml-auto'
-                  : 'bg-white/10 text-secondary-bg'
-              }`}
-            >
-              {msg.content}
+            <div key={index} className={`flex flex-col gap-2 ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
+              <div
+                className={`max-w-[85%] px-4 py-3 rounded-[20px] text-sm leading-relaxed ${
+                  msg.role === 'user'
+                    ? 'bg-accent-blue text-[#0A1622] rounded-tr-none'
+                    : 'bg-white/10 text-secondary-bg rounded-tl-none'
+                }`}
+              >
+                {msg.content}
+              </div>
+              
+              {msg.role === 'assistant' && msg.suggestions && msg.suggestions.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {msg.suggestions.map((suggestion, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        setPrompt(suggestion);
+                        // Trigger send automatically? Maybe better to let user edit.
+                      }}
+                      className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-neutral-text hover:border-accent-blue hover:text-accent-blue transition-all"
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

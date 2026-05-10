@@ -1,6 +1,8 @@
 const { prisma } = require('../lib/prisma');
 const generateSlug = require('../utils/slugGenerator');
 const generateShareCode = require('../utils/shareCodeGenerator');
+const geminiService = require('./gemini.service');
+const promptService = require('./prompt.service');
 
 class TripService {
   async createTrip(userId, data, fileBuffer) {
@@ -412,6 +414,73 @@ class TripService {
         actual: trip.expenses.reduce((sum, exp) => sum + exp.amount, 0)
       }
     };
+  }
+
+  async generateAITrip(userId, options) {
+    const { destination, duration, budget, tripType, interests } = options;
+    
+    const prompt = promptService.getDetailedTripPlanPrompt(options);
+    const aiPlan = await geminiService.generateJSON(prompt);
+    
+    if (!aiPlan) throw new Error('AI failed to generate a trip plan');
+
+    const slug = await generateSlug(aiPlan.title);
+    const shareCode = await generateShareCode();
+
+    // Try to find a city ID for the destination
+    const city = await prisma.city.findFirst({
+      where: { name: { contains: destination, mode: 'insensitive' } }
+    });
+
+    // Create the Trip
+    const trip = await prisma.trip.create({
+      data: {
+        userId,
+        title: aiPlan.title,
+        description: aiPlan.description,
+        destination,
+        slug,
+        shareCode,
+        tripType: tripType || 'LEISURE',
+        estimatedBudget: aiPlan.estimatedBudget,
+        aiGenerated: true,
+        status: 'PLANNING',
+        visibility: 'PRIVATE'
+      }
+    });
+
+    // Create sections and activities
+    if (aiPlan.itinerarySections && Array.isArray(aiPlan.itinerarySections)) {
+      for (const section of aiPlan.itinerarySections) {
+        const createdSection = await prisma.tripSection.create({
+          data: {
+            tripId: trip.id,
+            title: section.title,
+            description: section.description,
+            sectionOrder: section.sectionOrder || 0,
+            cityId: city?.id
+          }
+        });
+
+        if (section.activities && Array.isArray(section.activities)) {
+          await prisma.activity.createMany({
+            data: section.activities.map(act => ({
+              tripId: trip.id,
+              sectionId: createdSection.id,
+              title: act.title,
+              description: act.description,
+              category: act.category || 'RELAXATION',
+              location: act.location,
+              price: act.price || 0,
+              aiRecommended: true,
+              cityId: city?.id
+            }))
+          });
+        }
+      }
+    }
+
+    return await this.getTripById(trip.id, userId);
   }
 }
 

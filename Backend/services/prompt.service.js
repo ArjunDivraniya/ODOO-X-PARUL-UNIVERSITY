@@ -1,20 +1,37 @@
 class PromptService {
-  getTripGenerationPrompt(data) {
-    return `Generate a comprehensive travel itinerary for a ${data.days}-day trip to ${data.destination}.
-    Trip Type: ${data.tripType}
-    Interests: ${data.interests.join(', ')}
-    Budget: ${data.budget} INR
-    Travelers: ${data.travelersCount}
+  getDetailedTripPlanPrompt(data) {
+    return `Create a high-quality, realistic day-by-day travel itinerary for a ${data.duration}-day ${data.tripType || 'leisure'} trip to ${data.destination}.
+    Budget: ${data.budget || 'moderate'} INR.
+    Interests: ${(data.interests || []).join(', ')}.
     
-    Structure the response as a JSON object with:
+    The response must be a valid JSON object exactly matching this structure:
     {
-      "tripPlan": { "title": "", "summary": "" },
-      "itinerary": [
-        { "day": 1, "title": "", "activities": [{ "time": "", "title": "", "description": "", "cost": 0 }] }
-      ],
-      "estimatedBudget": 0,
-      "travelTips": [""]
-    }`;
+      "title": "A catchy and professional title for the trip",
+      "description": "A compelling overview of what the traveler will experience",
+      "estimatedBudget": ${data.budget || 50000},
+      "itinerarySections": [
+        {
+          "title": "Day 1: [Focus of the day]",
+          "description": "Detailed summary of this day's plan",
+          "sectionOrder": 0,
+          "activities": [
+            {
+              "title": "Specific Activity Name",
+              "description": "Engaging description of the activity",
+              "category": "ADVENTURE|FOOD|CULTURE|NIGHTLIFE|NATURE|RELAXATION",
+              "location": "Specific location or address in the city",
+              "price": 0
+            }
+          ]
+        }
+      ]
+    }
+    
+    Rules:
+    1. Categories MUST be one of: ADVENTURE, FOOD, CULTURE, NIGHTLIFE, NATURE, RELAXATION.
+    2. Provide at least 3 distinct activities per day.
+    3. Ensure the title is unique and descriptive.
+    4. Return ONLY the JSON object. No markdown blocks.`;
   }
 
   getActivitySuggestionPrompt(data) {

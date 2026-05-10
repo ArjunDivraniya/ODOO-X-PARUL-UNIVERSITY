@@ -25,14 +25,13 @@ class GeminiService {
       const response = await result.response;
       let text = response.text().trim();
       
-      // Clean up markdown code blocks if AI ignored instructions
-      if (text.startsWith('```json')) {
-        text = text.replace(/```json\n?/, '').replace(/\n?```/, '');
-      } else if (text.startsWith('```')) {
-        text = text.replace(/```\n?/, '').replace(/\n?```/, '');
+      // Extract JSON using regex (more robust than startsWith)
+      const jsonMatch = text.match(/\{[\s\S]*\}|\[[\s\S]*\]/);
+      if (jsonMatch) {
+        return JSON.parse(jsonMatch[0]);
       }
       
-      return JSON.parse(text);
+      return JSON.parse(text); // Fallback to parsing whole text
     } catch (error) {
       console.error('Gemini JSON Error:', error);
       throw new Error('AI failed to generate valid structured data');

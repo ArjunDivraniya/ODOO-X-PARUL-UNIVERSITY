@@ -12,8 +12,8 @@ exports.generateTrip = async (req, res) => {
 
 exports.chat = async (req, res) => {
   try {
-    const { message, tripId } = req.body;
-    const response = await aiService.chat(req.user.id, message, tripId);
+    const { prompt, tripId } = req.body;
+    const response = await aiService.chat(req.user.id, prompt, tripId);
     return successResponse(res, 'AI assistant reply', response);
   } catch (error) {
     return errorResponse(res, 'AI chat failed', 500, error);

@@ -14,6 +14,9 @@ router.use(authMiddleware);
 // @route   POST /api/trips
 router.post('/', upload.single('coverImage'), tripController.createTrip);
 
+// @route   POST /api/trips/generate-ai
+router.post('/generate-ai', tripController.generateAITrip);
+
 // @route   GET /api/trips
 router.get('/', tripController.getTrips);
 
