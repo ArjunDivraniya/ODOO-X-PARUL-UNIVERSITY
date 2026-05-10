@@ -55,7 +55,11 @@ const EditProfile = ({ profile, onProfileUpdate }) => {
       if (images.profileImage) data.append('profileImage', images.profileImage);
       if (images.coverImage) data.append('coverImage', images.coverImage);
 
-      const res = await api.patch('/users/profile', data);
+      const res = await api.patch('/users/profile', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
       toast.success('Profile updated successfully!');
       
       if (onProfileUpdate) onProfileUpdate(res.data.data.user);
