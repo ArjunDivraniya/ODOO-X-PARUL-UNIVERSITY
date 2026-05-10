@@ -477,3 +477,1338 @@
 }
 ]
 }
+
+{
+"cities": [
+{
+"name": "Ahmedabad",
+"state": "Gujarat",
+"country": "India",
+"description": "India's first UNESCO World Heritage City, known for its incredible architecture, textile history, and the Sabarmati Ashram.",
+"image": "https://images.unsplash.com/photo-1603262110263-fb0110e71329?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 15000,
+"popularity": 88,
+"famousFor": "Heritage, Textiles, and Street Food",
+"latitude": 23.0225,
+"longitude": 72.5714,
+"activities": [
+{
+"title": "Sabarmati Ashram Visit",
+"description": "The humble residence of Mahatma Gandhi and a museum dedicated to the Indian independence movement.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Adalaj Stepwell Exploration",
+"description": "Marvel at the intricate Solanki style architecture of this 5th-century underground water building.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 50,
+"duration": "1.5 Hours"
+},
+{
+"title": "Manek Chowk Night Market",
+"description": "Experience the ultimate street food heaven that starts in a jewelry market square at night.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=800",
+"estimatedCost": 500,
+"duration": "3 Hours"
+},
+{
+"title": "Sidi Saiyyed Mosque",
+"description": "See the famous 'Tree of Life' stone lattice work (Jali) windows.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Kankaria Lake Evening",
+"description": "Enjoy the amusement park, zoo, and water shows around this massive circular lake.",
+"category": "Entertainment",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 200,
+"duration": "3 Hours"
+},
+{
+"title": "Akshardham Temple Trip",
+"description": "A massive sandstone temple complex with beautiful gardens and a laser water show.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "4 Hours"
+},
+{
+"title": "Calico Museum of Textiles",
+"description": "One of the finest textile museums in the world showcasing antique Indian fabrics.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2.5 Hours"
+},
+{
+"title": "Heritage Walk in Old City",
+"description": "Navigate the narrow 'Pols' (neighborhoods) and see the traditional wooden houses.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1603262110263-fb0110e71329?q=80&w=800",
+"estimatedCost": 300,
+"duration": "3 Hours"
+},
+{
+"title": "Auto World Vintage Car Museum",
+"description": "View a vast collection of rare vintage cars from all over the world.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "2 Hours"
+},
+{
+"title": "Science City Visit",
+"description": "Explore the aquatic gallery, robotics gallery, and planetarium.",
+"category": "Science",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 400,
+"duration": "4 Hours"
+}
+]
+},
+{
+"name": "Surat",
+"state": "Gujarat",
+"country": "India",
+"description": "The 'Diamond City' of India, known for its diamond polishing and flourishing textile industry.",
+"image": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 14000,
+"popularity": 82,
+"famousFor": "Diamonds, Textiles, and Locho",
+"latitude": 21.1702,
+"longitude": 72.8311,
+"activities": [
+{
+"title": "Dumas Beach Visit",
+"description": "A popular urban beach known for its black sand and local food stalls.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1540202404-a2f29036bc5e?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Dutch Garden Exploration",
+"description": "A historic garden containing the mausoleums of Dutch and British officials.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1589982840479-79737107775b?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Surat Castle (Old Fort)",
+"description": "A 16th-century fortification on the banks of the Tapi river.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1625505826533-5c80aca7d157?q=80&w=800",
+"estimatedCost": 50,
+"duration": "2 Hours"
+},
+{
+"title": "Textile Market Shopping",
+"description": "Explore the massive markets for wholesale fabrics and silk sarees.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=800",
+"estimatedCost": 0,
+"duration": "4 Hours"
+},
+{
+"title": "Gopi Talav Evening",
+"description": "Relax at this renovated lake with fountains and recreational zones.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800",
+"estimatedCost": 50,
+"duration": "2 Hours"
+},
+{
+"title": "Science Centre & Planetarium",
+"description": "A modern multi-facility hub with a museum, art gallery, and amphitheater.",
+"category": "Science",
+"image": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800",
+"estimatedCost": 150,
+"duration": "3 Hours"
+},
+{
+"title": "Surat Diamond Bourse Visit",
+"description": "Visit the world's largest office building, dedicated to the diamond trade.",
+"category": "Business",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Ambika Niketan Temple",
+"description": "A popular pilgrimage site on the banks of the Tapi River.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Suvali Beach Day Trip",
+"description": "A quieter, cleaner beach away from the city noise.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1593693411515-c202e974fe08?q=80&w=800",
+"estimatedCost": 0,
+"duration": "4 Hours"
+},
+{
+"title": "Street Food at Night",
+"description": "Try the legendary Surat Locho, Ponk, and Ghari sweets.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 300,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Vadodara",
+"state": "Gujarat",
+"country": "India",
+"description": "The cultural capital of Gujarat, famous for its magnificent palaces and the world-renowned MSU.",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 16000,
+"popularity": 85,
+"famousFor": "Palaces and Culture",
+"latitude": 22.3072,
+"longitude": 73.1812,
+"activities": [
+{
+"title": "Laxmi Vilas Palace Tour",
+"description": "Visit the majestic residence of the royal family, four times the size of Buckingham Palace.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 250,
+"duration": "3 Hours"
+},
+{
+"title": "Sayaji Baug (Kamati Baug)",
+"description": "A huge park featuring a zoo, museum, planetarium, and a flower clock.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=800",
+"estimatedCost": 100,
+"duration": "4 Hours"
+},
+{
+"title": "Champaner-Pavagadh Day Trip",
+"description": "Explore the UNESCO World Heritage site featuring Islamic architecture and a hilltop temple.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 500,
+"duration": "8 Hours"
+},
+{
+"title": "Baroda Museum & Picture Gallery",
+"description": "Admire a vast collection of artifacts, paintings, and a blue whale skeleton.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "2 Hours"
+},
+{
+"title": "Statue of Unity Day Trip",
+"description": "Visit the world's tallest statue, dedicated to Sardar Vallabhbhai Patel.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 2000,
+"duration": "10 Hours"
+},
+{
+"title": "EME Temple (Dakshinamurti Temple)",
+"description": "A unique geodesic dome temple built with aluminum sheets by the Indian Army.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Kirti Stambh (Tower of Fame)",
+"description": "A prominent landmark symbolizing the victory of the Maratha rulers.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "0.5 Hours"
+},
+{
+"title": "Inorbit Mall Shopping",
+"description": "Shop for luxury brands and enjoy the modern food court.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Sursagar Lake Evening",
+"description": "Watch the sunset by the lake featuring a 120-foot statue of Lord Shiva.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Navratri Festival Celebration",
+"description": "Experience the world's longest dance festival with Garba performances.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 1000,
+"duration": "6 Hours"
+}
+]
+},
+{
+"name": "Rajkot",
+"state": "Gujarat",
+"country": "India",
+"description": "A hub of industry and culture in Saurashtra, known for its colonial history and vibrant markets.",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 12000,
+"popularity": 78,
+"famousFor": "Handicrafts and Engineering",
+"latitude": 22.3039,
+"longitude": 70.8022,
+"activities": [
+{
+"title": "Watson Museum",
+"description": "One of the oldest museums in Gujarat showcasing Saurashtra's history.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 20,
+"duration": "2 Hours"
+},
+{
+"title": "Kaba Gandhi No Delo",
+"description": "The childhood home of Mahatma Gandhi, now a museum.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Rotary Dolls Museum",
+"description": "A unique collection of dolls from across the world representing various cultures.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "2 Hours"
+},
+{
+"title": "Nyari Dam Visit",
+"description": "A scenic spot on the outskirts of the city, perfect for picnics.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Bangdi Bazaar Shopping",
+"description": "Famous for traditional glass and metal bangles and Bandhani sarees.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Aji Dam Evening",
+"description": "Enjoy the gardens and bird watching at this major city reservoir.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Swaminarayan Temple Visit",
+"description": "A grand white marble temple complex with intricate carvings.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Race Course Grounds",
+"description": "A large park with sports facilities, gardens, and walking tracks.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Ishwariya Park",
+"description": "A beautiful hilltop park with a musical fountain and children's play area.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 30,
+"duration": "2 Hours"
+},
+{
+"title": "Kathiyawadi Food Tour",
+"description": "Try authentic local dishes like Ringan no Oro and Vagharelo Rotlo.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 400,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Bhavnagar",
+"state": "Gujarat",
+"country": "India",
+"description": "A coastal city with a rich trading history, serving as a gateway to the Palitana Jain temples.",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 11000,
+"popularity": 70,
+"famousFor": "Jain Temples and Trading",
+"latitude": 21.7645,
+"longitude": 72.1519,
+"activities": [
+{
+"title": "Palitana Temple Trek",
+"description": "Climb over 3,000 steps to reach the world's only mountain with over 800 Jain temples.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 200,
+"duration": "8 Hours"
+},
+{
+"title": "Blackbuck National Park (Velavadar)",
+"description": "Spot herds of Blackbucks and rare birds in this unique grassland park.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 500,
+"duration": "5 Hours"
+},
+{
+"title": "Nilambag Palace Stay",
+"description": "Experience heritage luxury at the residence of the Bhavnagar royal family.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 5000,
+"duration": "24 Hours"
+},
+{
+"title": "Takhteshwar Temple View",
+"description": "A white marble temple located on a hill offering panoramic city views.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Gaurishankar Lake Evening",
+"description": "A peaceful lake and park perfect for bird watching and walking.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Barton Museum Visit",
+"description": "One of the oldest museums in Gujarat with an extensive collection of coins.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 20,
+"duration": "2 Hours"
+},
+{
+"title": "Victoria Park Walk",
+"description": "A protected forest within the city limits, home to various flora and fauna.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 20,
+"duration": "2 Hours"
+},
+{
+"title": "Alang Ship Breaking Yard",
+"description": "Observe the massive ship-scrapping operations (requires permission).",
+"category": "Industrial",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "4 Hours"
+},
+{
+"title": "Gandhi Smriti Institution",
+"description": "A center dedicated to Gandhian philosophy with a library and gallery.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Bhavnagar Street Food Trail",
+"description": "Famous for Bhavnagari Ganthiya and spicy Pav Bhaji.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 250,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Jamnagar",
+"state": "Gujarat",
+"country": "India",
+"description": "Known as the 'Jewel of Kathiawar', famous for its marine national park and exquisite brass industry.",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 13000,
+"popularity": 75,
+"famousFor": "Bandhani and Marine Park",
+"latitude": 22.4707,
+"longitude": 70.0577,
+"activities": [
+{
+"title": "Marine National Park (Pirotan)",
+"description": "Explore India's first marine park and see coral reefs and dolphins.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 1000,
+"duration": "6 Hours"
+},
+{
+"title": "Lakhota Lake and Palace",
+"description": "An island palace in the middle of a lake, now a museum.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "2 Hours"
+},
+{
+"title": "Khijadiya Bird Sanctuary",
+"description": "A unique wetland habitat where sea water and fresh water meet.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "4 Hours"
+},
+{
+"title": "Bala Hanuman Temple",
+"description": "World-famous for its continuous chanting of 'Ram Dhun' since 1964.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Bandhani Shopping in Old City",
+"description": "Buy world-class tie-dye fabrics from the masters of the craft.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Pratap Vilas Palace Visit",
+"description": "A European-styled palace with intricate carvings and lush gardens.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "2 Hours"
+},
+{
+"title": "Darbargadh Palace Exploration",
+"description": "The old royal residence showing a mix of Rajput and European architecture.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "1.5 Hours"
+},
+{
+"title": "Brass Industry Tour",
+"description": "Learn about the mass production of brass parts exported globally.",
+"category": "Industrial",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Sivrajpur Beach Day Trip",
+"description": "Relax at this pristine 'Blue Flag' certified beach near Jamnagar.",
+"category": "Beach",
+"image": "https://images.unsplash.com/photo-1540202404-a2f29036bc5e?q=80&w=800",
+"estimatedCost": 0,
+"duration": "6 Hours"
+},
+{
+"title": "Bhujiyo Kotho Viewpoint",
+"description": "An old tower offering great views of the city and its surrounding areas.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+}
+]
+},
+{
+"name": "Junagadh",
+"state": "Gujarat",
+"country": "India",
+"description": "Located at the foot of Girnar Hill, this city is a melting pot of Hindu, Buddhist, and Islamic history.",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 12000,
+"popularity": 80,
+"famousFor": "Girnar Hills and Uparkot Fort",
+"latitude": 21.5222,
+"longitude": 70.4579,
+"activities": [
+{
+"title": "Girnar Hill Trek",
+"description": "Climb 10,000 steps to reach the sacred temples at the mountain peak.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "10 Hours"
+},
+{
+"title": "Uparkot Fort Exploration",
+"description": "Tour the 2,300-year-old fort featuring Buddhist caves and ancient stepwells.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 50,
+"duration": "3 Hours"
+},
+{
+"title": "Mahabat Maqbara",
+"description": "Visit the most stunning mausoleum in Gujarat with its unique spiral staircases.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Gir National Park Safari",
+"description": "Go on a jeep safari to see the only Asiatic Lions in the world.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 2500,
+"duration": "4 Hours"
+},
+{
+"title": "Sakkarbaug Zoological Garden",
+"description": "One of India's oldest zoos, famous for breeding Asiatic Lions.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "3 Hours"
+},
+{
+"title": "Ashoka Rock Edicts",
+"description": "View 14 edicts of the great Emperor Ashoka carved into a boulder.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 20,
+"duration": "1 Hour"
+},
+{
+"title": "Buddhist Caves Visit",
+"description": "Explore the rock-cut cave systems used by monks thousands of years ago.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 20,
+"duration": "1.5 Hours"
+},
+{
+"title": "Damodar Kund Holy Dip",
+"description": "A sacred lake at the foot of Girnar, popular for spiritual rituals.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Darbar Hall Museum",
+"description": "View the royal collection including weapons, costumes, and paintings.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "2 Hours"
+},
+{
+"title": "Somnath Temple Trip",
+"description": "Day trip to the magnificent first Jyotirlinga on the coast.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 500,
+"duration": "6 Hours"
+}
+]
+},
+{
+"name": "Delhi",
+"state": "Delhi",
+"country": "India",
+"description": "The capital of India, a historic metropolis blending Mughal grandeur with British colonial architecture.",
+"image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 25000,
+"popularity": 97,
+"famousFor": "History, Food, and Shopping",
+"latitude": 28.6139,
+"longitude": 77.209,
+"activities": [
+{
+"title": "Red Fort Exploration",
+"description": "Tour the iconic sandstone palace complex of Mughal emperors.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?q=80&w=800",
+"estimatedCost": 500,
+"duration": "3 Hours"
+},
+{
+"title": "Qutub Minar Visit",
+"description": "Admire the world's tallest brick minaret and its surrounding ancient complex.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1523544545175-92e04b96d26b?q=80&w=800",
+"estimatedCost": 500,
+"duration": "2 Hours"
+},
+{
+"title": "Humayun's Tomb Walk",
+"description": "Explore the precursor to the Taj Mahal, set in lush Persian-style gardens.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 500,
+"duration": "2 Hours"
+},
+{
+"title": "Chandni Chowk Food Tour",
+"description": "Taste the best parathas, jalebis, and chaat in the heart of Old Delhi.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 600,
+"duration": "3 Hours"
+},
+{
+"title": "Lotus Temple Meditation",
+"description": "Visit the Bahá'í House of Worship known for its flowerlike shape and silence.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1564507592333-c60657451dd7?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "India Gate & Kartavya Path",
+"description": "A war memorial arch and a central ceremonial boulevard of India.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Akshardham Temple Experience",
+"description": "A massive spiritual complex with boat rides and musical fountains.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1590766948510-59367209188d?q=80&w=800",
+"estimatedCost": 300,
+"duration": "5 Hours"
+},
+{
+"title": "Dilli Haat Shopping",
+"description": "Open-air food and craft bazaar representing different Indian states.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 100,
+"duration": "3 Hours"
+},
+{
+"title": "Jama Masjid Visit",
+"description": "One of the largest mosques in India, built by Shah Jahan.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Lodhi Garden Evening Walk",
+"description": "A favorite spot for locals featuring 15th-century Sayyid and Lodi tombs.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1589982840479-79737107775b?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Amritsar",
+"state": "Punjab",
+"country": "India",
+"description": "The spiritual and cultural center of the Sikh religion, famous for the Golden Temple.",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 14000,
+"popularity": 94,
+"famousFor": "Golden Temple and Wagah Border",
+"latitude": 31.6223,
+"longitude": 74.8753,
+"activities": [
+{
+"title": "Golden Temple (Harmandir Sahib)",
+"description": "The holiest Gurdwara, famous for its architecture and communal kitchen (Langar).",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Wagah Border Ceremony",
+"description": "Watch the high-energy military ceremony at the India-Pakistan border.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "4 Hours"
+},
+{
+"title": "Jallianwala Bagh Memorial",
+"description": "A tragic historical site commemorating the 1919 massacre victims.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Partition Museum Visit",
+"description": "The world's first museum dedicated to the memories of the 1947 Partition.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 20,
+"duration": "2 Hours"
+},
+{
+"title": "Amritsari Kulcha Trail",
+"description": "Savor the crispy, buttery local stuffed bread at authentic dhabas.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 300,
+"duration": "2 Hours"
+},
+{
+"title": "Hall Bazaar Shopping",
+"description": "Famous for Phulkari embroidery, traditional footwear, and spices.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Ram Tirath Temple",
+"description": "The ancient ashram of Valmiki where Sita took refuge.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Durgiana Temple Visit",
+"description": "Often called the Silver Temple, it bears a striking resemblance to the Golden Temple.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Gobindgarh Fort Show",
+"description": "Watch a multimedia sound and light show on the history of Punjab.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 300,
+"duration": "3 Hours"
+},
+{
+"title": "Sadda Pind Village Experience",
+"description": "A Punjabi culture living village museum with folk dance and food.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 800,
+"duration": "4 Hours"
+}
+]
+},
+{
+"name": "Udaipur",
+"state": "Rajasthan",
+"country": "India",
+"description": "The 'City of Lakes' or 'Venice of the East', known for its romantic palaces and stunning artificial lakes.",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1000",
+"bestTime": "September to March",
+"avgBudget": 22000,
+"popularity": 96,
+"famousFor": "Lakes and Palaces",
+"latitude": 24.5854,
+"longitude": 73.7125,
+"activities": [
+{
+"title": "City Palace Tour",
+"description": "Explore the largest palace complex in Rajasthan overlooking Lake Pichola.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 400,
+"duration": "3 Hours"
+},
+{
+"title": "Lake Pichola Boat Ride",
+"description": "A scenic boat trip during sunset to view the Lake Palace and Jag Mandir.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800",
+"estimatedCost": 500,
+"duration": "1.5 Hours"
+},
+{
+"title": "Bagore Ki Haveli Dance Show",
+"description": "Watch 'Dharohar', a vibrant Rajasthani folk dance and puppet show.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=800",
+"estimatedCost": 150,
+"duration": "1.5 Hours"
+},
+{
+"title": "Jagdish Temple Visit",
+"description": "A grand Indo-Aryan temple dedicated to Lord Vishnu in the heart of the city.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Saheliyon-ki-Bari Garden",
+"description": "Tour the 'Garden of the Maidens' with its fountains and marble elephants.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1589982840479-79737107775b?q=80&w=800",
+"estimatedCost": 50,
+"duration": "1.5 Hours"
+},
+{
+"title": "Sajjangarh (Monsoon Palace)",
+"description": "A hilltop palace offering panoramic views of the city's lakes and palaces.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 200,
+"duration": "2 Hours"
+},
+{
+"title": "Shilpgram Craft Village",
+"description": "An ethnographic museum and rural arts center showcasing tribal culture.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 50,
+"duration": "3 Hours"
+},
+{
+"title": "Fateh Sagar Lake evening",
+"description": "Enjoy snacks at 'Bombay Market' and walk along the lake's promenade.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Vintage Car Collection Museum",
+"description": "View the royal car collection including the 1934 Rolls-Royce Phantom.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 400,
+"duration": "1.5 Hours"
+},
+{
+"title": "Hathi Pol Bazaar Shopping",
+"description": "Shop for traditional Pichwai and Phad paintings and Rajasthani mojris.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+}
+]
+},
+{
+"name": "Mysore",
+"state": "Karnataka",
+"country": "India",
+"description": "The cultural capital of Karnataka, known for its royal heritage and majestic Mysore Palace.",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1000",
+"bestTime": "October to February",
+"avgBudget": 15000,
+"popularity": 90,
+"famousFor": "Palaces and Sandalwood",
+"latitude": 12.2958,
+"longitude": 76.6394,
+"activities": [
+{
+"title": "Mysore Palace Visit",
+"description": "Admire the Indo-Saracenic architecture and its illumination on Sundays.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "3 Hours"
+},
+{
+"title": "Chamundi Hill Climb",
+"description": "Climb 1,000 steps to the temple at the top and see the massive Nandi statue.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Brindavan Gardens Walk",
+"description": "Enjoy the terrace gardens and musical fountain show in the evening.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1589982840479-79737107775b?q=80&w=800",
+"estimatedCost": 50,
+"duration": "3 Hours"
+},
+{
+"title": "Devaraja Market Exploration",
+"description": "A historic, vibrant market selling silk, incense, and sandalwood oil.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Mysore Zoo (Chamarajendra)",
+"description": "One of the oldest and most popular zoos in India.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "4 Hours"
+},
+{
+"title": "St. Philomena's Church",
+"description": "Visit one of the tallest churches in India, inspired by Cologne Cathedral.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Jaganmohan Palace Gallery",
+"description": "A former palace turned art gallery with paintings by Raja Ravi Varma.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "2 Hours"
+},
+{
+"title": "Seringapatam Day Trip",
+"description": "Explore the historic capital of Tipu Sultan near Mysore.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 300,
+"duration": "5 Hours"
+},
+{
+"title": "Mysore Pak Tasting",
+"description": "Try the legendary melt-in-mouth local sweet at its birthplace.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 200,
+"duration": "1 Hour"
+},
+{
+"title": "Sand Sculpture Museum",
+"description": "A unique museum showcasing giant sculptures made entirely of sand.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "1 Hour"
+}
+]
+},
+{
+"name": "Shimla",
+"state": "Himachal Pradesh",
+"country": "India",
+"description": "The 'Queen of Hills', once the summer capital of British India, known for its colonial buildings and scenic landscapes.",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1000",
+"bestTime": "March to June / November to February (Snow)",
+"avgBudget": 18000,
+"popularity": 95,
+"famousFor": "Colonial Charm and Snow",
+"latitude": 31.1048,
+"longitude": 77.1734,
+"activities": [
+{
+"title": "The Ridge & Mall Road Walk",
+"description": "The hub of the city with colonial architecture, cafes, and views of the Himalayas.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Toy Train Ride (Kalka-Shimla)",
+"description": "A UNESCO heritage railway ride through tunnels and pine forests.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 600,
+"duration": "5 Hours"
+},
+{
+"title": "Jakhu Temple Hike",
+"description": "A short trek to the temple of Lord Hanuman featuring a 108-foot statue.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Viceregal Lodge Tour",
+"description": "Visit the Scottish Baronial style former summer residence of British Viceroys.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "2 Hours"
+},
+{
+"title": "Kufri Adventure Trip",
+"description": "Head to Kufri for horse riding and snow sports (in winter).",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 1000,
+"duration": "5 Hours"
+},
+{
+"title": "Christ Church Visit",
+"description": "The second oldest church in North India, famous for its neo-Gothic design.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Himachal State Museum",
+"description": "Explore the collection of Pahari paintings and ancient sculptures.",
+"category": "Museum",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "2 Hours"
+},
+{
+"title": "Chadwick Falls Exploration",
+"description": "A beautiful waterfall surrounded by dense deodar and pine forests.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Summer Hill Picnic",
+"description": "A quiet residential area offering peaceful walks and hillside views.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Lakkar Bazaar Wood Shopping",
+"description": "Famous for wooden toys, walking sticks, and handcrafted furniture.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Manali",
+"state": "Himachal Pradesh",
+"country": "India",
+"description": "A high-altitude Himalayan resort town, popular for its snow sports and as a gateway for adventure.",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1000",
+"bestTime": "October to June",
+"avgBudget": 20000,
+"popularity": 98,
+"famousFor": "Adventure and Landscapes",
+"latitude": 32.2432,
+"longitude": 77.1892,
+"activities": [
+{
+"title": "Solang Valley Adventure",
+"description": "Enjoy paragliding, zorbing, and skiing in this breathtaking valley.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 2500,
+"duration": "6 Hours"
+},
+{
+"title": "Rohtang Pass Trip",
+"description": "Travel to this high mountain pass for year-round snow (requires permit).",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 3500,
+"duration": "8 Hours"
+},
+{
+"title": "Hadimba Devi Temple",
+"description": "A wooden temple built in 1553, located in a cedar forest.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Beas River Rafting",
+"description": "Experience white water rafting in the cold waters of the Beas.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 1000,
+"duration": "3 Hours"
+},
+{
+"title": "Old Manali Cafe Crawl",
+"description": "Explore the bohemian vibes and riverside cafes of Old Manali.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 800,
+"duration": "4 Hours"
+},
+{
+"title": "Jogini Falls Trek",
+"description": "A gentle trek to a scenic waterfall overlooking the Beas river.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "4 Hours"
+},
+{
+"title": "Vashisht Hot Springs",
+"description": "Natural sulfur hot springs located near an ancient temple.",
+"category": "Wellness",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Naggar Castle Exploration",
+"description": "Visit this medieval castle built in local stone and wood architecture.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "3 Hours"
+},
+{
+"title": "Mall Road Shopping",
+"description": "Shop for Kullu shawls, local handicrafts, and dry fruits.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Atal Tunnel Drive",
+"description": "Travel through the world's longest single-tube highway tunnel above 10,000 feet.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Nainital",
+"state": "Uttarakhand",
+"country": "India",
+"description": "A beautiful hill station centered around the pear-shaped Naini Lake, set in the Kumaon region.",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1000",
+"bestTime": "March to June",
+"avgBudget": 16000,
+"popularity": 92,
+"famousFor": "Lakes and Boating",
+"latitude": 29.3912,
+"longitude": 79.4547,
+"activities": [
+{
+"title": "Naini Lake Boating",
+"description": "Enjoy a peaceful boat ride on the emerald waters of Naini Lake.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800",
+"estimatedCost": 400,
+"duration": "1 Hour"
+},
+{
+"title": "Snow View Point by Ropeway",
+"description": "Ride a cable car to see the panoramic views of the high Himalayan peaks.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 300,
+"duration": "2 Hours"
+},
+{
+"title": "Naina Devi Temple",
+"description": "Visit the sacred temple of Goddess Naina Devi on the northern shore of the lake.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Tiffin Top (Dorothy's Seat)",
+"description": "A short hike to a viewpoint offering a stunning view of Nainital city.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Nainital Zoo Exploration",
+"description": "Visit the high-altitude zoo, home to snow leopards and Himalayan bears.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "3 Hours"
+},
+{
+"title": "Mall Road evening",
+"description": "Stroll along the lakefront road lined with shops and restaurants.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Eco Cave Gardens",
+"description": "Explore the interconnected rocky caves and hanging gardens.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "2 Hours"
+},
+{
+"title": "St. John Wilderness Church",
+"description": "An old neo-Gothic church surrounded by pine and deodar forests.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Bhimtal Day Trip",
+"description": "Visit the nearby town of Bhimtal, famous for its large lake and island museum.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 500,
+"duration": "5 Hours"
+},
+{
+"title": "Governor's House (Raj Bhavan)",
+"description": "Tour the magnificent Victorian-style building set in large gardens.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "1.5 Hours"
+}
+]
+}
+]
+}
