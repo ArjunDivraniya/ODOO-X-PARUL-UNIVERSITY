@@ -5,6 +5,7 @@ const { prisma } = require('../lib/prisma');
 const generateTokens = require('../utils/generateTokens');
 const sendEmail = require('../utils/sendEmail');
 const { passwordResetTemplate, emailVerificationTemplate } = require('../utils/emailTemplates');
+const { uploadToCloudinary } = require('../utils/cloudinary');
 
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'fallback_refresh_secret_traveloop';
@@ -23,7 +24,11 @@ exports.register = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const profileImage = req.file ? `/uploads/${req.file.filename}` : null;
+    let profileImage = null;
+    if (req.file) {
+      const result = await uploadToCloudinary(req.file.buffer, 'traveloop/profiles');
+      profileImage = result.secure_url;
+    }
 
     // Generate Verification Token
     const verificationToken = crypto.randomBytes(32).toString("hex");
