@@ -8,7 +8,9 @@ import ResetPassword from '../pages/auth/ResetPassword';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
 import Overview from '../pages/dashboard/Overview';
 import Trips from '../pages/dashboard/Trips';
+import TripDetail from '../pages/dashboard/TripDetail';
 import Profile from '../pages/dashboard/profile/Profile';
+import SharedTrip from '../pages/SharedTrip';
 import Landing from '../pages/Landing';
 
 const PrivateRoute = ({ children }) => {
@@ -55,6 +57,7 @@ const AppRoutes = () => {
         </PublicRoute>
       } />
       <Route path="/" element={<Landing />} />
+      <Route path="/shared/:shareCode" element={<SharedTrip />} />
       <Route path="/dashboard" element={
         <PrivateRoute>
           <DashboardLayout />
@@ -62,6 +65,7 @@ const AppRoutes = () => {
       }>
         <Route index element={<Overview />} />
         <Route path="trips" element={<Trips />} />
+        <Route path="trips/:tripId" element={<TripDetail />} />
         <Route path="profile" element={<Profile />} />
       </Route>
     </Routes>
