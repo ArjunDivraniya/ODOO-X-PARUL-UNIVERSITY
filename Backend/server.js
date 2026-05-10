@@ -27,6 +27,8 @@ app.use('/api/recommendations', require('./routes/recommendation.routes.js'));
 app.use('/api/cities', require('./routes/city.routes.js'));
 app.use('/api/activities', require('./routes/activity.routes.js'));
 app.use('/api/expenses', require('./routes/expense.routes.js'));
+app.use('/api/notes', require('./routes/note.routes.js'));
+app.use('/api/packing-list', require('./routes/packing.routes.js'));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
