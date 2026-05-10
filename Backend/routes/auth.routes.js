@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/auth.controller');
 const authMiddleware = require('../middleware/auth.middleware');
-const upload = require('../middleware/upload');
+const upload = require('../middleware/upload.middleware');
 
 // Public routes
 router.post('/register', upload.single('profilePhoto'), authController.register);
