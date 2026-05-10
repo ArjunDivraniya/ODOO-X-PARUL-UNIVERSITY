@@ -5,7 +5,9 @@ import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
 import ForgotPassword from '../pages/auth/ForgotPassword';
 import ResetPassword from '../pages/auth/ResetPassword';
-import Dashboard from '../pages/Dashboard';
+import DashboardLayout from '../components/dashboard/DashboardLayout';
+import Overview from '../pages/dashboard/Overview';
+import Trips from '../pages/dashboard/Trips';
 import Landing from '../pages/Landing';
 
 const PrivateRoute = ({ children }) => {
@@ -54,9 +56,12 @@ const AppRoutes = () => {
       <Route path="/" element={<Landing />} />
       <Route path="/dashboard" element={
         <PrivateRoute>
-          <Dashboard />
+          <DashboardLayout />
         </PrivateRoute>
-      } />
+      }>
+        <Route index element={<Overview />} />
+        <Route path="trips" element={<Trips />} />
+      </Route>
     </Routes>
   );
 };
