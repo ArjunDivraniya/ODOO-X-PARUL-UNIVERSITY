@@ -22,6 +22,8 @@ app.use('/uploads', express.static(uploadsDir));
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/trips', require('./routes/trip.routes.js'));
+app.use('/api/trip-sections', require('./routes/tripSection.routes.js'));
+app.use('/api/recommendations', require('./routes/recommendation.routes.js'));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
