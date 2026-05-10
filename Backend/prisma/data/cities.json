@@ -474,12 +474,7 @@
 "duration": "4 Hours"
 }
 ]
-}
-]
-}
-
-{
-"cities": [
+},
 {
 "name": "Ahmedabad",
 "state": "Gujarat",
@@ -1807,6 +1802,481 @@
 "image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
 "estimatedCost": 100,
 "duration": "1.5 Hours"
+}
+]
+},
+{
+"name": "Rann of Kutch",
+"state": "Gujarat",
+"country": "India",
+"description": "The world's largest salt desert, known for the Rann Utsav and its surreal white landscape under the moonlight.",
+"image": "https://images.unsplash.com/photo-1590766948510-59367209188d?q=80&w=1000",
+"bestTime": "November to February",
+"avgBudget": 20000,
+"popularity": 94,
+"famousFor": "White Desert and Handicrafts",
+"latitude": 23.8118,
+"longitude": 70.3664,
+"activities": [
+{
+"title": "White Rann Moonlight Walk",
+"description": "Walk on the endless salt flats on a full moon night for a magical experience.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 100,
+"duration": "2 Hours"
+},
+{
+"title": "Rann Utsav Cultural Show",
+"description": "Experience local folk music, dance, and handicrafts in the tent city.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?q=80&w=800",
+"estimatedCost": 500,
+"duration": "4 Hours"
+},
+{
+"title": "Kalo Dungar (Black Hill)",
+"description": "The highest point in Kutch offering a panoramic view of the Great Rann.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Bhujodi Village Visit",
+"description": "Observe traditional weaving and purchase authentic Kutchi shawls.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Dholavira Harappan Site",
+"description": "Explore the ruins of one of the five largest Harappan cities in the world.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 100,
+"duration": "5 Hours"
+},
+{
+"title": "Mandvi Beach Sunset",
+"description": "Relax at the pristine beach and visit the Vijay Vilas Palace nearby.",
+"category": "Beach",
+"image": "https://images.unsplash.com/photo-1540202404-a2f29036bc5e?q=80&w=800",
+"estimatedCost": 0,
+"duration": "4 Hours"
+},
+{
+"title": "Kutch Desert Wildlife Sanctuary",
+"description": "Spot flamingos and other migratory birds in the salt marshes.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 200,
+"duration": "4 Hours"
+},
+{
+"title": "Aina Mahal Museum Bhuj",
+"description": "Visit the 18th-century 'Palace of Mirrors' showing royal artifacts.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 50,
+"duration": "1.5 Hours"
+},
+{
+"title": "Camel Safari in the Rann",
+"description": "Ride across the white desert on a traditional camel cart.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1524230507669-5ff97982bb5e?q=80&w=800",
+"estimatedCost": 500,
+"duration": "2 Hours"
+},
+{
+"title": "Hodka Village Stay",
+"description": "Live in traditional 'Bhungas' (mud huts) and experience rural life.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 4000,
+"duration": "24 Hours"
+}
+]
+},
+{
+"name": "Dwara",
+"state": "Gujarat",
+"country": "India",
+"description": "An ancient city and one of the four sacred 'Char Dham' pilgrimage sites, believed to be the kingdom of Lord Krishna.",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 12000,
+"popularity": 92,
+"famousFor": "Dwarkadhish Temple and Spirituality",
+"latitude": 22.2442,
+"longitude": 68.9685,
+"activities": [
+{
+"title": "Dwarkadhish Temple Darshan",
+"description": "Visit the 2,500-year-old temple dedicated to Lord Krishna.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Bet Dwarka Boat Trip",
+"description": "Take a ferry to the island where Lord Krishna is said to have resided.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800",
+"estimatedCost": 100,
+"duration": "4 Hours"
+},
+{
+"title": "Nageshwar Jyotirlinga Visit",
+"description": "Pray at one of the 12 sacred Jyotirlinga shrines of Lord Shiva.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Rukmini Devi Temple",
+"description": "Explore the architectural beauty of this temple dedicated to Krishna's wife.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Gomti Ghat Holy Dip",
+"description": "Take a ritual bath where the Gomti river meets the Arabian Sea.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Sudama Setu Walk",
+"description": "Cross the suspension bridge over Gomti river for city views.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 10,
+"duration": "0.5 Hours"
+},
+{
+"title": "Shivrajpur Beach Scuba",
+"description": "Enjoy scuba diving and crystal clear water at this Blue Flag beach.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1540202404-a2f29036bc5e?q=80&w=800",
+"estimatedCost": 2500,
+"duration": "3 Hours"
+},
+{
+"title": "Dwarka Lighthouse Sunset",
+"description": "Watch the sunset over the Arabian Sea from the top of the lighthouse.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 20,
+"duration": "1 Hour"
+},
+{
+"title": "Bhalka Tirth Day Trip",
+"description": "Visit the spot where Lord Krishna left his earthly body.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1624716164214-3d077978d386?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Dwarka Evening Market",
+"description": "Shop for traditional brassware, shells, and devotional items.",
+"category": "Shopping",
+"image": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+}
+]
+},
+{
+"name": "Saputara",
+"state": "Gujarat",
+"country": "India",
+"description": "Gujarat's only hill station, nestled in the Sahyadri range, known for its cool climate, forests, and waterfalls.",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1000",
+"bestTime": "June to September (Monsoon) / October to February",
+"avgBudget": 10000,
+"popularity": 80,
+"famousFor": "Nature and Hill Station",
+"latitude": 20.578,
+"longitude": 73.747,
+"activities": [
+{
+"title": "Saputara Lake Boating",
+"description": "Enjoy pedal boating in the heart of the hill station.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=800",
+"estimatedCost": 200,
+"duration": "1 Hour"
+},
+{
+"title": "Sunset Point Ropeway",
+"description": "Take a cable car ride to get a bird's eye view of the Sahyadri valley.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 150,
+"duration": "1 Hour"
+},
+{
+"title": "Gira Waterfalls Day Trip",
+"description": "Visit the majestic 75-foot seasonal waterfall near Waghai.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Saputara Tribal Museum",
+"description": "Learn about the lifestyle and culture of the Dang tribes.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 20,
+"duration": "1.5 Hours"
+},
+{
+"title": "Vansda National Park Safari",
+"description": "Explore the dense deciduous forest home to leopards and hyenas.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 500,
+"duration": "4 Hours"
+},
+{
+"title": "Artist Village Visit",
+"description": "Buy bamboo crafts and Warli paintings directly from tribal artists.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1590050752117-23a9d7fc219c?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Step Garden Walk",
+"description": "Stroll through the multi-layered garden featuring a variety of flowers.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1589982840479-79737107775b?q=80&w=800",
+"estimatedCost": 10,
+"duration": "1 Hour"
+},
+{
+"title": "Purna Wildlife Sanctuary Trek",
+"description": "A haven for nature lovers and bird watchers.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 200,
+"duration": "5 Hours"
+},
+{
+"title": "Hatgadh Fort Trek",
+"description": "Hike to this historic fort on the border of Gujarat and Maharashtra.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=800",
+"estimatedCost": 0,
+"duration": "3 Hours"
+},
+{
+"title": "Rose Garden Exploration",
+"description": "See numerous varieties of roses in full bloom during the spring season.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1589982840479-79737107775b?q=80&w=800",
+"estimatedCost": 10,
+"duration": "1 Hour"
+}
+]
+},
+{
+"name": "Rishikesh",
+"state": "Uttarakhand",
+"country": "India",
+"description": "The 'Yoga Capital of the World', known for spiritual learning and high-adrenaline river rafting on the Ganges.",
+"image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=1000",
+"bestTime": "March to May / September to November",
+"avgBudget": 15000,
+"popularity": 96,
+"famousFor": "Yoga and River Rafting",
+"latitude": 30.0869,
+"longitude": 78.2676,
+"activities": [
+{
+"title": "White Water River Rafting",
+"description": "Navigate the exciting rapids of the Ganges river.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 1200,
+"duration": "3 Hours"
+},
+{
+"title": "Evening Ganga Aarti at Parmarth Niketan",
+"description": "Join the soulful devotional ceremony at the river bank.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1590766948510-59367209188d?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Beatles Ashram Visit",
+"description": "Explore the graffiti-covered ruins of the ashram where The Beatles stayed in 1968.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 150,
+"duration": "2 Hours"
+},
+{
+"title": "Laxman Jhula & Ram Jhula",
+"description": "Walk across the iconic iron suspension bridges over the Ganges.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Bungee Jumping",
+"description": "Take a leap from India's highest fixed-platform bungee jumping site.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 3500,
+"duration": "2 Hours"
+},
+{
+"title": "Neer Garh Waterfall Trek",
+"description": "A beautiful hike to hidden cascading falls through the jungle.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 30,
+"duration": "3 Hours"
+},
+{
+"title": "Yoga & Meditation Class",
+"description": "Attend an authentic session at one of the world's most renowned ashrams.",
+"category": "Wellness",
+"image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800",
+"estimatedCost": 500,
+"duration": "2 Hours"
+},
+{
+"title": "Triveni Ghat Evening",
+"description": "A sacred bathing spot and the biggest ghat in Rishikesh.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1561359313-0639aad49ca6?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1.5 Hours"
+},
+{
+"title": "Cafe Crawl (Little Buddha Cafe)",
+"description": "Enjoy river views and global cuisine in hippie-style cafes.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 800,
+"duration": "3 Hours"
+},
+{
+"title": "Rajaji National Park Safari",
+"description": "Explore the forest habitat of Asian elephants and tigers nearby.",
+"category": "Nature",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 2000,
+"duration": "4 Hours"
+}
+]
+},
+{
+"name": "Pondicherry",
+"state": "Puducherry",
+"country": "India",
+"description": "A former French colony known for its mustard-yellow colonial villas, chic boutiques, and spiritual vibes.",
+"image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=1000",
+"bestTime": "October to March",
+"avgBudget": 18000,
+"popularity": 88,
+"famousFor": "French Quarter and Auroville",
+"latitude": 11.9416,
+"longitude": 79.8083,
+"activities": [
+{
+"title": "White Town Heritage Walk",
+"description": "Walk through the French Quarter with its colonial architecture and bougainvillea.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Auroville & Matrimandir",
+"description": "Visit the universal township and meditate at the Golden Globe.",
+"category": "Culture",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "4 Hours"
+},
+{
+"title": "Paradise Beach Ferry",
+"description": "Take a boat to reach the secluded beach known for its golden sand.",
+"category": "Beach",
+"image": "https://images.unsplash.com/photo-1540202404-a2f29036bc5e?q=80&w=800",
+"estimatedCost": 300,
+"duration": "4 Hours"
+},
+{
+"title": "Sri Aurobindo Ashram Visit",
+"description": "A spiritual community and place of learning in the city center.",
+"category": "Spiritual",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "Scuba Diving in Bay of Bengal",
+"description": "Explore coral reefs and underwater life with professional instructors.",
+"category": "Adventure",
+"image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800",
+"estimatedCost": 5000,
+"duration": "4 Hours"
+},
+{
+"title": "Rock Beach evening",
+"description": "Walk along the promenade and see the Gandhi Statue at night.",
+"category": "Sightseeing",
+"image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800",
+"estimatedCost": 0,
+"duration": "2 Hours"
+},
+{
+"title": "French Food Trail",
+"description": "Dine at chic cafes like Coromandel Cafe for authentic French pastries.",
+"category": "Food",
+"image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=800",
+"estimatedCost": 1500,
+"duration": "2 Hours"
+},
+{
+"title": "Basilica of the Sacred Heart",
+"description": "Admire the Gothic architecture of this historic Catholic church.",
+"category": "Heritage",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 0,
+"duration": "1 Hour"
+},
+{
+"title": "Chunnambar Boat House",
+"description": "Rent a houseboat or take a cruise through the backwaters.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1593693411515-c202e974fe08?q=80&w=800",
+"estimatedCost": 500,
+"duration": "3 Hours"
+},
+{
+"title": "Cycle Tour of the City",
+"description": "Rent a cycle and explore the different quarters of the city at dawn.",
+"category": "Experience",
+"image": "https://images.unsplash.com/photo-1599661046289-e31897846e41?q=80&w=800",
+"estimatedCost": 200,
+"duration": "3 Hours"
 }
 ]
 }

@@ -94,6 +94,7 @@ model User {
   socialLinks             Json?
   preferences             Json?
   onboardingComplete      Boolean   @default(false)
+  currency                Currency  @default(INR)
   isBlocked               Boolean   @default(false)
   createdAt               DateTime  @default(now())
   updatedAt               DateTime  @updatedAt
@@ -123,6 +124,7 @@ model Trip {
   userId          String
   title           String
   slug            String?    @unique
+  destination     String?
   description     String?
   coverImage      String?
   startDate       DateTime?
@@ -184,6 +186,7 @@ model TripSection {
   notes      TravelNote[]
   expenses   Expense[]
 
+  @@unique([tripId, title])
   @@index([tripId])
 }
 
@@ -480,19 +483,22 @@ model RecommendationCache {
 }
 
 model GlobalActivity {
-  id           String   @id @default(uuid())
-  foursquareId String?  @unique
-  title        String
-  description  String?
-  category     String?
-  location     String?
-  cityId       String?
-  rating       Float?
-  image        String?
-  createdAt    DateTime @default(now())
+  id            String   @id @default(uuid())
+  foursquareId  String?  @unique
+  title         String
+  description   String?
+  category      String?
+  location      String?
+  cityId        String?
+  rating        Float?
+  estimatedCost Float?
+  duration      String?
+  image         String?
+  createdAt     DateTime @default(now())
 
   city City? @relation(fields: [cityId], references: [id], onDelete: SetNull)
 
+  @@unique([title, cityId])
   @@index([cityId])
 }
 

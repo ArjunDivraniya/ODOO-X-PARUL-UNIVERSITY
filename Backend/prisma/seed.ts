@@ -75,38 +75,102 @@ async function main() {
     // Seed GlobalActivities for this city
     if (city.activities && city.activities.length > 0) {
       for (const activity of city.activities) {
-        const existingActivity = await prisma.globalActivity.findFirst({
+        await prisma.globalActivity.upsert({
           where: { 
-            title: activity.title,
-            cityId: upsertedCity.id
-          }
-        });
-
-        if (existingActivity) {
-          await prisma.globalActivity.update({
-            where: { id: existingActivity.id },
-            data: {
-              description: activity.description,
-              category: activity.category,
-              image: activity.image,
-              location: activity.duration
-            }
-          });
-        } else {
-          await prisma.globalActivity.create({
-            data: {
+            // Use a combination for uniqueness since foursquareId might be missing
+            title_cityId: {
               title: activity.title,
-              description: activity.description,
-              category: activity.category,
-              image: activity.image,
-              cityId: upsertedCity.id,
-              location: `Duration: ${activity.duration} | Cost: ${activity.estimatedCost}`
+              cityId: upsertedCity.id
             }
-          });
-        }
+          },
+          update: {
+            description: activity.description,
+            category: activity.category,
+            image: activity.image,
+            estimatedCost: parseFloat(activity.estimatedCost) || 0,
+            duration: activity.duration,
+            location: activity.duration // fallback
+          },
+          create: {
+            title: activity.title,
+            description: activity.description,
+            category: activity.category,
+            image: activity.image,
+            cityId: upsertedCity.id,
+            estimatedCost: parseFloat(activity.estimatedCost) || 0,
+            duration: activity.duration,
+            location: activity.duration
+          }
+        }).catch(err => console.error(`Error upserting activity ${activity.title}:`, err.message));
       }
       console.log(`  Seeded ${city.activities.length} global activities for ${upsertedCity.name}`);
     }
+  }
+
+  // 3. Seed Sample Trip Data for "test@traveloop.com"
+  const jaipur = await prisma.city.findFirst({ where: { name: 'Jaipur' } });
+  if (jaipur) {
+    const trip = await prisma.trip.upsert({
+      where: { slug: 'my-first-trip' },
+      update: {},
+      create: {
+        userId: user1.id,
+        title: 'Exploring the Pink City',
+        description: 'A 3-day cultural heritage trip to Jaipur.',
+        slug: 'my-first-trip',
+        destination: 'Jaipur',
+        startDate: new Date(),
+        endDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+        estimatedBudget: 25000,
+        currency: 'INR',
+        visibility: 'PUBLIC'
+      }
+    });
+
+    const section = await prisma.tripSection.upsert({
+      where: { 
+        tripId_title: {
+          tripId: trip.id,
+          title: 'Day 1: Royal Heritage'
+        }
+      },
+      update: {},
+      create: {
+        tripId: trip.id,
+        title: 'Day 1: Royal Heritage',
+        description: 'Focusing on the main forts and palaces.',
+        sectionOrder: 1
+      }
+    });
+
+    await prisma.activity.create({
+      data: {
+        tripId: trip.id,
+        sectionId: section.id,
+        cityId: jaipur.id,
+        title: 'Amer Fort Exploration',
+        description: 'Morning visit to the magnificent Amer Fort.',
+        category: 'ADVENTURE',
+        startTime: new Date(),
+        price: 500
+      }
+    });
+
+    await prisma.favoritePlace.upsert({
+      where: {
+        userId_cityId: {
+          userId: user1.id,
+          cityId: jaipur.id
+        }
+      },
+      update: {},
+      create: {
+        userId: user1.id,
+        cityId: jaipur.id
+      }
+    });
+
+    console.log('Sample Trip, Section, Activity, and Favorite seeded.');
   }
 
   console.log('Seeding completed successfully!');

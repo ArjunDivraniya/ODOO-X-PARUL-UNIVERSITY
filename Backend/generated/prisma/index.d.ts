@@ -3312,6 +3312,7 @@ export namespace Prisma {
     isPublic: boolean | null
     authProvider: string | null
     onboardingComplete: boolean | null
+    currency: $Enums.Currency | null
     isBlocked: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -3341,6 +3342,7 @@ export namespace Prisma {
     isPublic: boolean | null
     authProvider: string | null
     onboardingComplete: boolean | null
+    currency: $Enums.Currency | null
     isBlocked: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -3372,6 +3374,7 @@ export namespace Prisma {
     socialLinks: number
     preferences: number
     onboardingComplete: number
+    currency: number
     isBlocked: number
     createdAt: number
     updatedAt: number
@@ -3403,6 +3406,7 @@ export namespace Prisma {
     isPublic?: true
     authProvider?: true
     onboardingComplete?: true
+    currency?: true
     isBlocked?: true
     createdAt?: true
     updatedAt?: true
@@ -3432,6 +3436,7 @@ export namespace Prisma {
     isPublic?: true
     authProvider?: true
     onboardingComplete?: true
+    currency?: true
     isBlocked?: true
     createdAt?: true
     updatedAt?: true
@@ -3463,6 +3468,7 @@ export namespace Prisma {
     socialLinks?: true
     preferences?: true
     onboardingComplete?: true
+    currency?: true
     isBlocked?: true
     createdAt?: true
     updatedAt?: true
@@ -3567,6 +3573,7 @@ export namespace Prisma {
     socialLinks: JsonValue | null
     preferences: JsonValue | null
     onboardingComplete: boolean
+    currency: $Enums.Currency
     isBlocked: boolean
     createdAt: Date
     updatedAt: Date
@@ -3615,6 +3622,7 @@ export namespace Prisma {
     socialLinks?: boolean
     preferences?: boolean
     onboardingComplete?: boolean
+    currency?: boolean
     isBlocked?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -3661,6 +3669,7 @@ export namespace Prisma {
     socialLinks?: boolean
     preferences?: boolean
     onboardingComplete?: boolean
+    currency?: boolean
     isBlocked?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -3692,6 +3701,7 @@ export namespace Prisma {
     socialLinks?: boolean
     preferences?: boolean
     onboardingComplete?: boolean
+    currency?: boolean
     isBlocked?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -3723,13 +3733,14 @@ export namespace Prisma {
     socialLinks?: boolean
     preferences?: boolean
     onboardingComplete?: boolean
+    currency?: boolean
     isBlocked?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     lastLogin?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstName" | "lastName" | "username" | "email" | "password" | "phoneNumber" | "bio" | "city" | "country" | "profileImage" | "coverImage" | "role" | "isVerified" | "verificationToken" | "verificationTokenExpiry" | "resetPasswordToken" | "resetPasswordExpiry" | "refreshToken" | "isPublic" | "authProvider" | "socialLinks" | "preferences" | "onboardingComplete" | "isBlocked" | "createdAt" | "updatedAt" | "lastLogin", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstName" | "lastName" | "username" | "email" | "password" | "phoneNumber" | "bio" | "city" | "country" | "profileImage" | "coverImage" | "role" | "isVerified" | "verificationToken" | "verificationTokenExpiry" | "resetPasswordToken" | "resetPasswordExpiry" | "refreshToken" | "isPublic" | "authProvider" | "socialLinks" | "preferences" | "onboardingComplete" | "currency" | "isBlocked" | "createdAt" | "updatedAt" | "lastLogin", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     trips?: boolean | User$tripsArgs<ExtArgs>
     savedTrips?: boolean | User$savedTripsArgs<ExtArgs>
@@ -3793,6 +3804,7 @@ export namespace Prisma {
       socialLinks: Prisma.JsonValue | null
       preferences: Prisma.JsonValue | null
       onboardingComplete: boolean
+      currency: $Enums.Currency
       isBlocked: boolean
       createdAt: Date
       updatedAt: Date
@@ -4258,6 +4270,7 @@ export namespace Prisma {
     readonly socialLinks: FieldRef<"User", 'Json'>
     readonly preferences: FieldRef<"User", 'Json'>
     readonly onboardingComplete: FieldRef<"User", 'Boolean'>
+    readonly currency: FieldRef<"User", 'Currency'>
     readonly isBlocked: FieldRef<"User", 'Boolean'>
     readonly createdAt: FieldRef<"User", 'DateTime'>
     readonly updatedAt: FieldRef<"User", 'DateTime'>
@@ -5038,6 +5051,7 @@ export namespace Prisma {
     userId: string | null
     title: string | null
     slug: string | null
+    destination: string | null
     description: string | null
     coverImage: string | null
     startDate: Date | null
@@ -5060,6 +5074,7 @@ export namespace Prisma {
     userId: string | null
     title: string | null
     slug: string | null
+    destination: string | null
     description: string | null
     coverImage: string | null
     startDate: Date | null
@@ -5082,6 +5097,7 @@ export namespace Prisma {
     userId: number
     title: number
     slug: number
+    destination: number
     description: number
     coverImage: number
     startDate: number
@@ -5118,6 +5134,7 @@ export namespace Prisma {
     userId?: true
     title?: true
     slug?: true
+    destination?: true
     description?: true
     coverImage?: true
     startDate?: true
@@ -5140,6 +5157,7 @@ export namespace Prisma {
     userId?: true
     title?: true
     slug?: true
+    destination?: true
     description?: true
     coverImage?: true
     startDate?: true
@@ -5162,6 +5180,7 @@ export namespace Prisma {
     userId?: true
     title?: true
     slug?: true
+    destination?: true
     description?: true
     coverImage?: true
     startDate?: true
@@ -5271,6 +5290,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug: string | null
+    destination: string | null
     description: string | null
     coverImage: string | null
     startDate: Date | null
@@ -5312,6 +5332,7 @@ export namespace Prisma {
     userId?: boolean
     title?: boolean
     slug?: boolean
+    destination?: boolean
     description?: boolean
     coverImage?: boolean
     startDate?: boolean
@@ -5347,6 +5368,7 @@ export namespace Prisma {
     userId?: boolean
     title?: boolean
     slug?: boolean
+    destination?: boolean
     description?: boolean
     coverImage?: boolean
     startDate?: boolean
@@ -5370,6 +5392,7 @@ export namespace Prisma {
     userId?: boolean
     title?: boolean
     slug?: boolean
+    destination?: boolean
     description?: boolean
     coverImage?: boolean
     startDate?: boolean
@@ -5393,6 +5416,7 @@ export namespace Prisma {
     userId?: boolean
     title?: boolean
     slug?: boolean
+    destination?: boolean
     description?: boolean
     coverImage?: boolean
     startDate?: boolean
@@ -5410,7 +5434,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type TripOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "title" | "slug" | "description" | "coverImage" | "startDate" | "endDate" | "tripType" | "visibility" | "status" | "estimatedBudget" | "totalExpense" | "travelersCount" | "currency" | "aiGenerated" | "shareCode" | "createdAt" | "updatedAt", ExtArgs["result"]["trip"]>
+  export type TripOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "title" | "slug" | "destination" | "description" | "coverImage" | "startDate" | "endDate" | "tripType" | "visibility" | "status" | "estimatedBudget" | "totalExpense" | "travelersCount" | "currency" | "aiGenerated" | "shareCode" | "createdAt" | "updatedAt", ExtArgs["result"]["trip"]>
   export type TripInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     owner?: boolean | UserDefaultArgs<ExtArgs>
     itinerarySections?: boolean | Trip$itinerarySectionsArgs<ExtArgs>
@@ -5454,6 +5478,7 @@ export namespace Prisma {
       userId: string
       title: string
       slug: string | null
+      destination: string | null
       description: string | null
       coverImage: string | null
       startDate: Date | null
@@ -5908,6 +5933,7 @@ export namespace Prisma {
     readonly userId: FieldRef<"Trip", 'String'>
     readonly title: FieldRef<"Trip", 'String'>
     readonly slug: FieldRef<"Trip", 'String'>
+    readonly destination: FieldRef<"Trip", 'String'>
     readonly description: FieldRef<"Trip", 'String'>
     readonly coverImage: FieldRef<"Trip", 'String'>
     readonly startDate: FieldRef<"Trip", 'DateTime'>
@@ -26482,10 +26508,12 @@ export namespace Prisma {
 
   export type GlobalActivityAvgAggregateOutputType = {
     rating: number | null
+    estimatedCost: number | null
   }
 
   export type GlobalActivitySumAggregateOutputType = {
     rating: number | null
+    estimatedCost: number | null
   }
 
   export type GlobalActivityMinAggregateOutputType = {
@@ -26497,6 +26525,8 @@ export namespace Prisma {
     location: string | null
     cityId: string | null
     rating: number | null
+    estimatedCost: number | null
+    duration: string | null
     image: string | null
     createdAt: Date | null
   }
@@ -26510,6 +26540,8 @@ export namespace Prisma {
     location: string | null
     cityId: string | null
     rating: number | null
+    estimatedCost: number | null
+    duration: string | null
     image: string | null
     createdAt: Date | null
   }
@@ -26523,6 +26555,8 @@ export namespace Prisma {
     location: number
     cityId: number
     rating: number
+    estimatedCost: number
+    duration: number
     image: number
     createdAt: number
     _all: number
@@ -26531,10 +26565,12 @@ export namespace Prisma {
 
   export type GlobalActivityAvgAggregateInputType = {
     rating?: true
+    estimatedCost?: true
   }
 
   export type GlobalActivitySumAggregateInputType = {
     rating?: true
+    estimatedCost?: true
   }
 
   export type GlobalActivityMinAggregateInputType = {
@@ -26546,6 +26582,8 @@ export namespace Prisma {
     location?: true
     cityId?: true
     rating?: true
+    estimatedCost?: true
+    duration?: true
     image?: true
     createdAt?: true
   }
@@ -26559,6 +26597,8 @@ export namespace Prisma {
     location?: true
     cityId?: true
     rating?: true
+    estimatedCost?: true
+    duration?: true
     image?: true
     createdAt?: true
   }
@@ -26572,6 +26612,8 @@ export namespace Prisma {
     location?: true
     cityId?: true
     rating?: true
+    estimatedCost?: true
+    duration?: true
     image?: true
     createdAt?: true
     _all?: true
@@ -26672,6 +26714,8 @@ export namespace Prisma {
     location: string | null
     cityId: string | null
     rating: number | null
+    estimatedCost: number | null
+    duration: string | null
     image: string | null
     createdAt: Date
     _count: GlobalActivityCountAggregateOutputType | null
@@ -26704,6 +26748,8 @@ export namespace Prisma {
     location?: boolean
     cityId?: boolean
     rating?: boolean
+    estimatedCost?: boolean
+    duration?: boolean
     image?: boolean
     createdAt?: boolean
     city?: boolean | GlobalActivity$cityArgs<ExtArgs>
@@ -26718,6 +26764,8 @@ export namespace Prisma {
     location?: boolean
     cityId?: boolean
     rating?: boolean
+    estimatedCost?: boolean
+    duration?: boolean
     image?: boolean
     createdAt?: boolean
     city?: boolean | GlobalActivity$cityArgs<ExtArgs>
@@ -26732,6 +26780,8 @@ export namespace Prisma {
     location?: boolean
     cityId?: boolean
     rating?: boolean
+    estimatedCost?: boolean
+    duration?: boolean
     image?: boolean
     createdAt?: boolean
     city?: boolean | GlobalActivity$cityArgs<ExtArgs>
@@ -26746,11 +26796,13 @@ export namespace Prisma {
     location?: boolean
     cityId?: boolean
     rating?: boolean
+    estimatedCost?: boolean
+    duration?: boolean
     image?: boolean
     createdAt?: boolean
   }
 
-  export type GlobalActivityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "foursquareId" | "title" | "description" | "category" | "location" | "cityId" | "rating" | "image" | "createdAt", ExtArgs["result"]["globalActivity"]>
+  export type GlobalActivityOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "foursquareId" | "title" | "description" | "category" | "location" | "cityId" | "rating" | "estimatedCost" | "duration" | "image" | "createdAt", ExtArgs["result"]["globalActivity"]>
   export type GlobalActivityInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     city?: boolean | GlobalActivity$cityArgs<ExtArgs>
   }
@@ -26775,6 +26827,8 @@ export namespace Prisma {
       location: string | null
       cityId: string | null
       rating: number | null
+      estimatedCost: number | null
+      duration: string | null
       image: string | null
       createdAt: Date
     }, ExtArgs["result"]["globalActivity"]>
@@ -27209,6 +27263,8 @@ export namespace Prisma {
     readonly location: FieldRef<"GlobalActivity", 'String'>
     readonly cityId: FieldRef<"GlobalActivity", 'String'>
     readonly rating: FieldRef<"GlobalActivity", 'Float'>
+    readonly estimatedCost: FieldRef<"GlobalActivity", 'Float'>
+    readonly duration: FieldRef<"GlobalActivity", 'String'>
     readonly image: FieldRef<"GlobalActivity", 'String'>
     readonly createdAt: FieldRef<"GlobalActivity", 'DateTime'>
   }
@@ -28746,6 +28802,7 @@ export namespace Prisma {
     socialLinks: 'socialLinks',
     preferences: 'preferences',
     onboardingComplete: 'onboardingComplete',
+    currency: 'currency',
     isBlocked: 'isBlocked',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
@@ -28760,6 +28817,7 @@ export namespace Prisma {
     userId: 'userId',
     title: 'title',
     slug: 'slug',
+    destination: 'destination',
     description: 'description',
     coverImage: 'coverImage',
     startDate: 'startDate',
@@ -29046,6 +29104,8 @@ export namespace Prisma {
     location: 'location',
     cityId: 'cityId',
     rating: 'rating',
+    estimatedCost: 'estimatedCost',
+    duration: 'duration',
     image: 'image',
     createdAt: 'createdAt'
   };
@@ -29180,6 +29240,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Currency'
+   */
+  export type EnumCurrencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Currency'>
+    
+
+
+  /**
+   * Reference to a field of type 'Currency[]'
+   */
+  export type ListEnumCurrencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Currency[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Visibility'
    */
   export type EnumVisibilityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Visibility'>
@@ -29232,20 +29306,6 @@ export namespace Prisma {
    * Reference to a field of type 'Int[]'
    */
   export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
-
-
-  /**
-   * Reference to a field of type 'Currency'
-   */
-  export type EnumCurrencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Currency'>
-    
-
-
-  /**
-   * Reference to a field of type 'Currency[]'
-   */
-  export type ListEnumCurrencyFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Currency[]'>
     
 
 
@@ -29322,6 +29382,7 @@ export namespace Prisma {
     socialLinks?: JsonNullableFilter<"User">
     preferences?: JsonNullableFilter<"User">
     onboardingComplete?: BoolFilter<"User"> | boolean
+    currency?: EnumCurrencyFilter<"User"> | $Enums.Currency
     isBlocked?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
@@ -29367,6 +29428,7 @@ export namespace Prisma {
     socialLinks?: SortOrderInput | SortOrder
     preferences?: SortOrderInput | SortOrder
     onboardingComplete?: SortOrder
+    currency?: SortOrder
     isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -29415,6 +29477,7 @@ export namespace Prisma {
     socialLinks?: JsonNullableFilter<"User">
     preferences?: JsonNullableFilter<"User">
     onboardingComplete?: BoolFilter<"User"> | boolean
+    currency?: EnumCurrencyFilter<"User"> | $Enums.Currency
     isBlocked?: BoolFilter<"User"> | boolean
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
@@ -29460,6 +29523,7 @@ export namespace Prisma {
     socialLinks?: SortOrderInput | SortOrder
     preferences?: SortOrderInput | SortOrder
     onboardingComplete?: SortOrder
+    currency?: SortOrder
     isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -29497,6 +29561,7 @@ export namespace Prisma {
     socialLinks?: JsonNullableWithAggregatesFilter<"User">
     preferences?: JsonNullableWithAggregatesFilter<"User">
     onboardingComplete?: BoolWithAggregatesFilter<"User"> | boolean
+    currency?: EnumCurrencyWithAggregatesFilter<"User"> | $Enums.Currency
     isBlocked?: BoolWithAggregatesFilter<"User"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -29511,6 +29576,7 @@ export namespace Prisma {
     userId?: StringFilter<"Trip"> | string
     title?: StringFilter<"Trip"> | string
     slug?: StringNullableFilter<"Trip"> | string | null
+    destination?: StringNullableFilter<"Trip"> | string | null
     description?: StringNullableFilter<"Trip"> | string | null
     coverImage?: StringNullableFilter<"Trip"> | string | null
     startDate?: DateTimeNullableFilter<"Trip"> | Date | string | null
@@ -29545,6 +29611,7 @@ export namespace Prisma {
     userId?: SortOrder
     title?: SortOrder
     slug?: SortOrderInput | SortOrder
+    destination?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
     coverImage?: SortOrderInput | SortOrder
     startDate?: SortOrderInput | SortOrder
@@ -29583,6 +29650,7 @@ export namespace Prisma {
     NOT?: TripWhereInput | TripWhereInput[]
     userId?: StringFilter<"Trip"> | string
     title?: StringFilter<"Trip"> | string
+    destination?: StringNullableFilter<"Trip"> | string | null
     description?: StringNullableFilter<"Trip"> | string | null
     coverImage?: StringNullableFilter<"Trip"> | string | null
     startDate?: DateTimeNullableFilter<"Trip"> | Date | string | null
@@ -29616,6 +29684,7 @@ export namespace Prisma {
     userId?: SortOrder
     title?: SortOrder
     slug?: SortOrderInput | SortOrder
+    destination?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
     coverImage?: SortOrderInput | SortOrder
     startDate?: SortOrderInput | SortOrder
@@ -29646,6 +29715,7 @@ export namespace Prisma {
     userId?: StringWithAggregatesFilter<"Trip"> | string
     title?: StringWithAggregatesFilter<"Trip"> | string
     slug?: StringNullableWithAggregatesFilter<"Trip"> | string | null
+    destination?: StringNullableWithAggregatesFilter<"Trip"> | string | null
     description?: StringNullableWithAggregatesFilter<"Trip"> | string | null
     coverImage?: StringNullableWithAggregatesFilter<"Trip"> | string | null
     startDate?: DateTimeNullableWithAggregatesFilter<"Trip"> | Date | string | null
@@ -29714,6 +29784,7 @@ export namespace Prisma {
 
   export type TripSectionWhereUniqueInput = Prisma.AtLeast<{
     id?: string
+    tripId_title?: TripSectionTripIdTitleCompoundUniqueInput
     AND?: TripSectionWhereInput | TripSectionWhereInput[]
     OR?: TripSectionWhereInput[]
     NOT?: TripSectionWhereInput | TripSectionWhereInput[]
@@ -29736,7 +29807,7 @@ export namespace Prisma {
     activities?: ActivityListRelationFilter
     notes?: TravelNoteListRelationFilter
     expenses?: ExpenseListRelationFilter
-  }, "id">
+  }, "id" | "tripId_title">
 
   export type TripSectionOrderByWithAggregationInput = {
     id?: SortOrder
@@ -31063,6 +31134,8 @@ export namespace Prisma {
     location?: StringNullableFilter<"GlobalActivity"> | string | null
     cityId?: StringNullableFilter<"GlobalActivity"> | string | null
     rating?: FloatNullableFilter<"GlobalActivity"> | number | null
+    estimatedCost?: FloatNullableFilter<"GlobalActivity"> | number | null
+    duration?: StringNullableFilter<"GlobalActivity"> | string | null
     image?: StringNullableFilter<"GlobalActivity"> | string | null
     createdAt?: DateTimeFilter<"GlobalActivity"> | Date | string
     city?: XOR<CityNullableScalarRelationFilter, CityWhereInput> | null
@@ -31077,6 +31150,8 @@ export namespace Prisma {
     location?: SortOrderInput | SortOrder
     cityId?: SortOrderInput | SortOrder
     rating?: SortOrderInput | SortOrder
+    estimatedCost?: SortOrderInput | SortOrder
+    duration?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     city?: CityOrderByWithRelationInput
@@ -31085,6 +31160,7 @@ export namespace Prisma {
   export type GlobalActivityWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     foursquareId?: string
+    title_cityId?: GlobalActivityTitleCityIdCompoundUniqueInput
     AND?: GlobalActivityWhereInput | GlobalActivityWhereInput[]
     OR?: GlobalActivityWhereInput[]
     NOT?: GlobalActivityWhereInput | GlobalActivityWhereInput[]
@@ -31094,10 +31170,12 @@ export namespace Prisma {
     location?: StringNullableFilter<"GlobalActivity"> | string | null
     cityId?: StringNullableFilter<"GlobalActivity"> | string | null
     rating?: FloatNullableFilter<"GlobalActivity"> | number | null
+    estimatedCost?: FloatNullableFilter<"GlobalActivity"> | number | null
+    duration?: StringNullableFilter<"GlobalActivity"> | string | null
     image?: StringNullableFilter<"GlobalActivity"> | string | null
     createdAt?: DateTimeFilter<"GlobalActivity"> | Date | string
     city?: XOR<CityNullableScalarRelationFilter, CityWhereInput> | null
-  }, "id" | "foursquareId">
+  }, "id" | "foursquareId" | "title_cityId">
 
   export type GlobalActivityOrderByWithAggregationInput = {
     id?: SortOrder
@@ -31108,6 +31186,8 @@ export namespace Prisma {
     location?: SortOrderInput | SortOrder
     cityId?: SortOrderInput | SortOrder
     rating?: SortOrderInput | SortOrder
+    estimatedCost?: SortOrderInput | SortOrder
+    duration?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: GlobalActivityCountOrderByAggregateInput
@@ -31129,6 +31209,8 @@ export namespace Prisma {
     location?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
     cityId?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
     rating?: FloatNullableWithAggregatesFilter<"GlobalActivity"> | number | null
+    estimatedCost?: FloatNullableWithAggregatesFilter<"GlobalActivity"> | number | null
+    duration?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
     image?: StringNullableWithAggregatesFilter<"GlobalActivity"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"GlobalActivity"> | Date | string
   }
@@ -31212,6 +31294,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -31257,6 +31340,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -31302,6 +31386,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31347,6 +31432,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31392,6 +31478,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -31423,6 +31510,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31454,6 +31542,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31464,6 +31553,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -31498,6 +31588,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -31530,6 +31621,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -31564,6 +31656,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -31597,6 +31690,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -31618,6 +31712,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -31640,6 +31735,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -33122,6 +33218,8 @@ export namespace Prisma {
     category?: string | null
     location?: string | null
     rating?: number | null
+    estimatedCost?: number | null
+    duration?: string | null
     image?: string | null
     createdAt?: Date | string
     city?: CityCreateNestedOneWithoutGlobalActivitiesInput
@@ -33136,6 +33234,8 @@ export namespace Prisma {
     location?: string | null
     cityId?: string | null
     rating?: number | null
+    estimatedCost?: number | null
+    duration?: string | null
     image?: string | null
     createdAt?: Date | string
   }
@@ -33148,6 +33248,8 @@ export namespace Prisma {
     category?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    estimatedCost?: NullableFloatFieldUpdateOperationsInput | number | null
+    duration?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     city?: CityUpdateOneWithoutGlobalActivitiesNestedInput
@@ -33162,6 +33264,8 @@ export namespace Prisma {
     location?: NullableStringFieldUpdateOperationsInput | string | null
     cityId?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    estimatedCost?: NullableFloatFieldUpdateOperationsInput | number | null
+    duration?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -33175,6 +33279,8 @@ export namespace Prisma {
     location?: string | null
     cityId?: string | null
     rating?: number | null
+    estimatedCost?: number | null
+    duration?: string | null
     image?: string | null
     createdAt?: Date | string
   }
@@ -33187,6 +33293,8 @@ export namespace Prisma {
     category?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    estimatedCost?: NullableFloatFieldUpdateOperationsInput | number | null
+    duration?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -33200,6 +33308,8 @@ export namespace Prisma {
     location?: NullableStringFieldUpdateOperationsInput | string | null
     cityId?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    estimatedCost?: NullableFloatFieldUpdateOperationsInput | number | null
+    duration?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -33325,6 +33435,13 @@ export namespace Prisma {
     gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type EnumCurrencyFilter<$PrismaModel = never> = {
+    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
+    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumCurrencyFilter<$PrismaModel> | $Enums.Currency
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -33508,6 +33625,7 @@ export namespace Prisma {
     socialLinks?: SortOrder
     preferences?: SortOrder
     onboardingComplete?: SortOrder
+    currency?: SortOrder
     isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -33537,6 +33655,7 @@ export namespace Prisma {
     isPublic?: SortOrder
     authProvider?: SortOrder
     onboardingComplete?: SortOrder
+    currency?: SortOrder
     isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -33566,6 +33685,7 @@ export namespace Prisma {
     isPublic?: SortOrder
     authProvider?: SortOrder
     onboardingComplete?: SortOrder
+    currency?: SortOrder
     isBlocked?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -33666,6 +33786,16 @@ export namespace Prisma {
     _max?: NestedJsonNullableFilter<$PrismaModel>
   }
 
+  export type EnumCurrencyWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
+    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumCurrencyWithAggregatesFilter<$PrismaModel> | $Enums.Currency
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCurrencyFilter<$PrismaModel>
+    _max?: NestedEnumCurrencyFilter<$PrismaModel>
+  }
+
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -33716,13 +33846,6 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
-  export type EnumCurrencyFilter<$PrismaModel = never> = {
-    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
-    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
-    not?: NestedEnumCurrencyFilter<$PrismaModel> | $Enums.Currency
-  }
-
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
@@ -33763,6 +33886,7 @@ export namespace Prisma {
     userId?: SortOrder
     title?: SortOrder
     slug?: SortOrder
+    destination?: SortOrder
     description?: SortOrder
     coverImage?: SortOrder
     startDate?: SortOrder
@@ -33791,6 +33915,7 @@ export namespace Prisma {
     userId?: SortOrder
     title?: SortOrder
     slug?: SortOrder
+    destination?: SortOrder
     description?: SortOrder
     coverImage?: SortOrder
     startDate?: SortOrder
@@ -33813,6 +33938,7 @@ export namespace Prisma {
     userId?: SortOrder
     title?: SortOrder
     slug?: SortOrder
+    destination?: SortOrder
     description?: SortOrder
     coverImage?: SortOrder
     startDate?: SortOrder
@@ -33888,16 +34014,6 @@ export namespace Prisma {
     _max?: NestedIntFilter<$PrismaModel>
   }
 
-  export type EnumCurrencyWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
-    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
-    not?: NestedEnumCurrencyWithAggregatesFilter<$PrismaModel> | $Enums.Currency
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumCurrencyFilter<$PrismaModel>
-    _max?: NestedEnumCurrencyFilter<$PrismaModel>
-  }
-
   export type TripScalarRelationFilter = {
     is?: TripWhereInput
     isNot?: TripWhereInput
@@ -33906,6 +34022,11 @@ export namespace Prisma {
   export type CityNullableScalarRelationFilter = {
     is?: CityWhereInput | null
     isNot?: CityWhereInput | null
+  }
+
+  export type TripSectionTripIdTitleCompoundUniqueInput = {
+    tripId: string
+    title: string
   }
 
   export type TripSectionCountOrderByAggregateInput = {
@@ -34831,6 +34952,11 @@ export namespace Prisma {
     _max?: NestedJsonFilter<$PrismaModel>
   }
 
+  export type GlobalActivityTitleCityIdCompoundUniqueInput = {
+    title: string
+    cityId: string
+  }
+
   export type GlobalActivityCountOrderByAggregateInput = {
     id?: SortOrder
     foursquareId?: SortOrder
@@ -34840,12 +34966,15 @@ export namespace Prisma {
     location?: SortOrder
     cityId?: SortOrder
     rating?: SortOrder
+    estimatedCost?: SortOrder
+    duration?: SortOrder
     image?: SortOrder
     createdAt?: SortOrder
   }
 
   export type GlobalActivityAvgOrderByAggregateInput = {
     rating?: SortOrder
+    estimatedCost?: SortOrder
   }
 
   export type GlobalActivityMaxOrderByAggregateInput = {
@@ -34857,6 +34986,8 @@ export namespace Prisma {
     location?: SortOrder
     cityId?: SortOrder
     rating?: SortOrder
+    estimatedCost?: SortOrder
+    duration?: SortOrder
     image?: SortOrder
     createdAt?: SortOrder
   }
@@ -34870,12 +35001,15 @@ export namespace Prisma {
     location?: SortOrder
     cityId?: SortOrder
     rating?: SortOrder
+    estimatedCost?: SortOrder
+    duration?: SortOrder
     image?: SortOrder
     createdAt?: SortOrder
   }
 
   export type GlobalActivitySumOrderByAggregateInput = {
     rating?: SortOrder
+    estimatedCost?: SortOrder
   }
 
   export type ActivityScalarRelationFilter = {
@@ -35123,6 +35257,10 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type EnumCurrencyFieldUpdateOperationsInput = {
+    set?: $Enums.Currency
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -35703,10 +35841,6 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
-  }
-
-  export type EnumCurrencyFieldUpdateOperationsInput = {
-    set?: $Enums.Currency
   }
 
   export type UserUpdateOneRequiredWithoutTripsNestedInput = {
@@ -37152,6 +37286,13 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type NestedEnumCurrencyFilter<$PrismaModel = never> = {
+    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
+    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumCurrencyFilter<$PrismaModel> | $Enums.Currency
+  }
+
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -37274,6 +37415,16 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
+  export type NestedEnumCurrencyWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
+    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
+    not?: NestedEnumCurrencyWithAggregatesFilter<$PrismaModel> | $Enums.Currency
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCurrencyFilter<$PrismaModel>
+    _max?: NestedEnumCurrencyFilter<$PrismaModel>
+  }
+
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -37311,13 +37462,6 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedEnumCurrencyFilter<$PrismaModel = never> = {
-    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
-    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
-    not?: NestedEnumCurrencyFilter<$PrismaModel> | $Enums.Currency
   }
 
   export type NestedEnumVisibilityWithAggregatesFilter<$PrismaModel = never> = {
@@ -37381,16 +37525,6 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
-  export type NestedEnumCurrencyWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Currency | EnumCurrencyFieldRefInput<$PrismaModel>
-    in?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
-    notIn?: $Enums.Currency[] | ListEnumCurrencyFieldRefInput<$PrismaModel>
-    not?: NestedEnumCurrencyWithAggregatesFilter<$PrismaModel> | $Enums.Currency
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumCurrencyFilter<$PrismaModel>
-    _max?: NestedEnumCurrencyFilter<$PrismaModel>
   }
 
   export type NestedEnumActivityCategoryFilter<$PrismaModel = never> = {
@@ -37503,6 +37637,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -37535,6 +37670,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -37965,6 +38101,7 @@ export namespace Prisma {
     userId?: StringFilter<"Trip"> | string
     title?: StringFilter<"Trip"> | string
     slug?: StringNullableFilter<"Trip"> | string | null
+    destination?: StringNullableFilter<"Trip"> | string | null
     description?: StringNullableFilter<"Trip"> | string | null
     coverImage?: StringNullableFilter<"Trip"> | string | null
     startDate?: DateTimeNullableFilter<"Trip"> | Date | string | null
@@ -38383,6 +38520,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -38427,6 +38565,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -38883,6 +39022,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -38927,6 +39067,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -39191,6 +39332,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -39224,6 +39366,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -39452,6 +39595,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -39485,6 +39629,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -39753,6 +39898,8 @@ export namespace Prisma {
     category?: string | null
     location?: string | null
     rating?: number | null
+    estimatedCost?: number | null
+    duration?: string | null
     image?: string | null
     createdAt?: Date | string
   }
@@ -39765,6 +39912,8 @@ export namespace Prisma {
     category?: string | null
     location?: string | null
     rating?: number | null
+    estimatedCost?: number | null
+    duration?: string | null
     image?: string | null
     createdAt?: Date | string
   }
@@ -39855,6 +40004,8 @@ export namespace Prisma {
     location?: StringNullableFilter<"GlobalActivity"> | string | null
     cityId?: StringNullableFilter<"GlobalActivity"> | string | null
     rating?: FloatNullableFilter<"GlobalActivity"> | number | null
+    estimatedCost?: FloatNullableFilter<"GlobalActivity"> | number | null
+    duration?: StringNullableFilter<"GlobalActivity"> | string | null
     image?: StringNullableFilter<"GlobalActivity"> | string | null
     createdAt?: DateTimeFilter<"GlobalActivity"> | Date | string
   }
@@ -39863,6 +40014,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -39896,6 +40048,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -40089,6 +40242,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -40122,6 +40276,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -40293,6 +40448,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -40326,6 +40482,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -40459,6 +40616,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -40492,6 +40650,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -40621,6 +40780,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -40654,6 +40814,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -40711,6 +40872,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -40755,6 +40917,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -40834,6 +40997,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -40867,6 +41031,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -40930,6 +41095,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40974,6 +41140,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41034,6 +41201,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -41078,6 +41246,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -41106,6 +41275,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -41139,6 +41309,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -41207,6 +41378,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41251,6 +41423,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41285,6 +41458,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41318,6 +41492,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41370,6 +41545,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -41414,6 +41590,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -41442,6 +41619,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -41475,6 +41653,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -41588,6 +41767,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41632,6 +41812,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41666,6 +41847,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41699,6 +41881,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -41802,6 +41985,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -41846,6 +42030,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -41874,6 +42059,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -41907,6 +42093,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -42021,6 +42208,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42065,6 +42253,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42099,6 +42288,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -42132,6 +42322,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -42216,6 +42407,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -42260,6 +42452,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -42353,6 +42546,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42397,6 +42591,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42480,6 +42675,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -42524,6 +42720,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -42617,6 +42814,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42661,6 +42859,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42744,6 +42943,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -42788,6 +42988,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -42816,6 +43017,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -42849,6 +43051,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -42917,6 +43120,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42961,6 +43165,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42995,6 +43200,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43028,6 +43234,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43080,6 +43287,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -43124,6 +43332,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -43184,6 +43393,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43228,6 +43438,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43272,6 +43483,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -43316,6 +43528,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -43344,6 +43557,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -43377,6 +43591,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -43496,6 +43711,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43540,6 +43756,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43574,6 +43791,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43607,6 +43825,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -43716,6 +43935,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -43760,6 +43980,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -43788,6 +44009,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -43821,6 +44043,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -43889,6 +44112,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43933,6 +44157,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -43967,6 +44192,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44000,6 +44226,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44031,6 +44258,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -44064,6 +44292,7 @@ export namespace Prisma {
     userId: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -44121,6 +44350,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -44165,6 +44395,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -44204,6 +44435,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44237,6 +44469,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -44300,6 +44533,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -44344,6 +44578,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -44388,6 +44623,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -44432,6 +44668,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -44543,6 +44780,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -44587,6 +44825,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -44796,6 +45035,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -44840,6 +45080,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: boolean
+    currency?: $Enums.Currency
     isBlocked?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -44951,6 +45192,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -44995,6 +45237,7 @@ export namespace Prisma {
     socialLinks?: NullableJsonNullValueInput | InputJsonValue
     preferences?: NullableJsonNullValueInput | InputJsonValue
     onboardingComplete?: BoolFieldUpdateOperationsInput | boolean
+    currency?: EnumCurrencyFieldUpdateOperationsInput | $Enums.Currency
     isBlocked?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -45075,6 +45318,7 @@ export namespace Prisma {
     id?: string
     title: string
     slug?: string | null
+    destination?: string | null
     description?: string | null
     coverImage?: string | null
     startDate?: Date | string | null
@@ -45212,6 +45456,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -45244,6 +45489,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -45276,6 +45522,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     slug?: NullableStringFieldUpdateOperationsInput | string | null
+    destination?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     coverImage?: NullableStringFieldUpdateOperationsInput | string | null
     startDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -46451,6 +46698,8 @@ export namespace Prisma {
     category?: string | null
     location?: string | null
     rating?: number | null
+    estimatedCost?: number | null
+    duration?: string | null
     image?: string | null
     createdAt?: Date | string
   }
@@ -46605,6 +46854,8 @@ export namespace Prisma {
     category?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    estimatedCost?: NullableFloatFieldUpdateOperationsInput | number | null
+    duration?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -46617,6 +46868,8 @@ export namespace Prisma {
     category?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    estimatedCost?: NullableFloatFieldUpdateOperationsInput | number | null
+    duration?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -46629,6 +46882,8 @@ export namespace Prisma {
     category?: NullableStringFieldUpdateOperationsInput | string | null
     location?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
+    estimatedCost?: NullableFloatFieldUpdateOperationsInput | number | null
+    duration?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -145,6 +145,7 @@ exports.Prisma.UserScalarFieldEnum = {
   socialLinks: 'socialLinks',
   preferences: 'preferences',
   onboardingComplete: 'onboardingComplete',
+  currency: 'currency',
   isBlocked: 'isBlocked',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
@@ -156,6 +157,7 @@ exports.Prisma.TripScalarFieldEnum = {
   userId: 'userId',
   title: 'title',
   slug: 'slug',
+  destination: 'destination',
   description: 'description',
   coverImage: 'coverImage',
   startDate: 'startDate',
@@ -388,6 +390,8 @@ exports.Prisma.GlobalActivityScalarFieldEnum = {
   location: 'location',
   cityId: 'cityId',
   rating: 'rating',
+  estimatedCost: 'estimatedCost',
+  duration: 'duration',
   image: 'image',
   createdAt: 'createdAt'
 };
@@ -433,6 +437,16 @@ exports.Role = exports.$Enums.Role = {
   ADMIN: 'ADMIN'
 };
 
+exports.Currency = exports.$Enums.Currency = {
+  INR: 'INR',
+  USD: 'USD',
+  EUR: 'EUR',
+  GBP: 'GBP',
+  JPY: 'JPY',
+  AUD: 'AUD',
+  CAD: 'CAD'
+};
+
 exports.Visibility = exports.$Enums.Visibility = {
   PRIVATE: 'PRIVATE',
   PUBLIC: 'PUBLIC',
@@ -444,16 +458,6 @@ exports.TripStatus = exports.$Enums.TripStatus = {
   ACTIVE: 'ACTIVE',
   COMPLETED: 'COMPLETED',
   CANCELLED: 'CANCELLED'
-};
-
-exports.Currency = exports.$Enums.Currency = {
-  INR: 'INR',
-  USD: 'USD',
-  EUR: 'EUR',
-  GBP: 'GBP',
-  JPY: 'JPY',
-  AUD: 'AUD',
-  CAD: 'CAD'
 };
 
 exports.ActivityCategory = exports.$Enums.ActivityCategory = {
